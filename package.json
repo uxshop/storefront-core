@@ -1,0 +1,32 @@
+{
+  "name": "lw-storefront-core",
+  "version": "1.0.0",
+  "description": "",
+  "main": "./lib/index.js",
+  "source": "./lib",
+  "types": "./lib/index.d.ts",
+  "scripts": {
+    "dev": "tsc --watch --sourcemap",
+    "test": "npx jest",
+    "test:dev": "npx jest --watch",
+    "build": "tsc"
+  },
+  "dependencies": {
+    "@types/node": "^17.0.31",
+    "@urql/core": "^2.3.3",
+    "dotenv": "^16.0.1",
+    "graphql": "^15.6.1",
+    "socket.io-client": "^4.2.0",
+    "typescript": "^4.4.4",
+    "webfontloader": "^1.6.28"
+  },
+  "devDependencies": {
+    "@types/jest": "^27.0.3",
+    "@types/webfontloader": "^1.6.33",
+    "isomorphic-fetch": "^3.0.0",
+    "jest": "^27.4.2",
+    "ts-jest": "^27.0.7"
+  },
+  "author": "",
+  "license": "ISC"
+}
