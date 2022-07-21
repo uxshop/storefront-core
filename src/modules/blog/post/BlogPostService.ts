@@ -2,7 +2,7 @@ import { BlogPostRepositoryGql } from './BlogPostRepositoryGql'
 import { BlogPostRepositoryJson } from './BlogPostRepositoryJson'
 import { BlogPost, BlogPostFields, BlogPostList, BlogPostListFilter } from './BlogPostTypes'
 
-const Repository = process.env.DC_CONFIG.mock?.blogPost ? BlogPostRepositoryJson : BlogPostRepositoryGql
+const Repository = dc_config.mock?.blogPost ? BlogPostRepositoryJson : BlogPostRepositoryGql
 
 export class BlogPostService {
   static async getById(id: string, fields?: Array<BlogPostFields>): Promise<BlogPost> {

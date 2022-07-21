@@ -1,15 +1,17 @@
 {
-  "name": "lw-storefront-core",
-  "version": "1.0.0",
+  "name": "@uxshop/storefront-core",
+  "version": "0.0.1",
   "description": "",
-  "main": "./lib/index.js",
-  "source": "./lib",
-  "types": "./lib/index.d.ts",
+  "main": "./dist/index.js",
+  "source": "./dist",
+  "types": "./dist/index.d.ts",
   "scripts": {
     "dev": "tsc --watch --sourcemap",
+    "dev:plugin": "tsc -p ./src/plugin --watch --sourcemap",
     "test": "npx jest",
     "test:dev": "npx jest --watch",
-    "build": "tsc"
+    "build": "tsc && tsc -p ./src/plugin",
+    "install": "tsc && tsc -p ./src/plugin"
   },
   "dependencies": {
     "@types/node": "^17.0.31",
@@ -25,8 +27,17 @@
     "@types/webfontloader": "^1.6.33",
     "isomorphic-fetch": "^3.0.0",
     "jest": "^27.4.2",
-    "ts-jest": "^27.0.7"
+    "ts-jest": "^27.0.7",
+    "vite": "^2.9.1"
   },
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/uxshop/storefront-core.git"
+  },
+  "bugs": {
+    "url": "https://github.com/uxshop/storefront-core/issues"
+  },
+  "homepage": "https://github.com/uxshop/storefront-core#readme"
 }

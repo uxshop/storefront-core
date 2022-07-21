@@ -44,6 +44,6 @@ class GraphqlService {
     }
   }
 }
-const client = new GraphqlService(process.env.API_URL, process.env.TOKEN, process.env.DOMAIN)
+const client = new GraphqlService(dc_config.api_url, dc_config.token, dc_config.domain)
 
 export { client }
