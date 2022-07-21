@@ -13,7 +13,7 @@
     "sourceMap": true,
     "lib": ["dom", "esnext"],
     "jsx": "react",
-    "outDir": "../../lib/plugin",
+    "outDir": "../../dist/plugin",
     "skipLibCheck": true
   },
   "exclude": ["src/**/__test__/", "node_modules"]

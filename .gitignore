@@ -106,5 +106,7 @@ typings/
 
 **/dist/
 lib/
+dist/
 
 yarn.lock
+package-lock.json
