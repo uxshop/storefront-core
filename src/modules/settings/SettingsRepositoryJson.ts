@@ -1,6 +1,6 @@
 export class SettingsRepositoryJson {
   static async getOne() {
-    const result = process.env.DC_CONFIG.mock?.settings
+    const result = dc_config.mock?.settings
 
     return result || {}
   }

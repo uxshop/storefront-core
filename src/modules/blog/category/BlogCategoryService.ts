@@ -2,7 +2,7 @@ import { BlogCategoryRepositoryGql } from './BlogCategoryRepositoryGql'
 import { BlogCategoryRepositoryJson } from './BlogCategoryRepositoryJson'
 import { BlogCategory, BlogCategoryFields } from './BlogCategoryTypes'
 
-const Repository = process.env.DC_CONFIG.mock?.blogCategory ? BlogCategoryRepositoryJson : BlogCategoryRepositoryGql
+const Repository = dc_config.mock?.blogCategory ? BlogCategoryRepositoryJson : BlogCategoryRepositoryGql
 
 export class BlogCategoryService {
   static async getById(id: string, fields?: Array<BlogCategoryFields>): Promise<BlogCategory> {

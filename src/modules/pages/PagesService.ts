@@ -2,7 +2,7 @@ import { PagesRepositoryGql } from './PagesRepositoryGql'
 import { PagesRepositoryJson } from './PagesRepositoryJson'
 import { Page, PageFields } from './PageTypes'
 
-const Repository = process.env.DC_CONFIG.mock?.pages ? PagesRepositoryJson : PagesRepositoryGql
+const Repository = dc_config.mock?.pages ? PagesRepositoryJson : PagesRepositoryGql
 
 export class PagesService {
   static async getList(fields?: Array<PageFields>): Promise<Array<Page>> {

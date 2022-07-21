@@ -3,7 +3,7 @@ import { CategoryRepositoryJson } from './CategoryRepositoryJson'
 import { Category, CategoryFields, CategoryTree, CategoryTreeFields } from './CategoryTypes'
 
 const Repository =
-  process.env.DC_CONFIG.mock?.category && process.env.DC_CONFIG.mock?.categoryTree ? CategoryRepositoryJson : CategoryRepositoryGql
+  dc_config.mock?.category && dc_config.mock?.categoryTree ? CategoryRepositoryJson : CategoryRepositoryGql
 
 export class CategoryService {
   static async getById(id: string, fields?: Array<CategoryFields>) {

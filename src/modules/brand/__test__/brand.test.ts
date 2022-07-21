@@ -37,6 +37,6 @@ describe('Brand Module', () => {
   })
 
   it('Should try get brand by inexistant id and it should throw error', async () => {
-    console.log(await BrandService.getList(undefined, ['id']))
+    expect(async () => await BrandService.getList({page: 1})).rejects.toThrow()
   })
 })
