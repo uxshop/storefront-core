@@ -1,5 +1,4 @@
 import { Client, createClient, defaultExchanges, gql } from '@urql/core'
-require('dotenv').config();
 
 class GraphqlService {
   client: Client
