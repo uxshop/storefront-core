@@ -1,7 +1,9 @@
-import stringHelper from './helpers/stringHelper'
-import styleHelper from './helpers/styleHelper'
-import viewportHelper from './helpers/viewportHelper'
+// Helpers
+import { StringHelper } from './helpers/StringHelper'
+import { StyleHelper } from './helpers/StyleHelper'
+import { ViewportHelper } from './helpers/ViewportHelper'
 
+// Modules services
 import { AppsService } from './modules/apps/AppsService'
 import { BlogCategoryService } from './modules/blog/category/BlogCategoryService'
 import { BlogPostService } from './modules/blog/post/BlogPostService'
@@ -18,32 +20,29 @@ import { ShopService } from './modules/shop/ShopService'
 import { ShowcaseService } from './modules/showcase/ShowcaseService'
 import { UserService } from './modules/user/UserService'
 
-import Socket from './socket'
+import { SeoServiceFactory } from './services/seo/SeoServiceFactory'
 
-export const helpers = {
-  stringHelper,
-  styleHelper,
-  viewportHelper
-}
+import { Socket } from './socket'
 
-export const services = {
-  apps: AppsService,
-  blogCategory: BlogCategoryService,
-  blogPost: BlogPostService,
-  brand: BrandService,
-  cart: CartService,
-  category: CategoryService,
-  landingPages: LandingPagesService,
-  menu: MenuService,
-  pages: PagesService,
-  scripts: ScriptsService,
-  sections: SectionsService,
-  settings: SettingsService,
-  shop: ShopService,
-  showcase: ShowcaseService,
-  user: UserService
-}
-
-export const socket = {
-  ...Socket
+export default {
+  StringHelper,
+  StyleHelper,
+  ViewportHelper,
+  AppsService,
+  BlogCategoryService,
+  BlogPostService,
+  BrandService,
+  CartService,
+  CategoryService,
+  LandingPagesService,
+  MenuService,
+  PagesService,
+  ScriptsService,
+  SectionsService,
+  SettingsService,
+  ShopService,
+  ShowcaseService,
+  UserService,
+  SeoServiceFactory,
+  Socket
 }

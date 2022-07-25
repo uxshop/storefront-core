@@ -1,48 +1,16 @@
+import { Post } from '../../../types/PostTypes'
 import { nullable } from '../../../types/NullableTypes'
 import { PageableEdgeObject, PageableListObject, PaginationFilter } from '../../../types/PaginationTypes'
 
-export interface BlogPost {
-  id?: nullable<Number>
-  post_category_id?: nullable<Number>
-  name?: nullable<String>
-  slug?: nullable<String>
-  image?: nullable<String>
-  description?: nullable<String>
-  tags?: nullable<String>
-  active?: nullable<Boolean>
-  url?: nullable<String>
-  meta_title?: nullable<String>
-  meta_description?: nullable<String>
-  meta_keywords?: nullable<String>
-  created_at?: nullable<String>
-  updated_at?: nullable<String>
-  category?: nullable<BlogPostCategory>
-}
-
-export interface BlogPostCategory {
-  id?: nullable<Number>
-  name?: nullable<String>
-  slug?: nullable<String>
-  description?: nullable<String>
-  meta_title?: nullable<String>
-  meta_description?: nullable<String>
-  active?: nullable<Boolean>
-  posts_count?: nullable<Number>
-  position?: nullable<Number>
-  url?: nullable<String>
-  created_at?: nullable<String>
-  updated_at?: nullable<String>
-}
-
 export interface BlogPostResponse {
-  blogPost: BlogPost
+  blogPost: Post
 }
 
 export interface BlogPostListResponse {
   blogPosts: BlogPostList
 }
 
-export interface BlogPostEdges extends PageableEdgeObject<BlogPost> {}
+export interface BlogPostEdges extends PageableEdgeObject<Post> {}
 
 export interface BlogPostList extends PageableListObject<BlogPostEdges> {}
 
