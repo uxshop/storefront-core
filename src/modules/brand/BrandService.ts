@@ -1,7 +1,8 @@
+import { Brand } from '../../types/product/BrandTypes'
 import { PaginationFilter } from '../../types/PaginationTypes'
 import { BrandRepositoryGql } from './BrandRepositoryGql'
 import { BrandRepositoryJson } from './BrandRepositoryJson'
-import { Brand, BrandFields, BrandList } from './BrandTypes'
+import { BrandFields, BrandList } from './BrandTypes'
 
 const Repository = dc_config.mock?.brand ? BrandRepositoryJson : BrandRepositoryGql
 

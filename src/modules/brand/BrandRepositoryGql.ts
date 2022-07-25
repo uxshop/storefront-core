@@ -1,7 +1,7 @@
+import { Brand } from '../../types/product/BrandTypes'
 import { client } from '../../services/GraphqlService'
 import { BrandQueries } from './BrandQueries'
 import {
-  Brand,
   BrandFields,
   BrandList,
   BrandListResponse,

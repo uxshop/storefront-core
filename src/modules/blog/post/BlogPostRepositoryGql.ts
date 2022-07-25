@@ -1,7 +1,7 @@
+import { Post } from '../../../types/PostTypes'
 import { client } from '../../../services/GraphqlService'
 import { BlogPostQueries } from './BlogPostQueries'
 import {
-  BlogPost,
   BlogPostFields,
   BlogPostList,
   BlogPostListResponse,
@@ -26,7 +26,7 @@ export class BlogPostRepositoryGql {
     }
   }
 
-  private static async getBlogPost({ fields, filter }: OptionsGetBlogPost): Promise<BlogPost> {
+  private static async getBlogPost({ fields, filter }: OptionsGetBlogPost): Promise<Post> {
     const blogPostQuery = new BlogPostQueries(fields)
     const blogPostGetOneQuery: string = blogPostQuery.getOnefullQuery()
     try {
@@ -41,11 +41,11 @@ export class BlogPostRepositoryGql {
     }
   }
 
-  static async getById(id: Number, fields?: Array<BlogPostFields>): Promise<BlogPost> {
+  static async getById(id: Number, fields?: Array<BlogPostFields>): Promise<Post> {
     return this.getBlogPost({ fields: fields || null, filter: { id: id } })
   }
 
-  static async getBySlug(slug: String, fields?: Array<BlogPostFields>): Promise<BlogPost> {
+  static async getBySlug(slug: String, fields?: Array<BlogPostFields>): Promise<Post> {
     return this.getBlogPost({ fields: fields || null, filter: { slug: slug } })
   }
 }

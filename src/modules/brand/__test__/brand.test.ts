@@ -1,7 +1,5 @@
 import { BrandService } from '../BrandService'
-import { Brand, BrandFields } from '../BrandTypes'
-import { buildBaseAsserts, buildGeneralModuleAsserts } from '../../../helpers/__test__/testHelper'
-import { PageInfo } from '../../../types/PaginationTypes'
+import { BrandFields } from '../BrandTypes'
 import 'isomorphic-fetch'
 
 const ID_FILTER = '1260'
@@ -37,6 +35,6 @@ describe('Brand Module', () => {
   })
 
   it('Should try get brand by inexistant id and it should throw error', async () => {
-    expect(async () => await BrandService.getList({page: 1})).rejects.toThrow()
+    expect(async () => await BrandService.getList({ page: 1 })).rejects.toThrow()
   })
 })
