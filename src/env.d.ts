@@ -13,6 +13,7 @@ interface dc_config {
     landing_pages?: any
     menu?: any
     pages?: any
+    page?: any
     scripts?: any
     sections?: any
     settings?: any
