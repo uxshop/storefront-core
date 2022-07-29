@@ -39,10 +39,10 @@ export class PageSeoService extends SeoService {
       this.page.faq.forEach(question => {
         let questionItem = {
           '@type': 'Question',
-          name: question.name,
+          name: question.question,
           acceptedAnswer: {
             '@type': 'Answer',
-            text: this.formatRichText(question.content)
+            text: this.formatRichText(question.answer)
           }
         }
         microData.mainEntity.push(questionItem)

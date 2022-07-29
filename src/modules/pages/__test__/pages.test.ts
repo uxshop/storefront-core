@@ -1,6 +1,6 @@
 import { PagesService } from '../PagesService'
-import 'isomorphic-fetch'
 import { PageFields } from '../PageTypes'
+import 'isomorphic-fetch'
 
 describe('Pages Module', () => {
   it('Should get page by id with all fields succeffully', async () => {

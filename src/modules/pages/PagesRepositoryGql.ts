@@ -1,6 +1,7 @@
-import { OptionsGetPage, Page, PageFields, PageListResponse, PageResponse } from './PageTypes'
+import { OptionsGetPage, PageFields, PageListResponse, PageResponse } from './PageTypes'
 import { client } from '../../services/GraphqlService'
 import { PagesQueries } from './PagesQueries'
+import { Page } from '../../types/PageTypes'
 
 export class PagesRepositoryGql {
   static async getList(fields?: Array<PageFields>): Promise<Array<Page>> {

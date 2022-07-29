@@ -7,14 +7,12 @@ export class PagesRepositoryJson {
   }
 
   static async getById(id: Number, fields?: Array<PageFields>) {
-    const pages = dc_config.mock?.pages
-    const result = pages && pages.filter(page => page.id == id)
+    const result = dc_config.mock?.page
     return result || {}
   }
 
   static async getBySlug(slug: String, fields?: Array<PageFields>) {
-    const pages = dc_config.mock?.pages
-    const result = pages && pages.filter(page => page.slug == slug)
+    const result = dc_config.mock?.page
     return result || {}
   }
 }
