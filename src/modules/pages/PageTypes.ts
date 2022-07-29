@@ -1,20 +1,5 @@
+import { Page } from '../../types/PageTypes'
 import { nullable } from '../../types/NullableTypes'
-
-export interface Page {
-  id?: Number
-  name?: nullable<String>
-  slug?: nullable<String>
-  template?: nullable<String>
-  url?: nullable<String>
-  active?: nullable<Boolean>
-  faq?: nullable<FAQ>
-  created_at?: nullable<String>
-  updated_at?: nullable<String>
-  description?: nullable<String>
-  meta_title?: nullable<String>
-  meta_description?: nullable<String>
-  meta_keywords?: nullable<String>
-}
 
 export interface PageListResponse {
   pages: Array<Page>
@@ -22,12 +7,6 @@ export interface PageListResponse {
 
 export interface PageResponse {
   pageBy: Page
-}
-
-export interface FAQ {
-  active?: nullable<Boolean>
-  answer?: nullable<String>
-  question?: nullable<String>
 }
 
 export interface OptionsGetPage {

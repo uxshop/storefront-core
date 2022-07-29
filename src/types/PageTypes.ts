@@ -13,11 +13,11 @@ export interface Page {
   active?: nullable<boolean>
   created_at?: nullable<string>
   updated_at?: nullable<string>
-  faq?: nullable<FaqProps[]>
+  faq?: nullable<Array<FAQ>>
 }
 
-interface FaqProps {
-  id: number
-  name: string
-  content: string
+export interface FAQ {
+  active?: nullable<boolean>
+  answer?: nullable<string>
+  question?: nullable<string>
 }
