@@ -152,7 +152,7 @@ export class ShowcaseQueries {
         attribute ${this.getAttributeFields()},
         attribute_secondary ${this.getAttributeFields()},
         features ${this.getFeatureFields()},
-        variation_id,
+        product_id,
         variations ${this.getVariationFields()},
         component_groups ${this.getComponentGroupsFields()}
     }`
