@@ -102,12 +102,7 @@ export interface ShowcasePayment {
   has_interest: nullable<Boolean>
 }
 
-export interface ShowcaseFeatureValue {
-  id: nullable<Number>
-  name: nullable<String>
-  slug: nullable<String>
-  image: nullable<ShowcaseImage>
-}
+export interface ShowcaseFeatureValue extends Omit<ShowcaseFeature, 'values'> {}
 
 export interface ShowcaseFeature {
   id: nullable<Number>
@@ -122,9 +117,7 @@ export interface ShowcaseImage {
   alt: nullable<String>
 }
 
-export interface ShowcaseProductImage {
-  url: nullable<String>
-  alt: nullable<String>
+export interface ShowcaseProductImage extends ShowcaseImage {
   color_ids: nullable<Number>
 }
 
@@ -155,11 +148,7 @@ export interface ShowcaseComponent extends Omit<Showcase, 'id' | 'components'> {
   optional: nullable<Boolean>
 }
 
-export interface ShowcaseAttributeValue {
-  id: nullable<Number>
-  name: nullable<String>
-  slug: nullable<String>
-}
+export interface ShowcaseAttributeValue extends Omit<ShowcaseAttribute, 'values'> {}
 
 export interface ShowcaseAttribute {
   id: nullable<Number>
