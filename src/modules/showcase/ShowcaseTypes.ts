@@ -6,7 +6,7 @@ export interface Showcase {
   name?: nullable<String>
   slug?: nullable<String>
   url?: nullable<String>
-  payments?: nullable<ShowcasePayment>
+  payments?: nullable<Array<ShowcasePayment>>
   gtin?: nullable<String>
   mpn?: nullable<String>
   additional_shipping_time?: nullable<Number>
@@ -56,7 +56,7 @@ export interface Showcase {
   attribute?: nullable<ShowcaseAttribute>
   attribute_secondary?: nullable<ShowcaseAttribute>
   features?: nullable<Array<ShowcaseFeature>>
-  variation_id?: nullable<Number>
+  product_id?: nullable<Number>
   variations?: nullable<Array<ShowcaseVariation>>
   components?: nullable<Array<ShowcaseComponent>>
   component_groups?: nullable<Array<ShowcaseComponentGroup>>
@@ -102,12 +102,7 @@ export interface ShowcasePayment {
   has_interest: nullable<Boolean>
 }
 
-export interface ShowcaseFeatureValue {
-  id: nullable<Number>
-  name: nullable<String>
-  slug: nullable<String>
-  image: nullable<ShowcaseImage>
-}
+export interface ShowcaseFeatureValue extends Omit<ShowcaseFeature, 'values'> {}
 
 export interface ShowcaseFeature {
   id: nullable<Number>
@@ -122,9 +117,7 @@ export interface ShowcaseImage {
   alt: nullable<String>
 }
 
-export interface ShowcaseProductImage {
-  url: nullable<String>
-  alt: nullable<String>
+export interface ShowcaseProductImage extends ShowcaseImage {
   color_ids: nullable<Number>
 }
 
@@ -146,20 +139,17 @@ export interface ShowcaseComponentGroup {
   optional: nullable<Boolean>
 }
 
-export interface ShowcaseComponent extends Omit<Showcase, 'id' | 'components'> {
+export interface ShowcaseComponent extends Omit<Showcase, 'id' | 'components' | 'variation_id'> {
   id?: nullable<Number>
   product_component_id: nullable<Number>
   product_component_group_id: nullable<Number>
   quantity: nullable<Number>
   default: nullable<Boolean>
   optional: nullable<Boolean>
+  product_id: nullable<Number>
 }
 
-export interface ShowcaseAttributeValue {
-  id: nullable<Number>
-  name: nullable<String>
-  slug: nullable<String>
-}
+export interface ShowcaseAttributeValue extends Omit<ShowcaseAttribute, 'values'> {}
 
 export interface ShowcaseAttribute {
   id: nullable<Number>
