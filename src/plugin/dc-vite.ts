@@ -1,4 +1,5 @@
 import { loadEnv } from 'vite'
+import { SchemaService } from './SchemaService'
 
 export function doocaPlugin(dcConfig) {
   return {
@@ -16,6 +17,15 @@ export function doocaPlugin(dcConfig) {
           domain: dcConfig.domain,
           mock: dcConfig.mock || null
         }
+      }
+    },
+    async buildStart(config) {
+      try {
+        const schemaService = new SchemaService()
+        const settingsSchema = await schemaService.getSettingsBundle(__dirname)
+        console.log('build start ==>', settingsSchema)
+      } catch (error) {
+        console.log(error)
       }
     }
   }
