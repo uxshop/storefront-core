@@ -1,5 +1,6 @@
 import FileHound from 'filehound'
 import fs from 'fs'
+import path from 'path'
 
 export interface SchemaFile {
   schema: string
@@ -52,7 +53,7 @@ export class SchemaService {
 
     try {
       const directories = await this.getPaths(themePath, bundleType)
-      const contents = directories.map(toContent)
+      const contents = await directories.map(toContent)
       const draftBundle = await getDraftBundle(contents)
 
       return draftBundleToBundle(draftBundle)
@@ -61,12 +62,26 @@ export class SchemaService {
     }
   }
 
-  async getSettingsBundle(themePath: string): Promise<string> {
-    console.log('themepath', themePath)
+  private writeSchemaBundle(content, dir) {
+    fs.mkdir(
+      path.dirname(dir),
+      {
+        recursive: true
+      },
+      error => {
+        if (error) throw new Error(`Error create diretory ${error}`)
 
+        fs.writeFile(dir, content, error => {
+          if (error) throw new Error(`Error write bundle ${error}`)
+        })
+      }
+    )
+  }
+
+  async getSettingsBundle(themePath: string): Promise<string> {
     try {
       const bundle = await this.bundleGenerator(`${themePath}/src/`, 'settings')
-      return JSON.stringify(bundle)
+      return JSON.stringify(bundle.config)
     } catch (error) {
       throw new Error(`Error returning settings bundle ${error}`)
     }
@@ -78,6 +93,32 @@ export class SchemaService {
       return JSON.stringify(bundle)
     } catch (error) {
       throw new Error(`Error returning sections bundle ${error}`)
+    }
+  }
+
+  async generateSettingsBundle(themePath: string) {
+    try {
+      const bundle = await this.getSettingsBundle(themePath)
+      const pathDir = `${themePath}/public/schemas/settings.json`
+
+      this.writeSchemaBundle(bundle, pathDir)
+
+      return bundle
+    } catch (error) {
+      throw new Error(`Error generate settings bundle ${error}`)
+    }
+  }
+
+  async generateSectionBundle(themePath: string) {
+    try {
+      const bundle = await this.getSectionBundle(themePath)
+      const pathDir = `${themePath}/public/schemas/sections.json`
+
+      this.writeSchemaBundle(bundle, pathDir)
+
+      return bundle
+    } catch (error) {
+      throw new Error(`Error generate sections bundle ${error}`)
     }
   }
 }

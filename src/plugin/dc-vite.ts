@@ -21,11 +21,12 @@ export function doocaPlugin(dcConfig) {
     },
     async buildStart(config) {
       try {
+        const themePath = process.cwd()
         const schemaService = new SchemaService()
-        const settingsSchema = await schemaService.getSettingsBundle(__dirname)
-        console.log('build start ==>', settingsSchema)
+        const settingsBundle = await schemaService.generateSettingsBundle(themePath)
+        const sectionsBundle = await schemaService.generateSectionBundle(themePath)
       } catch (error) {
-        console.log(error)
+        console.error(error)
       }
     }
   }
