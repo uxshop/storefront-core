@@ -1,5 +1,10 @@
 import { nullable } from '../../../src/types/NullableTypes'
 
+interface CategoryImage {
+  src: string
+  alt: string
+}
+
 export interface Category {
   id?: Number
   name?: nullable<String>
@@ -15,8 +20,8 @@ export interface Category {
   hotsite_id?: nullable<Number>
   external_id?: nullable<Number>
   description?: nullable<String>
-  image?: nullable<String>
-  banner?: nullable<String>
+  image?: nullable<CategoryImage>
+  banner?: nullable<CategoryImage>
   banner_link?: nullable<String>
   google_taxonomy_id?: nullable<Number>
   meta_title?: nullable<String>
