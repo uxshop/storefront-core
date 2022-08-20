@@ -1,6 +1,7 @@
 interface dc_config {
   token: string
   api_url: string
+  api_editor: string
   domain: string
   mock?: {
     apps?: any
