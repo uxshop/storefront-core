@@ -35,6 +35,10 @@ export class CategoryQueries {
     }`
   }
 
+  private getImageFields() {
+    return '{src, alt}'
+  }
+
   private defaultFields() {
     return [
       'id',
@@ -51,8 +55,8 @@ export class CategoryQueries {
       'hotsite_id',
       'external_id',
       'description',
-      'image',
-      'banner',
+      `image ${this.getImageFields()}`,
+      `banner ${this.getImageFields()}`,
       'banner_link',
       'google_taxonomy_id',
       'meta_title',
