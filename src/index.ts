@@ -1,7 +1,7 @@
 // Helpers
-import { StringHelper } from './helpers/StringHelper'
-import { StyleHelper } from './helpers/StyleHelper'
-import { ViewportHelper } from './helpers/ViewportHelper'
+import { StringHelper } from './helpers/stringHelper'
+import { StyleHelper } from './helpers/styleHelper'
+import { ViewportHelper } from './helpers/viewportHelper'
 
 // Modules services
 import { AppsService } from './modules/apps/AppsService'
