@@ -1,5 +1,5 @@
 import * as WebFont from 'webfontloader'
-import { StringHelper } from './StringHelper'
+import { StringHelper } from './stringHelper'
 const fonts = {}
 
 export class StyleHelper {
