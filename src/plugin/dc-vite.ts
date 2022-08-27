@@ -21,9 +21,9 @@ export function doocaPlugin(dcConfig) {
       process.env = { ...process.env, ...loadEnv(options.mode, process.cwd()) }
       const apis = options.mode !== 'production' ? URL_APIS.homolog : URL_APIS.production
 
+      config.base = dcConfig.base_path || '/'
       config.define = {
         ...config.define,
-        base: dcConfig.base_path || null,
         dc_config: {
           api_url: dcConfig.api_url || apis.api_url,
           api_editor: dcConfig.api_editor || apis.api_editor,
