@@ -9,9 +9,44 @@ export class ShopQueries {
     return this.fields.join()
   }
 
+  private getPlanFields() {
+    return `
+      {
+        id,
+        plan_id,
+        last_shop_plan_id,
+        name,
+        slug,
+        original_price,
+        price,
+        pageviews_limit,
+        products_limit,
+        users_limit,
+        additional_charge_type,
+        additional_charge_value,
+        free_plan,
+        early_invoice,
+        billing_day,
+        billing_frequency,
+        current_cycle,
+        current_cycle_starts_at,
+        current_cycle_ends_at,
+        active,
+        status,
+        suspended_at,
+        suspended_by,
+        canceled_at,
+        cancelation_reason,
+        changed_plan_at,
+        last_charged_at,
+        next_charge_at,
+      }
+    `
+  }
+
   private defaultFields() {
     return [
-      'shop_id',
+      'id',
       'theme_id',
       'terms_user_id',
       'users_count',
@@ -57,7 +92,7 @@ export class ShopQueries {
       'city',
       'state',
       'street',
-      'Int',
+      'number',
       'detail',
       'district',
       'phone',
@@ -71,7 +106,11 @@ export class ShopQueries {
       'canceled_at',
       'deleted_at',
       'trial',
-      'plan'
+      `plan ${this.getPlanFields()}`,
+      'checkout_options',
+      'beta_checkout',
+      'beta_admin',
+      'bagy_apps'
     ]
   }
 

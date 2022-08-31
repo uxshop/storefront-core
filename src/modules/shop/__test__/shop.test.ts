@@ -2,12 +2,13 @@ import { Shop, ShopFields } from '../ShopTypes'
 import { ShopService } from '../ShopService'
 import 'isomorphic-fetch'
 
-const SELECTED_FIELDS: Array<ShopFields> = ['shop_id', 'name', 'slug']
+const SELECTED_FIELDS: Array<ShopFields> = ['id', 'name', 'slug']
 
 describe('Shop Module', () => {
   it('Should Get shop with all fields successfully', async () => {
     const shopResult: Shop = await ShopService.getShop()
-    expect(!shopResult.shop_id != null).toBeTruthy()
+    console.log(shopResult)
+    expect(!shopResult.id != null).toBeTruthy()
   })
 
   it('Should Get shop with selected fields successfully', async () => {
