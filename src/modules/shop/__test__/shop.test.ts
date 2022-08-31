@@ -7,7 +7,6 @@ const SELECTED_FIELDS: Array<ShopFields> = ['id', 'name', 'slug']
 describe('Shop Module', () => {
   it('Should Get shop with all fields successfully', async () => {
     const shopResult: Shop = await ShopService.getShop()
-    console.log(shopResult)
     expect(!shopResult.id != null).toBeTruthy()
   })
 
