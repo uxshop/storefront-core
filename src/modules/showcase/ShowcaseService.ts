@@ -2,7 +2,7 @@ import { ShowcaseRepositoryGql } from './ShowcaseRepositoryGql'
 import { ShowcaseRepositoryJson } from './ShowcaseRepositoryJson'
 import { FastSearch, Showcase, ShowcaseFields, ShowcaseList, ShowcasePaginationFilter } from './ShowcaseTypes'
 
-const Repository = dc_config.mock?.showcase ? ShowcaseRepositoryJson : ShowcaseRepositoryGql
+const Repository = shop.mock?.showcase ? ShowcaseRepositoryJson : ShowcaseRepositoryGql
 
 export class ShowcaseService {
   static async getList(

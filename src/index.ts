@@ -21,6 +21,7 @@ import { ShowcaseService } from './modules/showcase/ShowcaseService'
 import { UserService } from './modules/user/UserService'
 
 import { SeoServiceFactory } from './services/seo/SeoServiceFactory'
+import { ShopConfigService } from './services/ShopService'
 
 import { Socket } from './socket'
 
@@ -44,5 +45,6 @@ export default {
   ShowcaseService,
   UserService,
   SeoServiceFactory,
+  ShopConfigService,
   Socket
 }

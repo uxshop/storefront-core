@@ -2,7 +2,7 @@ import { AppsRepositoryJson } from './AppsRepositoryJson'
 import { AppsRepositoryGql } from './AppsRepositoryGql'
 import { Apps, AppsFields } from './AppsTypes'
 
-const Repository = dc_config.mock?.apps ? AppsRepositoryJson : AppsRepositoryGql
+const Repository = shop.mock?.apps ? AppsRepositoryJson : AppsRepositoryGql
 
 export class AppsService {
   static async getById(id: string, fields?: Array<AppsFields>) {

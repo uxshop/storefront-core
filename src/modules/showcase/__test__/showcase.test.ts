@@ -39,7 +39,7 @@ describe('Showcase Module', () => {
     const FILTER_PAGINATION: ShowcasePaginationFilter = { page: 1, first: 1 }
     const showcaseResult = await ShowcaseService.getList(FILTER_PAGINATION)
     expect(showcaseResult.edges.length).toEqual(1)
-    expect(showcaseResult.edges[0].node.id).toEqual('9467839')
+    expect(showcaseResult.edges[0].node.id).toEqual('9467694')
   })
 
   it('Should try to get showcase by inexistant id and it should throw error', async () => {

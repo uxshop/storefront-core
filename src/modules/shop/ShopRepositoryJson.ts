@@ -2,7 +2,7 @@ import { ShopFields } from './ShopTypes'
 
 export class ShopRepositoryJson {
   static async getShop(fields?: Array<ShopFields>) {
-    const result = dc_config.mock?.shop
+    const result = shop.mock?.shop
 
     return result || {}
   }
