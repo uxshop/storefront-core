@@ -1,5 +1,5 @@
-import { ShopService } from 'src/modules/shop/ShopService'
-import { Shop } from 'src/modules/shop/ShopTypes'
+import { ShopService } from '../modules/shop/ShopService'
+import { Shop } from '../modules/shop/ShopTypes'
 import { ShopConfig, ShopDataConfig } from '../types/ShopTypes'
 
 const URL_APIS = {
@@ -53,6 +53,6 @@ export class ShopConfigService {
 
   static async setup(config) {
     const shopService = new ShopConfigService(config)
-    window.shop = await shopService.bootstrap()
+    await shopService.bootstrap()
   }
 }

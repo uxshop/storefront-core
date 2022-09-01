@@ -1,4 +1,5 @@
 import { loadEnv } from 'vite'
+
 import { SchemaService } from './SchemaService'
 
 const URL_APIS = {
@@ -24,7 +25,7 @@ export function doocaPlugin(dcConfig) {
       config.base = dcConfig.base_path || '/'
       config.define = {
         ...config.define,
-        dc_config: {
+        shop: {
           api_url: dcConfig.api_url || apis.api_url,
           api_editor: dcConfig.api_editor || apis.api_editor,
           token: dcConfig.token,
@@ -33,6 +34,9 @@ export function doocaPlugin(dcConfig) {
           base_path: dcConfig.base_path || '/'
         }
       }
+    },
+    transformIndexHtml(html) {
+      return { html, tags: [{ tag: 'script', children: 'console.log(window)', injectTo: 'body' }] }
     },
     async buildStart(config) {
       try {

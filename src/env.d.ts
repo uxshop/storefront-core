@@ -2,7 +2,7 @@
 
 import { ShopDataConfig } from './types/ShopTypes'
 
-interface dc_config {
+interface shop {
   token: string
   api_url: string
   api_editor: string
@@ -30,7 +30,7 @@ interface dc_config {
 }
 
 declare global {
-  var dc_config: dc_config
+  var shop: shop
   interface Window {
     shop: ShopDataConfig
   }

@@ -43,6 +43,6 @@ class GraphqlService {
     }
   }
 }
-const client = new GraphqlService(dc_config.api_url, dc_config.token, dc_config.domain)
+const client = new GraphqlService(shop.api_url, shop.token, shop.domain)
 
 export { client }
