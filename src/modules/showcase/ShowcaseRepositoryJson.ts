@@ -6,17 +6,17 @@ export class ShowcaseRepositoryJson {
     return result || {}
   }
 
-  static async getById(id: Number, fields?: Array<ShowcaseFields>) {
+  static async getById(id: number, fields?: Array<ShowcaseFields>) {
     const result = dc_config.mock?.showcase
     return { ...result, edges: result.edges.find(edge => edge.node.id == id) } || {}
   }
 
-  static async getBySlug(slug: String, fields?: Array<ShowcaseFields>) {
+  static async getBySlug(slug: string, fields?: Array<ShowcaseFields>) {
     const result = dc_config.mock?.showcase
     return { ...result, edges: result.edges.find(edge => edge.node.slug == slug) } || {}
   }
 
-  static async search(queryString: String, fields?: Array<ShowcaseFields>) {
+  static async search(queryString: string, fields?: Array<ShowcaseFields>) {
     const result = dc_config.mock?.showcase
     return { ...result, edges: result.edges[0] } || {}
   }
