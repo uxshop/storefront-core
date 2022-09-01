@@ -1,3 +1,7 @@
+/// <reference types="vite/client" />
+
+import { ShopDataConfig } from './types/ShopTypes'
+
 interface dc_config {
   token: string
   api_url: string
@@ -25,4 +29,9 @@ interface dc_config {
   }
 }
 
-declare var dc_config: dc_config
+declare global {
+  var dc_config: dc_config
+  interface Window {
+    shop: ShopDataConfig
+  }
+}
