@@ -61,7 +61,42 @@ export interface Shop {
   canceled_at?: nullable<string>
   deleted_at?: nullable<string>
   trial?: nullable<string>
-  plan?: nullable<string>
+  plan?: nullable<ShopPlan>
+  checkout_options?: string
+  beta_checkout?: boolean
+  beta_admin?: boolean
+  bagy_apps?: string
+}
+
+export interface ShopPlan {
+  id: number
+  plan_id: number
+  last_shop_plan_id: number
+  name: string
+  slug: string
+  original_price: string
+  price: string
+  pageviews_limit: number
+  products_limit: number
+  users_limit: number
+  additional_charge_type: string
+  additional_charge_value: string
+  free_plan: boolean
+  early_invoice: boolean
+  billing_day: number
+  billing_frequency: string
+  current_cycle: number
+  current_cycle_starts_at: string
+  current_cycle_ends_at: string
+  active: boolean
+  status: string
+  suspended_at: string
+  suspended_by: string
+  canceled_at: string
+  cancelation_reason: string
+  changed_plan_at: string
+  last_charged_at: string
+  next_charge_at: string
 }
 
 export interface ShopGoogleAnalytics {
@@ -75,6 +110,7 @@ export interface ShopGoogleConversion {
 
 export interface ShopFacebookPixel {
   id: string
+  token: string
 }
 
 export interface ShopResponse {
@@ -82,7 +118,7 @@ export interface ShopResponse {
 }
 
 export type ShopFields =
-  | 'shop_id'
+  | 'id'
   | 'theme_id'
   | 'terms_user_id'
   | 'users_count'
@@ -128,7 +164,7 @@ export type ShopFields =
   | 'city'
   | 'state'
   | 'street'
-  | 'Int'
+  | 'number'
   | 'detail'
   | 'district'
   | 'phone'
@@ -143,3 +179,37 @@ export type ShopFields =
   | 'deleted_at'
   | 'trial'
   | 'plan'
+  | 'checkout_options'
+  | 'beta_checkout'
+  | 'beta_admin'
+  | 'bagy_apps'
+
+export type ShopPlanFields =
+  | 'id'
+  | 'plan_id'
+  | 'last_shop_plan_id'
+  | 'name'
+  | 'slug'
+  | 'original_price'
+  | 'price'
+  | 'pageviews_limit'
+  | 'products_limit'
+  | 'users_limit'
+  | 'additional_charge_type'
+  | 'additional_charge_value'
+  | 'free_plan'
+  | 'early_invoice'
+  | 'billing_day'
+  | 'billing_frequency'
+  | 'current_cycle'
+  | 'current_cycle_starts_at'
+  | 'current_cycle_ends_at'
+  | 'active'
+  | 'status'
+  | 'suspended_at'
+  | 'suspended_by'
+  | 'canceled_at'
+  | 'cancelation_reason'
+  | 'changed_plan_at'
+  | 'last_charged_at'
+  | 'next_charge_at'
