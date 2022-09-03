@@ -5,11 +5,7 @@ export interface ShopConfig {
   api_url?: string
   api_editor?: string
   domain?: string
-  mock?: string
+  mock?: any
   base_path?: string
-}
-
-export interface ShopDataConfig {
-  config: ShopConfig
-  settings: Shop
+  settings?: Shop
 }

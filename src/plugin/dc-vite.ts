@@ -1,6 +1,6 @@
 import { loadEnv } from 'vite'
-
 import { SchemaService } from './SchemaService'
+import * as ShopConfigService from './ShopService'
 
 const URL_APIS = {
   homolog: {
@@ -14,6 +14,7 @@ const URL_APIS = {
 }
 
 export function doocaPlugin(dcConfig) {
+  console.log('asas', ShopConfigService)
   return {
     name: 'vite-plugin-dooca',
     config(config, options) {
@@ -36,7 +37,17 @@ export function doocaPlugin(dcConfig) {
       }
     },
     transformIndexHtml(html) {
-      return { html, tags: [{ tag: 'script', children: 'console.log(window)', injectTo: 'body' }] }
+      return {
+        html,
+        tags: [
+          // {
+          //   tag: 'script',
+          //   children: ShopConfigService,
+          //   injectTo: 'body'
+          // },
+          { tag: 'script', children: 'ShopConfigService.setup(window.shop)', injectTo: 'body' }
+        ]
+      }
     },
     async buildStart(config) {
       try {
