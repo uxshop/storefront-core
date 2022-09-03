@@ -13,25 +13,25 @@ const URL_APIS = {
   }
 }
 
-export function doocaPlugin(dcConfig) {
+export function shopPlugin(shopConfig) {
   return {
     name: 'vite-plugin-dooca',
     config(config, options) {
-      if (!dcConfig) throw new Error('dooca config is required')
+      if (!shopConfig) throw new Error('dooca config is required')
 
       process.env = { ...process.env, ...loadEnv(options.mode, process.cwd()) }
       const apis = options.mode !== 'production' ? URL_APIS.homolog : URL_APIS.production
 
-      config.base = dcConfig.base_path || '/'
+      config.base = shopConfig.base_path || '/'
       config.define = {
         ...config.define,
         shop: {
-          api_url: dcConfig.api_url || apis.api_url,
-          api_editor: dcConfig.api_editor || apis.api_editor,
-          token: dcConfig.token,
-          domain: dcConfig.domain,
-          mock: dcConfig.mock || null,
-          base_path: dcConfig.base_path || '/'
+          api_url: shopConfig.api_url || apis.api_url,
+          api_editor: shopConfig.api_editor || apis.api_editor,
+          token: shopConfig.token,
+          domain: shopConfig.domain,
+          mock: shopConfig.mock || null,
+          base_path: shopConfig.base_path || '/'
         }
       }
     },
