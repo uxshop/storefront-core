@@ -14,8 +14,8 @@ export class SettingsQueries {
   }
 
   getOnefullQuery() {
-    return `query Setting {
-        setting {
+    return `query Setting($filter: filterSetting) {
+        setting(filter: $filter) {
           ${this.getFields()}
         }
       }`
