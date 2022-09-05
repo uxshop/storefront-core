@@ -17,7 +17,7 @@ export function shopPlugin(shopConfig) {
   return {
     name: 'vite-plugin-shop',
     config(config, options) {
-      if (!shopConfig) throw new Error('dooca config is required')
+      if (!shopConfig) throw new Error('config is required')
 
       process.env = { ...process.env, ...loadEnv(options.mode, process.cwd()) }
       const apis = options.mode !== 'production' ? URL_APIS.homolog : URL_APIS.production
