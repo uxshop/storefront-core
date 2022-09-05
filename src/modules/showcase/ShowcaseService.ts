@@ -26,7 +26,7 @@ export class ShowcaseService {
     return result
   }
 
-  static async search(queryString: String, fields?: Array<ShowcaseFields>): Promise<Showcase> {
+  static async search(queryString: string, fields?: Array<ShowcaseFields>): Promise<Showcase> {
     const result: Showcase = await Repository.search(queryString, fields)
     return result
   }
