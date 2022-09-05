@@ -15,7 +15,7 @@ const URL_APIS = {
 
 export function shopPlugin(shopConfig) {
   return {
-    name: 'vite-plugin-dooca',
+    name: 'vite-plugin-shop',
     config(config, options) {
       if (!shopConfig) throw new Error('dooca config is required')
 
