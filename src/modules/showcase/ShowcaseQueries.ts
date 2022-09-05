@@ -54,7 +54,7 @@ export class ShowcaseQueries {
         name,
         slug,
         hexadecimal,
-        image {src, alt},
+        image ${this.getImageFields()},
         product_images {src, alt, color_ids}
     }`
   }
