@@ -10,7 +10,7 @@ export class ShowcaseQueries {
   }
 
   private getImageFields() {
-    return '{alt, url}'
+    return '{alt, src}'
   }
 
   private getComponentGroupsFields() {
@@ -54,8 +54,8 @@ export class ShowcaseQueries {
         name,
         slug,
         hexadecimal,
-        image {url, alt},
-        product_images {url, alt, color_ids}
+        image ${this.getImageFields()},
+        product_images {src, alt, color_ids}
     }`
   }
 
