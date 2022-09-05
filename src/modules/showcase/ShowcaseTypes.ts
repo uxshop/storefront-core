@@ -78,7 +78,7 @@ export interface ShowcaseBrand {
   short_description: nullable<String>
   image: nullable<ShowcaseImage>
   banner: nullable<ShowcaseImage>
-  url: nullable<String>
+  src: nullable<String>
 }
 
 export interface ShowcaseCategory {
@@ -89,7 +89,7 @@ export interface ShowcaseCategory {
   image: nullable<ShowcaseImage>
   breadcrumb: nullable<String>
   google_taxonomy_id: nullable<String>
-  url: nullable<String>
+  src: nullable<String>
 }
 
 export interface ShowcasePayment {
@@ -113,7 +113,7 @@ export interface ShowcaseFeature {
 }
 
 export interface ShowcaseImage {
-  url: nullable<String>
+  src: nullable<String>
   alt: nullable<String>
 }
 
