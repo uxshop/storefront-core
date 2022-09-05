@@ -1,7 +1,7 @@
 import { nullable } from '../../types/NullableTypes'
 
 export interface Shop {
-  shop_id?: nullable<Number>
+  id?: nullable<Number>
   theme_id?: nullable<Number>
   terms_user_id?: nullable<Number>
   users_count?: nullable<Number>

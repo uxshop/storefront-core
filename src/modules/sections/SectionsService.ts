@@ -7,6 +7,16 @@ const Repository = shop.mock?.sections ? SectionsRepositoryJson : SectionsReposi
 export class SectionsService {
   static async getOne(filter?: SectionFilter) {
     const result: Section<unknown> = await Repository.getOne(filter)
-    return result
+    const page = filter.page ?? 'home'
+
+    return await this.getByCategory(result.data, page)
+  }
+
+  static async getByCategory(data, page) {
+    return {
+      header: data.header,
+      footer: data.footer,
+      content: data[page]
+    }
   }
 }
