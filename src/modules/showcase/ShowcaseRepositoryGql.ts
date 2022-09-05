@@ -45,15 +45,15 @@ export class ShowcaseRepositoryGql {
     }
   }
 
-  static async getById(id: Number, fields?: Array<ShowcaseFields>): Promise<Showcase> {
+  static async getById(id: number, fields?: Array<ShowcaseFields>): Promise<Showcase> {
     return this.getOne({ fields: fields || null, filter: { id: id } })
   }
 
-  static async getBySlug(slug: String, fields?: Array<ShowcaseFields>): Promise<Showcase> {
+  static async getBySlug(slug: string, fields?: Array<ShowcaseFields>): Promise<Showcase> {
     return this.getOne({ fields: fields || null, filter: { slug: slug } })
   }
 
-  static async search(queryString: String, fields?: Array<ShowcaseFields>): Promise<Showcase> {
+  static async search(queryString: string, fields?: Array<ShowcaseFields>): Promise<Showcase> {
     return this.getOne({ fields: fields || null, filter: { fastSearch: { queryString: queryString } } })
   }
 }

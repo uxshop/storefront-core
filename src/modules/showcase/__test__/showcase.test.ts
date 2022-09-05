@@ -6,14 +6,14 @@ const SELECTED_FIELDS: Array<ShowcaseFields> = ['id', 'slug']
 
 describe('Showcase Module', () => {
   it('Should get showcase by id with all fields successfully', async () => {
-    const FILTER_ID = '64428'
+    const FILTER_ID = '9467839'
     const showcaseResult = await ShowcaseService.getById(FILTER_ID)
     expect(showcaseResult.id).toEqual(FILTER_ID.toString())
-    expect(showcaseResult.name).toEqual('Produtodeteste')
+    expect(showcaseResult.name).toEqual('Pizza boa')
   })
 
   it('Should get showcase by id with selected fields successfully', async () => {
-    const FILTER_ID = '64428'
+    const FILTER_ID = '9467839'
     const showcaseResult = await ShowcaseService.getById(FILTER_ID, [...SELECTED_FIELDS])
     const showcaseResultFields = Object.keys(showcaseResult).filter(key => key != '__typename')
     expect(showcaseResultFields).toEqual(SELECTED_FIELDS)
@@ -21,25 +21,25 @@ describe('Showcase Module', () => {
   })
 
   it('Should get showcase by slug with all fields successfully', async () => {
-    const FILTER_SLUG = 'sdfsd'
+    const FILTER_SLUG = 'pizza-boa'
     const showcaseResult = await ShowcaseService.getBySlug(FILTER_SLUG)
     expect(showcaseResult.slug).toEqual(FILTER_SLUG)
-    expect(showcaseResult.name).toEqual('Produtodeteste')
+    expect(showcaseResult.name).toEqual('Pizza boa')
   })
 
   it('Should get showcase by fast search with all fields successfully', async () => {
-    const QUERY_STRING_FILTER = 'sdfsd'
+    const QUERY_STRING_FILTER = 'pizza-boa'
     const showcaseResult = await ShowcaseService.search(QUERY_STRING_FILTER)
     expect(showcaseResult.slug).toEqual(QUERY_STRING_FILTER)
-    expect(showcaseResult.name).toEqual('Produtodeteste')
-    expect(showcaseResult.id).toEqual('64428')
+    expect(showcaseResult.name).toEqual('Pizza boa')
+    expect(showcaseResult.id).toEqual('9467839')
   })
 
   it('Should get showcase list with all fields successfully', async () => {
     const FILTER_PAGINATION: ShowcasePaginationFilter = { page: 1, first: 1 }
     const showcaseResult = await ShowcaseService.getList(FILTER_PAGINATION)
     expect(showcaseResult.edges.length).toEqual(1)
-    expect(showcaseResult.edges[0].node.id).toEqual('64428')
+    expect(showcaseResult.edges[0].node.id).toEqual('9467694')
   })
 
   it('Should try to get showcase by inexistant id and it should throw error', async () => {
