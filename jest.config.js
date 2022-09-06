@@ -1,5 +1,6 @@
 /** @type {import('ts-jest/dist/types').InitialOptionsTsJest} */
 const shop = require('./src/mocks/shop.json')
+const blogCategory = require('./src/mocks/blog/blog-category.json')
 
 module.exports = {
   preset: 'ts-jest',

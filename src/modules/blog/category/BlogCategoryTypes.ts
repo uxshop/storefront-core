@@ -1,18 +1,18 @@
 import { nullable } from '../../../types/NullableTypes'
 
 export interface BlogCategory {
-  id?: nullable<Number>
-  name?: nullable<String>
-  slug?: nullable<String>
-  description?: nullable<String>
-  meta_title?: nullable<String>
-  meta_description?: nullable<String>
+  id?: nullable<number>
+  name?: nullable<string>
+  slug?: nullable<string>
+  description?: nullable<string>
+  meta_title?: nullable<string>
+  meta_description?: nullable<string>
   active?: nullable<Boolean>
-  posts_count?: nullable<Number>
-  position?: nullable<Number>
-  url?: nullable<String>
-  created_at?: nullable<String>
-  updated_at?: nullable<String>
+  posts_count?: nullable<number>
+  position?: nullable<number>
+  url?: nullable<string>
+  created_at?: nullable<string>
+  updated_at?: nullable<string>
 }
 
 export interface BlogCategoryResponse {
@@ -29,8 +29,8 @@ export interface OptionsGetBlogCategory {
 }
 
 export interface BlogCategoryFilter {
-  id?: nullable<Number>
-  slug?: nullable<String>
+  id?: nullable<number>
+  slug?: nullable<string>
 }
 
 export type BlogCategoryFields =
