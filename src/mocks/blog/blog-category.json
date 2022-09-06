@@ -1,0 +1,18 @@
+[
+  {
+    "id": 1064,
+    "name": "teste de integração",
+    "description": "<p>teste de teste</p>",
+    "slug": "teste-de-integracao",
+    "meta_title": null,
+    "meta_description": null,
+    "meta_keywords": null,
+    "position": 9,
+    "url": null,
+    "posts_count": null,
+    "active": true,
+    "created_at": "2022-09-01 20:26:45",
+    "updated_at": "2022-09-01 20:26:45",
+    "shop_id": "47"
+  }
+]
