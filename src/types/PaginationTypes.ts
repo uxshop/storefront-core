@@ -1,15 +1,19 @@
-export interface PaginationFilter {
-  page: Number
-  first?: Number
+export interface Pagination {
+  page: number
+  items?: number
+}
+
+export interface PaginationFilter extends Pick<Pagination, 'page'> {
+  first?: number
 }
 
 export interface PageInfo {
-  hasNextPage?: Boolean
-  hasPreviousPage?: Boolean
-  startCursor?: String
-  endCursor?: String
-  first?: Number
-  total?: Number
+  hasNextPage?: boolean
+  hasPreviousPage?: boolean
+  startCursor?: string
+  endCursor?: string
+  first?: number
+  total?: number
 }
 
 export interface PageableListObject<T> {
@@ -19,5 +23,5 @@ export interface PageableListObject<T> {
 
 export interface PageableEdgeObject<T> {
   node: T
-  cursor?: String
+  cursor?: string
 }

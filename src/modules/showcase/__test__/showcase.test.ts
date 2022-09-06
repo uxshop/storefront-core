@@ -1,5 +1,6 @@
-import { ShowcaseFields, ShowcasePaginationFilter } from '../ShowcaseTypes'
+import { ShowcaseFields } from '../ShowcaseTypes'
 import { ShowcaseService } from '../ShowcaseService'
+import { Pagination } from '../../../types/PaginationTypes'
 import 'isomorphic-fetch'
 
 const SELECTED_FIELDS: Array<ShowcaseFields> = ['id', 'slug']
@@ -36,7 +37,7 @@ describe('Showcase Module', () => {
   })
 
   it('Should get showcase list with all fields successfully', async () => {
-    const FILTER_PAGINATION: ShowcasePaginationFilter = { page: 1, first: 1 }
+    const FILTER_PAGINATION: Pagination = { page: 1, items: 1 }
     const showcaseResult = await ShowcaseService.getList(FILTER_PAGINATION)
     expect(showcaseResult.edges.length).toEqual(1)
     expect(showcaseResult.edges[0].node.id).toEqual('9467694')
