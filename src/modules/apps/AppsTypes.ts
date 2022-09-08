@@ -1,18 +1,18 @@
 import { nullable } from '../../../src/types/NullableTypes'
 
 export interface Apps {
-  id?: nullable<String>
-  slug?: nullable<Number>
-  price?: nullable<Number>
-  shop_id?: nullable<Number>
-  store_app_id?: nullable<Number>
-  content?: nullable<String>
-  user_id?: nullable<String>
-  bridge_package_id?: nullable<String>
+  id?: nullable<string>
+  slug?: nullable<number>
+  price?: nullable<number>
+  shop_id?: nullable<number>
+  store_app_id?: nullable<number>
+  content?: nullable<string>
+  user_id?: nullable<string>
+  bridge_package_id?: nullable<string>
 }
 
 export interface AppsFilter {
-  id: nullable<Number>
+  id: nullable<number>
 }
 
 export interface AppsResponse {
