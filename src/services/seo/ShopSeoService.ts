@@ -1,4 +1,4 @@
-import { Shop } from 'src/modules/shop/ShopTypes'
+import { Shop } from '../../modules/shop/ShopTypes'
 import { SeoService } from './SeoService'
 import { ShopMicroData } from './types'
 
