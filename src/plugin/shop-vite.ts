@@ -1,4 +1,4 @@
-import { IndexHtmlTransformResult, loadEnv } from 'vite'
+import { loadEnv } from 'vite'
 
 import { SchemaService } from './SchemaService'
 
@@ -34,9 +34,6 @@ export function shopPlugin(shopConfig) {
           base_path: shopConfig.base_path || '/'
         }
       }
-    },
-    transformIndexHtml(html: string): IndexHtmlTransformResult {
-      return { html: html, tags: [{ tag: 'script', children: 'console.log(window)', injectTo: 'body' }] }
     },
     async buildStart(config) {
       try {
