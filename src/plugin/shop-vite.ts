@@ -22,7 +22,6 @@ export function shopPlugin(shopConfig) {
       process.env = { ...process.env, ...loadEnv(options.mode, process.cwd()) }
       const apis = options.mode !== 'production' ? URL_APIS.homolog : URL_APIS.production
 
-      config.base = shopConfig.base_path || '/'
       config.define = {
         ...config.define,
         shop: {
