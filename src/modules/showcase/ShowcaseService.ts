@@ -1,17 +1,16 @@
+import { Pagination } from '../../types/PaginationTypes'
 import { ShowcaseRepositoryGql } from './ShowcaseRepositoryGql'
 import { ShowcaseRepositoryJson } from './ShowcaseRepositoryJson'
-import { FastSearch, Showcase, ShowcaseFields, ShowcaseList, ShowcasePaginationFilter } from './ShowcaseTypes'
+import { Showcase, ShowcaseFields, ShowcaseList } from './ShowcaseTypes'
+import { normalizePagination } from '../../helpers/PaginationHelper'
 
 const Repository = shop.mock?.showcase ? ShowcaseRepositoryJson : ShowcaseRepositoryGql
 
 export class ShowcaseService {
-  static async getList(
-    showcasePaginationFilter: ShowcasePaginationFilter,
-    fields?: Array<ShowcaseFields>
-  ): Promise<ShowcaseList> {
+  static async getList(pagination: Pagination, fields?: Array<ShowcaseFields>): Promise<ShowcaseList> {
     const result: ShowcaseList = await Repository.getList({
       fields: fields || null,
-      filter: showcasePaginationFilter || { page: 1 }
+      filter: normalizePagination(pagination.page || 1, pagination.items)
     })
     return result
   }
