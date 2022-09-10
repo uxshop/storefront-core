@@ -16,7 +16,7 @@ import { PagesService } from './modules/pages/PagesService'
 import { ScriptsService } from './modules/scripts/ScriptsService'
 import { SectionsService } from './modules/sections/SectionsService'
 import { SettingsService } from './modules/settings/SettingsService'
-import { ShopService } from './modules/shop/ShopService'
+import { ShopService } from './modules/store/ShopService'
 import { ShowcaseService } from './modules/showcase/ShowcaseService'
 import { UserService } from './modules/user/UserService'
 
@@ -24,7 +24,7 @@ import { SeoServiceFactory } from './services/seo/SeoServiceFactory'
 
 import { Socket } from './socket'
 
-export default {
+export {
   StringHelper,
   StyleHelper,
   ViewportHelper,
@@ -44,6 +44,5 @@ export default {
   ShowcaseService,
   UserService,
   SeoServiceFactory,
-
   Socket
 }

@@ -115,10 +115,8 @@ export class ShopQueries {
   }
 
   getShop() {
-    return `query Shop {
-        shop {
-          ${this.getFields()}
-        }
-      }`
+    const query = 'query Shop {shop{' + this.getFields() + '}}'
+
+    return query.toString()
   }
 }

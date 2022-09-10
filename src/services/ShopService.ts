@@ -1,5 +1,5 @@
-import { ShopService } from '../modules/shop/ShopService'
-import { Shop } from '../modules/shop/ShopTypes'
+import { ShopService } from '../modules/store/ShopService'
+import { Shop } from '../modules/store/ShopTypes'
 import { ShopConfig, ShopDataConfig } from '../types/ShopTypes'
 
 const URL_APIS = {

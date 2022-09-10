@@ -1,4 +1,4 @@
-import { Shop } from '../modules/shop/ShopTypes'
+import { Shop } from '../modules/store/ShopTypes'
 
 export interface ShopConfig {
   token: string
