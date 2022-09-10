@@ -25,7 +25,7 @@ export function shopPlugin(shopConfig) {
       config.base = shopConfig.base_path || '/'
       config.define = {
         ...config.define,
-        shop: {
+        shop_ctx: {
           api_url: shopConfig.api_url || apis.api_url,
           api_editor: shopConfig.api_editor || apis.api_editor,
           token: shopConfig.token,

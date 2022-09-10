@@ -2,7 +2,7 @@ import { ShopRepositoryGql } from './ShopRepositoryGql'
 import { ShopRepositoryJson } from './ShopRepositoryJson'
 import { Shop, ShopFields } from './ShopTypes'
 
-const Repository = shop.mock?.shop ? ShopRepositoryJson : ShopRepositoryGql
+const Repository = shop_ctx.mock?.shop ? ShopRepositoryJson : ShopRepositoryGql
 
 export class ShopService {
   static async getShop(fields?: Array<ShopFields>): Promise<Shop> {

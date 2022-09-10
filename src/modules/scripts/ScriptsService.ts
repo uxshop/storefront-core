@@ -2,7 +2,7 @@ import { ScriptsRepositoryGql } from './ScriptsRepositoryGql'
 import { ScriptsRepositoryJson } from './ScriptsRepositoryJson'
 import { Script, ScriptFields } from './ScriptsTypes'
 
-const Repository = shop.mock?.scripts ? ScriptsRepositoryJson : ScriptsRepositoryGql
+const Repository = shop_ctx.mock?.scripts ? ScriptsRepositoryJson : ScriptsRepositoryGql
 
 export class ScriptsService {
   static async getList(fields?: Array<ScriptFields>): Promise<Array<Script>> {
