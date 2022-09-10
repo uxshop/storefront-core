@@ -4,7 +4,7 @@ import { BrandRepositoryGql } from './BrandRepositoryGql'
 import { BrandRepositoryJson } from './BrandRepositoryJson'
 import { BrandFields, BrandList } from './BrandTypes'
 
-const Repository = shop.mock?.brand ? BrandRepositoryJson : BrandRepositoryGql
+const Repository = shop_ctx.mock?.brand ? BrandRepositoryJson : BrandRepositoryGql
 
 export class BrandService {
   static async getList(paginationFilter: PaginationFilter, fields?: Array<BrandFields>): Promise<BrandList> {

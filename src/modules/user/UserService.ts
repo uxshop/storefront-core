@@ -2,7 +2,7 @@ import { UserRepositoryGql } from './UserRepositoryGql'
 import { UserRepositoryJson } from './UserRepositoryJson'
 import { LoginCredentials, OptionsGetUser, User, UserFields } from './UserTypes'
 
-const Repository = shop.mock?.user ? UserRepositoryJson : UserRepositoryGql
+const Repository = shop_ctx.mock?.user ? UserRepositoryJson : UserRepositoryGql
 
 export class UserService {
   static async auth(credentials: LoginCredentials, fields?: Array<UserFields>): Promise<User> {

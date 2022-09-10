@@ -4,7 +4,7 @@ import { ShowcaseRepositoryJson } from './ShowcaseRepositoryJson'
 import { Showcase, ShowcaseFields, ShowcaseList } from './ShowcaseTypes'
 import { normalizePagination } from '../../helpers/PaginationHelper'
 
-const Repository = shop.mock?.showcase ? ShowcaseRepositoryJson : ShowcaseRepositoryGql
+const Repository = shop_ctx.mock?.showcase ? ShowcaseRepositoryJson : ShowcaseRepositoryGql
 
 export class ShowcaseService {
   static async getList(pagination: Pagination, fields?: Array<ShowcaseFields>): Promise<ShowcaseList> {

@@ -2,11 +2,11 @@ import { BlogCategory, BlogCategoryFields } from './BlogCategoryTypes'
 
 export class BlogCategoryRepositoryJson {
   static async getList(fields?: Array<BlogCategoryFields>) {
-    return [...shop.mock?.blogCategory] || []
+    return [...shop_ctx.mock?.blogCategory] || []
   }
 
   static async getById(id: number, fields?: Array<BlogCategoryFields>) {
-    const blogCategories = [...shop.mock?.blogCategory]
+    const blogCategories = [...shop_ctx.mock?.blogCategory]
     const blogCategory = blogCategories && blogCategories.find(blogCategory => blogCategory.id == id)
 
     if (!blogCategory) {
@@ -21,7 +21,7 @@ export class BlogCategoryRepositoryJson {
   }
 
   static async getBySlug(slug: string, fields?: Array<BlogCategoryFields>) {
-    const blogCategories = [...shop.mock?.blogCategory]
+    const blogCategories = [...shop_ctx.mock?.blogCategory]
     const blogCategory = blogCategories && blogCategories.find(blogCategory => blogCategory.slug == slug)
 
     if (!blogCategory) {

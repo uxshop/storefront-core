@@ -2,7 +2,7 @@ import { MenuRepositoryGql } from './MenuRepositoryGql'
 import { MenuRepositoryJson } from './MenuRepositoryJson'
 import { Menu, MenuFields } from './MenuTypes'
 
-const Repository = shop.mock?.menu ? MenuRepositoryJson : MenuRepositoryGql
+const Repository = shop_ctx.mock?.menu ? MenuRepositoryJson : MenuRepositoryGql
 
 export class MenuService {
   static async getById(id: string, fields?: Array<MenuFields>): Promise<Menu> {
