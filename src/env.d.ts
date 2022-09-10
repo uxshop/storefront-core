@@ -30,7 +30,7 @@ interface shop {
 }
 
 declare global {
-  var shop: shop
+  var shop_ctx: shop
   interface Window {
     shop: ShopDataConfig
   }

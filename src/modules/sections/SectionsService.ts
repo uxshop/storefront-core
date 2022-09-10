@@ -2,7 +2,7 @@ import { SectionsRepositoryGql } from './SectionsRepositoryGql'
 import { SectionsRepositoryJson } from './SectionsRepositoryJson'
 import { Section, SectionFilter } from './SectionsTypes'
 
-const Repository = shop.mock?.sections ? SectionsRepositoryJson : SectionsRepositoryGql
+const Repository = shop_ctx.mock?.sections ? SectionsRepositoryJson : SectionsRepositoryGql
 
 export class SectionsService {
   static async getOne(filter?: SectionFilter) {

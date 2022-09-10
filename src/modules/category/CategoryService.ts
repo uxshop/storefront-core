@@ -2,7 +2,8 @@ import { CategoryRepositoryGql } from './CategoryRepositoryGql'
 import { CategoryRepositoryJson } from './CategoryRepositoryJson'
 import { Category, CategoryFields, CategoryTree, CategoryTreeFields } from './CategoryTypes'
 
-const Repository = shop.mock?.category && shop.mock?.categoryTree ? CategoryRepositoryJson : CategoryRepositoryGql
+const Repository =
+  shop_ctx.mock?.category && shop_ctx.mock?.categoryTree ? CategoryRepositoryJson : CategoryRepositoryGql
 
 export class CategoryService {
   static async getById(id: string, fields?: Array<CategoryFields>) {

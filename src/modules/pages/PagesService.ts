@@ -3,7 +3,7 @@ import { PagesRepositoryGql } from './PagesRepositoryGql'
 import { PagesRepositoryJson } from './PagesRepositoryJson'
 import { PageFields } from './PageTypes'
 
-const Repository = shop.mock?.pages || shop.mock?.page ? PagesRepositoryJson : PagesRepositoryGql
+const Repository = shop_ctx.mock?.pages || shop_ctx.mock?.page ? PagesRepositoryJson : PagesRepositoryGql
 
 export class PagesService {
   static async getList(fields?: Array<PageFields>): Promise<Array<Page>> {

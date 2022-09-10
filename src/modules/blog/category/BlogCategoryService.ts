@@ -2,7 +2,7 @@ import { BlogCategoryRepositoryGql } from './BlogCategoryRepositoryGql'
 import { BlogCategoryRepositoryJson } from './BlogCategoryRepositoryJson'
 import { BlogCategory, BlogCategoryFields } from './BlogCategoryTypes'
 
-const Repository = shop.mock?.blogCategory ? BlogCategoryRepositoryJson : BlogCategoryRepositoryGql
+const Repository = shop_ctx.mock?.blogCategory ? BlogCategoryRepositoryJson : BlogCategoryRepositoryGql
 
 export class BlogCategoryService {
   static async getById(id: string, fields?: Array<BlogCategoryFields>): Promise<BlogCategory> {

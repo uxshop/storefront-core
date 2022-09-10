@@ -1,7 +1,7 @@
 import { io } from 'socket.io-client'
 
 function createSocket(hash, onUpdate, onFocus) {
-  const URL = shop.api_editor
+  const URL = shop_ctx.api_editor
   const socketIO = io(URL, { autoConnect: false, query: { hash } })
 
   socketIO.connect()
