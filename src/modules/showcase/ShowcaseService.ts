@@ -10,7 +10,7 @@ export class ShowcaseService {
   static async getList(pagination: Pagination, fields?: Array<ShowcaseFields>): Promise<ShowcaseList> {
     const result: ShowcaseList = await Repository.getList({
       fields: fields || null,
-      filter: normalizePagination(pagination.page || 1, pagination.items)
+      filter: normalizePagination(pagination?.page || 1, pagination?.items)
     })
     return result
   }
