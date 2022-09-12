@@ -71,114 +71,114 @@ export interface ShowcaseListResponse {
 }
 
 export interface ShowcaseBrand {
-  id: nullable<number>
-  name: nullable<string>
-  slug: nullable<string>
-  description: nullable<string>
-  short_description: nullable<string>
-  image: nullable<ShowcaseImage>
-  banner: nullable<ShowcaseImage>
-  url: nullable<string>
+  id?: nullable<number>
+  name?: nullable<string>
+  slug?: nullable<string>
+  description?: nullable<string>
+  short_description?: nullable<string>
+  image?: nullable<ShowcaseImage>
+  banner?: nullable<ShowcaseImage>
+  url?: nullable<string>
 }
 
 export interface ShowcaseCategory {
-  id: nullable<number>
-  name: nullable<string>
-  slug: nullable<string>
-  description: nullable<string>
-  image: nullable<ShowcaseImage>
-  breadcrumb: nullable<string>
-  google_taxonomy_id: nullable<string>
-  url: nullable<string>
+  id?: nullable<number>
+  name?: nullable<string>
+  slug?: nullable<string>
+  description?: nullable<string>
+  image?: nullable<ShowcaseImage>
+  breadcrumb?: nullable<string>
+  google_taxonomy_id?: nullable<string>
+  url?: nullable<string>
 }
 
 export interface ShowcasePayment {
-  name: nullable<string>
-  method: nullable<string>
-  discount: nullable<number>
-  parcels: nullable<number>
-  total: nullable<number>
-  parcel_price: nullable<number>
-  has_interest: nullable<boolean>
+  name?: nullable<string>
+  method?: nullable<string>
+  discount?: nullable<number>
+  parcels?: nullable<number>
+  total?: nullable<number>
+  parcel_price?: nullable<number>
+  has_interest?: nullable<boolean>
 }
 
 export interface ShowcaseFeatureValue extends Omit<ShowcaseFeature, 'values'> {}
 
 export interface ShowcaseFeature {
-  id: nullable<number>
-  name: nullable<string>
-  slug: nullable<string>
-  image: nullable<ShowcaseImage>
-  values: nullable<Array<ShowcaseFeatureValue>>
+  id?: nullable<number>
+  name?: nullable<string>
+  slug?: nullable<string>
+  image?: nullable<ShowcaseImage>
+  values?: nullable<Array<ShowcaseFeatureValue>>
 }
 
 export interface ShowcaseImage {
-  src: nullable<string>
-  alt: nullable<string>
+  src?: nullable<string>
+  alt?: nullable<string>
 }
 
 export interface ShowcaseProductImage extends ShowcaseImage {
-  color_ids: nullable<number>
+  color_ids?: nullable<number>
 }
 
 export interface ShowcaseColor {
-  id: nullable<number>
-  name: nullable<string>
-  slug: nullable<string>
-  hexadecimal: nullable<string>
-  image: nullable<ShowcaseImage>
-  product_images: nullable<Array<ShowcaseProductImage>>
+  id?: nullable<number>
+  name?: nullable<string>
+  slug?: nullable<string>
+  hexadecimal?: nullable<string>
+  image?: nullable<ShowcaseImage>
+  product_images?: nullable<Array<ShowcaseProductImage>>
 }
 
 export interface ShowcaseComponentGroup {
-  id: nullable<number>
-  shop_id: nullable<number>
-  name: nullable<string>
-  description: nullable<string>
-  slug: nullable<string>
-  optional: nullable<boolean>
+  id?: nullable<number>
+  shop_id?: nullable<number>
+  name?: nullable<string>
+  description?: nullable<string>
+  slug?: nullable<string>
+  optional?: nullable<boolean>
 }
 
 export interface ShowcaseComponent extends Omit<Showcase, 'id' | 'components' | 'variation_id'> {
   id?: nullable<number>
-  product_component_id: nullable<number>
-  product_component_group_id: nullable<number>
-  quantity: nullable<number>
-  default: nullable<boolean>
-  optional: nullable<boolean>
-  product_id: nullable<number>
+  product_component_id?: nullable<number>
+  product_component_group_id?: nullable<number>
+  quantity?: nullable<number>
+  default?: nullable<boolean>
+  optional?: nullable<boolean>
+  product_id?: nullable<number>
 }
 
 export interface ShowcaseAttributeValue extends Omit<ShowcaseAttribute, 'values'> {}
 
 export interface ShowcaseAttribute {
-  id: nullable<number>
-  name: nullable<string>
-  slug: nullable<string>
-  values: nullable<Array<ShowcaseAttributeValue>>
+  id?: nullable<number>
+  name?: nullable<string>
+  slug?: nullable<string>
+  values?: nullable<Array<ShowcaseAttributeValue>>
 }
 
 export interface ShowcaseVariation {
-  id: nullable<number>
-  product_id: nullable<number>
-  price: nullable<number>
-  color_id: nullable<number>
-  color_secondary_id: nullable<number>
-  attribute_value_id: nullable<number>
-  attribute_value_secondary_id: nullable<number>
-  reference: nullable<string>
-  slug: nullable<string>
-  price_compare: nullable<number>
-  sku: nullable<string>
-  gtin: nullable<string>
-  mpn: nullable<string>
-  additional_shipping_time: nullable<number>
-  images: nullable<Array<ShowcaseImage>>
-  balance: nullable<number>
-  selling_out_of_stock: nullable<boolean>
-  color: nullable<ShowcaseColor>
-  attribute: nullable<ShowcaseAttribute>
-  attribute_secondary: nullable<ShowcaseAttribute>
+  id?: nullable<number>
+  product_id?: nullable<number>
+  price?: nullable<number>
+  color_id?: nullable<number>
+  color_secondary_id?: nullable<number>
+  attribute_value_id?: nullable<number>
+  attribute_value_secondary_id?: nullable<number>
+  reference?: nullable<string>
+  slug?: nullable<string>
+  price_compare?: nullable<number>
+  sku?: nullable<string>
+  gtin?: nullable<string>
+  mpn?: nullable<string>
+  additional_shipping_time?: nullable<number>
+  images?: nullable<Array<ShowcaseImage>>
+  balance?: nullable<number>
+  selling_out_of_stock?: nullable<boolean>
+  color?: nullable<ShowcaseColor>
+  attribute?: nullable<ShowcaseAttribute>
+  attribute_secondary?: nullable<ShowcaseAttribute>
 }
 
 export interface ShowcaseEdge extends PageableEdgeObject<Showcase> {}
