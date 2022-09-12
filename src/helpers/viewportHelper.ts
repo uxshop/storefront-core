@@ -14,7 +14,7 @@ export class ViewportHelper {
     return this.getSize().width <= width
   }
 
-  static heightGreaterhan(height) {
+  static heightGreaterThan(height) {
     return this.getSize().height >= height
   }
 
@@ -24,6 +24,6 @@ export class ViewportHelper {
 
   static isMobile() {
     const regexMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i
-    return regexMobile.test(navigator.userAgent) && this.widthLessThan(1024)
+    return regexMobile.test(navigator.userAgent) || this.widthLessThan(1024)
   }
 }
