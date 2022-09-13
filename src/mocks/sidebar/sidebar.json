@@ -1,0 +1,79 @@
+{
+  "filtered": [
+    {
+      "type": "attribute_secondary",
+      "id": 6450,
+      "name": "Grande"
+    }
+  ],
+  "filters": [
+    {
+      "type": "attribute",
+      "description": "Attributo",
+      "items": [
+        {
+          "id": 461720,
+          "name": "42"
+        },
+        {
+          "id": 461720,
+          "name": "42"
+        },
+        {
+          "id": 461720,
+          "name": "42"
+        },
+        {
+          "id": 461720,
+          "name": "42"
+        },
+        {
+          "id": 461720,
+          "name": "42"
+        },
+        {
+          "id": 461720,
+          "name": "42"
+        }
+      ]
+    },
+    {
+      "type": "attribute_secondary",
+      "description": "Attributo Secundário",
+      "items": [
+        {
+          "id": 6450,
+          "name": "Grande"
+        },
+        {
+          "id": 6450,
+          "name": "Grande"
+        }
+      ]
+    },
+    {
+      "type": "brand",
+      "description": "Marca",
+      "items": []
+    },
+    {
+      "type": "category",
+      "description": "Categoria",
+      "items": []
+    },
+    {
+      "type": "color",
+      "description": "Cor",
+      "items": [
+        {
+          "id": 61274,
+          "name": "BRANCO"
+        },
+        {
+          "id": 61274,
+          "name": "BRANCO"
+        }
+      ]
+    }
+  ]
+}

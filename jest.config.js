@@ -1,6 +1,7 @@
 /** @type {import('ts-jest/dist/types').InitialOptionsTsJest} */
 const shop = require('./src/mocks/shop/shop.json')
 const apps = require('./src/mocks/apps/apps.json')
+const sidebar = require('./src/mocks/sidebar/sidebar.json')
 
 module.exports = {
   preset: 'ts-jest',
@@ -13,7 +14,8 @@ module.exports = {
       domain: 'https://dcgamer.dchomolog.dooca.store/',
       mock: {
         shop: shop,
-        apps: apps
+        apps: apps,
+        sidebar: sidebar
       }
     }
   }
