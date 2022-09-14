@@ -26,6 +26,7 @@ interface shop {
     shop?: any
     showcase?: any
     user?: any
+    sidebar?: any
   }
 }
 
