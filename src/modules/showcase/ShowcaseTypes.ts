@@ -52,7 +52,6 @@ export interface Showcase {
   category?: nullable<ShowcaseCategory>
   categories?: nullable<Array<ShowcaseCategory>>
   color?: nullable<ShowcaseColor>
-  colors?: nullable<Array<ShowcaseColor>>
   attribute?: nullable<ShowcaseAttribute>
   attribute_secondary?: nullable<ShowcaseAttribute>
   features?: nullable<Array<ShowcaseFeature>>
