@@ -261,7 +261,6 @@ export type ShowcaseFields =
   | 'category'
   | 'categories'
   | 'color'
-  | 'colors'
   | 'attribute'
   | 'attribute_secondary'
   | 'features'
