@@ -70,7 +70,6 @@ export interface Product {
   category?: nullable<Category>
   categories?: nullable<Category[]>
   color?: nullable<Color>
-  colors?: nullable<Color[]>
   attribute?: nullable<Attribute>
   attribute_secondary?: nullable<Attribute>
   features?: nullable<Feature[]>

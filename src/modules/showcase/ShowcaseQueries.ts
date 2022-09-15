@@ -209,7 +209,6 @@ export class ShowcaseQueries {
       `category ${this.getCategoryFields()}`,
       `categories ${this.getCategoryFields()}`,
       `color ${this.getColorFields()}`,
-      `colors ${this.getColorFields()}`,
       `attribute ${this.getAttributeFields()}`,
       `attribute_secondary ${this.getAttributeFields()}`,
       `features ${this.getFeatureFields()}`,
