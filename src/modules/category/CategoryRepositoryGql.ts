@@ -41,19 +41,19 @@ export class CategoryRepositoryGql {
     }
   }
 
-  static async getById(id: Number, fields?: Array<CategoryFields>): Promise<Category> {
+  static async getById(id: number, fields?: Array<CategoryFields>): Promise<Category> {
     return this.getOne({ fields: fields || null, filter: { id: id } })
   }
 
-  static async getBySlug(slug: String, fields?: Array<CategoryFields>): Promise<Category> {
+  static async getBySlug(slug: string, fields?: Array<CategoryFields>): Promise<Category> {
     return this.getOne({ fields: fields || null, filter: { slug: slug } })
   }
 
-  static async getTreeById(id: Number, fields?: Array<CategoryTreeFields>): Promise<Array<CategoryTree>> {
+  static async getTreeById(id: number, fields?: Array<CategoryTreeFields>): Promise<Array<CategoryTree>> {
     return this.getTree({ fields: fields || null, filter: { id: id } })
   }
 
-  static async getTreeBySlug(slug: String, fields?: Array<CategoryTreeFields>): Promise<Array<CategoryTree>> {
+  static async getTreeBySlug(slug: string, fields?: Array<CategoryTreeFields>): Promise<Array<CategoryTree>> {
     return this.getTree({ fields: fields || null, filter: { slug: slug } })
   }
 }
