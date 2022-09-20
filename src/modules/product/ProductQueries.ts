@@ -21,20 +21,14 @@ export class ProductQueries {
     return `
       {
         id,
-        product_id,
         price,
-        attribute_id,
-        attribute_secondary_id,
-        reference,
         slug,
         price_compare,
-        sku,
         gtin,
         mpn,
         additional_shipping_time,
         images ${this.getImageFields()},
         balance,
-        selling_out_of_stock,
         color ${this.getColorFields()},
         attribute ${this.getAttributeFields()},
         attribute_secondary ${this.getAttributeFields()}
@@ -149,7 +143,6 @@ export class ProductQueries {
         attribute ${this.getAttributeFields()},
         attribute_secondary ${this.getAttributeFields()},
         features ${this.getFeatureFields()},
-        product_id,
         variations ${this.getVariationFields()},
         component_groups ${this.getComponentGroupsFields()}
     }`
@@ -210,7 +203,6 @@ export class ProductQueries {
       `attribute ${this.getAttributeFields()}`,
       `attribute_secondary ${this.getAttributeFields()}`,
       `features ${this.getFeatureFields()}`,
-      'variation_id',
       `variations ${this.getVariationFields()}`,
       `components ${this.getComponentFields()}`,
       `component_groups ${this.getComponentGroupsFields()}`

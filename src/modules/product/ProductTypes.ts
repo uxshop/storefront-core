@@ -28,7 +28,6 @@ export interface Product {
   kit_markup?: nullable<number>
   is_virtual?: nullable<boolean>
   is_pre_sale?: nullable<boolean>
-  images?: nullable<Array<ProductImage>>
   video?: nullable<string>
   weight?: nullable<number>
   depth?: nullable<number>
@@ -139,7 +138,7 @@ export interface ProductComponentGroup {
   optional?: nullable<boolean>
 }
 
-export interface ProductComponent extends Omit<Product, 'id' | 'components' | 'variation_id'> {
+export interface ProductComponent extends Omit<Product, 'id' | 'components'> {
   id?: nullable<number>
   product_component_id?: nullable<number>
   product_component_group_id?: nullable<number>
@@ -162,18 +161,13 @@ export interface ProductVariation {
   id?: nullable<number>
   product_id?: nullable<number>
   price?: nullable<number>
-  attribute_id?: nullable<number>
-  attribute_secondary_id?: nullable<number>
-  reference?: nullable<string>
   slug?: nullable<string>
   price_compare?: nullable<number>
-  sku?: nullable<string>
   gtin?: nullable<string>
   mpn?: nullable<string>
   additional_shipping_time?: nullable<number>
   images?: nullable<Array<ProductImage>>
   balance?: nullable<number>
-  selling_out_of_stock?: nullable<boolean>
   color?: nullable<ProductColor>
   attribute?: nullable<ProductAttribute>
   attribute_secondary?: nullable<ProductAttribute>
@@ -267,7 +261,6 @@ export type ProductFields =
   | 'attribute'
   | 'attribute_secondary'
   | 'features'
-  | 'variation_id'
   | 'variations'
   | 'components'
   | 'component_groups'
