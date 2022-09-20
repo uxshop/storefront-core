@@ -1,4 +1,4 @@
-export class ShowcaseQueries {
+export class ProductQueries {
   fields: null | Array<string>
 
   constructor(fields) {
@@ -23,10 +23,8 @@ export class ShowcaseQueries {
         id,
         product_id,
         price,
-        color_id,
-        color_secondary_id,
-        attribute_value_id,
-        attribute_value_secondary_id,
+        attribute_id,
+        attribute_secondary_id,
         reference,
         slug,
         price_compare,
@@ -220,8 +218,8 @@ export class ShowcaseQueries {
   }
 
   listFullQuery() {
-    return `query Showcases($filter: filterPaginationFilter) {
-        showcases(filter: $filter) {
+    return `query Products($agg: agg!, $filter: filterPaginationFilter) {
+      products(agg: $agg, filter: $filter) {
             edges {
               node {
                 ${this.getFields()}
@@ -241,8 +239,8 @@ export class ShowcaseQueries {
   }
 
   getOnefullQuery() {
-    return `query Showcase($filter: filterShowcase) {
-        showcase(filter: $filter) {
+    return `query Product($filter: filterProduct) {
+      product(filter: $filter) {
           ${this.getFields()}
         }
       }`

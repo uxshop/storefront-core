@@ -24,7 +24,7 @@ interface shop {
     sections?: any
     settings?: any
     shop?: any
-    showcase?: any
+    product?: any
     user?: any
     sidebar?: any
   }
