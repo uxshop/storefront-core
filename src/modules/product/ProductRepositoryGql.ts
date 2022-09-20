@@ -40,8 +40,8 @@ export class ProductRepositoryGql {
     }
   }
 
-  static async getByProductId(productId: number, fields?: Array<ProductFields>): Promise<Product> {
-    return this.getOne({ fields: fields || null, filter: { productId: productId } })
+  static async getById(id: number, fields?: Array<ProductFields>): Promise<Product> {
+    return this.getOne({ fields: fields || null, filter: { productId: id } })
   }
 
   static async getBySlug(slug: string, fields?: Array<ProductFields>): Promise<Product> {

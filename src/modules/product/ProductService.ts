@@ -17,8 +17,8 @@ export class ProductService {
     return result
   }
 
-  static async getByProductId(productId: string, fields?: Array<ProductFields>): Promise<Product> {
-    const result: Product = await Repository.getByProductId(Number(productId), fields)
+  static async getById(productId: string, fields?: Array<ProductFields>): Promise<Product> {
+    const result: Product = await Repository.getById(Number(productId), fields)
     return result
   }
 

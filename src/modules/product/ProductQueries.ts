@@ -196,6 +196,7 @@ export class ProductQueries {
       'model',
       'gender',
       'age_group',
+      'product_id',
       `brand ${this.getBrandFields()}`,
       `category ${this.getCategoryFields()}`,
       `categories ${this.getCategoryFields()}`,

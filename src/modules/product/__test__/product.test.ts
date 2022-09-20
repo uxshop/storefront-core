@@ -8,14 +8,14 @@ const SELECTED_FIELDS: Array<ProductFields> = ['id', 'slug']
 describe('Product Module', () => {
   it('Should get product by id with all fields successfully', async () => {
     const FILTER_ID = '2913645'
-    const productResult = await ProductService.getByProductId(FILTER_ID)
-    expect(productResult.id).toEqual('9468160')
+    const productResult = await ProductService.getById(FILTER_ID)
+    expect(productResult.product_id.toString()).toEqual(FILTER_ID)
     expect(productResult.name).toEqual('Teste Novo')
   })
 
   it('Should get product by id with selected fields successfully', async () => {
     const FILTER_ID = '2913645'
-    const productResult = await ProductService.getByProductId(FILTER_ID, [...SELECTED_FIELDS])
+    const productResult = await ProductService.getById(FILTER_ID, [...SELECTED_FIELDS])
     const productResultFields = Object.keys(productResult).filter(key => key != '__typename')
     expect(productResultFields).toEqual(SELECTED_FIELDS)
     expect(productResultFields.length).toEqual(SELECTED_FIELDS.length)
@@ -36,6 +36,6 @@ describe('Product Module', () => {
 
   it('Should try to get product by inexistent id and it should throw error', async () => {
     const FILTER_ID = '6'
-    expect(async () => await ProductService.getByProductId(FILTER_ID)).rejects.toThrow()
+    expect(async () => await ProductService.getById(FILTER_ID)).rejects.toThrow()
   })
 })

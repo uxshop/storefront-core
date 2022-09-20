@@ -6,9 +6,9 @@ export class ProductRepositoryJson {
     return result || {}
   }
 
-  static async getByProductId(productId: number, fields?: Array<ProductFields>) {
+  static async getById(id: number, fields?: Array<ProductFields>) {
     const result = shop_ctx.mock?.product
-    return { ...result, edges: result.edges.find(edge => edge.node.id == productId) } || {}
+    return { ...result, edges: result.edges.find(edge => edge.node.id == id) } || {}
   }
 
   static async getBySlug(slug: string, fields?: Array<ProductFields>) {
