@@ -30,7 +30,7 @@ describe('Product Module', () => {
 
   it('Should get product list with all fields successfully', async () => {
     const FILTER_PAGINATION: Pagination = { page: 1, items: 1 }
-    const productResult = await ProductService.getList(FILTER_PAGINATION)
+    const productResult = await ProductService.getList({ filter: FILTER_PAGINATION })
     expect(productResult.edges.length).toEqual(1)
   })
 

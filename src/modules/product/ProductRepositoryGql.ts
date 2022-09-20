@@ -11,14 +11,14 @@ import {
 } from './ProductTypes'
 
 export class ProductRepositoryGql {
-  static async getList({ fields, filter }: OptionsGetProductList): Promise<ProductList> {
+  static async getList({ fields, agg, filter }: OptionsGetProductList): Promise<ProductList> {
     const productQuery = new ProductQueries(fields)
     const productListQuery: string = productQuery.listFullQuery()
 
     try {
       const { products }: ProductListResponse = await client.query(
         productListQuery,
-        filter && { agg: { field: 'product_id' }, filter: { ...filter } }
+        filter && { agg: agg, filter: { ...filter } }
       )
 
       return products

@@ -1,7 +1,12 @@
-import { FastSearch, ProductFields } from './ProductTypes'
+import { Aggregator, ProductFields, ProductListFilter } from './ProductTypes'
 
+interface OptionsGetList {
+  filter: ProductListFilter
+  agg?: Aggregator
+  fields?: Array<ProductFields>
+}
 export class ProductRepositoryJson {
-  static async getList() {
+  static async getList({ filter, agg = { field: 'product_id' }, fields }: OptionsGetList) {
     const result = shop_ctx.mock?.product
     return result || {}
   }

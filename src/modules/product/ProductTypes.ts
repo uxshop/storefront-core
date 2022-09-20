@@ -202,9 +202,13 @@ export interface OptionsGetProduct {
   filter: ProductFilter
 }
 
+export interface Aggregator {
+  field: string
+}
 export interface OptionsGetProductList {
-  fields: nullable<Array<ProductFields>>
   filter: ProductPaginationFilter
+  fields?: nullable<Array<ProductFields>>
+  agg?: Aggregator
 }
 
 export interface ProductListFilter extends Omit<ProductPaginationFilter, 'first'> {
