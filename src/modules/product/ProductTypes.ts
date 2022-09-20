@@ -207,6 +207,10 @@ export interface OptionsGetProductList {
   filter: ProductPaginationFilter
 }
 
+export interface ProductListFilter extends Omit<ProductPaginationFilter, 'first'> {
+  items?: number
+}
+
 export type ProductFields =
   | 'id'
   | 'name'
