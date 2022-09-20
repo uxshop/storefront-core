@@ -28,15 +28,9 @@ describe('Product Module', () => {
     expect(productResult.name).toEqual('Teste Novo')
   })
 
-  it('Should get product list by category slug with all fields successfully', async () => {
+  it('Should get product list with all fields successfully', async () => {
     const FILTER_PAGINATION: Pagination = { page: 1, items: 1 }
-    const productResult = await ProductService.getListByCategorySlug('tenis', FILTER_PAGINATION)
-    expect(productResult.edges.length).toEqual(1)
-  })
-
-  it('Should get product list by category brand with all fields successfully', async () => {
-    const FILTER_PAGINATION: Pagination = { page: 1, items: 1 }
-    const productResult = await ProductService.getListByBrandSlug('asics', FILTER_PAGINATION)
+    const productResult = await ProductService.getList(FILTER_PAGINATION)
     expect(productResult.edges.length).toEqual(1)
   })
 

@@ -188,7 +188,7 @@ export interface ProductFilter {
 }
 
 export interface ProductPaginationFilter extends Pick<PaginationFilter, 'first'> {
-  page?: Number
+  page?: number
   fastSearch?: nullable<FastSearch>
   sidebarFilters?: Array<SidebarFilter>
   categoryId?: number

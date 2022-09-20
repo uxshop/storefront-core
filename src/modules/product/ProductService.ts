@@ -1,32 +1,18 @@
-import { Pagination } from '../../types/PaginationTypes'
 import { ProductRepositoryGql } from './ProductRepositoryGql'
 import { ProductRepositoryJson } from './ProductRepositoryJson'
-import { Product, ProductFields, ProductList } from './ProductTypes'
+import { Product, ProductFields, ProductList, ProductPaginationFilter } from './ProductTypes'
 import { normalizePagination } from '../../helpers/PaginationHelper'
 
 const Repository = shop_ctx.mock?.product ? ProductRepositoryJson : ProductRepositoryGql
 
+export interface ProductServiceFilter extends Omit<ProductPaginationFilter, 'first'> {
+  items?: number
+}
 export class ProductService {
-  static async getListByCategorySlug(
-    categorySlug: string,
-    pagination: Pagination,
-    fields?: Array<ProductFields>
-  ): Promise<ProductList> {
+  static async getList(filter: ProductServiceFilter, fields?: Array<ProductFields>): Promise<ProductList> {
     const result: ProductList = await Repository.getList({
       fields: fields || null,
-      filter: { ...normalizePagination(pagination?.page || 1, pagination?.items), categorySlug: categorySlug }
-    })
-    return result
-  }
-
-  static async getListByBrandSlug(
-    brandSlug: string,
-    pagination: Pagination,
-    fields?: Array<ProductFields>
-  ): Promise<ProductList> {
-    const result: ProductList = await Repository.getList({
-      fields: fields || null,
-      filter: { ...normalizePagination(pagination?.page || 1, pagination?.items), brandSlug: brandSlug }
+      filter: { ...normalizePagination(filter?.page || 1, filter?.items), ...filter }
     })
     return result
   }
