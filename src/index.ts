@@ -17,7 +17,7 @@ import { ScriptsService } from './modules/scripts/ScriptsService'
 import { SectionsService } from './modules/sections/SectionsService'
 import { SettingsService } from './modules/settings/SettingsService'
 import { ShopService } from './modules/shop/ShopService'
-import { ShowcaseService } from './modules/showcase/ShowcaseService'
+import { ProductService } from './modules/product/ProductService'
 import { UserService } from './modules/user/UserService'
 
 import { SeoServiceFactory } from './services/seo/SeoServiceFactory'
@@ -41,7 +41,7 @@ export {
   SectionsService,
   SettingsService,
   ShopService,
-  ShowcaseService,
+  ProductService,
   UserService,
   SeoServiceFactory,
   Socket
