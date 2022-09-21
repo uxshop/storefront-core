@@ -29,6 +29,7 @@ export interface Product {
   is_virtual?: nullable<boolean>
   is_pre_sale?: nullable<boolean>
   video?: nullable<string>
+  images?: Array<ProductImage>
   weight?: nullable<number>
   depth?: nullable<number>
   width?: nullable<number>
