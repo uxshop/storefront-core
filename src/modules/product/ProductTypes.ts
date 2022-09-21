@@ -1,12 +1,13 @@
 import { PageableEdgeObject, PageableListObject, PaginationFilter } from '../../types/PaginationTypes'
 import { nullable } from '../../types/NullableTypes'
+import { SidebarFilter } from '../sidebar/SidebarTypes'
 
-export interface Showcase {
+export interface Product {
   id?: nullable<string>
   name?: nullable<string>
   slug?: nullable<string>
   url?: nullable<string>
-  payments?: nullable<Array<ShowcasePayment>>
+  payments?: nullable<Array<ProductPayment>>
   gtin?: nullable<string>
   mpn?: nullable<string>
   additional_shipping_time?: nullable<number>
@@ -27,7 +28,6 @@ export interface Showcase {
   kit_markup?: nullable<number>
   is_virtual?: nullable<boolean>
   is_pre_sale?: nullable<boolean>
-  images?: nullable<Array<ShowcaseImage>>
   video?: nullable<string>
   weight?: nullable<number>
   depth?: nullable<number>
@@ -48,50 +48,50 @@ export interface Showcase {
   model?: nullable<string>
   gender?: nullable<string>
   age_group?: nullable<string>
-  brand?: nullable<ShowcaseBrand>
-  category?: nullable<ShowcaseCategory>
-  categories?: nullable<Array<ShowcaseCategory>>
-  color?: nullable<ShowcaseColor>
-  attribute?: nullable<ShowcaseAttribute>
-  attribute_secondary?: nullable<ShowcaseAttribute>
-  features?: nullable<Array<ShowcaseFeature>>
+  brand?: nullable<ProductBrand>
+  category?: nullable<ProductCategory>
+  categories?: nullable<Array<ProductCategory>>
+  color?: nullable<ProductColor>
+  attribute?: nullable<ProductAttribute>
+  attribute_secondary?: nullable<ProductAttribute>
+  features?: nullable<Array<ProductFeature>>
   product_id?: nullable<number>
-  variations?: nullable<Array<ShowcaseVariation>>
-  components?: nullable<Array<ShowcaseComponent>>
-  component_groups?: nullable<Array<ShowcaseComponentGroup>>
+  variations?: nullable<Array<ProductVariation>>
+  components?: nullable<Array<ProductComponent>>
+  component_groups?: nullable<Array<ProductComponentGroup>>
 }
 
-export interface ShowcaseResponse {
-  showcase: nullable<Showcase>
+export interface ProductResponse {
+  product: nullable<Product>
 }
 
-export interface ShowcaseListResponse {
-  showcases: nullable<ShowcaseList>
+export interface ProductListResponse {
+  products: nullable<ProductList>
 }
 
-export interface ShowcaseBrand {
+export interface ProductBrand {
   id?: nullable<number>
   name?: nullable<string>
   slug?: nullable<string>
   description?: nullable<string>
   short_description?: nullable<string>
-  image?: nullable<ShowcaseImage>
-  banner?: nullable<ShowcaseImage>
+  image?: nullable<ProductImage>
+  banner?: nullable<ProductImage>
   url?: nullable<string>
 }
 
-export interface ShowcaseCategory {
+export interface ProductCategory {
   id?: nullable<number>
   name?: nullable<string>
   slug?: nullable<string>
   description?: nullable<string>
-  image?: nullable<ShowcaseImage>
+  image?: nullable<ProductImage>
   breadcrumb?: nullable<string>
   google_taxonomy_id?: nullable<string>
   url?: nullable<string>
 }
 
-export interface ShowcasePayment {
+export interface ProductPayment {
   name?: nullable<string>
   method?: nullable<string>
   discount?: nullable<number>
@@ -101,35 +101,35 @@ export interface ShowcasePayment {
   has_interest?: nullable<boolean>
 }
 
-export interface ShowcaseFeatureValue extends Omit<ShowcaseFeature, 'values'> {}
+export interface ProductFeatureValue extends Omit<ProductFeature, 'values'> {}
 
-export interface ShowcaseFeature {
+export interface ProductFeature {
   id?: nullable<number>
   name?: nullable<string>
   slug?: nullable<string>
-  image?: nullable<ShowcaseImage>
-  values?: nullable<Array<ShowcaseFeatureValue>>
+  image?: nullable<ProductImage>
+  values?: nullable<Array<ProductFeatureValue>>
 }
 
-export interface ShowcaseImage {
+export interface ProductImage {
   src?: nullable<string>
   alt?: nullable<string>
 }
 
-export interface ShowcaseProductImage extends ShowcaseImage {
+export interface ProductColorImage extends ProductImage {
   color_ids?: nullable<number>
 }
 
-export interface ShowcaseColor {
+export interface ProductColor {
   id?: nullable<number>
   name?: nullable<string>
   slug?: nullable<string>
   hexadecimal?: nullable<string>
-  image?: nullable<ShowcaseImage>
-  product_images?: nullable<Array<ShowcaseProductImage>>
+  image?: nullable<ProductImage>
+  product_images?: nullable<Array<ProductColorImage>>
 }
 
-export interface ShowcaseComponentGroup {
+export interface ProductComponentGroup {
   id?: nullable<number>
   shop_id?: nullable<number>
   name?: nullable<string>
@@ -138,7 +138,7 @@ export interface ShowcaseComponentGroup {
   optional?: nullable<boolean>
 }
 
-export interface ShowcaseComponent extends Omit<Showcase, 'id' | 'components' | 'variation_id'> {
+export interface ProductComponent extends Omit<Product, 'id' | 'components'> {
   id?: nullable<number>
   product_component_id?: nullable<number>
   product_component_group_id?: nullable<number>
@@ -148,69 +148,74 @@ export interface ShowcaseComponent extends Omit<Showcase, 'id' | 'components' | 
   product_id?: nullable<number>
 }
 
-export interface ShowcaseAttributeValue extends Omit<ShowcaseAttribute, 'values'> {}
+export interface ProductAttributeValue extends Omit<ProductAttribute, 'values'> {}
 
-export interface ShowcaseAttribute {
+export interface ProductAttribute {
   id?: nullable<number>
   name?: nullable<string>
   slug?: nullable<string>
-  values?: nullable<Array<ShowcaseAttributeValue>>
+  values?: nullable<Array<ProductAttributeValue>>
 }
 
-export interface ShowcaseVariation {
+export interface ProductVariation {
   id?: nullable<number>
   product_id?: nullable<number>
   price?: nullable<number>
-  color_id?: nullable<number>
-  color_secondary_id?: nullable<number>
-  attribute_value_id?: nullable<number>
-  attribute_value_secondary_id?: nullable<number>
-  reference?: nullable<string>
   slug?: nullable<string>
   price_compare?: nullable<number>
-  sku?: nullable<string>
   gtin?: nullable<string>
   mpn?: nullable<string>
   additional_shipping_time?: nullable<number>
-  images?: nullable<Array<ShowcaseImage>>
+  images?: nullable<Array<ProductImage>>
   balance?: nullable<number>
-  selling_out_of_stock?: nullable<boolean>
-  color?: nullable<ShowcaseColor>
-  attribute?: nullable<ShowcaseAttribute>
-  attribute_secondary?: nullable<ShowcaseAttribute>
+  color?: nullable<ProductColor>
+  attribute?: nullable<ProductAttribute>
+  attribute_secondary?: nullable<ProductAttribute>
 }
 
-export interface ShowcaseEdge extends PageableEdgeObject<Showcase> {}
+export interface ProductEdge extends PageableEdgeObject<Product> {}
 
-export interface ShowcaseList extends PageableListObject<ShowcaseEdge> {}
+export interface ProductList extends PageableListObject<ProductEdge> {}
 
 export interface FastSearch {
   queryString: nullable<string>
-  fields?: nullable<Array<ShowcaseFields>>
+  fields?: nullable<Array<ProductFields>>
 }
 
-export interface ShowcaseFilter {
-  id?: nullable<number>
+export interface ProductFilter {
+  productId?: nullable<number>
   slug?: nullable<string>
+}
+
+export interface ProductPaginationFilter extends Pick<PaginationFilter, 'first'> {
+  page?: number
   fastSearch?: nullable<FastSearch>
+  sidebarFilters?: Array<SidebarFilter>
+  categoryId?: number
+  categorySlug?: string
+  brandId?: number
+  brandSlug?: string
 }
 
-export interface ShowcasePaginationFilter extends Pick<PaginationFilter, 'first'> {
-  page?: Number
-  queryString?: string
+export interface OptionsGetProduct {
+  fields: nullable<Array<ProductFields>>
+  filter: ProductFilter
 }
 
-export interface OptionsGetShowcase {
-  fields: nullable<Array<ShowcaseFields>>
-  filter: ShowcaseFilter
+export interface Aggregator {
+  field: string
+}
+export interface OptionsGetProductList {
+  filter: ProductPaginationFilter
+  fields?: nullable<Array<ProductFields>>
+  agg?: Aggregator
 }
 
-export interface OptionsGetShowcaseList {
-  fields: nullable<Array<ShowcaseFields>>
-  filter: ShowcasePaginationFilter
+export interface ProductListFilter extends Omit<ProductPaginationFilter, 'first'> {
+  items?: number
 }
 
-export type ShowcaseFields =
+export type ProductFields =
   | 'id'
   | 'name'
   | 'slug'
@@ -264,7 +269,6 @@ export type ShowcaseFields =
   | 'attribute'
   | 'attribute_secondary'
   | 'features'
-  | 'variation_id'
   | 'variations'
   | 'components'
   | 'component_groups'

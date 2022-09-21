@@ -1,4 +1,4 @@
-export class ShowcaseQueries {
+export class ProductQueries {
   fields: null | Array<string>
 
   constructor(fields) {
@@ -21,22 +21,14 @@ export class ShowcaseQueries {
     return `
       {
         id,
-        product_id,
         price,
-        color_id,
-        color_secondary_id,
-        attribute_value_id,
-        attribute_value_secondary_id,
-        reference,
         slug,
         price_compare,
-        sku,
         gtin,
         mpn,
         additional_shipping_time,
         images ${this.getImageFields()},
         balance,
-        selling_out_of_stock,
         color ${this.getColorFields()},
         attribute ${this.getAttributeFields()},
         attribute_secondary ${this.getAttributeFields()}
@@ -151,7 +143,6 @@ export class ShowcaseQueries {
         attribute ${this.getAttributeFields()},
         attribute_secondary ${this.getAttributeFields()},
         features ${this.getFeatureFields()},
-        product_id,
         variations ${this.getVariationFields()},
         component_groups ${this.getComponentGroupsFields()}
     }`
@@ -205,6 +196,7 @@ export class ShowcaseQueries {
       'model',
       'gender',
       'age_group',
+      'product_id',
       `brand ${this.getBrandFields()}`,
       `category ${this.getCategoryFields()}`,
       `categories ${this.getCategoryFields()}`,
@@ -212,7 +204,6 @@ export class ShowcaseQueries {
       `attribute ${this.getAttributeFields()}`,
       `attribute_secondary ${this.getAttributeFields()}`,
       `features ${this.getFeatureFields()}`,
-      'variation_id',
       `variations ${this.getVariationFields()}`,
       `components ${this.getComponentFields()}`,
       `component_groups ${this.getComponentGroupsFields()}`
@@ -220,8 +211,8 @@ export class ShowcaseQueries {
   }
 
   listFullQuery() {
-    return `query Showcases($filter: filterPaginationFilter) {
-        showcases(filter: $filter) {
+    return `query Products($agg: agg!, $filter: filterPaginationFilter) {
+      products(agg: $agg, filter: $filter) {
             edges {
               node {
                 ${this.getFields()}
@@ -241,8 +232,8 @@ export class ShowcaseQueries {
   }
 
   getOnefullQuery() {
-    return `query Showcase($filter: filterShowcase) {
-        showcase(filter: $filter) {
+    return `query Product($filter: filterProduct) {
+      product(filter: $filter) {
           ${this.getFields()}
         }
       }`
