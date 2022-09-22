@@ -49,8 +49,8 @@ export class CategoryQueries {
   }
 
   treeFullQuery() {
-    return `query getCategoryTree($filter: filterCategory){
-        categoryTree(filter: $filter){
+    return `query getCategoryTree {
+        categoryTree {
                 ${this.getFields()},
                 ${this.getChildrenFields()}
           }
