@@ -11,27 +11,10 @@ export class CategoryQueries {
 
   private getChildrenFields() {
     return `children {
-      id,
-      name,
-      slug,
-      position,
-      depth,
-      breadcrumb,
-      url,
-      active,
-      created_at,
-      updated_at,
-      parent_id,
-      hotsite_id,
-      external_id,
-      description,
-      image,
-      banner,
-      banner_link,
-      google_taxonomy_id,
-      meta_title,
-      meta_keywords,
-      meta_description,
+      ${this.getFields()},
+      children {
+        ${this.getFields()}
+      }
     }`
   }
 
@@ -66,8 +49,8 @@ export class CategoryQueries {
   }
 
   treeFullQuery() {
-    return `query getCategoryTree($filter: filterCategory){
-        categoryTree(filter: $filter){
+    return `query getCategoryTree {
+        categoryTree {
                 ${this.getFields()},
                 ${this.getChildrenFields()}
           }
