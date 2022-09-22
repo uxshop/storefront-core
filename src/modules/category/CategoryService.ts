@@ -16,13 +16,8 @@ export class CategoryService {
     return result
   }
 
-  static async getTreeById(id: string, fields?: Array<CategoryTreeFields>) {
-    const result: Array<CategoryTree> = await Repository.getTreeById(Number(id), fields)
-    return result
-  }
-
-  static async getTreeBySlug(slug: string, fields?: Array<CategoryTreeFields>) {
-    const result: Array<CategoryTree> = await Repository.getTreeBySlug(slug, fields)
+  static async getTree(fields?: Array<CategoryTreeFields>) {
+    const result: Array<CategoryTree> = await Repository.getTree(fields)
     return result
   }
 }

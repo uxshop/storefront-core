@@ -23,17 +23,11 @@ export class CategoryRepositoryGql {
     }
   }
 
-  private static async getTree({
-    fields,
-    filter
-  }: OptionsGetCategory<CategoryTreeFields>): Promise<Array<CategoryTree>> {
+  static async getTree(fields?: Array<CategoryTreeFields>): Promise<Array<CategoryTree>> {
     const categoryQuery = new CategoryQueries(fields)
     const getTreeQuery: string = categoryQuery.treeFullQuery()
     try {
-      const { categoryTree }: CategoryTreeResponse = await client.query(
-        getTreeQuery,
-        filter && { filter: { ...filter } }
-      )
+      const { categoryTree }: CategoryTreeResponse = await client.query(getTreeQuery)
 
       return categoryTree
     } catch (error) {
@@ -41,19 +35,11 @@ export class CategoryRepositoryGql {
     }
   }
 
-  static async getById(id: Number, fields?: Array<CategoryFields>): Promise<Category> {
+  static async getById(id: number, fields?: Array<CategoryFields>): Promise<Category> {
     return this.getOne({ fields: fields || null, filter: { id: id } })
   }
 
-  static async getBySlug(slug: String, fields?: Array<CategoryFields>): Promise<Category> {
+  static async getBySlug(slug: string, fields?: Array<CategoryFields>): Promise<Category> {
     return this.getOne({ fields: fields || null, filter: { slug: slug } })
-  }
-
-  static async getTreeById(id: Number, fields?: Array<CategoryTreeFields>): Promise<Array<CategoryTree>> {
-    return this.getTree({ fields: fields || null, filter: { id: id } })
-  }
-
-  static async getTreeBySlug(slug: String, fields?: Array<CategoryTreeFields>): Promise<Array<CategoryTree>> {
-    return this.getTree({ fields: fields || null, filter: { slug: slug } })
   }
 }
