@@ -6,36 +6,35 @@ interface CategoryImage {
 }
 
 export interface Category {
-  id?: Number
-  name?: nullable<String>
-  slug?: nullable<String>
-  position?: nullable<Number>
-  depth?: nullable<Number>
-  breadcrumb?: nullable<String>
-  url?: nullable<String>
-  active?: nullable<Boolean>
-  created_at?: String
-  updated_at?: String
-  parent_id?: nullable<Number>
-  hotsite_id?: nullable<Number>
-  external_id?: nullable<Number>
-  description?: nullable<String>
+  id?: number
+  name?: nullable<string>
+  slug?: nullable<string>
+  position?: nullable<number>
+  depth?: nullable<number>
+  breadcrumb?: nullable<string>
+  url?: nullable<string>
+  active?: nullable<boolean>
+  created_at?: string
+  updated_at?: string
+  parent_id?: nullable<number>
+  hotsite_id?: nullable<number>
+  external_id?: nullable<number>
+  description?: nullable<string>
   image?: nullable<CategoryImage>
   banner?: nullable<CategoryImage>
-  banner_link?: nullable<String>
-  google_taxonomy_id?: nullable<Number>
-  meta_title?: nullable<String>
-  meta_keywords?: nullable<String>
-  meta_description?: nullable<String>
-}
-
-export interface CategoryTree extends Category {
+  banner_link?: nullable<string>
+  google_taxonomy_id?: nullable<number>
+  meta_title?: nullable<string>
+  meta_keywords?: nullable<string>
+  meta_description?: nullable<string>
   children?: Array<Category>
 }
 
+export interface CategoryTree extends Category {}
+
 export interface CategoryFilter {
-  id?: Number
-  slug?: String
+  id?: number
+  slug?: string
 }
 
 export interface CategoryResponse {

@@ -10,7 +10,8 @@ module.exports = {
   globals: {
     shop_ctx: {
       api_url: 'https://api-storefront.dchomolog.dooca.store/',
-      token: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzaG9wX2lkIjo0N30.gfPoCGYJ4dBQe_tW8_H6qC-AYkLsm76SG4qC4zjPPrY',
+      token:
+        'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzaG9wX2lkIjoxNDkzOCwidHlwZSI6ImFkbWluIiwiZW1haWwiOiJkaW92YW5pQGRvb2NhLmNvbS5iciIsImZpcnN0X25hbWUiOiJEaW92YW5pIiwiYWN0aXZlIjp0cnVlLCJpYXQiOjE2NTk3MDAzNzR9.iOUS4aJlFuUQuONtalm8yeBQNN1GqmREkq9Lxf-K5H0',
       domain: 'https://dcgamer.dchomolog.dooca.store/',
       mock: {
         shop: shop,
