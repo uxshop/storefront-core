@@ -20,9 +20,9 @@ export class PagesRepositoryGql {
     const pagesQuery = new PagesQueries(fields)
     const pagesGetOneQuery: string = pagesQuery.getOnefullQuery()
     try {
-      const { pageBy }: PageResponse = await client.query(pagesGetOneQuery, filter && { filter: filter })
+      const { page }: PageResponse = await client.query(pagesGetOneQuery, filter && { filter: filter })
 
-      return pageBy
+      return page
     } catch (error) {
       throw new Error(error)
     }

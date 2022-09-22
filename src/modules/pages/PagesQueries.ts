@@ -36,8 +36,8 @@ export class PagesQueries {
   }
 
   getOnefullQuery() {
-    return `query getPageBy($filter: filterPage){
-        pageBy(filter: $filter){
+    return `query Page($filter: filterPage) {
+      page(filter: $filter) {
             ${this.getFields()}
         }
       }`
