@@ -6,7 +6,7 @@ export interface PageListResponse {
 }
 
 export interface PageResponse {
-  pageBy: Page
+  page: Page
 }
 
 export interface OptionsGetPage {
