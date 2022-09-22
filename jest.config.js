@@ -16,7 +16,8 @@ module.exports = {
       mock: {
         shop: shop,
         apps: apps,
-        sidebar: sidebar
+        sidebar: sidebar,
+        singleProduct: singleProduct
       }
     }
   }
