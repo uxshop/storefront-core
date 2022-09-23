@@ -24,10 +24,7 @@ interface shop {
     sections?: any
     settings?: any
     shop?: any
-    product?: {
-      single?: any
-      list?: any
-    }
+    products?: any
     user?: any
     sidebar?: any
   }

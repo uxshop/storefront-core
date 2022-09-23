@@ -1,0 +1,184 @@
+{
+  "edges": [
+    {
+      "node": {
+        "id": "9468373",
+        "name": "TÊNIS ASICS COURT FF 2 CLAY - MASCULINO - AZUL MARINHO",
+        "slug": "tenis-asics-court-ff-2-clay-masculino-azul-marinho",
+        "url": "https://diovani.dchomolog.dooca.store/tenis-asics-court-ff-2-clay-masculino-azul-marinho",
+        "payments": [
+          {
+            "name": "Boleto",
+            "method": "billet",
+            "discount": "4000.00",
+            "parcels": null,
+            "total": null,
+            "parcel_price": null,
+            "has_interest": null
+          },
+          {
+            "name": "Catão",
+            "method": "creditcard",
+            "discount": "20",
+            "parcels": 10,
+            "total": 1099.99,
+            "parcel_price": 109.99,
+            "has_interest": true
+          }
+        ],
+        "gtin": null,
+        "mpn": null,
+        "additional_shipping_time": null,
+        "external_id": null,
+        "category_default_id": 318045,
+        "hotsite_id": null,
+        "description": "<p>O COURT FF™ CLAY masculino da ASICS foi feito para você mandar bem nas quadras de tênis, com diversas características técnicas que te ajudam a buscar cada ponto.</p>\n<p>A entressola FLYTEFOAM™ dá mais resposta para sua corrida, com uma formulação avançada que devolve a energia dos seus saltos. Ele também conta com tecnologia GEL™ na frente e atrás para amortecer suas aterrissagens, então pode abusar dos smashs com confiança. A palmilha SOLYTE™ também melhora a elasticidade do calçado, além de aumentar a durabilidade. E como não pode faltar conforto, inserimos um ajuste MONO-SOCK™ prático para vestir e tirar no COURT FF™ CLAY.</p>\n<p>Você quer seus pés descansados e ventilados, por isso acrescentamos uma palmilha ORTHOLITE™ que ajuda com impactos e gerenciamento de umidade, enquanto a tecnologia TRUSSTIC SYSTEM™ centralizada na base garante estabilidade.</p>\n<p>Um bom tênis precisa ser resistente, por isso ele conta com solado AHAR™. Este componente de borracha resistente reduz o desgaste em áreas que tem mais contato com o chão. Com design contemporâneo, o COURT FF™ CLAY é um tênis cheio de charme, entre outras coisas que te ajudam a mandar bem nas quadras de tênis.</p>",
+        "short_description": null,
+        "relevance": 1,
+        "tags": null,
+        "min_quantity": 1,
+        "max_quantity": null,
+        "sell_in_kit_only": null,
+        "meta_title": null,
+        "meta_description": null,
+        "meta_keywords": null,
+        "kit": null,
+        "kit_markup": 1,
+        "is_virtual": null,
+        "is_pre_sale": null,
+        "images": null,
+        "video": null,
+        "weight": null,
+        "depth": null,
+        "width": null,
+        "height": null,
+        "sell_out_of_stock": null,
+        "additional_time_out_of_stock": null,
+        "balance": null,
+        "price": 1099.99,
+        "min_price_range": null,
+        "max_price_range": null,
+        "has_price_range": null,
+        "price_compare": 5099.99,
+        "discount": "4000.00",
+        "billet_discount": null,
+        "payments_reason": null,
+        "warranty": null,
+        "model": null,
+        "gender": null,
+        "age_group": null,
+        "brand": {
+          "id": 136425,
+          "name": "Asics",
+          "slug": "asics",
+          "description": "<p><strong>ASICS</strong> é uma empresa de artigos desportivos fundada em <a href=\"https://pt.wikipedia.org/wiki/1949\" title=\"1949\">1949</a> por Kihachiro Onitsuka em <a href=\"https://pt.wikipedia.org/wiki/Kobe\" title=\"Kobe\">Kobe</a>, <a href=\"https://pt.wikipedia.org/wiki/Jap%C3%A3o\" title=\"Japão\">Japão</a>. Em <a href=\"https://pt.wikipedia.org/wiki/1977\" title=\"1977\">1977</a> os ténis da Asics foram introduzidos no mercado norte-americano sob a marca \"Tiger\". A empresa tem como destaque a especialidade em produzir equipamentos para atletismo, para isso, possui um centro de pesquisas próprio no Japão.</p>",
+          "short_description": null,
+          "image": {
+            "src": "https://api.dchomolog.dooca.store/files/14938/brands/5d5vabdqkntvx6yngt4u8knsw084cocrhlxa.png?v=1663767815",
+            "alt": null
+          },
+          "banner": {
+            "src": "https://api.dchomolog.dooca.store/files/14938/brands/g0tvtzzzsjg9hk5xtgyuihbjilb4frvdjezs.png?v=1663767815",
+            "alt": null
+          },
+          "url": "https://diovani.dchomolog.dooca.store/asics"
+        },
+        "category": {
+          "id": 318045,
+          "name": "Esportes",
+          "slug": "esportes",
+          "description": null,
+          "breadcrumb": "Calçados > Tenis > Esportes",
+          "google_taxonomy_id": null,
+          "url": "https://diovani.dchomolog.dooca.store/esportes"
+        },
+        "categories": [
+          {
+            "id": 318045,
+            "name": "Esportes",
+            "slug": "esportes",
+            "description": null,
+            "breadcrumb": "Calçados > Tenis > Esportes",
+            "google_taxonomy_id": null,
+            "url": "https://diovani.dchomolog.dooca.store/esportes"
+          },
+          {
+            "id": 318043,
+            "name": "Calçados",
+            "slug": "calcados",
+            "description": null,
+            "breadcrumb": "Calçados",
+            "google_taxonomy_id": null,
+            "url": "https://diovani.dchomolog.dooca.store/calcados"
+          },
+          {
+            "id": 318044,
+            "name": "Tenis",
+            "slug": "tenis-1",
+            "description": null,
+            "breadcrumb": "Calçados > Tenis",
+            "google_taxonomy_id": null,
+            "url": "https://diovani.dchomolog.dooca.store/tenis-1"
+          }
+        ],
+        "color": null,
+        "attribute": null,
+        "attribute_secondary": null,
+        "features": [
+          {
+            "id": 11136,
+            "name": "Material",
+            "slug": "material",
+            "values": [
+              {
+                "id": 108803,
+                "name": "Tecido",
+                "slug": "tecido"
+              },
+              {
+                "id": 108805,
+                "name": "Borracha",
+                "slug": "borracha"
+              },
+              {
+                "id": 108804,
+                "name": "Couro",
+                "slug": "couro"
+              }
+            ]
+          },
+          {
+            "id": 11137,
+            "name": "Ideal para",
+            "slug": "ideal-para",
+            "values": [
+              {
+                "id": 108806,
+                "name": "Vôlei",
+                "slug": "volei"
+              },
+              {
+                "id": 108807,
+                "name": "Quadra",
+                "slug": "quadra"
+              }
+            ]
+          }
+        ],
+        "product_id": 2913725,
+        "variations": [],
+        "components": null,
+        "component_groups": null
+      },
+      "cursor": "9468373"
+    }
+  ],
+  "pageInfo": {
+    "hasNextPage": false,
+    "hasPreviousPage": false,
+    "startCursor": "9468373",
+    "endCursor": "9468373",
+    "first": 1,
+    "total": 2
+  }
+}
