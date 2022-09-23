@@ -2,85 +2,85 @@ import { Image } from '../../types/ImageTypes'
 import { nullable } from '../../types/NullableTypes'
 
 export interface Cart {
-  id?: nullable<String>
-  token?: nullable<String>
+  id?: string
+  token?: string
   customer?: nullable<CustomerCart>
   address?: nullable<CartAddress>
-  coupon?: nullable<String>
-  shipping_token?: nullable<String>
-  payment_token?: nullable<String>
+  coupon?: nullable<string>
+  shipping_token?: nullable<string>
+  payment_token?: nullable<string>
   creditcard?: nullable<CartCreditCard>
-  items?: nullable<Array<CartItem>>
+  items?: Array<CartItem>
 }
 
 export interface CustomerCart {
-  email?: nullable<String>
-  doc?: nullable<String>
-  newsletter?: nullable<Boolean>
-  first_name?: nullable<String>
-  last_name?: nullable<String>
-  name?: nullable<String>
-  phone?: nullable<String>
+  email?: string
+  doc?: string
+  newsletter?: boolean
+  first_name?: string
+  last_name?: string
+  name?: string
+  phone?: string
 }
 
 export interface CartAddress {
-  receiver?: nullable<String>
-  zipcode?: nullable<String>
-  street?: nullable<String>
-  Int?: nullable<String>
-  detail?: nullable<String>
-  district?: nullable<String>
-  city?: nullable<String>
-  state?: nullable<String>
+  receiver?: nullable<string>
+  zipcode?: nullable<string>
+  street?: nullable<string>
+  Int?: nullable<string>
+  detail?: nullable<string>
+  district?: nullable<string>
+  city?: nullable<string>
+  state?: nullable<string>
 }
 
 export interface CartCreditCard {
-  cvv?: nullable<String>
-  exp?: nullable<String>
-  name?: nullable<String>
-  Int?: nullable<String>
+  cvv?: nullable<string>
+  exp?: nullable<string>
+  name?: nullable<string>
+  Int?: nullable<string>
 }
 
 export interface CartItem {
   id
-  name?: nullable<String>
-  variation?: nullable<String>
+  name?: nullable<string>
+  variation?: nullable<string>
   is_virtual?: nullable<Boolean>
-  quantity?: nullable<Number>
+  quantity?: nullable<number>
   allowed_gift_wrapping?: nullable<Boolean>
-  total_cost?: nullable<Number>
-  total?: nullable<Number>
-  price?: nullable<Number>
-  price_cost?: nullable<Number>
-  stock_balance?: nullable<Number>
+  total_cost?: nullable<number>
+  total?: nullable<number>
+  price?: nullable<number>
+  price_cost?: nullable<number>
+  stock_balance?: nullable<number>
   can_sell_out_of_stock?: nullable<Boolean>
-  variation_id?: nullable<Number>
-  additional_price?: nullable<Number>
-  price_gift_wrapping?: nullable<Number>
-  allowed_gift_wrapping_price?: nullable<Number>
-  discount?: nullable<Number>
-  price_compare?: nullable<Number>
+  variation_id?: nullable<number>
+  additional_price?: nullable<number>
+  price_gift_wrapping?: nullable<number>
+  allowed_gift_wrapping_price?: nullable<number>
+  discount?: nullable<number>
+  price_compare?: nullable<number>
   image?: nullable<Image>
   customize?: nullable<CustomizationsItem>
   components?: nullable<ComponentItem>
 }
 
 export interface CustomizationsItem {
-  id?: nullable<Number>
-  name?: nullable<String>
+  id?: nullable<number>
+  name?: nullable<string>
   content?: nullable<CustomizeContent>
 }
 
 export interface CustomizeContent {
-  id?: nullable<Number>
-  field?: nullable<String>
-  value?: nullable<String>
-  price?: nullable<Number>
+  id?: nullable<number>
+  field?: nullable<string>
+  value?: nullable<string>
+  price?: nullable<number>
 }
 
 export interface ComponentItem {
-  variation_id?: nullable<Number>
-  component_id?: nullable<Number>
+  variation_id?: nullable<number>
+  component_id?: nullable<number>
 }
 
 interface MutationInput {
@@ -96,7 +96,7 @@ export interface UpdateItemInput extends MutationInput {
 }
 
 export interface CartItemDeleteInput {
-  id: nullable<Number>
+  id: nullable<number>
 }
 
 export interface DeleteItemInput extends MutationInput {
@@ -108,36 +108,36 @@ export interface CleanCartInput extends MutationInput {
 }
 
 export interface CartItemAddInput {
-  variation_id: nullable<Number>
-  quantity: nullable<Number>
-  cartToken?: nullable<String>
-  zipcode?: nullable<Number>
+  variation_id: nullable<number>
+  quantity: nullable<number>
+  cartToken?: nullable<string>
+  zipcode?: nullable<number>
   customize?: CustomizationsItemInput
   components?: ComponentItemInput
 }
 
 export interface CartItemUpdateInput {
-  id: nullable<Number>
-  quantity: nullable<Number>
+  id: nullable<number>
+  quantity: nullable<number>
   customize?: CustomizationsItemInput
 }
 
 export interface ComponentItemInput {
-  variation_id?: nullable<Number>
-  component_id?: nullable<Number>
+  variation_id?: nullable<number>
+  component_id?: nullable<number>
 }
 
 export interface CustomizationsItemInput {
-  id?: nullable<Number>
-  name?: nullable<String>
+  id?: nullable<number>
+  name?: nullable<string>
   content: CustomizationContentInput
 }
 
 export interface CustomizationContentInput {
-  id?: nullable<Number>
-  field?: nullable<String>
-  value?: nullable<String>
-  price?: nullable<Number>
+  id?: nullable<number>
+  field?: nullable<string>
+  value?: nullable<string>
+  price?: nullable<number>
 }
 
 interface OptionsCartMutation<T> {
