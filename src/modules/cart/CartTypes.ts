@@ -2,25 +2,25 @@ import { Image } from '../../types/ImageTypes'
 import { nullable } from '../../types/NullableTypes'
 
 export interface Cart {
-  id?: nullable<string>
-  token?: nullable<string>
+  id?: string
+  token?: string
   customer?: nullable<CustomerCart>
   address?: nullable<CartAddress>
   coupon?: nullable<string>
   shipping_token?: nullable<string>
   payment_token?: nullable<string>
   creditcard?: nullable<CartCreditCard>
-  items?: nullable<Array<CartItem>>
+  items?: Array<CartItem>
 }
 
 export interface CustomerCart {
-  email?: nullable<string>
-  doc?: nullable<string>
-  newsletter?: nullable<Boolean>
-  first_name?: nullable<string>
-  last_name?: nullable<string>
-  name?: nullable<string>
-  phone?: nullable<string>
+  email?: string
+  doc?: string
+  newsletter?: boolean
+  first_name?: string
+  last_name?: string
+  name?: string
+  phone?: string
 }
 
 export interface CartAddress {
