@@ -3,7 +3,7 @@ import { ProductRepositoryJson } from './ProductRepositoryJson'
 import { Aggregator, Product, ProductFields, ProductList, ProductListFilter } from './ProductTypes'
 import { normalizePagination } from '../../helpers/PaginationHelper'
 
-const Repository = shop_ctx.mock?.product ? ProductRepositoryJson : ProductRepositoryGql
+const Repository = shop_ctx.mock?.products ? ProductRepositoryJson : ProductRepositoryGql
 interface OptionsGetList {
   filter: ProductListFilter
   agg?: Aggregator
