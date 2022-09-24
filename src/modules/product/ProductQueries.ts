@@ -36,7 +36,7 @@ export class ProductQueries {
   }
 
   private getAttributeFields() {
-    return `{id, name, slug, values {id, name, slug}}`
+    return `{id, name, slug, attribute_id, attribute_name}`
   }
 
   private getColorFields() {

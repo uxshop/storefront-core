@@ -149,13 +149,12 @@ export interface ProductComponent extends Omit<Product, 'id' | 'components'> {
   product_id?: nullable<number>
 }
 
-export interface ProductAttributeValue extends Omit<ProductAttribute, 'values'> {}
-
 export interface ProductAttribute {
-  id?: nullable<number>
-  name?: nullable<string>
-  slug?: nullable<string>
-  values?: nullable<Array<ProductAttributeValue>>
+  id?: number
+  name?: string
+  slug?: string
+  attribute_id?: number
+  attribute_name?: string
 }
 
 export interface ProductVariation {
