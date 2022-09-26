@@ -157,21 +157,7 @@ export interface ProductAttribute {
   attribute_name?: string
 }
 
-export interface ProductVariation {
-  id?: nullable<number>
-  product_id?: nullable<number>
-  price?: nullable<number>
-  slug?: nullable<string>
-  price_compare?: nullable<number>
-  gtin?: nullable<string>
-  mpn?: nullable<string>
-  additional_shipping_time?: nullable<number>
-  images?: nullable<Array<ProductImage>>
-  balance?: nullable<number>
-  color?: nullable<ProductColor>
-  attribute?: nullable<ProductAttribute>
-  attribute_secondary?: nullable<ProductAttribute>
-}
+export interface ProductVariation extends Omit<Product, 'variations'> {}
 
 export interface ProductEdge extends PageableEdgeObject<Product> {}
 
