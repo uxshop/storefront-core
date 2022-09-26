@@ -33,8 +33,12 @@ export class ProductQueries {
     }`
   }
 
+  private getFeatureCommonFields() {
+    return ['id', 'name', 'slug', `image ${this.getImageFields()}`]
+  }
+
   private getFeatureFields() {
-    return `{id, name, slug, image ${this.getImageFields()}}`
+    return `{${this.getFeatureCommonFields().join()}, values {${this.getFeatureCommonFields().join()}}}`
   }
 
   private getBrandFields() {
