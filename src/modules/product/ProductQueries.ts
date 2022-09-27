@@ -17,26 +17,8 @@ export class ProductQueries {
     return `{id, shop_id, name, description, slug, optional}`
   }
 
-  private getVariationFields() {
-    return `
-      {
-        id,
-        price,
-        slug,
-        price_compare,
-        gtin,
-        mpn,
-        additional_shipping_time,
-        images ${this.getImageFields()},
-        balance,
-        color ${this.getColorFields()},
-        attribute ${this.getAttributeFields()},
-        attribute_secondary ${this.getAttributeFields()}
-      }`
-  }
-
   private getAttributeFields() {
-    return `{id, name, slug, values {id, name, slug}}`
+    return `{id, name, slug, attribute_id, attribute_name}`
   }
 
   private getColorFields() {
@@ -51,8 +33,12 @@ export class ProductQueries {
     }`
   }
 
+  private getFeatureCommonFields() {
+    return ['id', 'name', 'slug', `image ${this.getImageFields()}`]
+  }
+
   private getFeatureFields() {
-    return `{id, name, slug, image ${this.getImageFields()}}`
+    return `{${this.getFeatureCommonFields().join()}, values {${this.getFeatureCommonFields().join()}}}`
   }
 
   private getBrandFields() {
@@ -143,12 +129,11 @@ export class ProductQueries {
         attribute ${this.getAttributeFields()},
         attribute_secondary ${this.getAttributeFields()},
         features ${this.getFeatureFields()},
-        variations ${this.getVariationFields()},
         component_groups ${this.getComponentGroupsFields()}
     }`
   }
 
-  private defaultFields() {
+  private getCommonFields() {
     return [
       'id',
       'name',
@@ -204,10 +189,13 @@ export class ProductQueries {
       `attribute ${this.getAttributeFields()}`,
       `attribute_secondary ${this.getAttributeFields()}`,
       `features ${this.getFeatureFields()}`,
-      `variations ${this.getVariationFields()}`,
       `components ${this.getComponentFields()}`,
       `component_groups ${this.getComponentGroupsFields()}`
     ]
+  }
+
+  private defaultFields() {
+    return [`${this.getCommonFields().join()}`, `variations {${this.getCommonFields().join()}}`]
   }
 
   listFullQuery() {
