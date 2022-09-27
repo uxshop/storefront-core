@@ -3,52 +3,52 @@ import { nullable } from '../../types/NullableTypes'
 import { SidebarFilter } from '../sidebar/SidebarTypes'
 
 export interface Product {
-  id?: nullable<string>
-  name?: nullable<string>
-  slug?: nullable<string>
-  url?: nullable<string>
+  id?: string
+  name?: string
+  slug?: string
+  url?: string
   payments?: nullable<Array<ProductPayment>>
-  gtin?: nullable<string>
-  mpn?: nullable<string>
-  additional_shipping_time?: nullable<number>
-  external_id?: nullable<string>
-  category_default_id?: nullable<number>
-  hotsite_id?: nullable<number>
-  description?: nullable<string>
-  short_description?: nullable<string>
-  relevance?: nullable<number>
-  tags?: nullable<string>
-  min_quantity?: nullable<number>
-  max_quantity?: nullable<number>
+  gtin?: string
+  mpn?: string
+  additional_shipping_time?: number
+  external_id?: string
+  category_default_id?: number
+  hotsite_id?: number
+  description?: string
+  short_description?: string
+  relevance?: number
+  tags?: string
+  min_quantity?: number
+  max_quantity?: number
   sell_in_kit_only?: nullable<boolean>
-  meta_title?: nullable<string>
-  meta_description?: nullable<string>
-  meta_keywords?: nullable<string>
+  meta_title?: string
+  meta_description?: string
+  meta_keywords?: string
   kit?: nullable<boolean>
-  kit_markup?: nullable<number>
+  kit_markup?: number
   is_virtual?: nullable<boolean>
   is_pre_sale?: nullable<boolean>
-  video?: nullable<string>
+  video?: string
   images?: Array<ProductImage>
-  weight?: nullable<number>
-  depth?: nullable<number>
-  width?: nullable<number>
-  height?: nullable<number>
+  weight?: number
+  depth?: number
+  width?: number
+  height?: number
   sell_out_of_stock?: nullable<boolean>
-  additional_time_out_of_stock?: nullable<number>
-  balance?: nullable<number>
-  price?: nullable<number>
-  min_price_range?: nullable<number>
-  max_price_range?: nullable<number>
+  additional_time_out_of_stock?: number
+  balance?: number
+  price?: number
+  min_price_range?: number
+  max_price_range?: number
   has_price_range?: nullable<boolean>
-  price_compare?: nullable<number>
-  discount?: nullable<number>
-  billet_discount?: nullable<number>
-  payments_reason?: nullable<string>
-  warranty?: nullable<string>
-  model?: nullable<string>
-  gender?: nullable<string>
-  age_group?: nullable<string>
+  price_compare?: number
+  discount?: number
+  billet_discount?: number
+  payments_reason?: string
+  warranty?: string
+  model?: string
+  gender?: string
+  age_group?: string
   brand?: nullable<ProductBrand>
   category?: nullable<ProductCategory>
   categories?: nullable<Array<ProductCategory>>
@@ -56,7 +56,7 @@ export interface Product {
   attribute?: nullable<ProductAttribute>
   attribute_secondary?: nullable<ProductAttribute>
   features?: nullable<Array<ProductFeature>>
-  product_id?: nullable<number>
+  product_id?: number
   variations?: nullable<Array<ProductVariation>>
   components?: nullable<Array<ProductComponent>>
   component_groups?: nullable<Array<ProductComponentGroup>>
@@ -71,82 +71,82 @@ export interface ProductListResponse {
 }
 
 export interface ProductBrand {
-  id?: nullable<number>
-  name?: nullable<string>
-  slug?: nullable<string>
-  description?: nullable<string>
-  short_description?: nullable<string>
+  id?: number
+  name?: string
+  slug?: string
+  description?: string
+  short_description?: string
   image?: nullable<ProductImage>
   banner?: nullable<ProductImage>
-  url?: nullable<string>
+  url?: string
 }
 
 export interface ProductCategory {
-  id?: nullable<number>
-  name?: nullable<string>
-  slug?: nullable<string>
-  description?: nullable<string>
+  id?: number
+  name?: string
+  slug?: string
+  description?: string
   image?: nullable<ProductImage>
-  breadcrumb?: nullable<string>
-  google_taxonomy_id?: nullable<string>
-  url?: nullable<string>
+  breadcrumb?: string
+  google_taxonomy_id?: string
+  url?: string
 }
 
 export interface ProductPayment {
-  name?: nullable<string>
-  method?: nullable<string>
-  discount?: nullable<number>
-  parcels?: nullable<number>
-  total?: nullable<number>
-  parcel_price?: nullable<number>
+  name?: string
+  method?: string
+  discount?: number
+  parcels?: number
+  total?: number
+  parcel_price?: number
   has_interest?: nullable<boolean>
 }
 
 export interface ProductFeatureValue extends Omit<ProductFeature, 'values'> {}
 
 export interface ProductFeature {
-  id?: nullable<number>
-  name?: nullable<string>
-  slug?: nullable<string>
+  id?: number
+  name?: string
+  slug?: string
   image?: nullable<ProductImage>
   values?: nullable<Array<ProductFeatureValue>>
 }
 
 export interface ProductImage {
-  src?: nullable<string>
-  alt?: nullable<string>
+  src?: string
+  alt?: string
 }
 
 export interface ProductColorImage extends ProductImage {
-  color_ids?: nullable<number>
+  color_ids?: number
 }
 
 export interface ProductColor {
-  id?: nullable<number>
-  name?: nullable<string>
-  slug?: nullable<string>
-  hexadecimal?: nullable<string>
+  id?: number
+  name?: string
+  slug?: string
+  hexadecimal?: string
   image?: nullable<ProductImage>
   product_images?: nullable<Array<ProductColorImage>>
 }
 
 export interface ProductComponentGroup {
-  id?: nullable<number>
-  shop_id?: nullable<number>
-  name?: nullable<string>
-  description?: nullable<string>
-  slug?: nullable<string>
+  id?: number
+  shop_id?: number
+  name?: string
+  description?: string
+  slug?: string
   optional?: nullable<boolean>
 }
 
 export interface ProductComponent extends Omit<Product, 'id' | 'components'> {
-  id?: nullable<number>
-  product_component_id?: nullable<number>
-  product_component_group_id?: nullable<number>
-  quantity?: nullable<number>
+  id?: number
+  product_component_id?: number
+  product_component_group_id?: number
+  quantity?: number
   default?: nullable<boolean>
   optional?: nullable<boolean>
-  product_id?: nullable<number>
+  product_id?: number
 }
 
 export interface ProductAttribute {
@@ -164,13 +164,13 @@ export interface ProductEdge extends PageableEdgeObject<Product> {}
 export interface ProductList extends PageableListObject<ProductEdge> {}
 
 export interface FastSearch {
-  queryString: nullable<string>
+  queryString: string
   fields?: nullable<Array<ProductFields>>
 }
 
 export interface ProductFilter {
-  productId?: nullable<number>
-  slug?: nullable<string>
+  productId?: number
+  slug?: string
 }
 
 export interface ProductPaginationFilter extends Pick<PaginationFilter, 'first'> {
