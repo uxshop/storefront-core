@@ -13,6 +13,32 @@ export class MenuQueries {
     return '{alt, src}'
   }
 
+  private getChildrenFields() {
+    return [
+      'id',
+      'menu_id',
+      'brand_id',
+      'name',
+      'menu_type',
+      'slug',
+      'menu_type_slug',
+      'active',
+      'created_at',
+      `image ${this.getImageFields()}`,
+      'parent_id',
+      'page_id',
+      'hotsite_id',
+      'category_id',
+      'banner',
+      'banner_link',
+      'is_featured',
+      'link',
+      'menu_type_link',
+      'updated_at',
+      'position'
+    ]
+  }
+
   private defaultFields() {
     return [
       'id',
@@ -43,27 +69,10 @@ export class MenuQueries {
         updated_at,
         position,
         children {
-            id, 
-            menu_id, 
-            brand_id,
-            name,
-            menu_type,
-            slug, 
-            menu_type_slug, 
-            active, 
-            created_at, 
-            image ${this.getImageFields()},
-            parent_id, 
-            page_id, 
-            hotsite_id,
-            category_id,
-            banner,
-            banner_link,
-            is_featured,
-            link,
-            menu_type_link,
-            updated_at,
-            position
+           ${this.getChildrenFields().join()},
+           children {
+            ${this.getChildrenFields().join()},
+           }
         }
       }`
     ]
