@@ -92,14 +92,41 @@ export interface ProductCategory {
   url?: string
 }
 
+interface PaymentInstallment {
+  markup?: number
+  parcel?: number
+  discount?: number
+  interest?: number
+  total?: string
+  parcel_price?: string
+}
+
 export interface ProductPayment {
+  id?: number
+  gateway_id?: number
+  external_id?: number
   name?: string
   method?: string
-  discount?: number
-  parcels?: number
-  total?: number
-  parcel_price?: number
-  has_interest?: nullable<boolean>
+  external?: string
+  max_parcels?: number
+  parcels_no_interest?: number
+  installments?: Array<PaymentInstallment>
+  min_parcel_price?: string
+  min_purchase?: string
+  max_purchase?: string
+  expire_days?: number
+  soft_descriptor?: string
+  description?: string
+  active?: boolean
+  position?: number
+  billet_min_discount_price?: string
+  markup?: string
+  instructions?: string
+  is_default?: boolean
+  show_only_instore_shipping?: boolean
+  created_at?: string
+  updated_at?: string
+  installment?: PaymentInstallment
 }
 
 export interface ProductFeatureValue extends Omit<ProductFeature, 'values'> {}
