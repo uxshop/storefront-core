@@ -32,9 +32,9 @@ export class CartService {
     }
   }
 
-  static async getCart(cartToken: String, fields?: Array<CartFields>) {
+  static async getCart(cartToken: string, fields?: Array<CartFields>) {
     try {
-      const result = await Repository.getCart({ fields: fields || null, filter: { cart_token: cartToken } })
+      const result = await Repository.getCart({ fields: fields || null, filter: { cartToken: cartToken } })
       return result
     } catch (error) {
       throw new Error(error)

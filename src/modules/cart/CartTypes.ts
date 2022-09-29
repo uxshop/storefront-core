@@ -66,25 +66,25 @@ export interface CartItem {
 }
 
 export interface CustomizationsItem {
-  id?: nullable<number>
-  name?: nullable<string>
-  content?: nullable<CustomizeContent>
+  id?: number
+  name?: string
+  content?: CustomizeContent
 }
 
 export interface CustomizeContent {
-  id?: nullable<number>
+  id?: number
   field?: nullable<string>
   value?: nullable<string>
   price?: nullable<number>
 }
 
 export interface ComponentItem {
-  variation_id?: nullable<number>
-  component_id?: nullable<number>
+  variation_id?: number
+  component_id?: number
 }
 
 interface MutationInput {
-  cartToken?: String
+  cartToken?: string
 }
 
 export interface AddItemInput extends MutationInput {
@@ -96,7 +96,7 @@ export interface UpdateItemInput extends MutationInput {
 }
 
 export interface CartItemDeleteInput {
-  id: nullable<number>
+  id: number
 }
 
 export interface DeleteItemInput extends MutationInput {
@@ -108,33 +108,33 @@ export interface CleanCartInput extends MutationInput {
 }
 
 export interface CartItemAddInput {
-  variation_id: nullable<number>
-  quantity: nullable<number>
-  cartToken?: nullable<string>
-  zipcode?: nullable<number>
+  variation_id: number
+  quantity: number
+  cartToken?: string
+  zipcode?: number
   customize?: CustomizationsItemInput
   components?: ComponentItemInput
 }
 
 export interface CartItemUpdateInput {
-  id: nullable<number>
-  quantity: nullable<number>
+  id: number
+  quantity: number
   customize?: CustomizationsItemInput
 }
 
 export interface ComponentItemInput {
-  variation_id?: nullable<number>
-  component_id?: nullable<number>
+  variation_id?: number
+  component_id?: number
 }
 
 export interface CustomizationsItemInput {
-  id?: nullable<number>
-  name?: nullable<string>
+  id?: number
+  name?: string
   content: CustomizationContentInput
 }
 
 export interface CustomizationContentInput {
-  id?: nullable<number>
+  id?: number
   field?: nullable<string>
   value?: nullable<string>
   price?: nullable<number>
@@ -155,11 +155,15 @@ export interface OptionsCleanCart extends OptionsCartMutation<CleanCartInput> {}
 
 export interface OptionsGetCart {
   fields: nullable<Array<CartFields>>
-  filter: CartFilter
+  filter: GetCartFilter
 }
 
 export interface CartFilter {
-  cart_token: String
+  cart_token: string
+}
+
+export interface GetCartFilter {
+  cartToken: string
 }
 
 export interface AddItemResponse {
