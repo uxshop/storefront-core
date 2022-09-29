@@ -69,8 +69,38 @@ export class ProductQueries {
     }`
   }
 
+  private getPaymantInstallmentFields() {
+    return '{markup, parcel, discount, interest, total, parcel_price}'
+  }
+
   private getPaymentFields() {
-    return `{name, method, discount, parcels, total, parcel_price, has_interest}`
+    return [
+      'id',
+      'gateway_id',
+      'external_id',
+      'name',
+      'method',
+      'external',
+      'max_parcels',
+      'parcels_no_interest',
+      `installments ${this.getPaymantInstallmentFields()}`,
+      'min_parcel_price',
+      'min_purchase',
+      'max_purchase',
+      'expire_days',
+      'soft_descriptor',
+      'description',
+      'active',
+      'position',
+      'billet_min_discount_price',
+      'markup',
+      'instructions',
+      'is_default',
+      'show_only_instore_shipping',
+      'created_at',
+      'updated_at',
+      `installment ${this.getPaymantInstallmentFields()}`
+    ]
   }
 
   private getComponentFields() {
@@ -80,7 +110,7 @@ export class ProductQueries {
         name,
         slug,
         url,
-        payments ${this.getPaymentFields()},
+        payments {${this.getPaymentFields().join()}},
         gtin,
         mpn,
         additional_shipping_time,
@@ -139,7 +169,7 @@ export class ProductQueries {
       'name',
       'slug',
       'url',
-      `payments ${this.getPaymentFields()}`,
+      `payments {${this.getPaymentFields().join()}}`,
       'gtin',
       'mpn',
       'additional_shipping_time',
