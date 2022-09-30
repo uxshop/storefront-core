@@ -191,6 +191,7 @@ export class ProductQueries {
       'is_virtual',
       'is_pre_sale',
       `images ${this.getImageFields()}`,
+      `product_images ${this.getImageFields()}`,
       'video',
       'weight',
       'depth',
