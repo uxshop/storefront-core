@@ -30,6 +30,7 @@ export interface Product {
   is_pre_sale?: nullable<boolean>
   video?: string
   images?: Array<ProductImage>
+  product_images?: Array<ProductImage>
   weight?: number
   depth?: number
   width?: number
