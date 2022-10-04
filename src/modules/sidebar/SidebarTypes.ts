@@ -24,6 +24,7 @@ export interface SidebarResponse {
 export interface SidebarItem {
   id: number
   name: string
+  position: number
 }
 
 export interface SidebarFilter {
@@ -38,4 +39,4 @@ export type SidebarFilteredItemsFields = 'type' | 'id' | 'name'
 
 export type FiltersFields = 'type' | 'description' | 'items'
 
-export type SidebarItemFields = 'id' | 'name'
+export type SidebarItemFields = 'id' | 'name' | 'position'

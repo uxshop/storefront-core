@@ -9,6 +9,7 @@ interface OptionsGetList {
   agg?: Aggregator
   fields?: Array<ProductFields>
 }
+
 export class ProductService {
   static async getList({ filter, agg = { field: 'product_id' }, fields }: OptionsGetList): Promise<ProductList> {
     const { items, ...remainFilter } = filter
