@@ -7,7 +7,7 @@ export interface Product {
   name?: string
   slug?: string
   url?: string
-  payments?: nullable<Array<ProductPayment>>
+  payments?: nullable<ProductPayment[]>
   gtin?: string
   mpn?: string
   additional_shipping_time?: number
@@ -29,8 +29,8 @@ export interface Product {
   is_virtual?: nullable<boolean>
   is_pre_sale?: nullable<boolean>
   video?: string
-  images?: Array<ProductImage>
-  product_images?: Array<ProductImage>
+  images?: ProductImage[]
+  product_images?: ProductImage[]
   weight?: number
   depth?: number
   width?: number
@@ -52,15 +52,13 @@ export interface Product {
   age_group?: string
   brand?: nullable<ProductBrand>
   category?: nullable<ProductCategory>
-  categories?: nullable<Array<ProductCategory>>
-  color?: nullable<ProductColor>
-  attribute?: nullable<ProductAttribute>
+  categories?: nullable<ProductCategory[]>
   attribute_secondary?: nullable<ProductAttribute>
-  features?: nullable<Array<ProductFeature>>
+  features?: nullable<ProductFeature[]>
   product_id?: number
-  variations?: nullable<Array<ProductVariation>>
-  components?: nullable<Array<ProductComponent>>
-  component_groups?: nullable<Array<ProductComponentGroup>>
+  variations?: nullable<ProductVariation[]>
+  components?: nullable<ProductComponent[]>
+  component_groups?: nullable<ProductComponentGroup[]>
 }
 
 export interface ProductResponse {
@@ -111,7 +109,7 @@ export interface ProductPayment {
   external?: string
   max_parcels?: number
   parcels_no_interest?: number
-  installments?: Array<PaymentInstallment>
+  installments?: PaymentInstallment[]
   min_parcel_price?: string
   min_purchase?: string
   max_purchase?: string
@@ -137,7 +135,7 @@ export interface ProductFeature {
   name?: string
   slug?: string
   image?: nullable<ProductImage>
-  values?: nullable<Array<ProductFeatureValue>>
+  values?: nullable<ProductFeatureValue[]>
 }
 
 export interface ProductImage {
@@ -155,7 +153,7 @@ export interface ProductColor {
   slug?: string
   hexadecimal?: string
   image?: nullable<ProductImage>
-  product_images?: nullable<Array<ProductColorImage>>
+  product_images?: ProductColorImage[]
 }
 
 export interface ProductComponentGroup {
@@ -193,7 +191,7 @@ export interface ProductList extends PageableListObject<ProductEdge> {}
 
 export interface FastSearch {
   queryString: string
-  fields?: nullable<Array<ProductFields>>
+  fields?: ProductFields[]
 }
 
 export interface ProductFilter {
@@ -203,16 +201,13 @@ export interface ProductFilter {
 
 export interface ProductPaginationFilter extends Pick<PaginationFilter, 'first'> {
   page?: number
-  fastSearch?: nullable<FastSearch>
-  sidebarFilters?: Array<SidebarFilter>
-  categoryId?: number
-  categorySlug?: string
-  brandId?: number
-  brandSlug?: string
+  fastSearch?: FastSearch
+  sidebarFilters?: SidebarFilter[]
+  customerGroupId?: number
 }
 
 export interface OptionsGetProduct {
-  fields: nullable<Array<ProductFields>>
+  fields: ProductFields[]
   filter: ProductFilter
 }
 
@@ -221,7 +216,7 @@ export interface Aggregator {
 }
 export interface OptionsGetProductList {
   filter: ProductPaginationFilter
-  fields?: nullable<Array<ProductFields>>
+  fields?: ProductFields[]
   agg?: Aggregator
 }
 
