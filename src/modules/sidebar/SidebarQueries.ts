@@ -10,7 +10,7 @@ export class SidebarQueries {
   }
 
   private defaultFields() {
-    return ['filtered {type, id, name}', 'filters {type, description, items {id, name}}']
+    return ['filtered {type, id, name}', 'filters {type, description, items {id, name, position}}']
   }
 
   getQuery() {
