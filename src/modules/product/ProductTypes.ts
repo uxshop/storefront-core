@@ -54,6 +54,7 @@ export interface Product {
   category?: nullable<ProductCategory>
   categories?: nullable<ProductCategory[]>
   color?: ProductColor
+  attribute?: nullable<ProductAttribute>
   attribute_secondary?: nullable<ProductAttribute>
   features?: nullable<ProductFeature[]>
   product_id?: number
