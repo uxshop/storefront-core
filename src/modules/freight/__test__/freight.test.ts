@@ -3,7 +3,7 @@ import { FreightFields } from '../FreightTypes'
 import 'isomorphic-fetch'
 
 const SHIPPING_FILTER = {
-  variationId: 9468973,
+  variationId: '9468973',
   zipCode: '93037190'
 }
 
@@ -22,6 +22,6 @@ describe('Freight Module', () => {
   })
 
   it('Should try to get freight by inexistent variation_id and it should throw error', async () => {
-    expect(async () => await FreightService.getList({ ...SHIPPING_FILTER, variationId: 111 })).rejects.toThrow()
+    expect(async () => await FreightService.getList({ ...SHIPPING_FILTER, variationId: '111' })).rejects.toThrow()
   })
 })
