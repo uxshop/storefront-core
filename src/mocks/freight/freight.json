@@ -1,0 +1,47 @@
+[
+  {
+    "id": "138",
+    "name": "PAC",
+    "alias": "Econômico",
+    "api": "correios",
+    "image": null,
+    "price": 11.9,
+    "price_cost": 23.8,
+    "additional_message": null,
+    "insurance": 0,
+    "insurance_price": 0,
+    "shipment_time": 10,
+    "delivery_time": 17,
+    "has_lower_price": 1
+  },
+  {
+    "id": "139",
+    "name": "SEDEX",
+    "alias": "Expresso",
+    "api": "correios",
+    "image": null,
+    "price": 52.19,
+    "price_cost": 52.19,
+    "additional_message": null,
+    "insurance": 0,
+    "insurance_price": 0,
+    "shipment_time": 10,
+    "delivery_time": 12,
+    "has_lower_price": 0
+  },
+  {
+    "id": "12443",
+    "name": "Retire",
+    "alias": "Retire",
+    "api": "instore",
+    "image": null,
+    "price": 0,
+    "price_cost": 0,
+    "additional_message": null,
+    "insurance": 0,
+    "insurance_price": 0,
+    "shipment_time": 10,
+    "delivery_time": 15,
+    "has_lower_price": 0
+  }
+]

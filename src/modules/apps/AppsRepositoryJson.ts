@@ -8,10 +8,10 @@ export class AppsRepositoryJson {
       throw new Error('apps_not_found')
     }
 
-    const isFIeldNotSelected = entry => !fields.includes(entry)
+    const isFieldNotSelected = entry => !fields.includes(entry)
 
     const deleteFieldIfNecessary = entry => {
-      isFIeldNotSelected(entry) && delete mock[entry]
+      isFieldNotSelected(entry) && delete mock[entry]
     }
 
     fields && Object.keys(mock).forEach(deleteFieldIfNecessary)
