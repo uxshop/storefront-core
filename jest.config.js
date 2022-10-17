@@ -2,6 +2,7 @@
 const shop = require('./src/mocks/shop/shop.json')
 const apps = require('./src/mocks/apps/apps.json')
 const sidebar = require('./src/mocks/sidebar/sidebar.json')
+const freight = require('./src/mocks/freight/freight.json')
 
 module.exports = {
   preset: 'ts-jest',
@@ -10,12 +11,13 @@ module.exports = {
   globals: {
     shop_ctx: {
       api_url: 'https://api-storefront.dchomolog.dooca.store/',
-      token: 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzaG9wX2lkIjoxNDkzOH0.3GhJ1HSOuFVy3BRA1XfZmS7dnSnugJK5giLXo0jNeQ4',
-      domain: 'diovani.dchomolog.dooca.store',
+      token: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzaG9wX2lkIjoiNDcifQ.W8gSG3QFu4iqJsWElSSJ726fb1LZHxeJabkNi0PDCQ4',
+      domain: 'dcgamer.dchomolog.dooca.store',
       mock: {
         shop: shop,
         apps: apps,
-        sidebar: sidebar
+        sidebar: sidebar,
+        freight: freight
       }
     }
   }
