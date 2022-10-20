@@ -93,7 +93,7 @@ export interface ProductCategory {
   url?: string
 }
 
-interface PaymentInstallment {
+export interface PaymentInstallment {
   markup?: number
   parcel?: number
   discount?: number
