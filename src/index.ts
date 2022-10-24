@@ -23,6 +23,7 @@ import { ProductService } from './modules/product/ProductService'
 import { UserService } from './modules/user/UserService'
 
 import { SeoServiceFactory } from './services/seo/SeoServiceFactory'
+import { CookieService } from './services/CookieService'
 
 import { Socket } from './socket'
 
@@ -48,5 +49,6 @@ export {
   NewsletterService,
   SidebarService,
   SeoServiceFactory,
+  CookieService,
   Socket
 }
