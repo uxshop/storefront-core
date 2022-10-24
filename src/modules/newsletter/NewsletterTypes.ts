@@ -1,4 +1,4 @@
-import { nullable } from 'src/types/NullableTypes'
+import { nullable } from '../../types/NullableTypes'
 
 export interface Newsletter {
   email?: string
