@@ -1,6 +1,6 @@
 import { NewsletterRepositoryGql } from './NewsletterRepositoryGql'
 import { NewsletterRepositoryJson } from './NewsletterRepositoryJson'
-import { Newsletter, NewsletterFields, NewsletterInput } from './NewsletterTypes'
+import { Newsletter, NewsletterInput } from './NewsletterTypes'
 
 const Repository = shop_ctx.mock?.newsletter ? NewsletterRepositoryJson : NewsletterRepositoryGql
 
