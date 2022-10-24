@@ -21,6 +21,7 @@ import { ShopService } from './modules/shop/ShopService'
 import { SidebarService } from './modules/sidebar/SidebarService'
 import { ProductService } from './modules/product/ProductService'
 import { UserService } from './modules/user/UserService'
+import { FreightService } from './modules/freight/FreightService'
 
 import { SeoServiceFactory } from './services/seo/SeoServiceFactory'
 import { CookieService } from './services/CookieService'
@@ -48,6 +49,7 @@ export {
   UserService,
   NewsletterService,
   SidebarService,
+  FreightService,
   SeoServiceFactory,
   CookieService,
   Socket
