@@ -14,7 +14,6 @@ module.exports = {
       token: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzaG9wX2lkIjoiNDcifQ.W8gSG3QFu4iqJsWElSSJ726fb1LZHxeJabkNi0PDCQ4',
       domain: 'dcgamer.dchomolog.dooca.store',
       mock: {
-        shop: shop,
         apps: apps,
         sidebar: sidebar,
         freight: freight
