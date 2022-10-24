@@ -30,7 +30,6 @@ export interface Product {
   is_pre_sale?: nullable<boolean>
   video?: string
   images?: ProductImage[]
-  product_images?: ProductImage[]
   weight?: number
   depth?: number
   width?: number
@@ -93,7 +92,7 @@ export interface ProductCategory {
   url?: string
 }
 
-interface PaymentInstallment {
+export interface PaymentInstallment {
   markup?: number
   parcel?: number
   discount?: number
@@ -155,7 +154,6 @@ export interface ProductColor {
   slug?: string
   hexadecimal?: string
   image?: nullable<ProductImage>
-  product_images?: ProductColorImage[]
 }
 
 export interface ProductComponentGroup {

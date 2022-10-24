@@ -28,8 +28,7 @@ export class ProductQueries {
         name,
         slug,
         hexadecimal,
-        image ${this.getImageFields()},
-        product_images {src, alt, color_ids}
+        image ${this.getImageFields()}
     }`
   }
 
@@ -191,7 +190,6 @@ export class ProductQueries {
       'is_virtual',
       'is_pre_sale',
       `images ${this.getImageFields()}`,
-      `product_images ${this.getImageFields()}`,
       'video',
       'weight',
       'depth',

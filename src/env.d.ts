@@ -16,18 +16,19 @@ interface shop {
     blogPost?: any
     brand?: any
     cart?: any
+    freight?: any
     landing_pages?: any
     menu?: any
+    newsletter?: any
     pages?: any
     page?: any
     scripts?: any
+    sidebar?: any
     sections?: any
     settings?: any
     shop?: any
     products?: any
     user?: any
-    sidebar?: any
-    freight?: any
   }
 }
 
