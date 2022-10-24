@@ -11,11 +11,6 @@ export interface NewsletterResponse {
   sendMailing: Newsletter
 }
 
-export interface OptionsSubscribeNewsletter {
-  input: NewsletterInput
-  fields?: NewsletterFields[]
-}
-
 export interface NewsletterInput {
   email: string
   name?: string

@@ -6,7 +6,7 @@ const Repository = shop_ctx.mock?.newsletter ? NewsletterRepositoryJson : Newsle
 
 export class NewsletterService {
   static async subscribe(userData: NewsletterInput, fields?: NewsletterFields[]): Promise<Newsletter> {
-    const newsletterResult = await Repository.subscribe({ input: userData, fields })
+    const newsletterResult = await Repository.subscribe(userData)
     return newsletterResult
   }
 }
