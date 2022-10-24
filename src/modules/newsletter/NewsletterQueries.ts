@@ -1,5 +1,5 @@
 export class NewsletterQueries {
-  fields: null | Array<string>
+  fields: string[] | null
 
   constructor() {
     this.fields = this.defaultFields()
