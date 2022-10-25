@@ -19,7 +19,7 @@ export class BlogPostService {
 
   static async getList(
     { page, first = 6, post_category_id }: BlogPostListFilter,
-    fields?: Array<BlogPostFields>
+    fields?: BlogPostFields[]
   ): Promise<BlogPostList> {
     const result: BlogPostList = await Repository.getList({
       filter: {

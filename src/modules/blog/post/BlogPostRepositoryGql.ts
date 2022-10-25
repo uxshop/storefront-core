@@ -41,7 +41,7 @@ export class BlogPostRepositoryGql {
     }
   }
 
-  static async getById(id: number, fields?: Array<BlogPostFields>): Promise<Post> {
+  static async getById(id: number, fields?: BlogPostFields[]): Promise<Post> {
     return this.getBlogPost({ filter: { id: id }, fields: fields })
   }
 

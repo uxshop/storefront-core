@@ -11,7 +11,7 @@ describe('Blog Category Module', () => {
 
   it('Should get blog category by id with selected fields succeffully', async () => {
     const ID_FILTER = '1064'
-    const SELECTED_FIELDS: Array<BlogCategoryFields> = ['id', 'name']
+    const SELECTED_FIELDS: BlogCategoryFields[] = ['id', 'name']
     const blogCategoryResult = await BlogCategoryService.getById(ID_FILTER, SELECTED_FIELDS)
     const blogCategoryResultFields = Object.keys(blogCategoryResult).filter(key => key != '__typename')
     expect(blogCategoryResultFields).toEqual(SELECTED_FIELDS)
