@@ -10,7 +10,7 @@ import {
 import { BlogCategoryQueries } from './BlogCategoryQueries'
 
 export class BlogCategoryRepositoryGql {
-  static async getList(fields?: Array<BlogCategoryFields>): Promise<Array<BlogCategory>> {
+  static async getList(fields?: BlogCategoryFields[]): Promise<BlogCategory[]> {
     const blogCategoryQuery = new BlogCategoryQueries(fields)
     const blogCategoryListQuery: string = blogCategoryQuery.listFullQuery()
     try {
@@ -39,11 +39,11 @@ export class BlogCategoryRepositoryGql {
     }
   }
 
-  static async getById(id: number, fields?: Array<BlogCategoryFields>): Promise<BlogCategory> {
+  static async getById(id: number, fields?: BlogCategoryFields[]): Promise<BlogCategory> {
     return this.getOne({ fields: fields || null, filter: { id: id } })
   }
 
-  static async getBySlug(slug: string, fields?: Array<BlogCategoryFields>): Promise<BlogCategory> {
+  static async getBySlug(slug: string, fields?: BlogCategoryFields[]): Promise<BlogCategory> {
     return this.getOne({ fields: fields || null, filter: { slug: slug } })
   }
 }

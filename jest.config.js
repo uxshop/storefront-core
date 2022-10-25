@@ -4,6 +4,7 @@ const apps = require('./src/mocks/apps/apps.json')
 const sidebar = require('./src/mocks/sidebar/sidebar.json')
 const freight = require('./src/mocks/freight/freight.json')
 const newsletter = require('./src/mocks/newsletter/newsletter.json')
+const blogPost = require('./src/mocks/blog/blog-post.json')
 
 module.exports = {
   preset: 'ts-jest',
