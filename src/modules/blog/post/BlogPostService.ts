@@ -1,25 +1,32 @@
-import { Post } from '../../../types/PostTypes'
+import { normalizePagination } from '../../../helpers/PaginationHelper'
 import { BlogPostRepositoryGql } from './BlogPostRepositoryGql'
 import { BlogPostRepositoryJson } from './BlogPostRepositoryJson'
+import { Post } from '../../../types/PostTypes'
 import { BlogPostFields, BlogPostList, BlogPostListFilter } from './BlogPostTypes'
 
 const Repository = shop_ctx.mock?.blogPost ? BlogPostRepositoryJson : BlogPostRepositoryGql
 
 export class BlogPostService {
-  static async getById(id: string, fields?: Array<BlogPostFields>): Promise<Post> {
+  static async getById(id: string, fields?: BlogPostFields[]): Promise<Post> {
     const result: Post = await Repository.getById(Number(id), fields)
     return result
   }
 
-  static async getBySlug(slug: string, fields?: Array<BlogPostFields>): Promise<Post> {
+  static async getBySlug(slug: string, fields?: BlogPostFields[]): Promise<Post> {
     const result: Post = await Repository.getBySlug(slug, fields)
     return result
   }
 
-  static async getList(paginationFilter: BlogPostListFilter, fields?: Array<BlogPostFields>): Promise<BlogPostList> {
+  static async getList(
+    { page, first = 6, post_category_id }: BlogPostListFilter,
+    fields?: Array<BlogPostFields>
+  ): Promise<BlogPostList> {
     const result: BlogPostList = await Repository.getList({
-      fields: fields || null,
-      filter: paginationFilter || { page: 1 }
+      filter: {
+        ...normalizePagination(page, first),
+        post_category_id
+      },
+      fields: fields
     })
     return result
   }

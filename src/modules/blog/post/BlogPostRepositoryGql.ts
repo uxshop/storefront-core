@@ -41,11 +41,11 @@ export class BlogPostRepositoryGql {
     }
   }
 
-  static async getById(id: Number, fields?: Array<BlogPostFields>): Promise<Post> {
-    return this.getBlogPost({ fields: fields || null, filter: { id: id } })
+  static async getById(id: number, fields?: Array<BlogPostFields>): Promise<Post> {
+    return this.getBlogPost({ filter: { id: id }, fields: fields })
   }
 
-  static async getBySlug(slug: String, fields?: Array<BlogPostFields>): Promise<Post> {
-    return this.getBlogPost({ fields: fields || null, filter: { slug: slug } })
+  static async getBySlug(slug: string, fields?: BlogPostFields[]): Promise<Post> {
+    return this.getBlogPost({ filter: { slug: slug }, fields: fields })
   }
 }

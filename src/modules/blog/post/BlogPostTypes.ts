@@ -1,5 +1,4 @@
 import { Post } from '../../../types/PostTypes'
-import { nullable } from '../../../types/NullableTypes'
 import { PageableEdgeObject, PageableListObject, PaginationFilter } from '../../../types/PaginationTypes'
 
 export interface BlogPostResponse {
@@ -15,23 +14,23 @@ export interface BlogPostEdges extends PageableEdgeObject<Post> {}
 export interface BlogPostList extends PageableListObject<BlogPostEdges> {}
 
 export interface OptionsGetBlogPost {
-  fields: nullable<Array<BlogPostFields>>
   filter: BlogPostFilter
+  fields?: BlogPostFields[]
 }
 
 export interface BlogPostListFilter extends PaginationFilter {
-  post_category_id?: nullable<Number>
+  post_category_id?: number
 }
 
 export interface OptionsGetBlogPostList {
-  fields: nullable<Array<BlogPostFields>>
   filter: BlogPostListFilter
+  fields?: BlogPostFields[]
 }
 
 export interface BlogPostFilter {
-  id?: nullable<Number>
-  slug?: nullable<String>
-  post_category_id?: nullable<Number>
+  id?: number
+  slug?: string
+  post_category_id?: number
 }
 
 export type BlogPostFields =
