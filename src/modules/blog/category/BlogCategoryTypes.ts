@@ -20,11 +20,11 @@ export interface BlogCategoryResponse {
 }
 
 export interface BlogCategoryListResponse {
-  blogCategories: Array<BlogCategory>
+  blogCategories: BlogCategory[]
 }
 
 export interface OptionsGetBlogCategory {
-  fields: nullable<Array<BlogCategoryFields>>
+  fields: nullable<BlogCategoryFields[]>
   filter: BlogCategoryFilter
 }
 

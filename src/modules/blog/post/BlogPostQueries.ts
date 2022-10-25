@@ -15,7 +15,7 @@ export class BlogPostQueries {
       'post_category_id',
       'name',
       'slug',
-      'image',
+      'image {src, alt}',
       'description',
       'tags',
       'active',
