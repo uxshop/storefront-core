@@ -24,7 +24,7 @@
     "webfontloader": "^1.6.28"
   },
   "devDependencies": {
-    "@types/jest": "^27.0.3",
+    "@types/jest": "^27.5.2",
     "@types/webfontloader": "^1.6.33",
     "isomorphic-fetch": "^3.0.0",
     "jest": "^27.4.2",
