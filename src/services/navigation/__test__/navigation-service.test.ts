@@ -16,27 +16,27 @@ import blogCategoryItem from '../../../mocks/blog/blog-category.json'
 
 describe('Navigation Service', () => {
   it('Should get category link', async () => {
-    const categoryLink = getCategoryLink(categoryItem)
+    const categoryLink = getCategoryLink(categoryItem.slug)
     expect(categoryLink).toEqual(categoryLink)
   })
   it('Should get product link', async () => {
-    const productLink = getProductLink(productItem)
+    const productLink = getProductLink(productItem.slug)
     expect(productLink).toEqual(productLink)
   })
   it('Should get brand link', async () => {
-    const brandLink = getBrandLink(brandItem)
+    const brandLink = getBrandLink(brandItem.slug)
     expect(brandLink).toEqual(brandLink)
   })
   it('Should institutional link', async () => {
-    const institutionalLink = getInstitutionalLink(institutionalItem)
+    const institutionalLink = getInstitutionalLink(institutionalItem.slug)
     expect(institutionalLink).toEqual(institutionalLink)
   })
   it('Should get blog post link', async () => {
-    const blogPostLink = getBlogPostLink(blogPostItem)
+    const blogPostLink = getBlogPostLink(blogCategoryItem.slug, blogPostItem.slug)
     expect(blogPostLink).toEqual(blogPostLink)
   })
   it('Should get blog category link', async () => {
-    const blogCategoryLink = getBlogCategoryLink(blogCategoryItem)
+    const blogCategoryLink = getBlogCategoryLink(blogCategoryItem.slug)
     expect(blogCategoryLink).toEqual(blogCategoryLink)
   })
 })
