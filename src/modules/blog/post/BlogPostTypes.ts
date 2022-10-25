@@ -38,7 +38,7 @@ export type BlogPostFields =
   | 'post_category_id'
   | 'name'
   | 'slug'
-  | 'image'
+  | 'image {src}'
   | 'description'
   | 'tags'
   | 'active'
