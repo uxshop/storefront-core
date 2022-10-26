@@ -18,8 +18,15 @@ export interface OptionsGetBlogPost {
   fields?: BlogPostFields[]
 }
 
+export type BlogPostTokens = 'name' | 'slug' | 'description' | 'tags'
+export interface BlogPostFastSearch {
+  queryString: string
+  fields?: BlogPostTokens
+}
+
 export interface BlogPostListFilter extends PaginationFilter {
   post_category_id?: number
+  fastSearch?: BlogPostFastSearch
 }
 
 export interface OptionsGetBlogPostList {
