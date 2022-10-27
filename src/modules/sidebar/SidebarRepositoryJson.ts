@@ -1,7 +1,7 @@
 import { Sidebar, SidebarFilter } from './SidebarTypes'
 
 export class SidebarRepositoryJson {
-  static get(filter?: Array<SidebarFilter>): Sidebar {
+  static get(filter?: SidebarFilter[]): Sidebar {
     const mock = shop_ctx.mock?.sidebar
     const result = mock && { ...mock, filtered: [...mock.filtered] }
     !filter && this.adjustFilteredField(result)

@@ -1,8 +1,8 @@
 import { nullable } from '../../types/NullableTypes'
 
 export interface Sidebar {
-  filtered: nullable<Array<SidebarFilteredItems>>
-  filters: Array<Filters>
+  filtered: nullable<SidebarFilteredItems[]>
+  filters: Filters[]
 }
 
 export interface SidebarFilteredItems {
@@ -13,8 +13,8 @@ export interface SidebarFilteredItems {
 
 export interface Filters {
   type: string
-  description: string
-  items: Array<SidebarItem>
+  name: string
+  items: SidebarItem[]
 }
 
 export interface SidebarResponse {

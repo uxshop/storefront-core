@@ -9,7 +9,7 @@
   "filters": [
     {
       "type": "attribute",
-      "description": "Attributo",
+      "name": "Attributo",
       "items": [
         {
           "id": 461720,
@@ -39,7 +39,7 @@
     },
     {
       "type": "attribute_secondary",
-      "description": "Attributo Secundário",
+      "name": "Attributo Secundário",
       "items": [
         {
           "id": 6450,
@@ -53,17 +53,17 @@
     },
     {
       "type": "brand",
-      "description": "Marca",
+      "name": "Marca",
       "items": []
     },
     {
       "type": "category",
-      "description": "Categoria",
+      "name": "Categoria",
       "items": []
     },
     {
       "type": "color",
-      "description": "Cor",
+      "name": "Cor",
       "items": [
         {
           "id": 61274,
