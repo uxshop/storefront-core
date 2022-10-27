@@ -1,19 +1,19 @@
 export interface Script {
-  id?: string
+  id: string
   position?: number
-  name?: string
-  location?: string
+  name: string
+  location: string
   page?: string
   load_method?: string
   content?: string
-  category?: string
-  active?: boolean
+  category: string
+  active: boolean
   description?: string
   url?: string
 }
 
 export interface ScriptsResponse {
-  scripts: Array<Script>
+  scripts: Script[]
 }
 
 export interface ScriptFilter {
@@ -22,7 +22,7 @@ export interface ScriptFilter {
 }
 
 export interface OptionsGetScripts {
-  fields: Array<ScriptFields>
+  fields: ScriptFields[]
   filter?: ScriptFilter
 }
 
