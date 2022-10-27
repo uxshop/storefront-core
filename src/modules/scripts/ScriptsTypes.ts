@@ -1,13 +1,13 @@
 export interface Script {
   id: string
-  position?: number
   name: string
+  category: string
   location: string
+  active: boolean
+  position?: number
   page?: string
   load_method?: string
   content?: string
-  category: string
-  active: boolean
   description?: string
   url?: string
 }
