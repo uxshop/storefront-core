@@ -37,6 +37,6 @@ export type SidebarFields = 'filtered' | 'filters'
 
 export type SidebarFilteredItemsFields = 'type' | 'id' | 'name'
 
-export type FiltersFields = 'type' | 'description' | 'items'
+export type FiltersFields = 'type' | 'name' | 'items'
 
 export type SidebarItemFields = 'id' | 'name' | 'position'
