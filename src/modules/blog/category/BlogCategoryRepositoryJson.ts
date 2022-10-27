@@ -1,11 +1,11 @@
 import { BlogCategory, BlogCategoryFields } from './BlogCategoryTypes'
 
 export class BlogCategoryRepositoryJson {
-  static async getList(fields?: Array<BlogCategoryFields>) {
+  static async getList(fields?: BlogCategoryFields[]) {
     return [...shop_ctx.mock?.blogCategory] || []
   }
 
-  static async getById(id: number, fields?: Array<BlogCategoryFields>) {
+  static async getById(id: number, fields?: BlogCategoryFields[]) {
     const blogCategories = [...shop_ctx.mock?.blogCategory]
     const blogCategory = blogCategories && blogCategories.find(blogCategory => blogCategory.id == id)
 
@@ -20,7 +20,7 @@ export class BlogCategoryRepositoryJson {
     return result || {}
   }
 
-  static async getBySlug(slug: string, fields?: Array<BlogCategoryFields>) {
+  static async getBySlug(slug: string, fields?: BlogCategoryFields[]) {
     const blogCategories = [...shop_ctx.mock?.blogCategory]
     const blogCategory = blogCategories && blogCategories.find(blogCategory => blogCategory.slug == slug)
 
@@ -35,7 +35,7 @@ export class BlogCategoryRepositoryJson {
     return result || {}
   }
 
-  private static applyFieldFilters(result: BlogCategory, fields?: Array<BlogCategoryFields>) {
+  private static applyFieldFilters(result: BlogCategory, fields?: BlogCategoryFields[]) {
     const isFIeldNotSelected = entry => !fields.includes(entry)
 
     const deleteFieldIfNecessary = entry => {

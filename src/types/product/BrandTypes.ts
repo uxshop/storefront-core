@@ -5,8 +5,6 @@ export interface Brand {
   id: number
   name: string
   slug: string
-  created_at: string
-  updated_at: string
   url: string
   external_id?: nullable<string>
   hotsite_id?: nullable<number>
@@ -19,4 +17,6 @@ export interface Brand {
   meta_description?: nullable<string>
   position?: nullable<number>
   active?: nullable<boolean>
+  created_at?: string
+  updated_at?: string
 }
