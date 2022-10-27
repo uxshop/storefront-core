@@ -12,7 +12,7 @@ interface OptionsGetList {
 
 export class ProductService {
   static async getList({ filter, agg = { field: 'product_id' }, fields }: OptionsGetList): Promise<ProductList> {
-    const { items, sidebarFilters, ...remainFilter } = filter
+    const { items, ...remainFilter } = filter
     const result: ProductList = await Repository.getList({
       fields: fields || null,
       filter: { ...normalizePagination(filter?.page || 1, filter?.items), ...remainFilter },
