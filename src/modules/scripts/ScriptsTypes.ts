@@ -1,17 +1,15 @@
-import { nullable } from '../../types/NullableTypes'
-
 export interface Script {
-  id?: nullable<String>
-  position?: nullable<Number>
-  name?: nullable<String>
-  location?: nullable<String>
-  page?: nullable<String>
-  load_method?: nullable<String>
-  content?: nullable<String>
-  category?: nullable<String>
-  active?: nullable<Boolean>
-  description?: nullable<String>
-  url?: nullable<String>
+  id?: string
+  position?: number
+  name?: string
+  location?: string
+  page?: string
+  load_method?: string
+  content?: string
+  category?: string
+  active?: boolean
+  description?: string
+  url?: string
 }
 
 export interface ScriptsResponse {
@@ -19,12 +17,12 @@ export interface ScriptsResponse {
 }
 
 export interface ScriptFilter {
-  page?: nullable<String>
-  location?: nullable<String>
+  page?: string
+  location?: string
 }
 
 export interface OptionsGetScripts {
-  fields: nullable<Array<ScriptFields>>
+  fields: Array<ScriptFields>
   filter?: ScriptFilter
 }
 

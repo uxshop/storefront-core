@@ -20,11 +20,11 @@ export class ScriptsRepositoryGql {
     return this.get({ fields: fields || null })
   }
 
-  static async getListByPage(page: String, fields?: Array<ScriptFields>): Promise<Array<Script>> {
+  static async getListByPage(page: string, fields?: Array<ScriptFields>): Promise<Array<Script>> {
     return this.get({ filter: { page: page }, fields: fields || null })
   }
 
-  static async getListByLocation(location: String, fields?: Array<ScriptFields>): Promise<Array<Script>> {
+  static async getListByLocation(location: string, fields?: Array<ScriptFields>): Promise<Array<Script>> {
     return this.get({ filter: { location: location }, fields: fields || null })
   }
 }

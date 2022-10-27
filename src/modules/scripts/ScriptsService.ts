@@ -10,12 +10,12 @@ export class ScriptsService {
     return result
   }
 
-  static async getListByPage(page: String, fields?: Array<ScriptFields>): Promise<Array<Script>> {
+  static async getListByPage(page: string, fields?: Array<ScriptFields>): Promise<Array<Script>> {
     const result: Array<Script> = await Repository.getListByPage(page, fields)
     return result
   }
 
-  static async getListByLocation(location: String, fields?: Array<ScriptFields>): Promise<Array<Script>> {
+  static async getListByLocation(location: string, fields?: Array<ScriptFields>): Promise<Array<Script>> {
     const result: Array<Script> = await Repository.getListByLocation(location, fields)
     return result
   }
