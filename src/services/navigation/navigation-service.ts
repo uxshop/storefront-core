@@ -7,8 +7,8 @@ export class NavigationService {
     return `blog/${blogCategorySlug}`
   }
 
-  static getBlogPostLink(blogPostSlug: string, blogCategorySlug: string): string {
-    return `blog/${blogCategorySlug}/${blogPostSlug}`
+  static getBlogPostLink(blogPostSlug: string): string {
+    return `blog/${blogPostSlug}`
   }
 
   static getCategoryLink(categorySlug: string): string {
