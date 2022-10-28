@@ -1,5 +1,5 @@
 export class ScriptsQueries {
-  fields: null | Array<string>
+  fields: null | string[]
 
   constructor(fields) {
     this.fields = fields || this.defaultFields()

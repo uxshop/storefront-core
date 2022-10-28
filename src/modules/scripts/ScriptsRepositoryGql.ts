@@ -3,7 +3,7 @@ import { ScriptsQueries } from './ScriptsQueries'
 import { OptionsGetScripts, Script, ScriptFields, ScriptsResponse } from './ScriptsTypes'
 
 export class ScriptsRepositoryGql {
-  private static async get(optionsGetScripts: OptionsGetScripts): Promise<Array<Script>> {
+  private static async get(optionsGetScripts: OptionsGetScripts): Promise<Script[]> {
     const { fields, filter } = optionsGetScripts
     const scriptsQuery = new ScriptsQueries(fields)
     const getScriptsQuery: string = scriptsQuery.listFullQuery()
@@ -16,15 +16,15 @@ export class ScriptsRepositoryGql {
     }
   }
 
-  static async getList(fields?: Array<ScriptFields>): Promise<Array<Script>> {
+  static async getList(fields?: ScriptFields[]): Promise<Script[]> {
     return this.get({ fields: fields || null })
   }
 
-  static async getListByPage(page: String, fields?: Array<ScriptFields>): Promise<Array<Script>> {
+  static async getListByPage(page: string, fields?: ScriptFields[]): Promise<Script[]> {
     return this.get({ filter: { page: page }, fields: fields || null })
   }
 
-  static async getListByLocation(location: String, fields?: Array<ScriptFields>): Promise<Array<Script>> {
+  static async getListByLocation(location: string, fields?: ScriptFields[]): Promise<Script[]> {
     return this.get({ filter: { location: location }, fields: fields || null })
   }
 }

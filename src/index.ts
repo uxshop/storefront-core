@@ -25,6 +25,7 @@ import { FreightService } from './modules/freight/FreightService'
 
 import { SeoServiceFactory } from './services/seo/SeoServiceFactory'
 import { CookieService } from './services/CookieService'
+import { NavigationService } from './services/navigation/navigation-service'
 
 import { Socket } from './socket'
 
@@ -52,5 +53,6 @@ export {
   FreightService,
   SeoServiceFactory,
   CookieService,
-  Socket
+  Socket,
+  NavigationService
 }

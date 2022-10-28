@@ -1,5 +1,5 @@
 export class SidebarQueries {
-  fields: null | Array<string>
+  fields: null | string[]
 
   constructor() {
     this.fields = this.defaultFields()
@@ -10,7 +10,7 @@ export class SidebarQueries {
   }
 
   private defaultFields() {
-    return ['filtered {type, id, name}', 'filters {type, description, items {id, name, position}}']
+    return ['filtered {type, id, name}', 'filters {type, name, items {id, name, position}}']
   }
 
   getQuery() {
