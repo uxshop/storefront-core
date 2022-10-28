@@ -6,15 +6,9 @@ export class SectionsRepositoryGql {
   static async getOne(filter?: SectionFilter): Promise<Section<unknown>> {
     const sectionsQuery = new SectionsQueries()
     const sectionsGetOneQuery: string = sectionsQuery.getOnefullQuery()
+    const { section }: SectionResponse = await client.query(sectionsGetOneQuery, filter && { filter: { ...filter } })
+    const data = JSON.parse(section.data)
 
-    try {
-      const { section }: SectionResponse = await client.query(sectionsGetOneQuery, filter && { filter: { ...filter } })
-
-      const data = JSON.parse(section.data)
-
-      return { ...section, data }
-    } catch (error) {
-      throw new Error(error)
-    }
+    return { ...section, data }
   }
 }
