@@ -1,6 +1,6 @@
 export interface Setting<T> {
-  shop_id: Number
-  theme_id: Number
+  shopId: Number
+  themeId: Number
   version: String
   page: String
   data: T
@@ -11,8 +11,8 @@ export interface SettingResponse {
 }
 
 export interface SettingFilter {
-  section_type?: String
-  theme_id?: Number
+  sectionType?: String
+  themeId?: Number
   version?: String
   page?: String
 }

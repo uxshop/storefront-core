@@ -6,7 +6,7 @@ export interface Script {
   active: boolean
   position?: number
   page?: string
-  load_method?: string
+  loadMethod?: string
   content?: string
   description?: string
   url?: string
@@ -32,7 +32,7 @@ export type ScriptFields =
   | 'name'
   | 'location'
   | 'page'
-  | 'load_method'
+  | 'loadMethod'
   | 'content'
   | 'category'
   | 'active'

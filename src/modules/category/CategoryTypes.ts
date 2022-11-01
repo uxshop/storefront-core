@@ -14,19 +14,19 @@ export interface Category {
   breadcrumb?: nullable<string>
   url?: nullable<string>
   active?: nullable<boolean>
-  created_at?: string
-  updated_at?: string
-  parent_id?: nullable<number>
-  hotsite_id?: nullable<number>
-  external_id?: nullable<number>
+  createdAt?: string
+  updatedAt?: string
+  parentId?: nullable<number>
+  hotsiteId?: nullable<number>
+  externalId?: nullable<number>
   description?: nullable<string>
   image?: nullable<CategoryImage>
   banner?: nullable<CategoryImage>
-  banner_link?: nullable<string>
-  google_taxonomy_id?: nullable<number>
-  meta_title?: nullable<string>
-  meta_keywords?: nullable<string>
-  meta_description?: nullable<string>
+  bannerLink?: nullable<string>
+  googleTaxonomyId?: nullable<number>
+  metaTitle?: nullable<string>
+  metaKeywords?: nullable<string>
+  metaDescription?: nullable<string>
   children?: Array<Category>
 }
 
@@ -58,18 +58,18 @@ export type CategoryFields =
   | 'breadcrumb'
   | 'url'
   | 'active'
-  | 'created_at'
-  | 'updated_at'
-  | 'parent_id'
-  | 'hotsite_id'
-  | 'external_id'
+  | 'createdAt'
+  | 'updatedAt'
+  | 'parentId'
+  | 'hotsiteId'
+  | 'externalId'
   | 'description'
   | 'image'
   | 'banner'
-  | 'banner_link'
-  | 'google_taxonomy_id'
-  | 'meta_title'
-  | 'meta_keywords'
-  | 'meta_description'
+  | 'bannerLink'
+  | 'googleTaxonomyId'
+  | 'metaTitle'
+  | 'metaKeywords'
+  | 'metaDescription'
 
 export type CategoryTreeFields = CategoryFields | 'children'

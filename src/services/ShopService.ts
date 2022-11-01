@@ -21,8 +21,8 @@ export class ShopConfigService {
   private getApisUrl() {
     const defaultApis = import.meta.env.MODE !== 'production' ? URL_APIS.homolog : URL_APIS.production
     const apis = {
-      api_editor: this.config.api_editor || defaultApis.api_editor,
-      api_url: this.config.api_url || defaultApis.api_url
+      api_editor: this.config.apiEditor || defaultApis.api_editor,
+      api_url: this.config.apiUrl || defaultApis.api_url
     }
     return apis
   }
@@ -37,7 +37,7 @@ export class ShopConfigService {
       token: this.config.token,
       domain: this.shop.domain || null,
       mock: this.config.mock || null,
-      base_path: this.config.base_path || '/'
+      basePath: this.config.basePath || '/'
     }
   }
 

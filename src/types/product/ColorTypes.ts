@@ -9,8 +9,8 @@ export interface Color {
   url: string
   hexadecimal?: nullable<string>
   active?: nullable<boolean>
-  external_id?: nullable<string>
+  externalId?: nullable<string>
   image?: nullable<Image>
-  product_images?: nullable<ProductImage[]>
+  productImages?: nullable<ProductImage[]>
   position?: nullable<number>
 }

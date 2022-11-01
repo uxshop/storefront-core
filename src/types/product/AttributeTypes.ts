@@ -6,17 +6,17 @@ export interface Attribute {
   slug: string
   values: nullable<AttributeValue[]>
   active?: nullable<boolean>
-  external_id?: nullable<string>
+  externalId?: nullable<string>
 }
 
 export interface AttributeValue {
   id: number
   name: string
   slug: string
-  created_at: string
-  updated_at: string
-  attribute_id?: nullable<number>
-  external_id?: nullable<string>
+  createdAt: string
+  updatedAt: string
+  attributeId?: nullable<number>
+  externalId?: nullable<string>
   position?: nullable<number>
   active?: nullable<boolean>
 }

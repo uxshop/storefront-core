@@ -4,19 +4,19 @@ import { Image } from './ImageTypes'
 
 export interface Post {
   id: number
-  post_category_id: number
+  postCategoryid: number
   name: string
   description: string
   slug: string
-  created_at: string
-  updated_at: string
+  createdAt: string
+  updatedAt: string
   url: string
   image?: nullable<Image>
   tags?: nullable<Tag[]>
   active?: nullable<boolean>
-  meta_title?: nullable<string>
-  meta_description?: nullable<string>
-  meta_keywords?: nullable<string>
+  metaTitle?: nullable<string>
+  metaDescription?: nullable<string>
+  metaKeywords?: nullable<string>
   category?: nullable<Category>
 }
 

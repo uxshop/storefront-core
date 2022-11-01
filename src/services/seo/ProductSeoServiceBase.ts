@@ -16,8 +16,8 @@ export class ProductSeoServiceBase extends SeoService {
         priceCurrency: 'BRL',
         priceValidUntil: new Date(new Date().setMonth(new Date().getMonth() + 1)).toISOString(),
         price: product.price,
-        lowPrice: product.min_price_range,
-        highPrice: product.max_price_range,
+        lowPrice: product.minPriceRange,
+        highPrice: product.maxPriceRange,
         offerCount: product.variations.length ?? 1,
         itemCondition: 'http://schema.org/NewCondition',
         availability: `http://schema.org/${product.balance > 1 ? 'InStock' : 'OutOfStock'}`
@@ -32,7 +32,7 @@ export class ProductSeoServiceBase extends SeoService {
     }
 
     let billetTotal = product.payments.billet.total ?? null
-    if (billetTotal < product.min_price_range) {
+    if (billetTotal < product.minPriceRange) {
       data.offers.price = billetTotal
       data.offers.lowPrice = billetTotal
     }

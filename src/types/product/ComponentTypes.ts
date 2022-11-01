@@ -6,26 +6,26 @@ export interface Component {
   name: string
   slug: string
   url: string
-  grid_id?: nullable<number>
+  gridId?: nullable<number>
   image?: nullable<Image>
-  external_id?: nullable<string>
-  category_default_id?: nullable<number>
-  brand_id?: nullable<number>
-  color_id?: nullable<number>
-  hotsite_id?: nullable<number>
+  externalId?: nullable<string>
+  categoryDefaultId?: nullable<number>
+  brandId?: nullable<number>
+  colorId?: nullable<number>
+  hotsiteId?: nullable<number>
   description?: nullable<string>
-  short_description?: nullable<string>
+  shortDescription?: nullable<string>
   relevance?: nullable<number>
   tags?: nullable<string>
-  min_quantity?: nullable<number>
-  max_quantity?: nullable<number>
-  sell_in_kit_only?: nullable<boolean>
-  meta_title?: nullable<string>
-  meta_description?: nullable<string>
-  meta_keywords?: nullable<string>
+  minQuantity?: nullable<number>
+  maxQuantity?: nullable<number>
+  sellInKitOnly?: nullable<boolean>
+  metaTitle?: nullable<string>
+  metaDescription?: nullable<string>
+  metaKeywords?: nullable<string>
   kit?: nullable<boolean>
-  kit_markup?: nullable<number>
-  is_virtual?: nullable<boolean>
-  is_pre_sale?: nullable<boolean>
-  product_component_group_id?: nullable<number>
+  kitMarkup?: nullable<number>
+  isVirtual?: nullable<boolean>
+  isPreSale?: nullable<boolean>
+  productComponentGroupId?: nullable<number>
 }

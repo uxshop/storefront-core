@@ -4,26 +4,26 @@ import { nullable } from '../../types/NullableTypes'
 export interface User {
   id?: nullable<String>
   email?: nullable<String>
-  first_name?: nullable<String>
-  last_name?: nullable<String>
+  firstName?: nullable<String>
+  lastName?: nullable<String>
   gender?: nullable<String>
   newsletter?: nullable<Boolean>
   marketplace?: nullable<Boolean>
-  customer_group_id?: nullable<Number>
-  external_id?: nullable<Number>
+  customerGroupId?: nullable<Number>
+  externalId?: nullable<Number>
   entity?: nullable<String>
   company?: nullable<String>
   ie?: nullable<String>
   birthday?: nullable<String>
   phone?: nullable<String>
   token?: nullable<string>
-  reset_token?: nullable<String>
+  resetToken?: nullable<String>
   note?: nullable<String>
-  facebook_id?: nullable<String>
-  google_id?: nullable<String>
+  facebookId?: nullable<String>
+  googleId?: nullable<String>
   active?: nullable<Boolean>
-  created_at?: nullable<String>
-  updated_at?: nullable<String>
+  createdAt?: nullable<String>
+  updatedAt?: nullable<String>
   doc?: nullable<String>
   group?: nullable<UserGroup>
   address?: nullable<UserAddress>
@@ -73,26 +73,26 @@ export interface LoginCredentials {
 export type UserFields =
   | 'id'
   | 'email'
-  | 'first_name'
-  | 'last_name'
+  | 'firstName'
+  | 'lastName'
   | 'gender'
   | 'newsletter'
   | 'marketplace'
-  | 'customer_group_id'
-  | 'external_id'
+  | 'customerGroupId'
+  | 'externalId'
   | 'entity'
   | 'company'
   | 'ie'
   | 'birthday'
   | 'phone'
   | 'token'
-  | 'reset_token'
+  | 'resetToken'
   | 'note'
-  | 'facebook_id'
-  | 'google_id'
+  | 'facebookId'
+  | 'googleId'
   | 'active'
-  | 'created_at'
-  | 'updated_at'
+  | 'createdAt'
+  | 'updatedAt'
   | 'doc'
   | 'group'
   | 'address'
