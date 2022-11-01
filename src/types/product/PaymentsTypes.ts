@@ -1,6 +1,6 @@
 export interface Payments {
   billet: PaymentItem
-  creditcard: PaymentItem
+  creditard: PaymentItem
   pix: PaymentItem
 }
 
@@ -10,9 +10,9 @@ export interface PaymentItem {
   discount: number
   parcels: number
   total: number
-  parcel_price: number
-  has_interest: boolean
-  max_installment: PaymentMaxInstallment
+  parcelPrice: number
+  hasInterest: boolean
+  maxInstallment: PaymentMaxInstallment
 }
 
 export interface PaymentMaxInstallment {
@@ -21,5 +21,5 @@ export interface PaymentMaxInstallment {
   discount: number
   interest: number
   total: number
-  parcel_price: number
+  parcelPrice: number
 }

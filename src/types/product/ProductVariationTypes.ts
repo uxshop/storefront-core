@@ -5,29 +5,29 @@ import { nullable } from '../NullableTypes'
 
 export interface ProductVariation {
   id: number
-  product_id: number
+  productId: number
   price: number
-  created_at: string
-  updated_at: string
-  grid_id?: nullable<number>
-  color_id?: nullable<number>
-  color_secondary_id?: nullable<number>
-  attribute_value_id?: nullable<number>
-  attribute_value_secondary_id?: nullable<number>
-  external_id?: nullable<string>
+  createdAt: string
+  updatedAt: string
+  gridId?: nullable<number>
+  colorId?: nullable<number>
+  colorSecondaryId?: nullable<number>
+  attributeValueId?: nullable<number>
+  attributeValueSecondaryId?: nullable<number>
+  externalId?: nullable<string>
   reference?: nullable<string>
   slug?: nullable<string>
-  price_compare?: nullable<number>
+  priceCompare?: nullable<number>
   sku?: nullable<string>
   gtin?: nullable<string>
   mpn?: nullable<string>
-  additional_shipping_time?: nullable<number>
+  additionalShippingTime?: nullable<number>
   images?: nullable<ProductImage[]>
   position?: nullable<number>
   active?: nullable<boolean>
   balance?: nullable<number>
-  selling_out_of_stock?: nullable<boolean>
+  sellingOutOfStock?: nullable<boolean>
   color?: nullable<Color>
   attribute?: nullable<AttributeValue>
-  attribute_secondary?: nullable<AttributeValue>
+  attributeSecondary?: nullable<AttributeValue>
 }

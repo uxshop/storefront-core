@@ -16,22 +16,22 @@ export class BrandQueries {
   private defaultFields() {
     return [
       'id',
-      'hotsite_id',
-      'external_id',
+      'hotsiteId',
+      'externalId',
       'name',
       'slug',
       'description',
-      'short_description',
+      'shortDescription',
       `image ${this.getImageFields()}`,
       `banner ${this.getImageFields()}`,
-      'meta_title',
-      'meta_keywords',
-      'meta_description',
+      'metaTitle',
+      'metaKeywords',
+      'metaDescription',
       'position',
       'url',
       'active',
-      'created_at',
-      'updated_at'
+      'createdAt',
+      'updatedAt'
     ]
   }
 

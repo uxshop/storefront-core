@@ -10,7 +10,7 @@ export class SettingsQueries {
   }
 
   private defaultFields() {
-    return ['shop_id', 'theme_id', 'version', 'page', 'data']
+    return ['shopId', 'themeId', 'version', 'page', 'data']
   }
 
   getOnefullQuery() {

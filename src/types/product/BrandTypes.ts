@@ -6,17 +6,17 @@ export interface Brand {
   name: string
   slug: string
   url: string
-  external_id?: nullable<string>
-  hotsite_id?: nullable<number>
+  externalId?: nullable<string>
+  hotsiteId?: nullable<number>
   description?: nullable<string>
-  short_description?: nullable<string>
+  shortDescription?: nullable<string>
   image?: nullable<Image>
   banner?: nullable<Image>
-  meta_title?: nullable<string>
-  meta_keywords?: nullable<string>
-  meta_description?: nullable<string>
+  metaTitle?: nullable<string>
+  metaKeywords?: nullable<string>
+  metaDescription?: nullable<string>
   position?: nullable<number>
   active?: nullable<boolean>
-  created_at?: string
-  updated_at?: string
+  createdAt?: string
+  updatedAt?: string
 }

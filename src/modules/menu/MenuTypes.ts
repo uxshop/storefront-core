@@ -12,25 +12,25 @@ export interface Menu {
 
 export interface MenuValues {
   id?: nullable<Number>
-  menu_id?: nullable<Number>
-  brand_id?: nullable<Number>
+  menuId?: nullable<Number>
+  brandId?: nullable<Number>
   name?: nullable<String>
-  menu_type?: nullable<String>
+  menuType?: nullable<String>
   slug?: nullable<String>
-  menu_type_slug?: nullable<String>
+  menuTypeSlug?: nullable<String>
   active?: nullable<Boolean>
-  created_at?: nullable<String>
+  createdAt?: nullable<String>
   image?: nullable<Image>
-  parent_id?: nullable<String>
-  page_id?: nullable<Number>
-  hotsite_id?: nullable<Number>
-  category_id?: nullable<Number>
+  parentId?: nullable<String>
+  pageId?: nullable<Number>
+  hotsiteId?: nullable<Number>
+  categoryId?: nullable<Number>
   banner?: nullable<String>
-  banner_link?: nullable<String>
-  is_featured?: nullable<Number>
+  bannerLink?: nullable<String>
+  isFeatured?: nullable<Number>
   link?: nullable<Number>
-  menu_type_link?: nullable<Number>
-  updated_at?: nullable<String>
+  menuTypeLink?: nullable<Number>
+  updatedAt?: nullable<String>
   position?: nullable<String>
   children?: Array<MenuValues>
 }
@@ -56,24 +56,24 @@ export type MenuFields = 'id' | 'name' | 'handle' | 'createdAt' | 'updatedAt' | 
 
 export type MenuValueFields =
   | 'id'
-  | 'menu_id'
-  | 'brand_id'
+  | 'menuId'
+  | 'brandId'
   | 'name'
-  | 'menu_type'
+  | 'menuType'
   | 'slug'
-  | 'menu_type_slug'
+  | 'menuTypeSlug'
   | 'active'
-  | 'created_at'
+  | 'createdAt'
   | 'image'
-  | 'parent_id'
-  | 'page_id'
-  | 'hotsite_id'
-  | 'category_id'
+  | 'parentId'
+  | 'pageId'
+  | 'hotsiteId'
+  | 'categoryId'
   | 'banner'
-  | 'banner_link'
-  | 'is_featured'
+  | 'bannerLink'
+  | 'isFeatured'
   | 'link'
-  | 'menu_type_link'
-  | 'updated_at'
+  | 'menuTypeLink'
+  | 'updatedAt'
   | 'position'
   | 'children'

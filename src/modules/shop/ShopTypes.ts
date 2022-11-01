@@ -2,46 +2,46 @@ import { nullable } from '../../types/NullableTypes'
 
 export interface Shop {
   id?: nullable<Number>
-  theme_id?: nullable<Number>
-  terms_user_id?: nullable<Number>
-  users_count?: nullable<Number>
-  products_count?: nullable<Number>
+  themeId?: nullable<Number>
+  termsUserId?: nullable<Number>
+  usersCount?: nullable<Number>
+  productsCount?: nullable<Number>
   name?: nullable<string>
   slug?: nullable<string>
-  dooca_domain?: nullable<string>
-  shipping_time_additional?: nullable<string>
-  shipping_time_additional_kit?: nullable<string>
-  append_to_head?: nullable<string>
-  append_to_body?: nullable<string>
+  doocaDomain?: nullable<string>
+  shippingTimeAdditional?: nullable<string>
+  shippingTimeAdditionalKit?: nullable<string>
+  appendToHead?: nullable<string>
+  appendToBody?: nullable<string>
   zipcode?: nullable<string>
-  customer_register_approves?: nullable<string>
-  customer_registerFor?: nullable<string>
-  terms_accepted_at?: nullable<string>
-  created_at?: nullable<string>
+  customerRegisterApproves?: nullable<string>
+  customerRegisterFor?: nullable<string>
+  termsAcceptedAt?: nullable<string>
+  createdAt?: nullable<string>
   notifications?: nullable<string>
-  schedule_delivery?: nullable<string>
+  scheduleDelivery?: nullable<string>
   active?: nullable<Boolean>
-  enable_beta?: nullable<Boolean>
+  enableBeta?: nullable<Boolean>
   ssl?: nullable<Boolean>
-  redirect_temporary?: nullable<Boolean>
+  redirectTemporary?: nullable<Boolean>
   catalog?: nullable<Boolean>
-  checkout_note_active?: nullable<Boolean>
-  gift_wrapping_active?: nullable<Boolean>
-  customer_register_individual?: nullable<Boolean>
-  customer_register_company?: nullable<Boolean>
-  google_connect?: nullable<Boolean>
-  facebook_connect?: nullable<Boolean>
-  ideris_connect?: nullable<Boolean>
-  updated_at?: nullable<string>
+  checkoutNoteActive?: nullable<Boolean>
+  giftWrappingActive?: nullable<Boolean>
+  customerRegisterIndividual?: nullable<Boolean>
+  customerRegisterCompany?: nullable<Boolean>
+  googleConnect?: nullable<Boolean>
+  facebookConnect?: nullable<Boolean>
+  iderisConnect?: nullable<Boolean>
+  updatedAt?: nullable<string>
   industry?: nullable<string>
   phrase?: nullable<string>
   description?: nullable<string>
   keywords?: nullable<string>
   email?: nullable<string>
-  email_from?: nullable<string>
+  emailFrom?: nullable<string>
   domain?: nullable<string>
-  shipping_restriction_message?: nullable<string>
-  policy_footer?: nullable<string>
+  shippingRestrictionMessage?: nullable<string>
+  policyFooter?: nullable<string>
   company?: nullable<string>
   cgc?: nullable<string>
   city?: nullable<string>
@@ -51,52 +51,52 @@ export interface Shop {
   detail?: nullable<string>
   district?: nullable<string>
   phone?: nullable<string>
-  checkout_note_label?: nullable<string>
-  gift_wrapping_price?: nullable<string>
-  tracker_google_analytics?: nullable<ShopGoogleAnalytics>
-  tracker_google_conversion?: nullable<ShopGoogleConversion>
-  tracker_facebook_pixel?: nullable<ShopFacebookPixel>
+  checkoutNoteLabel?: nullable<string>
+  giftWrappingPrice?: nullable<string>
+  trackerGoogleAnalytics?: nullable<ShopGoogleAnalytics>
+  trackerGoogleConversion?: nullable<ShopGoogleConversion>
+  trackerFacebookPixel?: nullable<ShopFacebookPixel>
   organization?: nullable<string>
-  suspended_at?: nullable<string>
-  canceled_at?: nullable<string>
-  deleted_at?: nullable<string>
+  suspendedAt?: nullable<string>
+  canceledAt?: nullable<string>
+  deletedAt?: nullable<string>
   trial?: nullable<string>
   plan?: nullable<ShopPlan>
-  checkout_options?: string
-  beta_checkout?: boolean
-  beta_admin?: boolean
-  bagy_apps?: string
+  checkoutOptions?: string
+  betaCheckout?: boolean
+  betaAdmin?: boolean
+  bagyApps?: string
 }
 
 export interface ShopPlan {
   id: number
-  plan_id: number
-  last_shop_plan_id: number
+  planId: number
+  lastShopPlanId: number
   name: string
   slug: string
-  original_price: string
+  originalPrice: string
   price: string
-  pageviews_limit: number
-  products_limit: number
-  users_limit: number
-  additional_charge_type: string
-  additional_charge_value: string
-  free_plan: boolean
-  early_invoice: boolean
-  billing_day: number
-  billing_frequency: string
-  current_cycle: number
-  current_cycle_starts_at: string
-  current_cycle_ends_at: string
+  pageviewsLimit: number
+  productsLimit: number
+  usersLimit: number
+  additionalChargeType: string
+  additionalChargeValue: string
+  freePlan: boolean
+  earlyInvoice: boolean
+  billingDay: number
+  billingFrequency: string
+  currentCycle: number
+  currentCycleStartsAt: string
+  currentCycleEndsAt: string
   active: boolean
   status: string
-  suspended_at: string
-  suspended_by: string
-  canceled_at: string
-  cancelation_reason: string
-  changed_plan_at: string
-  last_charged_at: string
-  next_charge_at: string
+  suspendedAt: string
+  suspendedBy: string
+  canceledAt: string
+  cancelationReason: string
+  changedPlanAt: string
+  lastChargedAt: string
+  nextChargeAt: string
 }
 
 export interface ShopGoogleAnalytics {
@@ -119,46 +119,46 @@ export interface ShopResponse {
 
 export type ShopFields =
   | 'id'
-  | 'theme_id'
-  | 'terms_user_id'
-  | 'users_count'
-  | 'products_count'
+  | 'themeId'
+  | 'termsUserId'
+  | 'usersCount'
+  | 'productsCount'
   | 'name'
   | 'slug'
-  | 'dooca_domain'
-  | 'shipping_time_additional'
-  | 'shipping_time_additional_kit'
-  | 'append_to_head'
-  | 'append_to_body'
+  | 'doocaDomain'
+  | 'shippingTimeAdditional'
+  | 'shippingTimeAdditionalKit'
+  | 'appendToHead'
+  | 'appendToBody'
   | 'zipcode'
-  | 'customer_register_approves'
-  | 'customer_registerFor'
-  | 'terms_accepted_at'
-  | 'created_at'
+  | 'customerRegisterApproves'
+  | 'customerRegisterFor'
+  | 'termsAcceptedAt'
+  | 'createdAt'
   | 'notifications'
-  | 'schedule_delivery'
+  | 'scheduleDelivery'
   | 'active'
-  | 'enable_beta'
+  | 'enableBeta'
   | 'ssl'
-  | 'redirect_temporary'
+  | 'redirectTemporary'
   | 'catalog'
-  | 'checkout_note_active'
-  | 'gift_wrapping_active'
-  | 'customer_register_individual'
-  | 'customer_register_company'
-  | 'google_connect'
-  | 'facebook_connect'
-  | 'ideris_connect'
-  | 'updated_at'
+  | 'checkoutNoteActive'
+  | 'giftWrappingActive'
+  | 'customerRegisterIndividual'
+  | 'customerRegisterCompany'
+  | 'googleConnect'
+  | 'facebookConnect'
+  | 'iderisConnect'
+  | 'updatedAt'
   | 'industry'
   | 'phrase'
   | 'description'
   | 'keywords'
   | 'email'
-  | 'email_from'
+  | 'emailFrom'
   | 'domain'
-  | 'shipping_restriction_message'
-  | 'policy_footer'
+  | 'shippingRestrictionMessage'
+  | 'policyFooter'
   | 'company'
   | 'cgc'
   | 'city'
@@ -168,48 +168,48 @@ export type ShopFields =
   | 'detail'
   | 'district'
   | 'phone'
-  | 'checkout_note_label'
-  | 'gift_wrapping_price'
-  | 'tracker_google_analytics'
-  | 'tracker_google_conversion'
-  | 'tracker_facebook_pixel'
+  | 'checkoutNoteLabel'
+  | 'giftWrappingPrice'
+  | 'trackerGoogleAnalytics'
+  | 'trackerGoogleConversion'
+  | 'trackerFacebookPixel'
   | 'organization'
-  | 'suspended_at'
-  | 'canceled_at'
-  | 'deleted_at'
+  | 'suspendedAt'
+  | 'canceledAt'
+  | 'deletedAt'
   | 'trial'
   | 'plan'
-  | 'checkout_options'
-  | 'beta_checkout'
-  | 'beta_admin'
-  | 'bagy_apps'
+  | 'checkoutOptions'
+  | 'betaCheckout'
+  | 'betaAdmin'
+  | 'bagyApps'
 
 export type ShopPlanFields =
   | 'id'
-  | 'plan_id'
-  | 'last_shop_plan_id'
+  | 'planId'
+  | 'lastShopPlanId'
   | 'name'
   | 'slug'
-  | 'original_price'
+  | 'originalPrice'
   | 'price'
-  | 'pageviews_limit'
-  | 'products_limit'
-  | 'users_limit'
-  | 'additional_charge_type'
-  | 'additional_charge_value'
-  | 'free_plan'
-  | 'early_invoice'
-  | 'billing_day'
-  | 'billing_frequency'
-  | 'current_cycle'
-  | 'current_cycle_starts_at'
-  | 'current_cycle_ends_at'
+  | 'pageviewsLimit'
+  | 'productsLimit'
+  | 'usersLimit'
+  | 'additionalChargeType'
+  | 'additionalChargeValue'
+  | 'freePlan'
+  | 'earlyInvoice'
+  | 'billingDay'
+  | 'billingFrequency'
+  | 'currentCycle'
+  | 'currentCycleStartsAt'
+  | 'currentCycleEndsAt'
   | 'active'
   | 'status'
-  | 'suspended_at'
-  | 'suspended_by'
-  | 'canceled_at'
-  | 'cancelation_reason'
-  | 'changed_plan_at'
-  | 'last_charged_at'
-  | 'next_charge_at'
+  | 'suspendedAt'
+  | 'suspendedBy'
+  | 'canceledAt'
+  | 'cancelationReason'
+  | 'changedPlanAt'
+  | 'lastChargedAt'
+  | 'nextChargeAt'

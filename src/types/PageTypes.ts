@@ -6,13 +6,13 @@ export interface Page {
   template: string
   name?: nullable<string>
   description?: nullable<string>
-  meta_title?: nullable<string>
-  meta_description?: nullable<string>
-  meta_keywords?: nullable<string>
+  metaTitle?: nullable<string>
+  metaDescription?: nullable<string>
+  metaKeywords?: nullable<string>
   url?: nullable<string>
   active?: nullable<boolean>
-  created_at?: nullable<string>
-  updated_at?: nullable<string>
+  createdAt?: nullable<string>
+  updatedAt?: nullable<string>
   faq?: nullable<Array<FAQ>>
 }
 

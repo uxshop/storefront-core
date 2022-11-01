@@ -10,7 +10,7 @@ export class AppsQueries {
   }
 
   private defaultFields() {
-    return ['id', 'slug', 'price', 'shop_id', 'store_app_id', 'content', 'user_id', 'bridge_package_id']
+    return ['id', 'slug', 'price', 'shopId', 'storeAppId', 'content', 'userId', 'bridgePackageId']
   }
 
   getApps() {
