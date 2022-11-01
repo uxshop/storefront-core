@@ -32,19 +32,19 @@ export class CategoryQueries {
       'breadcrumb',
       'url',
       'active',
-      'created_at',
-      'updated_at',
-      'parent_id',
-      'hotsite_id',
-      'external_id',
+      'createdAt',
+      'updatedAt',
+      'parentId',
+      'hotsiteId',
+      'externalId',
       'description',
       `image ${this.getImageFields()}`,
       `banner ${this.getImageFields()}`,
-      'banner_link',
-      'google_taxonomy_id',
-      'meta_title',
-      'meta_keywords',
-      'meta_description'
+      'bannerLink',
+      'googleTaxonomyId',
+      'metaTitle',
+      'metaKeywords',
+      'metaDescription'
     ]
   }
 

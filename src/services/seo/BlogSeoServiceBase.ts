@@ -9,9 +9,9 @@ export class BlogSeoServiceBase extends SeoService {
       url: post.url,
       headline: post.name,
       name: post.name,
-      dateCreated: post.created_at,
-      datePublished: post.created_at,
-      dateModified: post.updated_at,
+      dateCreated: post.createdAt,
+      datePublished: post.createdAt,
+      dateModified: post.updatedAt,
       inLanguage: 'pt-BR',
       articleSection: post.category.name,
       articleBody: this.formatRichText(post.description)

@@ -15,14 +15,14 @@ export class BlogCategoryQueries {
       'name',
       'slug',
       'description',
-      'meta_title',
-      'meta_description',
+      'metaTitle',
+      'metaDescription',
       'active',
-      'posts_count',
+      'postsCount',
       'position',
       'url',
-      'created_at',
-      'updated_at'
+      'createdAt',
+      'updatedAt'
     ]
   }
 
