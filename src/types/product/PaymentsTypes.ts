@@ -1,6 +1,6 @@
 export interface Payments {
   billet: PaymentItem
-  creditard: PaymentItem
+  creditcard: PaymentItem
   pix: PaymentItem
 }
 
