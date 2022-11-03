@@ -20,11 +20,11 @@ export interface Product {
   tags?: string
   minQuantity?: number
   maxQuantity?: number
-  sellInKitOnly?: nullable<boolean>
+  isSellInKitOnly?: boolean
   metaTitle?: string
   metaDescription?: string
   metaKeywords?: string
-  kit?: nullable<boolean>
+  isKit?: boolean
   kitmarkup?: number
   isVirtual?: boolean
   isPreSale?: boolean
@@ -34,13 +34,13 @@ export interface Product {
   depth?: number
   width?: number
   height?: number
-  sellOutOfStock?: nullable<boolean>
+  isSellOutOfStock?: boolean
   additionalTimeOutOfStock?: number
   balance?: number
   price?: number
   minPriceRange?: number
   maxPriceRange?: number
-  hasPriceRange?: nullable<boolean>
+  isHasPriceRange?: boolean
   priceCompare?: number
   discount?: number
   billetDiscount?: number
@@ -60,6 +60,32 @@ export interface Product {
   variations?: nullable<ProductVariation[]>
   components?: nullable<ProductComponent[]>
   componentGroups?: nullable<ProductComponentGroup[]>
+}
+
+export interface ProductComponentVariation
+  extends Pick<
+    ProductVariation,
+    | 'id'
+    | 'productId'
+    | 'price'
+    | 'slug'
+    | 'priceCompare'
+    | 'gtin'
+    | 'mpn'
+    | 'additionalShippingTime'
+    | 'images'
+    | 'balance'
+    | 'color'
+    | 'attribute'
+    | 'attributeSecondary'
+  > {
+  colorId: nullable<number>
+  colorSecondaryId: nullable<number>
+  attributeValueId: nullable<number>
+  attributeValueSecondaryId: nullable<number>
+  reference: string
+  sku: string
+  isSellingOutOfStock: boolean
 }
 
 export interface ProductResponse {
@@ -103,29 +129,29 @@ export interface PaymentInstallment {
 
 export interface ProductPayment {
   id?: number
-  gateway_id?: number
-  external_id?: number
+  gatewayId?: number
+  externalId?: number
   name?: string
   method?: string
   external?: string
-  max_parcels?: number
-  parcels_no_interest?: number
+  maxParcels?: number
+  parcelsNoInterest?: number
   installments?: PaymentInstallment[]
-  min_parcel_price?: string
-  min_purchase?: string
-  max_purchase?: string
-  expire_days?: number
-  soft_descriptor?: string
+  minParcelPrice?: string
+  minPurchase?: string
+  maxPurchase?: string
+  expireDays?: number
+  softDescriptor?: string
   description?: string
   isActive?: boolean
   position?: number
-  billet_min_discount_price?: string
+  billetMinDiscountPrice?: string
   markup?: string
   instructions?: string
-  is_default?: boolean
+  isDefault?: boolean
   isShowOnlyInstoreShipping?: boolean
-  created_at?: string
-  updated_at?: string
+  createdAt?: string
+  updatedAt?: string
   installment?: PaymentInstallment
 }
 
@@ -158,21 +184,18 @@ export interface ProductColor {
 
 export interface ProductComponentGroup {
   id?: number
-  shopId?: number
   name?: string
   description?: string
   slug?: string
-  optional?: nullable<boolean>
+  optional?: boolean
 }
 
-export interface ProductComponent extends Omit<Product, 'id' | 'components'> {
-  id?: number
+export interface ProductComponent extends Pick<Product, 'variations'> {
   productComponentId?: number
   productComponentGroupId?: number
   quantity?: number
-  default?: nullable<boolean>
-  optional?: nullable<boolean>
-  product_id?: number
+  isDefault?: boolean
+  isOptional?: boolean
 }
 
 export interface ProductAttribute {

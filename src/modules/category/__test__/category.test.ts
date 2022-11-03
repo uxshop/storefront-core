@@ -4,7 +4,7 @@ import 'isomorphic-fetch'
 
 describe('Category Module', () => {
   it('Should get category by id with all fields succeffully', async () => {
-    const ID_FILTER = '318043'
+    const ID_FILTER = '18043'
     const categoryResult = await CategoryService.getById(ID_FILTER)
     expect(categoryResult.id.toString()).toEqual(ID_FILTER)
   })
