@@ -2,35 +2,35 @@ import { nullable } from '../../types/NullableTypes'
 
 export interface Shop {
   id?: number
-  theme_id?: number
+  themeId?: number
   name?: string
   slug?: string
   domain?: string
-  domain_temporary?: string
-  shipping_time_additional?: string
-  shipping_time_additional_kit?: string
-  append_to_head?: string
-  append_to_body?: string
+  domainTemporary?: string
+  shippingTimeAdditional?: string
+  shippingTimeAdditionalKit?: string
+  appendToHead?: string
+  appendToBody?: string
   zipcode?: string
-  customer_register_approves?: string
-  customer_registerFor?: string
-  schedule_delivery?: string
-  active?: string
-  ssl?: string
-  redirect_temporary?: string
-  catalog?: boolean
-  customer_register_individual?: boolean
-  customer_register_company?: boolean
-  google_connect?: boolean
-  facebook_connect?: boolean
+  customerRegisterApproves?: string
+  customerRegisterFor?: string
+  scheduleDelivery?: string
+  isActive?: string
+  isSsl?: string
+  isRedirectTemporary?: string
+  isCatalog?: boolean
+  isCustomerRegisterIndividual?: boolean
+  isCustomerRegisterCompany?: boolean
+  isGoogleConnect?: boolean
+  isFacebookConnect?: boolean
   industry?: string
   phrase?: string
   description?: string
   keywords?: string
   email?: string
-  email_from?: string
-  shipping_restriction_message?: string
-  policy_footer?: string
+  emailFrom?: string
+  shippingRestrictionMessage?: string
+  policyFooter?: string
   company?: string
   cgc?: string
   city?: string
@@ -40,15 +40,15 @@ export interface Shop {
   detail?: string
   district?: string
   phone?: string
-  checkout_note_label?: nullable<string>
-  gift_wrapping_price?: nullable<string>
-  tracker_google_analytics?: nullable<ShopGoogleAnalytics>
-  tracker_google_conversion?: nullable<ShopGoogleConversion>
-  tracker_facebook_pixel?: nullable<ShopFacebookPixel>
+  checkoutNoteLabel?: nullable<string>
+  giftWrappingPrice?: nullable<string>
+  trackerGoogleAnalytics?: nullable<ShopGoogleAnalytics>
+  trackerGoogleConversion?: nullable<ShopGoogleConversion>
+  trackerFacebookPixel?: nullable<ShopFacebookPixel>
   organization?: string
-  checkout_note_active?: string
-  checkout_options?: string
-  beta_checkout?: boolean
+  checkoutNoteActive?: string
+  checkoutOptions?: string
+  isBetaCheckout?: boolean
 }
 
 export interface ShopGoogleAnalytics {
@@ -71,37 +71,37 @@ export interface ShopResponse {
 
 export type ShopFields =
   | 'id'
-  | 'theme_id'
+  | 'themeId'
   | 'name'
   | 'slug'
   | 'domain'
-  | 'domain_temporary'
-  | 'shipping_time_additional'
-  | 'shipping_time_additional_kit'
-  | 'append_to_head'
-  | 'append_to_body'
+  | 'domainTemporary'
+  | 'shippingTimeAdditional'
+  | 'shippingTimeAdditionalKit'
+  | 'appendToHead'
+  | 'appendToBody'
   | 'zipcode'
-  | 'customer_register_approves'
-  | 'customer_registerFor'
-  | 'schedule_delivery'
-  | 'active'
-  | 'ssl'
-  | 'redirect_temporary'
-  | 'catalog'
-  | 'checkout_note_active'
-  | 'gift_wrapping_active'
-  | 'customer_register_individual'
-  | 'customer_register_company'
-  | 'google_connect'
-  | 'facebook_connect'
+  | 'customerRegisterApproves'
+  | 'customerRegisterFor'
+  | 'scheduleDelivery'
+  | 'isActive'
+  | 'isSsl'
+  | 'isRedirectTemporary'
+  | 'isCatalog'
+  | 'isCheckoutNoteActive'
+  | 'isGiftWrappingActive'
+  | 'isCustomerRegisterIndividual'
+  | 'isCustomerRegisterCompany'
+  | 'isGoogleConnect'
+  | 'isFacebookConnect'
   | 'industry'
   | 'phrase'
   | 'description'
   | 'keywords'
   | 'email'
-  | 'email_from'
-  | 'shipping_restriction_message'
-  | 'policy_footer'
+  | 'emailFrom'
+  | 'shippingRestrictionMessage'
+  | 'policyFooter'
   | 'company'
   | 'cgc'
   | 'city'
@@ -111,11 +111,11 @@ export type ShopFields =
   | 'detail'
   | 'district'
   | 'phone'
-  | 'checkout_note_label'
-  | 'gift_wrapping_price'
-  | 'tracker_google_analytics'
-  | 'tracker_google_conversion'
-  | 'tracker_facebook_pixel'
+  | 'checkoutNoteLabel'
+  | 'giftWrappingPrice'
+  | 'trackerGoogleAnalytics'
+  | 'trackerGoogleConversion'
+  | 'trackerFacebookPixel'
   | 'organization'
-  | 'checkout_options'
-  | 'beta_checkout'
+  | 'checkoutOptions'
+  | 'isBetaCheckout'

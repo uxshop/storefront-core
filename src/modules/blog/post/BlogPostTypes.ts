@@ -25,7 +25,7 @@ export interface BlogPostFastSearch {
 }
 
 export interface BlogPostListFilter extends PaginationFilter {
-  post_category_id?: number
+  postCategoryId?: number
   fastSearch?: BlogPostFastSearch
 }
 
@@ -37,12 +37,12 @@ export interface OptionsGetBlogPostList {
 export interface BlogPostFilter {
   id?: number
   slug?: string
-  post_category_id?: number
+  postCategoryId?: number
 }
 
 export type BlogPostFields =
   | 'id'
-  | 'post_category_id'
+  | 'postCategoryId'
   | 'name'
   | 'slug'
   | 'image {src}'
@@ -50,11 +50,11 @@ export type BlogPostFields =
   | 'tags'
   | 'active'
   | 'url'
-  | 'meta_title'
-  | 'meta_description'
-  | 'meta_keywords'
-  | 'created_at'
-  | 'updated_at'
+  | 'metaTitle'
+  | 'metaDescription'
+  | 'metaKeywords'
+  | 'createdAt'
+  | 'updatedAt'
   | 'category'
 
 export type BlogPostCategoryFields =
@@ -62,11 +62,11 @@ export type BlogPostCategoryFields =
   | 'name'
   | 'slug'
   | 'description'
-  | 'meta_title'
-  | 'meta_description'
+  | 'metaTitle'
+  | 'metaDescription'
   | 'active'
-  | 'posts_count'
+  | 'postsCount'
   | 'position'
   | 'url'
-  | 'created_at'
-  | 'updated_at'
+  | 'createdAt'
+  | 'updatedAt'

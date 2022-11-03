@@ -7,13 +7,13 @@ export interface Freight {
   api?: string
   image: nullable<string>
   price?: number
-  price_cost?: number
-  additional_message?: nullable<string>
+  priceCost?: number
+  additionalMessage?: nullable<string>
   insurance?: number
-  insurance_price?: number
-  shipment_time?: number
-  delivery_time?: number
-  has_lower_price?: number
+  insurancePrice?: number
+  shipmentTime?: number
+  deliveryTime?: number
+  hasLowerPrice?: number
 }
 
 export interface FreightResponse {
@@ -43,10 +43,10 @@ export type FreightFields =
   | 'api'
   | 'image'
   | 'price'
-  | 'price_cost'
-  | 'additional_message'
+  | 'priceCost'
+  | 'additionalMessage'
   | 'insurance'
-  | 'insurance_price'
-  | 'shipment_time'
-  | 'delivery_time'
-  | 'has_lower_price'
+  | 'insurancePrice'
+  | 'shipmentTime'
+  | 'deliveryTime'
+  | 'hasLowerPrice'

@@ -10,56 +10,56 @@ export interface Product {
   payments?: nullable<ProductPayment[]>
   gtin?: string
   mpn?: string
-  additional_shipping_time?: number
-  external_id?: string
-  category_default_id?: number
-  hotsite_id?: number
+  additionalShippingTime?: number
+  externalId?: string
+  categoryDefaultId?: number
+  hotsiteId?: number
   description?: string
-  short_description?: string
+  shortDescription?: string
   relevance?: number
   tags?: string
-  min_quantity?: number
-  max_quantity?: number
-  sell_in_kit_only?: nullable<boolean>
-  meta_title?: string
-  meta_description?: string
-  meta_keywords?: string
+  minQuantity?: number
+  maxQuantity?: number
+  sellInKitOnly?: nullable<boolean>
+  metaTitle?: string
+  metaDescription?: string
+  metaKeywords?: string
   kit?: nullable<boolean>
-  kit_markup?: number
-  is_virtual?: nullable<boolean>
-  is_pre_sale?: nullable<boolean>
+  kitmarkup?: number
+  isVirtual?: boolean
+  isPreSale?: boolean
   video?: string
   images?: ProductImage[]
   weight?: number
   depth?: number
   width?: number
   height?: number
-  sell_out_of_stock?: nullable<boolean>
-  additional_time_out_of_stock?: number
+  sellOutOfStock?: nullable<boolean>
+  additionalTimeOutOfStock?: number
   balance?: number
   price?: number
-  min_price_range?: number
-  max_price_range?: number
-  has_price_range?: nullable<boolean>
-  price_compare?: number
+  minPriceRange?: number
+  maxPriceRange?: number
+  hasPriceRange?: nullable<boolean>
+  priceCompare?: number
   discount?: number
-  billet_discount?: number
-  payments_reason?: string
+  billetDiscount?: number
+  paymentsReason?: string
   warranty?: string
   model?: string
   gender?: string
-  age_group?: string
+  ageGroup?: string
   brand?: nullable<ProductBrand>
   category?: nullable<ProductCategory>
   categories?: nullable<ProductCategory[]>
   color?: ProductColor
   attribute?: nullable<ProductAttribute>
-  attribute_secondary?: nullable<ProductAttribute>
+  attributeSecondary?: nullable<ProductAttribute>
   features?: nullable<ProductFeature[]>
-  product_id?: number
+  productId?: number
   variations?: nullable<ProductVariation[]>
   components?: nullable<ProductComponent[]>
-  component_groups?: nullable<ProductComponentGroup[]>
+  componentGroups?: nullable<ProductComponentGroup[]>
 }
 
 export interface ProductResponse {
@@ -75,7 +75,7 @@ export interface ProductBrand {
   name?: string
   slug?: string
   description?: string
-  short_description?: string
+  shortDescription?: string
   image?: nullable<ProductImage>
   banner?: nullable<ProductImage>
   url?: string
@@ -88,7 +88,7 @@ export interface ProductCategory {
   description?: string
   image?: nullable<ProductImage>
   breadcrumb?: string
-  google_taxonomy_id?: string
+  googleTaxonomyId?: string
   url?: string
 }
 
@@ -98,7 +98,7 @@ export interface PaymentInstallment {
   discount?: number
   interest?: number
   total?: string
-  parcel_price?: string
+  parcelPrice?: string
 }
 
 export interface ProductPayment {
@@ -117,13 +117,13 @@ export interface ProductPayment {
   expire_days?: number
   soft_descriptor?: string
   description?: string
-  active?: boolean
+  isActive?: boolean
   position?: number
   billet_min_discount_price?: string
   markup?: string
   instructions?: string
   is_default?: boolean
-  show_only_instore_shipping?: boolean
+  isShowOnlyInstoreShipping?: boolean
   created_at?: string
   updated_at?: string
   installment?: PaymentInstallment
@@ -145,7 +145,7 @@ export interface ProductImage {
 }
 
 export interface ProductColorImage extends ProductImage {
-  color_ids?: number
+  colorIds?: number
 }
 
 export interface ProductColor {
@@ -158,7 +158,7 @@ export interface ProductColor {
 
 export interface ProductComponentGroup {
   id?: number
-  shop_id?: number
+  shopId?: number
   name?: string
   description?: string
   slug?: string
@@ -167,8 +167,8 @@ export interface ProductComponentGroup {
 
 export interface ProductComponent extends Omit<Product, 'id' | 'components'> {
   id?: number
-  product_component_id?: number
-  product_component_group_id?: number
+  productComponentId?: number
+  productComponentGroupId?: number
   quantity?: number
   default?: nullable<boolean>
   optional?: nullable<boolean>
@@ -179,8 +179,8 @@ export interface ProductAttribute {
   id?: number
   name?: string
   slug?: string
-  attribute_id?: number
-  attribute_name?: string
+  attributeId?: number
+  attributeName?: string
 }
 
 export interface ProductVariation extends Omit<Product, 'variations'> {}
@@ -232,52 +232,52 @@ export type ProductFields =
   | 'payments'
   | 'gtin'
   | 'mpn'
-  | 'additional_shipping_time'
-  | 'external_id'
-  | 'category_default_id'
-  | 'hotsite_id'
+  | 'additionalShippingTime'
+  | 'externalId'
+  | 'categoryDefaultId'
+  | 'hotsiteId'
   | 'description'
-  | 'short_description'
+  | 'shortDescription'
   | 'relevance'
   | 'tags'
-  | 'min_quantity'
-  | 'max_quantity'
-  | 'sell_in_kit_only'
-  | 'meta_title'
-  | 'meta_description'
-  | 'meta_keywords'
+  | 'minQuantity'
+  | 'maxQuantity'
+  | 'sellInKitOnly'
+  | 'metaTitle'
+  | 'metaDescription'
+  | 'metaKeywords'
   | 'kit'
-  | 'kit_markup'
-  | 'is_virtual'
-  | 'is_pre_sale'
+  | 'kitMarkup'
+  | 'isVirtual'
+  | 'isPreSale'
   | 'images'
   | 'video'
   | 'weight'
   | 'depth'
   | 'width'
   | 'height'
-  | 'sell_out_of_stock'
-  | 'additional_time_out_of_stock'
+  | 'sellOutOfStock'
+  | 'additionalTimeOutOfStock'
   | 'balance'
   | 'price'
-  | 'min_price_range'
-  | 'max_price_range'
-  | 'has_price_range'
-  | 'price_compare'
+  | 'minPriceRange'
+  | 'maxPriceRange'
+  | 'hasPriceRange'
+  | 'priceCompare'
   | 'discount'
-  | 'billet_discount'
-  | 'payments_reason'
+  | 'billetDiscount'
+  | 'paymentsReason'
   | 'warranty'
   | 'model'
   | 'gender'
-  | 'age_group'
+  | 'ageGroup'
   | 'brand'
   | 'category'
   | 'categories'
   | 'color'
   | 'attribute'
-  | 'attribute_secondary'
+  | 'attributeSecondary'
   | 'features'
   | 'variations'
   | 'components'
-  | 'component_groups'
+  | 'componentGroups'

@@ -11,19 +11,19 @@ export class LandingPagesQueries {
 
   private defaultFields() {
     return [
-      'shop_id',
+      'shopId',
       'id',
       'name',
       'content',
       'slug',
-      'not_index',
+      'notIndex',
       'active',
       'url',
-      'created_at',
-      'updated_at',
-      'meta_title',
-      'meta_description',
-      'meta_keywords'
+      'createdAt',
+      'updatedAt',
+      'metaTitle',
+      'metaDescription',
+      'metaKeywords'
     ]
   }
 

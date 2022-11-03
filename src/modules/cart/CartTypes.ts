@@ -7,8 +7,8 @@ export interface Cart {
   customer?: nullable<CustomerCart>
   address?: nullable<CartAddress>
   coupon?: nullable<string>
-  shipping_token?: nullable<string>
-  payment_token?: nullable<string>
+  shippingToken?: nullable<string>
+  paymentToken?: nullable<string>
   creditcard?: nullable<CartCreditCard>
   items?: Array<CartItem>
 }
@@ -17,8 +17,8 @@ export interface CustomerCart {
   email?: string
   doc?: string
   newsletter?: boolean
-  first_name?: string
-  last_name?: string
+  firstName?: string
+  lastName?: string
   name?: string
   phone?: string
 }
@@ -45,21 +45,21 @@ export interface CartItem {
   id
   name?: nullable<string>
   variation?: nullable<string>
-  is_virtual?: nullable<Boolean>
+  isVirtual?: nullable<Boolean>
   quantity?: nullable<number>
-  allowed_gift_wrapping?: nullable<Boolean>
-  total_cost?: nullable<number>
+  allowedGiftWrapping?: nullable<Boolean>
+  totalCost?: nullable<number>
   total?: nullable<number>
   price?: nullable<number>
-  price_cost?: nullable<number>
-  stock_balance?: nullable<number>
-  can_sell_out_of_stock?: nullable<Boolean>
-  variation_id?: nullable<number>
-  additional_price?: nullable<number>
-  price_gift_wrapping?: nullable<number>
-  allowed_gift_wrapping_price?: nullable<number>
+  priceCost?: nullable<number>
+  stockBalance?: nullable<number>
+  canSellOutOfStock?: nullable<Boolean>
+  variationId?: nullable<number>
+  additionalPrice?: nullable<number>
+  priceGiftWrapping?: nullable<number>
+  allowedGiftWrappingPrice?: nullable<number>
   discount?: nullable<number>
-  price_compare?: nullable<number>
+  priceCompare?: nullable<number>
   image?: nullable<Image>
   customize?: nullable<CustomizationsItem>
   components?: nullable<ComponentItem>
@@ -79,8 +79,8 @@ export interface CustomizeContent {
 }
 
 export interface ComponentItem {
-  variation_id?: number
-  component_id?: number
+  variationId?: number
+  componentId?: number
 }
 
 interface MutationInput {
@@ -108,7 +108,7 @@ export interface CleanCartInput extends MutationInput {
 }
 
 export interface CartItemAddInput {
-  variation_id: number
+  variationId: number
   quantity: number
   cartToken?: string
   zipcode?: number
@@ -123,8 +123,8 @@ export interface CartItemUpdateInput {
 }
 
 export interface ComponentItemInput {
-  variation_id?: number
-  component_id?: number
+  variationId?: number
+  componentId?: number
 }
 
 export interface CustomizationsItemInput {
@@ -159,7 +159,7 @@ export interface OptionsGetCart {
 }
 
 export interface CartFilter {
-  cart_token: string
+  cartToken: string
 }
 
 export interface GetCartFilter {
@@ -192,14 +192,14 @@ export type CartFields =
   | 'customer'
   | 'address'
   | 'coupon'
-  | 'shipping_token'
-  | 'payment_token'
+  | 'shippingToken'
+  | 'paymentToken'
   | 'creditcard'
   | 'items'
 
 export type CartCreditCartFields = 'cvv' | 'exp' | 'name' | 'Int'
 
-export type CustomerCartField = 'email' | 'doc' | 'newsletter' | 'first_name' | 'last_name' | 'name' | 'phone'
+export type CustomerCartField = 'email' | 'doc' | 'newsletter' | 'firstName' | 'lastName' | 'name' | 'phone'
 
 export type AdressCartFields = 'receiver' | 'zipcode' | 'street' | 'Int' | 'detail' | 'district' | 'city' | 'state'
 
@@ -207,26 +207,26 @@ export type CartItemFields =
   | 'id'
   | 'name'
   | 'variation'
-  | 'is_virtual'
+  | 'isVirtual'
   | 'quantity'
-  | 'allowed_gift_wrapping'
-  | 'total_cost'
+  | 'allowedGiftWrapping'
+  | 'totalCost'
   | 'total'
   | 'price'
-  | 'price_cost'
-  | 'stock_balance'
-  | 'can_sell_out_of_stock'
-  | 'variation_id'
-  | 'additional_price'
-  | 'price_gift_wrapping'
-  | 'allowed_gift_wrapping_price'
+  | 'priceCost'
+  | 'stockBalance'
+  | 'canSellOutOfStock'
+  | 'variationId'
+  | 'additionalPrice'
+  | 'priceGiftWrapping'
+  | 'allowedGiftWrappingPrice'
   | 'discount'
-  | 'price_compare'
+  | 'priceCompare'
   | 'image'
   | 'customize'
   | 'components'
 
-export type ComponentFields = 'variation_id' | 'component_id'
+export type ComponentFields = 'variationId' | 'componentId'
 
 export type CustomizeFields = 'id' | 'name' | 'content'
 

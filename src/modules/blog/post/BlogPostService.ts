@@ -18,14 +18,14 @@ export class BlogPostService {
   }
 
   static async getList(
-    { page, first = 6, fastSearch, post_category_id }: BlogPostListFilter,
+    { page, first = 6, fastSearch, postCategoryId }: BlogPostListFilter,
     fields?: BlogPostFields[]
   ): Promise<BlogPostList> {
     const result: BlogPostList = await Repository.getList({
       filter: {
         ...normalizePagination(page, first),
         fastSearch,
-        post_category_id
+        postCategoryId
       },
       fields: fields
     })

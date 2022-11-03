@@ -5,14 +5,14 @@ export interface BlogCategory {
   name?: nullable<string>
   slug?: nullable<string>
   description?: nullable<string>
-  meta_title?: nullable<string>
-  meta_description?: nullable<string>
+  metaTitle?: nullable<string>
+  metaDescription?: nullable<string>
   active?: nullable<Boolean>
-  posts_count?: nullable<number>
+  postsCount?: nullable<number>
   position?: nullable<number>
   url?: nullable<string>
-  created_at?: nullable<string>
-  updated_at?: nullable<string>
+  createdAt?: nullable<string>
+  updatedAt?: nullable<string>
 }
 
 export interface BlogCategoryResponse {
@@ -38,11 +38,11 @@ export type BlogCategoryFields =
   | 'name'
   | 'slug'
   | 'description'
-  | 'meta_title'
-  | 'meta_description'
+  | 'metaTitle'
+  | 'metaDescription'
   | 'active'
-  | 'posts_count'
+  | 'postsCount'
   | 'position'
   | 'url'
-  | 'created_at'
-  | 'updated_at'
+  | 'createdAt'
+  | 'updatedAt'

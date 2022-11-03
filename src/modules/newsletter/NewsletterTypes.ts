@@ -4,7 +4,7 @@ export interface Newsletter {
   email?: string
   name?: nullable<string>
   gender?: nullable<string>
-  created_at?: nullable<string>
+  createdAt?: nullable<string>
 }
 
 export interface NewsletterResponse {
@@ -19,4 +19,4 @@ export interface NewsletterInput {
   phone?: string
 }
 
-export type NewsletterFields = 'name' | 'email' | 'gender' | 'created_at'
+export type NewsletterFields = 'name' | 'email' | 'gender' | 'createdAt'

@@ -2,11 +2,11 @@ import { nullable } from '../NullableTypes'
 
 export interface ComponentGroup {
   id: number
-  shop_id: number
+  shopId: number
   name: string
   slug: string
-  created_at: string
-  updated_at: string
+  createdAt: string
+  updatedAt: string
   description?: nullable<string>
   optional?: nullable<boolean>
 }

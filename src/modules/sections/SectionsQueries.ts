@@ -10,7 +10,7 @@ export class SectionsQueries {
   }
 
   private defaultFields() {
-    return ['data', 'page', 'version', 'theme_id']
+    return ['data', 'page', 'version', 'themeId']
   }
 
   getOnefullQuery() {

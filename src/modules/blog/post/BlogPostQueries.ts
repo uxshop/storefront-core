@@ -12,7 +12,7 @@ export class BlogPostQueries {
   private defaultFields() {
     return [
       'id',
-      'post_category_id',
+      'postCategoryId',
       'name',
       'slug',
       'image {src, alt}',
@@ -20,24 +20,24 @@ export class BlogPostQueries {
       'tags',
       'active',
       'url',
-      'meta_title',
-      'meta_description',
-      'meta_keywords',
-      'created_at',
-      'updated_at',
+      'metaTitle',
+      'metaDescription',
+      'metaKeywords',
+      'createdAt',
+      'updatedAt',
       `category {
             id,
             name,
             slug,
             description,
-            meta_title,
-            meta_description,
+            metaTitle,
+            metaDescription,
             active,
-            posts_count,
+            postsCount,
             position,
             url,
-            created_at,
-            updated_at
+            createdAt,
+            updatedAt
         }`
     ]
   }

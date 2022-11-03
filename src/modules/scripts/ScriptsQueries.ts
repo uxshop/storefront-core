@@ -16,7 +16,7 @@ export class ScriptsQueries {
       'name',
       'location',
       'page',
-      'load_method',
+      'loadMethod',
       'content',
       'category',
       'active',
