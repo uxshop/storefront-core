@@ -40,7 +40,7 @@ export interface Product {
   price?: number
   minPriceRange?: number
   maxPriceRange?: number
-  isHasPriceRange?: boolean
+  hasPriceRange?: boolean
   priceCompare?: number
   discount?: number
   billetDiscount?: number
