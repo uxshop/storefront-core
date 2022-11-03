@@ -12,8 +12,7 @@ export interface Category {
   position?: nullable<number>
   depth?: nullable<number>
   breadcrumb?: nullable<string>
-  url?: nullable<string>
-  active?: nullable<boolean>
+  isActive?: boolean
   createdAt?: string
   updatedAt?: string
   parentId?: nullable<number>
@@ -56,8 +55,7 @@ export type CategoryFields =
   | 'position'
   | 'depth'
   | 'breadcrumb'
-  | 'url'
-  | 'active'
+  | 'isActive'
   | 'createdAt'
   | 'updatedAt'
   | 'parentId'

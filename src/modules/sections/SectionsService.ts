@@ -9,7 +9,7 @@ export class SectionsService {
     const result: Section<unknown> = await Repository.getOne(filter)
     const page = filter.page ?? 'home'
 
-    return await this.getByCategory(result.data, page)
+    return this.getByCategory(result.data, page)
   }
 
   static async getByCategory(data, page) {

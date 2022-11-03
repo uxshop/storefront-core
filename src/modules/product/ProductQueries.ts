@@ -1,5 +1,5 @@
 export class ProductQueries {
-  fields: null | Array<string>
+  fields: null | string[]
 
   constructor(fields) {
     this.fields = fields || this.defaultFields()
@@ -14,11 +14,11 @@ export class ProductQueries {
   }
 
   private getComponentGroupsFields() {
-    return `{id, shop_id, name, description, slug, optional}`
+    return `{id, name, description, slug, optional}`
   }
 
   private getAttributeFields() {
-    return `{id, name, slug, attribute_id, attribute_name}`
+    return `{id, name, slug, attributeId, attributeName}`
   }
 
   private getColorFields() {
@@ -47,7 +47,7 @@ export class ProductQueries {
         name,
         slug,
         description,
-        short_description,
+        shortDescription,
         image ${this.getImageFields()},
         banner ${this.getImageFields()},
         url
@@ -63,102 +63,79 @@ export class ProductQueries {
         description, 
         image ${this.getImageFields()}, 
         breadcrumb, 
-        google_taxonomy_id, 
+        googleTaxonomyId, 
         url
     }`
   }
 
   private getPaymantInstallmentFields() {
-    return '{markup, parcel, discount, interest, total, parcel_price}'
+    return '{markup, parcel, discount, interest, total, parcelPrice}'
   }
 
   private getPaymentFields() {
     return [
       'id',
-      'gateway_id',
-      'external_id',
+      'gatewayId',
+      'externalId',
       'name',
       'method',
       'external',
-      'max_parcels',
-      'parcels_no_interest',
+      'maxParcels',
+      'parcelsNoInterest',
       `installments ${this.getPaymantInstallmentFields()}`,
-      'min_parcel_price',
-      'min_purchase',
-      'max_purchase',
-      'expire_days',
-      'soft_descriptor',
+      'minParcelPrice',
+      'minPurchase',
+      'maxPurchase',
+      'expireDays',
+      'softDescriptor',
       'description',
-      'active',
+      'isActive',
       'position',
-      'billet_min_discount_price',
+      'billetMinDiscountPrice',
       'markup',
       'instructions',
-      'is_default',
-      'show_only_instore_shipping',
-      'created_at',
-      'updated_at',
+      'isDefault',
+      'showOnlyInstoreShipping',
+      'createdAt',
+      'updatedAt',
       `installment ${this.getPaymantInstallmentFields()}`
+    ]
+  }
+
+  private getComponentVariationsFields() {
+    return [
+      'id',
+      'productId',
+      'price',
+      'colorId',
+      'colorSecondaryId',
+      'attributeValueId',
+      'attributeValueSecondaryId',
+      'reference',
+      'slug',
+      'priceCompare',
+      'sku',
+      'gtin',
+      'mpn',
+      'additionalShippingTime',
+      `images ${this.getImageFields()}`,
+      'balance',
+      'isSellingOutOfStock',
+      `color ${this.getColorFields()}`,
+      `attribute ${this.getAttributeFields()}`,
+      `attributeSecondary ${this.getAttributeFields()}`
     ]
   }
 
   private getComponentFields() {
     return `
     {
-        id,
-        name,
-        slug,
-        url,
-        payments {${this.getPaymentFields().join()}},
-        gtin,
-        mpn,
-        additional_shipping_time,
-        external_id,
-        category_default_id,
-        hotsite_id,
-        description,
-        short_description,
-        relevance,
-        tags,
-        min_quantity,
-        max_quantity,
-        sell_in_kit_only,
-        meta_title,
-        meta_description,
-        meta_keywords,
-        kit,
-        kit_markup,
-        is_virtual,
-        is_pre_sale,
-        images ${this.getImageFields()},
-        video,
-        weight,
-        depth,
-        width,
-        height,
-        sell_out_of_stock,
-        additional_time_out_of_stock,
-        balance,
-        price,
-        min_price_range,
-        max_price_range,
-        has_price_range,
-        price_compare,
-        discount,
-        billet_discount,
-        payments_reason,
-        warranty,
-        model,
-        gender,
-        age_group,
-        brand ${this.getBrandFields()},
-        category ${this.getCategoryFields()},
-        categories ${this.getCategoryFields()},
-        color ${this.getColorFields()},
-        attribute ${this.getAttributeFields()},
-        attribute_secondary ${this.getAttributeFields()},
-        features ${this.getFeatureFields()},
-        component_groups ${this.getComponentGroupsFields()}
+      productComponentId
+      productComponentGroupId
+      quantity
+      isDefault
+      isOptional
+      variations {${this.getComponentVariationsFields().join()}}
     }`
   }
 
@@ -171,60 +148,67 @@ export class ProductQueries {
       `payments {${this.getPaymentFields().join()}}`,
       'gtin',
       'mpn',
-      'additional_shipping_time',
-      'external_id',
-      'category_default_id',
-      'hotsite_id',
+      'additionalShippingTime',
+      'externalId',
+      'categoryDefaultId',
+      'hotsiteId',
       'description',
-      'short_description',
+      'shortDescription',
       'relevance',
       'tags',
-      'min_quantity',
-      'max_quantity',
-      'sell_in_kit_only',
-      'meta_title',
-      'meta_description',
-      'meta_keywords',
+      'minQuantity',
+      'maxQuantity',
+      'isSellInKitOnly',
+      'metaTitle',
+      'metaDescription',
+      'metaKeywords',
       'kit',
-      'kit_markup',
-      'is_virtual',
-      'is_pre_sale',
+      'kitMarkup',
+      'isVirtual',
+      'isPreSale',
       `images ${this.getImageFields()}`,
       'video',
       'weight',
       'depth',
       'width',
       'height',
-      'sell_out_of_stock',
-      'additional_time_out_of_stock',
+      'sellOutOfStock',
+      'additionalTimeOutOfStock',
       'balance',
       'price',
-      'min_price_range',
-      'max_price_range',
-      'has_price_range',
-      'price_compare',
+      'minPriceRange',
+      'maxPriceRange',
+      'hasPriceRange',
+      'priceCompare',
       'discount',
-      'billet_discount',
-      'payments_reason',
+      'billetDiscount',
+      'paymentsReason',
       'warranty',
       'model',
       'gender',
-      'age_group',
-      'product_id',
+      'ageGroup',
+      'productId',
       `brand ${this.getBrandFields()}`,
       `category ${this.getCategoryFields()}`,
       `categories ${this.getCategoryFields()}`,
       `color ${this.getColorFields()}`,
       `attribute ${this.getAttributeFields()}`,
-      `attribute_secondary ${this.getAttributeFields()}`,
-      `features ${this.getFeatureFields()}`,
-      `components ${this.getComponentFields()}`,
-      `component_groups ${this.getComponentGroupsFields()}`
+      `attributeSecondary ${this.getAttributeFields()}`,
+      `features ${this.getFeatureFields()}`
     ]
   }
 
+  private getFullVariations() {
+    const componentsFields = [
+      `components ${this.getComponentFields()}`,
+      `componentGroups ${this.getComponentGroupsFields()}`
+    ]
+
+    return [...this.getCommonFields()].concat(componentsFields)
+  }
+
   private defaultFields() {
-    return [`${this.getCommonFields().join()}`, `variations {${this.getCommonFields().join()}}`]
+    return [`${this.getFullVariations().join()}`, `variations {${this.getFullVariations().join()}}`]
   }
 
   listFullQuery() {

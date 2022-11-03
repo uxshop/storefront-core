@@ -6,15 +6,9 @@ export class SettingsRepositoryGql {
   static async getOne(filter?: SettingFilter) {
     const settingsQuery = new SettingsQueries()
     const settingsGetOneQuery: string = settingsQuery.getOnefullQuery()
+    const { setting } = await client.query<SettingResponse>(settingsGetOneQuery, filter && { filter: { ...filter } })
+    const data = JSON.parse(setting.data)
 
-    try {
-      const { setting } = await client.query<SettingResponse>(settingsGetOneQuery, filter && { filter: { ...filter } })
-
-      const data = JSON.parse(setting.data)
-
-      return { ...setting, data }
-    } catch (error) {
-      throw new Error(error)
-    }
+    return { ...setting, data }
   }
 }

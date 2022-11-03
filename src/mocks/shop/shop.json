@@ -6,7 +6,7 @@
   "products_count": 91,
   "name": "Loja DC Gamer 2",
   "slug": "dcgamer",
-  "dooca_domain": "dcgamer.dchomolog.dooca.store",
+  "domain_temporary": "dcgamer.dchomolog.dooca.store",
   "shipping_time_additional": "2",
   "shipping_time_additional_kit": "3",
   "append_to_head": "<meta name=\"msvalidate.01\" content=\"941A5445C27F468DDF1B9CCE0BEA4161\" />\n<meta name=\"google-site-verification\" content=\"0mVQI_XcnEcBR3GIpCfiq7u6mHif2le8sCKoVC8tP54\" />",

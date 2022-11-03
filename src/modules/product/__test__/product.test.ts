@@ -9,7 +9,7 @@ describe('Product Module', () => {
   it('Should get product by id with all fields successfully', async () => {
     const FILTER_ID = '2913645'
     const productResult = await ProductService.getById(FILTER_ID)
-    expect(productResult.product_id.toString()).toEqual(FILTER_ID)
+    expect(productResult.productId.toString()).toEqual(FILTER_ID)
     expect(productResult.name).toEqual('Teste Novo')
   })
 
