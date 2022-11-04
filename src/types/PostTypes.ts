@@ -4,7 +4,7 @@ import { Image } from './ImageTypes'
 
 export interface Post {
   id: number
-  postCategoryid: number
+  postCategoryId: number
   name: string
   description: string
   slug: string

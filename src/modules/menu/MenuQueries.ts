@@ -1,5 +1,5 @@
 export class MenuQueries {
-  fields: null | Array<string>
+  fields: null | string[]
 
   constructor(fields) {
     this.fields = fields || this.defaultFields()
@@ -22,14 +22,14 @@ export class MenuQueries {
       'menuType',
       'slug',
       'menuTypeSlug',
-      'active',
+      'isActive',
       'createdAt',
       `image ${this.getImageFields()}`,
       'parentId',
       'pageId',
       'hotsiteId',
       'categoryId',
-      'banner',
+      `banner ${this.getImageFields()}`,
       'bannerLink',
       'isFeatured',
       'link',
@@ -54,14 +54,14 @@ export class MenuQueries {
         menuType,
         slug, 
         menuTypeSlug, 
-        active, 
+        isActive, 
         createdAt, 
         image ${this.getImageFields()},
         parentId, 
         pageId, 
         hotsiteId,
         categoryId,
-        banner,
+        banner ${this.getImageFields()},
         bannerLink,
         isFeatured,
         link,

@@ -15,7 +15,7 @@ export class MenuRepositoryGql {
     }
   }
 
-  static async getList(fields?: Array<MenuFields>): Promise<Array<Menu>> {
+  static async getList(fields?: MenuFields[]): Promise<Menu[]> {
     const menuQuery = new MenuQueries(fields)
     const menuListQuery: string = menuQuery.listFullQuery()
     try {
@@ -27,7 +27,7 @@ export class MenuRepositoryGql {
     }
   }
 
-  static async getById(id: Number, fields?: Array<MenuFields>): Promise<Menu> {
+  static async getById(id: number, fields?: MenuFields[]): Promise<Menu> {
     return this.getOne({ fields: fields || null, filter: { id: id } })
   }
 }

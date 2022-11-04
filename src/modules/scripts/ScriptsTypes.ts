@@ -3,7 +3,7 @@ export interface Script {
   name: string
   category: string
   location: string
-  active: boolean
+  isActive: boolean
   position?: number
   page?: string
   loadMethod?: string
@@ -35,6 +35,6 @@ export type ScriptFields =
   | 'loadMethod'
   | 'content'
   | 'category'
-  | 'active'
+  | 'isActive'
   | 'description'
   | 'url'

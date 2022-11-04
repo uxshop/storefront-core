@@ -18,8 +18,7 @@ export class BlogPostQueries {
       'image {src, alt}',
       'description',
       'tags',
-      'active',
-      'url',
+      'isActive',
       'metaTitle',
       'metaDescription',
       'metaKeywords',
@@ -32,10 +31,9 @@ export class BlogPostQueries {
             description,
             metaTitle,
             metaDescription,
-            active,
+            isActive,
             postsCount,
             position,
-            url,
             createdAt,
             updatedAt
         }`

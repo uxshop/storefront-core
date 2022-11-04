@@ -1,0 +1,21 @@
+[
+  {
+    "id": 75124,
+    "name": "FAQ",
+    "slug": "faq",
+    "template": "faq",
+    "isActive": true,
+    "faq": [
+      {
+        "answer": "<p>Resposta</p>",
+        "question": "Pergunta"
+      }
+    ],
+    "createdAt": "1667580423",
+    "updatedAt": "1667580423",
+    "description": "<p>Teste</p>",
+    "metaTitle": null,
+    "metaDescription": null,
+    "metaKeywords": null
+  }
+]
