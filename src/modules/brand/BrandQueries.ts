@@ -28,8 +28,7 @@ export class BrandQueries {
       'metaKeywords',
       'metaDescription',
       'position',
-      'url',
-      'active',
+      'isActive',
       'createdAt',
       'updatedAt'
     ]
