@@ -20,11 +20,11 @@ export class LandingPagesRepositoryGql {
     }
   }
 
-  static async getById(id: Number, fields?: Array<LandingPageFields>): Promise<LandingPage<any>> {
+  static async getById(id: number, fields?: Array<LandingPageFields>): Promise<LandingPage<any>> {
     return this.get({ fields: fields || null, filter: { id: id } })
   }
 
-  static async getBySlug(slug: String, fields?: Array<LandingPageFields>): Promise<LandingPage<any>> {
+  static async getBySlug(slug: string, fields?: Array<LandingPageFields>): Promise<LandingPage<any>> {
     return this.get({ fields: fields || null, filter: { slug: slug } })
   }
 }
