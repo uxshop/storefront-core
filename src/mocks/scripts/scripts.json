@@ -1,0 +1,15 @@
+[
+  {
+    "id": "2981",
+    "position": 1,
+    "name": "Teste",
+    "location": "footer",
+    "page": "all",
+    "loadMethod": "default",
+    "content": "dfdsfdsfsdf",
+    "category": "essential",
+    "isActive": true,
+    "description": "fsgsdfsgf",
+    "url": null
+  }
+]
