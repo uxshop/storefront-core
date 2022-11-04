@@ -1,5 +1,5 @@
 export class PagesQueries {
-  fields: null | Array<string>
+  fields: null | string[]
 
   constructor(fields) {
     this.fields = fields || this.defaultFields()
@@ -15,9 +15,8 @@ export class PagesQueries {
       'name',
       'slug',
       'template',
-      'url',
-      'active',
-      'faq {active, answer, question}',
+      'isActive',
+      'faq {answer, question}',
       'createdAt',
       'updatedAt',
       'description',

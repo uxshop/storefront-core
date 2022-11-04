@@ -9,15 +9,13 @@ export interface Page {
   metaTitle?: nullable<string>
   metaDescription?: nullable<string>
   metaKeywords?: nullable<string>
-  url?: nullable<string>
-  active?: nullable<boolean>
-  createdAt?: nullable<string>
-  updatedAt?: nullable<string>
-  faq?: nullable<Array<FAQ>>
+  isActive?: boolean
+  createdAt?: string
+  updatedAt?: string
+  faq?: nullable<FAQ[]>
 }
 
 export interface FAQ {
-  active?: nullable<boolean>
-  answer?: nullable<string>
-  question?: nullable<string>
+  answer?: string
+  question?: string
 }
