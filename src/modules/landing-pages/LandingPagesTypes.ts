@@ -1,19 +1,17 @@
 import { nullable } from '../../types/NullableTypes'
 
 export interface LandingPage<T> {
-  shopId?: nullable<Number>
-  id?: nullable<String>
-  name?: nullable<String>
+  id?: string
+  name?: string
   content?: nullable<T>
-  slug?: nullable<String>
-  notIndex?: nullable<Boolean>
-  active?: nullable<Boolean>
-  url?: nullable<String>
-  createdAt?: nullable<String>
-  updatedAt?: nullable<String>
-  metaTitlen?: nullable<String>
-  metaDescription?: nullable<String>
-  metaKeywords?: nullable<String>
+  slug?: string
+  isIndex?: boolean
+  isActive?: boolean
+  createdAt?: string
+  updatedAt?: string
+  metaTitle?: nullable<string>
+  metaDescription?: nullable<string>
+  metaKeywords?: nullable<string>
 }
 
 export interface LandingPageResponse {
@@ -21,24 +19,22 @@ export interface LandingPageResponse {
 }
 
 export interface OptionsGetLandingPage {
-  fields: nullable<Array<LandingPageFields>>
+  fields: nullable<LandingPageFields[]>
   filter: LandingPageFilter
 }
 
 export interface LandingPageFilter {
-  id?: nullable<Number>
-  slug?: nullable<String>
+  id?: nullable<number>
+  slug?: nullable<string>
 }
 
 export type LandingPageFields =
-  | 'shopId'
   | 'id'
   | 'name'
   | 'content'
   | 'slug'
-  | 'notIndex'
-  | 'active'
-  | 'url'
+  | 'isIndex'
+  | 'isActive'
   | 'createdAt'
   | 'updatedAt'
   | 'metaTitle'

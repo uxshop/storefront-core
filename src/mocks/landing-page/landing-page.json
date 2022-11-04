@@ -1,1 +1,17 @@
-{ "id": 12938, "slug": "landing-page", "template": "template" }
+{
+  "data": {
+    "landingPage": {
+      "id": "2789",
+      "name": "Teste 2",
+      "content": "{\"settings\":[],\"sections\":{\"html-907597980\":{\"type\":\"html\",\"settings\":{\"content\":\"<div class=\\\"border-bottom\\\"><div class=\\\"container py-5 text-center\\\"><h1 class=\\\"h1\\\">Insira seu c\\u00f3digo html<\\/h1><\\/div><\\/div>\",\"section_name\":null},\"blocks\":[]}},\"content_for_index\":[\"html-907597980\"],\"sections_exclude\":[]}",
+      "slug": "teste-2-1",
+      "isIndex": true,
+      "isActive": true,
+      "createdAt": "1667345625",
+      "updatedAt": "1667345625",
+      "metaTitle": null,
+      "metaDescription": null,
+      "metaKeywords": null
+    }
+  }
+}
