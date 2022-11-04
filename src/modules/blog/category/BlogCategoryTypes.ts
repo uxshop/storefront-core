@@ -7,10 +7,9 @@ export interface BlogCategory {
   description?: nullable<string>
   metaTitle?: nullable<string>
   metaDescription?: nullable<string>
-  active?: nullable<Boolean>
+  isActive?: nullable<Boolean>
   postsCount?: nullable<number>
   position?: nullable<number>
-  url?: nullable<string>
   createdAt?: nullable<string>
   updatedAt?: nullable<string>
 }
@@ -40,9 +39,8 @@ export type BlogCategoryFields =
   | 'description'
   | 'metaTitle'
   | 'metaDescription'
-  | 'active'
+  | 'isActive'
   | 'postsCount'
   | 'position'
-  | 'url'
   | 'createdAt'
   | 'updatedAt'
