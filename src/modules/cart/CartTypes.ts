@@ -7,18 +7,18 @@ export interface Cart {
   customer?: nullable<CustomerCart>
   address?: nullable<CartAddress>
   coupon?: nullable<string>
-  shippingToken?: nullable<string>
-  paymentToken?: nullable<string>
+  shipping_token?: nullable<string>
+  payment_token?: nullable<string>
   creditcard?: nullable<CartCreditCard>
-  items?: Array<CartItem>
+  items?: CartItem[]
 }
 
 export interface CustomerCart {
   email?: string
   doc?: string
   newsletter?: boolean
-  firstName?: string
-  lastName?: string
+  first_name?: string
+  last_name?: string
   name?: string
   phone?: string
 }
@@ -35,19 +35,19 @@ export interface CartAddress {
 }
 
 export interface CartCreditCard {
-  cvv?: nullable<string>
-  exp?: nullable<string>
-  name?: nullable<string>
-  Int?: nullable<string>
+  cvv?: string
+  exp?: string
+  name?: string
+  Int?: string
 }
 
 export interface CartItem {
-  id
-  name?: nullable<string>
+  id: number
+  name?: string
   variation?: nullable<string>
-  isVirtual?: nullable<Boolean>
+  is_virtual?: boolean
   quantity?: nullable<number>
-  allowedGiftWrapping?: nullable<Boolean>
+  allowed_gift_wrapping?: nullable<Boolean>
   totalCost?: nullable<number>
   total?: nullable<number>
   price?: nullable<number>
