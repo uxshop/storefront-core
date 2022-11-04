@@ -20,14 +20,14 @@ describe('Menu Module', () => {
 
   it('Should Get menu list with all fields successfully', async () => {
     const FIRST_ITEM_INDEX = 0
-    const menuListResult: Array<Menu> = await MenuService.getList()
+    const menuListResult: Menu[] = await MenuService.getList()
     expect(menuListResult.length).toEqual(1)
     expect(menuListResult[FIRST_ITEM_INDEX].id).toEqual(Number(ID_FILTER))
   })
 
   it('Should get menu list with all fields successfully', async () => {
     const FIRST_ITEM_INDEX = 0
-    const menuListResult: Array<Menu> = await MenuService.getList()
+    const menuListResult: Menu[] = await MenuService.getList()
     expect(menuListResult.length).toEqual(1)
     expect(menuListResult[FIRST_ITEM_INDEX].id).toEqual(Number(ID_FILTER))
   })
