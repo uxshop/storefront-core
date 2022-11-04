@@ -7,7 +7,7 @@ export interface BlogCategory {
   description?: nullable<string>
   metaTitle?: nullable<string>
   metaDescription?: nullable<string>
-  isActive?: nullable<Boolean>
+  isActive?: nullable<boolean>
   postsCount?: nullable<number>
   position?: nullable<number>
   createdAt?: nullable<string>
