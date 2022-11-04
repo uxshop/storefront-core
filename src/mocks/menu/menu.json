@@ -1,0 +1,61 @@
+{
+  "data": {
+    "menus": [
+      {
+        "id": 47070,
+        "name": "Menu",
+        "handle": "menu",
+        "createdAt": "1664389316",
+        "updatedAt": "1664389316",
+        "values": [
+          {
+            "id": 3806741,
+            "menuId": 47070,
+            "brandId": null,
+            "name": "Calçados",
+            "menuType": "category",
+            "slug": "calcados",
+            "menuTypeSlug": "calcados",
+            "isActive": true,
+            "createdAt": "1667583538",
+            "image": null,
+            "parentId": null,
+            "pageId": null,
+            "hotsiteId": null,
+            "categoryId": 318109,
+            "banner": null,
+            "bannerLink": null,
+            "isFeatured": null,
+            "link": null,
+            "menuTypeLink": null,
+            "updatedAt": "1667583538",
+            "position": null,
+            "children": [
+              {
+                "id": 3806742,
+                "menuId": 47070,
+                "brandId": null,
+                "name": "Tênis",
+                "menuType": "category",
+                "slug": "tenis",
+                "menuTypeSlug": "tenis-1",
+                "isActive": true,
+                "createdAt": "1667583538",
+                "parentId": 3806741,
+                "pageId": null,
+                "hotsiteId": null,
+                "categoryId": 318110,
+                "bannerLink": null,
+                "isFeatured": null,
+                "link": null,
+                "menuTypeLink": null,
+                "updatedAt": "1667583538",
+                "position": null
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}
