@@ -15,7 +15,7 @@ export interface Brand {
   metaKeywords?: nullable<string>
   metaDescription?: nullable<string>
   position?: nullable<number>
-  isActive?: nullable<boolean>
+  isActive?: boolean
   createdAt?: string
   updatedAt?: string
 }
