@@ -36,11 +36,11 @@ export class BrandRepositoryGql {
     }
   }
 
-  static async getById(id: Number, fields?: Array<BrandFields>): Promise<Brand> {
+  static async getById(id: number, fields?: BrandFields[]): Promise<Brand> {
     return this.getOne({ fields: fields || null, filter: { id: id } })
   }
 
-  static async getBySlug(slug: String, fields?: Array<BrandFields>): Promise<Brand> {
+  static async getBySlug(slug: string, fields?: BrandFields[]): Promise<Brand> {
     return this.getOne({ fields: fields || null, filter: { slug: slug } })
   }
 }
