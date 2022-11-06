@@ -1,4 +1,4 @@
-import { nullable } from '../../types/NullableTypes'
+import { nullable } from '../../types/HelpersTypes'
 import { PageableEdgeObject, PageableListObject, PaginationFilter } from '../../types/PaginationTypes'
 import { Brand } from '../../types/product/BrandTypes'
 

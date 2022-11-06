@@ -1,5 +1,5 @@
 import { PageableEdgeObject, PageableListObject, PaginationFilter } from '../../types/PaginationTypes'
-import { nullable } from '../../types/NullableTypes'
+import { nullable } from '../../types/HelpersTypes'
 import { SidebarFilter } from '../sidebar/SidebarTypes'
 
 export interface Product {

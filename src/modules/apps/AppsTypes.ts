@@ -1,4 +1,4 @@
-import { nullable } from '../../../src/types/NullableTypes'
+import { nullable } from '../../types/HelpersTypes'
 
 export interface Apps {
   id?: nullable<string>

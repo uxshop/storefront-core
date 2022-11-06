@@ -1,4 +1,4 @@
-import { nullable } from '../NullableTypes'
+import { nullable } from '../HelpersTypes'
 
 export interface ProductImage {
   id: number

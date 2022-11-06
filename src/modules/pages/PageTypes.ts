@@ -1,5 +1,5 @@
 import { Page } from '../../types/PageTypes'
-import { nullable } from '../../types/NullableTypes'
+import { nullable } from '../../types/HelpersTypes'
 
 export interface PageListResponse {
   pages: Page[]

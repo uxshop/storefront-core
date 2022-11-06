@@ -1,5 +1,5 @@
 import { Image } from '../ImageTypes'
-import { nullable } from '../NullableTypes'
+import { nullable } from '../HelpersTypes'
 
 export interface Brand {
   id: number
