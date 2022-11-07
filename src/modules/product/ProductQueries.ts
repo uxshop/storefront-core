@@ -10,7 +10,7 @@ export class ProductQueries {
   }
 
   private getImageFields() {
-    return '{alt, src}'
+    return '{productId, src, alt, colorIds, variationIds, position}'
   }
 
   private getComponentGroupsFields() {
