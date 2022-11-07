@@ -11,7 +11,7 @@ export interface BrandListResponse {
 }
 
 export interface BrandFilter {
-  id?: Number
+  id?: number
   slug?: String
 }
 
@@ -20,12 +20,12 @@ export interface BrandResponse {
 }
 
 export interface OptionsGetBrand {
-  fields: nullable<Array<BrandFields>>
+  fields: BrandFields[]
   filter?: BrandFilter
 }
 
 export interface OptionsGetBrandList {
-  fields: nullable<Array<BrandFields>>
+  fields: BrandFields[]
   filter: PaginationFilter
 }
 
@@ -43,7 +43,6 @@ export type BrandFields =
   | 'metaKeywords'
   | 'metaDescription'
   | 'position'
-  | 'url'
-  | 'active'
+  | 'isActive'
   | 'createdAt'
   | 'updatedAt'
