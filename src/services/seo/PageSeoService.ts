@@ -30,7 +30,7 @@ export class PageSeoService extends SeoService {
     let microData: PageMicroData = {
       '@context': 'http://schema.org/',
       '@type': 'FAQPage',
-      url: this.page.slug,
+      url: this.page.url,
       name: this.page.name,
       description: this.formatRichText(this.page.description),
       mainEntity: []
