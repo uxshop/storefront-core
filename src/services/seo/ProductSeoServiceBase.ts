@@ -45,7 +45,7 @@ export class ProductSeoServiceBase extends SeoService {
         name: product.brand.name,
         logo: product.brand.image.src,
         image: product.brand.image.src,
-        url: product.brand.url
+        url: product.brand.slug
       }
       if (product.brand.image) data.brand.image = product.brand.image.src
     }
