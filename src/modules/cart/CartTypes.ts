@@ -7,18 +7,18 @@ export interface Cart {
   customer?: nullable<CustomerCart>
   address?: nullable<CartAddress>
   coupon?: nullable<string>
-  shippingToken?: nullable<string>
-  paymentToken?: nullable<string>
+  shipping_token?: nullable<string>
+  payment_token?: nullable<string>
   creditcard?: nullable<CartCreditCard>
-  items?: Array<CartItem>
+  items?: CartItem[]
 }
 
 export interface CustomerCart {
   email?: string
   doc?: string
   newsletter?: boolean
-  firstName?: string
-  lastName?: string
+  first_name?: string
+  last_name?: string
   name?: string
   phone?: string
 }
@@ -35,31 +35,31 @@ export interface CartAddress {
 }
 
 export interface CartCreditCard {
-  cvv?: nullable<string>
-  exp?: nullable<string>
-  name?: nullable<string>
-  Int?: nullable<string>
+  cvv?: string
+  exp?: string
+  name?: string
+  Int?: string
 }
 
 export interface CartItem {
-  id
-  name?: nullable<string>
+  id: number
+  name?: string
   variation?: nullable<string>
-  isVirtual?: nullable<Boolean>
+  is_virtual?: boolean
   quantity?: nullable<number>
-  allowedGiftWrapping?: nullable<Boolean>
-  totalCost?: nullable<number>
+  allowed_gift_wrapping?: boolean
+  total_cost?: nullable<number>
   total?: nullable<number>
   price?: nullable<number>
-  priceCost?: nullable<number>
-  stockBalance?: nullable<number>
-  canSellOutOfStock?: nullable<Boolean>
-  variationId?: nullable<number>
-  additionalPrice?: nullable<number>
-  priceGiftWrapping?: nullable<number>
-  allowedGiftWrappingPrice?: nullable<number>
+  price_cost?: nullable<number>
+  stock_balance?: nullable<number>
+  can_sell_out_off_stock?: boolean
+  variation_id?: nullable<number>
+  additional_price?: nullable<number>
+  price_gift_wrapping?: nullable<number>
+  allowed_gift_wrapping_price?: nullable<number>
   discount?: nullable<number>
-  priceCompare?: nullable<number>
+  price_compare?: nullable<number>
   image?: nullable<Image>
   customize?: nullable<CustomizationsItem>
   components?: nullable<ComponentItem>
@@ -79,8 +79,8 @@ export interface CustomizeContent {
 }
 
 export interface ComponentItem {
-  variationId?: number
-  componentId?: number
+  variation_id?: number
+  component_id?: number
 }
 
 interface MutationInput {
@@ -88,7 +88,7 @@ interface MutationInput {
 }
 
 export interface AddItemInput extends MutationInput {
-  items: Array<CartItemAddInput>
+  items: CartItemAddInput[]
 }
 
 export interface UpdateItemInput extends MutationInput {
@@ -108,9 +108,9 @@ export interface CleanCartInput extends MutationInput {
 }
 
 export interface CartItemAddInput {
-  variationId: number
+  variation_id: number
   quantity: number
-  cartToken?: string
+  cart_token?: string
   zipcode?: number
   customize?: CustomizationsItemInput
   components?: ComponentItemInput
@@ -123,8 +123,8 @@ export interface CartItemUpdateInput {
 }
 
 export interface ComponentItemInput {
-  variationId?: number
-  componentId?: number
+  variation_id?: number
+  component_id?: number
 }
 
 export interface CustomizationsItemInput {

@@ -10,7 +10,7 @@ export class ProductQueries {
   }
 
   private getImageFields() {
-    return '{alt, src}'
+    return '{productId, src, alt, colorIds, variationIds, position}'
   }
 
   private getComponentGroupsFields() {
@@ -162,7 +162,7 @@ export class ProductQueries {
       'metaTitle',
       'metaDescription',
       'metaKeywords',
-      'kit',
+      'isKit',
       'kitMarkup',
       'isVirtual',
       'isPreSale',
@@ -172,7 +172,7 @@ export class ProductQueries {
       'depth',
       'width',
       'height',
-      'sellOutOfStock',
+      'isSellOutOfStock',
       'additionalTimeOutOfStock',
       'balance',
       'price',
