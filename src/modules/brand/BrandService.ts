@@ -3,6 +3,7 @@ import { PaginationFilter } from '../../types/PaginationTypes'
 import { BrandRepositoryGql } from './BrandRepositoryGql'
 import { BrandRepositoryJson } from './BrandRepositoryJson'
 import { BrandFields, BrandList } from './BrandTypes'
+import { ErrorResponse } from 'src/types/HelpersTypes'
 
 const Repository = shop_ctx.mock?.brand ? BrandRepositoryJson : BrandRepositoryGql
 
@@ -15,33 +16,25 @@ export class BrandService {
       })
       return result
     } catch (error) {
-      return {
-        edges: null,
-        pageInfo: null,
-        error: error?.message
-      }
+      throw new Error(error?.message)
     }
   }
 
-  static async getById(id: string, fields?: BrandFields[]): Promise<Brand | any> {
+  static async getById(id: string, fields?: BrandFields[]): Promise<Brand> {
     try {
       const result: Brand = await Repository.getById(Number(id), fields)
       return result
     } catch (error) {
-      return {
-        error: error?.message
-      }
+      throw new Error(error?.message)
     }
   }
 
-  static async getBySlug(slug: string, fields?: BrandFields[]): Promise<Brand | any> {
+  static async getBySlug(slug: string, fields?: BrandFields[]): Promise<Brand> {
     try {
       const result: Brand = await Repository.getBySlug(slug, fields)
       return result
     } catch (error) {
-      return {
-        error: error?.message
-      }
+      throw new Error(error?.message)
     }
   }
 }
