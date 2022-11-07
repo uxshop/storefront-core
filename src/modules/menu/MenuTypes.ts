@@ -28,7 +28,7 @@ export interface MenuValues {
   banner?: nullable<Image>
   bannerLink?: nullable<string>
   isFeatured?: boolean
-  link?: nullable<number>
+  link?: nullable<string>
   menuTypeLink?: nullable<number>
   updatedAt?: string
   position?: nullable<string>

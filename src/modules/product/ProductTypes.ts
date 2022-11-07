@@ -166,12 +166,13 @@ export interface ProductFeature {
 }
 
 export interface ProductImage {
+  id?: number
+  productId?: number
   src?: string
-  alt?: string
-}
-
-export interface ProductColorImage extends ProductImage {
-  colorIds?: number
+  alt?: nullable<string>
+  colorIds?: nullable<number[]>
+  variationIds?: nullable<number[]>
+  position?: number
 }
 
 export interface ProductColor {
