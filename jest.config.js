@@ -15,7 +15,7 @@ module.exports = {
       api_url: 'https://api-storefront.dchomolog.dooca.store/',
       token:
         'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzaG9wX2lkIjoxNDkzOCwidHlwZSI6ImFkbWluIiwiZW1haWwiOiJkaW92YW5pQGRvb2NhLmNvbS5iciIsImZpcnN0X25hbWUiOiJEaW92YW5pIiwiYWN0aXZlIjp0cnVlLCJpYXQiOjE2NTk3MDAzNzR9.iOUS4aJlFuUQuONtalm8yeBQNN1GqmREkq9Lxf-K5H0',
-      domain: 'dcgamer.dchomolog.dooca.store',
+      domain: 'diovani.dchomolog.dooca.store',
       mock: {
         apps: apps,
         sidebar: sidebar,

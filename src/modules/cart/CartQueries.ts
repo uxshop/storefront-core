@@ -17,8 +17,8 @@ export class CartQueries {
         email, 
         doc, 
         newsletter, 
-        firstName, 
-        lastName, 
+        first_name, 
+        last_name, 
         name, 
         phone
       }`,
@@ -33,28 +33,28 @@ export class CartQueries {
         state
       }`,
       'coupon',
-      'shippingToken',
-      'paymentToken',
+      'shipping_token',
+      'payment_token',
       'creditcard {cvv, exp, name, Int}',
       `items {
         id,
         name,
         variation,
-        isVirtual,
+        is_virtual,
         quantity,
-        allowedGiftWrapping,
-        totalCost,
+        allowed_gift_wrapping,
+        total_cost,
         total,
         price,
-        priceCost,
-        stockBalance,
-        canSellOutOfStock,
-        variationId,
-        additionalPrice,
-        priceGiftWrapping,
-        allowedGiftWrappingPrice,
+        price_cost,
+        stock_balance,
+        can_sell_out_of_stock,
+        variation_id,
+        additional_price,
+        price_gift_wrapping,
+        allowed_gift_wrapping_price,
         discount,
-        priceCompare,
+        price_compare,
         image {src, alt},
         customize {
             id, 
@@ -66,7 +66,7 @@ export class CartQueries {
                 price
             }
         },
-        components {variationId, componentId}
+        components {variation_id, component_id}
       }`
     ]
   }
