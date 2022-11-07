@@ -17,7 +17,7 @@ export class BrandSeoService extends SeoService {
       name: this.brand.name,
       logo: this.brand.image.src,
       image: this.brand.image.src,
-      url: this.brand.url
+      url: this.brand.slug
     }
 
     return this.render(microData)
