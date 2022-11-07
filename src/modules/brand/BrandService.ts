@@ -7,7 +7,7 @@ import { BrandFields, BrandList } from './BrandTypes'
 const Repository = shop_ctx.mock?.brand ? BrandRepositoryJson : BrandRepositoryGql
 
 export class BrandService {
-  static async getList(paginationFilter: PaginationFilter, fields?: Array<BrandFields>): Promise<BrandList> {
+  static async getList(paginationFilter: PaginationFilter, fields?: BrandFields[]): Promise<BrandList> {
     try {
       const result: BrandList = await Repository.getList({
         fields: fields || null,
@@ -19,7 +19,7 @@ export class BrandService {
     }
   }
 
-  static async getById(id: string, fields?: Array<BrandFields>): Promise<Brand> {
+  static async getById(id: string, fields?: BrandFields[]): Promise<Brand> {
     try {
       const result: Brand = await Repository.getById(Number(id), fields)
       return result
@@ -28,7 +28,7 @@ export class BrandService {
     }
   }
 
-  static async getBySlug(slug: string, fields?: Array<BrandFields>): Promise<Brand> {
+  static async getBySlug(slug: string, fields?: BrandFields[]): Promise<Brand> {
     try {
       const result: Brand = await Repository.getBySlug(slug, fields)
       return result

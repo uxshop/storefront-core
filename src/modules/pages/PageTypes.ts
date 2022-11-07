@@ -2,7 +2,7 @@ import { Page } from '../../types/PageTypes'
 import { nullable } from '../../types/NullableTypes'
 
 export interface PageListResponse {
-  pages: Array<Page>
+  pages: Page[]
 }
 
 export interface PageResponse {
@@ -10,7 +10,7 @@ export interface PageResponse {
 }
 
 export interface OptionsGetPage {
-  fields: nullable<Array<PageFields>>
+  fields: nullable<PageFields[]>
   filter?: PageFilter
 }
 
@@ -24,8 +24,7 @@ export type PageFields =
   | 'name'
   | 'slug'
   | 'template'
-  | 'url'
-  | 'active'
+  | 'isActive'
   | 'faq'
   | 'createdAt'
   | 'updatedAt'

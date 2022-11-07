@@ -19,7 +19,7 @@ export class ScriptsQueries {
       'loadMethod',
       'content',
       'category',
-      'active',
+      'isActive',
       'description',
       'url'
     ]

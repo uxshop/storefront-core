@@ -3,7 +3,7 @@ import { ScriptsService } from '../ScriptsService'
 import 'isomorphic-fetch'
 
 const PAGE_FILTER = 'all'
-const LOCATION_FILTER = 'header'
+const LOCATION_FILTER = 'footer'
 const SELECTED_FIELDS: Array<ScriptFields> = ['id', 'name']
 
 describe('Script Module', () => {
@@ -14,13 +14,11 @@ describe('Script Module', () => {
 
   it('Should get scripts by page with all fields successfully', async () => {
     const scriptResult: Array<Script> = await ScriptsService.getListByPage(PAGE_FILTER)
-    expect(scriptResult.length).toEqual(10)
     expect(scriptResult[0].page).toEqual(PAGE_FILTER)
   })
 
   it('Should get scripts by location with all fields successfully', async () => {
     const scriptResult: Array<Script> = await ScriptsService.getListByLocation(LOCATION_FILTER)
-    expect(scriptResult.length).toEqual(10)
     expect(scriptResult[0].location).toEqual(LOCATION_FILTER)
   })
 

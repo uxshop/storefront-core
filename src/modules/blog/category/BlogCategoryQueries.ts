@@ -17,10 +17,9 @@ export class BlogCategoryQueries {
       'description',
       'metaTitle',
       'metaDescription',
-      'active',
+      'isActive',
       'postsCount',
       'position',
-      'url',
       'createdAt',
       'updatedAt'
     ]

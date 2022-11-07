@@ -1,5 +1,5 @@
 export class LandingPagesQueries {
-  fields: null | Array<string>
+  fields: null | string[]
 
   constructor(fields) {
     this.fields = fields || this.defaultFields()
@@ -11,14 +11,12 @@ export class LandingPagesQueries {
 
   private defaultFields() {
     return [
-      'shopId',
       'id',
       'name',
       'content',
       'slug',
-      'notIndex',
-      'active',
-      'url',
+      'isIndex',
+      'isActive',
       'createdAt',
       'updatedAt',
       'metaTitle',

@@ -2,46 +2,46 @@ import { Image } from '../../../src/types/ImageTypes'
 import { nullable } from '../../types/NullableTypes'
 
 export interface Menu {
-  id?: nullable<Number>
-  name?: nullable<String>
-  handle?: nullable<String>
-  createdAt?: nullable<String>
-  updatedAt?: nullable<String>
-  values?: MenuValues
+  id?: number
+  name?: string
+  handle?: nullable<string>
+  createdAt?: string
+  updatedAt?: string
+  values?: MenuValues[]
 }
 
 export interface MenuValues {
-  id?: nullable<Number>
-  menuId?: nullable<Number>
-  brandId?: nullable<Number>
-  name?: nullable<String>
-  menuType?: nullable<String>
-  slug?: nullable<String>
-  menuTypeSlug?: nullable<String>
-  active?: nullable<Boolean>
-  createdAt?: nullable<String>
+  id?: number
+  menuId?: number
+  brandId?: nullable<number>
+  name?: string
+  menuType?: string
+  slug?: string
+  menuTypeSlug?: nullable<string>
+  isActive?: boolean
+  createdAt?: string
   image?: nullable<Image>
-  parentId?: nullable<String>
-  pageId?: nullable<Number>
-  hotsiteId?: nullable<Number>
-  categoryId?: nullable<Number>
-  banner?: nullable<String>
-  bannerLink?: nullable<String>
-  isFeatured?: nullable<Number>
-  link?: nullable<Number>
-  menuTypeLink?: nullable<Number>
-  updatedAt?: nullable<String>
-  position?: nullable<String>
-  children?: Array<MenuValues>
+  parentId?: string
+  pageId?: nullable<number>
+  hotsiteId?: nullable<number>
+  categoryId?: nullable<number>
+  banner?: nullable<Image>
+  bannerLink?: nullable<string>
+  isFeatured?: boolean
+  link?: nullable<number>
+  menuTypeLink?: nullable<number>
+  updatedAt?: string
+  position?: nullable<string>
+  children?: MenuValues[]
 }
 
 export interface OptionsGetMenu {
-  fields: nullable<Array<MenuFields>>
+  fields: nullable<MenuFields[]>
   filter?: MenuFIlter
 }
 
 export interface MenuFIlter {
-  id: Number
+  id: number
 }
 
 export interface MenuResponse {
@@ -49,7 +49,7 @@ export interface MenuResponse {
 }
 
 export interface MenuListResponse {
-  menus: Array<Menu>
+  menus: Menu[]
 }
 
 export type MenuFields = 'id' | 'name' | 'handle' | 'createdAt' | 'updatedAt' | 'values'
@@ -62,7 +62,7 @@ export type MenuValueFields =
   | 'menuType'
   | 'slug'
   | 'menuTypeSlug'
-  | 'active'
+  | 'isActive'
   | 'createdAt'
   | 'image'
   | 'parentId'
