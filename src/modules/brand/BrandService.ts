@@ -15,25 +15,33 @@ export class BrandService {
       })
       return result
     } catch (error) {
-      throw new Error(error)
+      return {
+        edges: null,
+        pageInfo: null,
+        error: error?.message
+      }
     }
   }
 
-  static async getById(id: string, fields?: BrandFields[]): Promise<Brand> {
+  static async getById(id: string, fields?: BrandFields[]): Promise<Brand | any> {
     try {
       const result: Brand = await Repository.getById(Number(id), fields)
       return result
     } catch (error) {
-      throw new Error(error)
+      return {
+        error: error?.message
+      }
     }
   }
 
-  static async getBySlug(slug: string, fields?: BrandFields[]): Promise<Brand> {
+  static async getBySlug(slug: string, fields?: BrandFields[]): Promise<Brand | any> {
     try {
       const result: Brand = await Repository.getBySlug(slug, fields)
       return result
     } catch (error) {
-      throw new Error(error)
+      return {
+        error: error?.message
+      }
     }
   }
 }

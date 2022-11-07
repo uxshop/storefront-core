@@ -2,7 +2,7 @@ import { BrandService } from '../BrandService'
 import { BrandFields } from '../BrandTypes'
 import 'isomorphic-fetch'
 
-const ID_FILTER = '1260'
+const ID_FILTER = '136481'
 
 describe('Brand Module', () => {
   it('Should get brand by id with all fields succeffully', async () => {
@@ -19,7 +19,7 @@ describe('Brand Module', () => {
   })
 
   it('Should get brand by slug with all fields succeffully', async () => {
-    const FILTER_SLUG = 'amd'
+    const FILTER_SLUG = 'nike'
     const brandResult = await BrandService.getBySlug(FILTER_SLUG)
     expect(brandResult.slug).toEqual(FILTER_SLUG)
   })
@@ -30,11 +30,10 @@ describe('Brand Module', () => {
     expect(brandListResult.edges.length > 0).toBeTruthy()
   })
 
-  it('Should try get brand by inexistant id and it should throw error', async () => {
-    expect(async () => await BrandService.getById('1234')).rejects.toThrow()
-  })
+  it('Should try get brand by inexistant id and it should returns error', async () => {
+    const brandResult = await BrandService.getById('1234')
+    console.log(brandResult)
 
-  it('Should try get brand by inexistant id and it should throw error', async () => {
-    expect(async () => await BrandService.getList({ page: 1 })).rejects.toThrow()
+    expect(brandResult.error).toBeTruthy()
   })
 })

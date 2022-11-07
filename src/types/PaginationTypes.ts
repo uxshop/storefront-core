@@ -19,6 +19,7 @@ export interface PageInfo {
 export interface PageableListObject<T> {
   edges: Array<T>
   pageInfo: PageInfo
+  error?: string
 }
 
 export interface PageableEdgeObject<T> {

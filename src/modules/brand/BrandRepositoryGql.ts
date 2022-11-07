@@ -14,26 +14,17 @@ export class BrandRepositoryGql {
   static async getList({ fields, filter }: OptionsGetBrandList): Promise<BrandList> {
     const brandQuery = new BrandQueries(fields)
     const brandListQuery: string = brandQuery.listFullQuery()
-    try {
-      const { brands }: BrandListResponse = await client.query(brandListQuery, filter && { filter: { ...filter } })
+    const { brands }: BrandListResponse = await client.query(brandListQuery, filter && { filter: { ...filter } })
 
-      return brands
-    } catch (error) {
-      throw new Error(error)
-    }
+    return brands
   }
 
   private static async getOne({ fields, filter }: OptionsGetBrand): Promise<Brand> {
     const brandQuery = new BrandQueries(fields)
     const brandGetOneQuery: string = brandQuery.getOnefullQuery()
+    const { brand }: BrandResponse = await client.query(brandGetOneQuery, filter && { filter: { ...filter } })
 
-    try {
-      const { brand }: BrandResponse = await client.query(brandGetOneQuery, filter && { filter: { ...filter } })
-
-      return brand
-    } catch (error) {
-      throw new Error(error)
-    }
+    return brand
   }
 
   static async getById(id: number, fields?: BrandFields[]): Promise<Brand> {
