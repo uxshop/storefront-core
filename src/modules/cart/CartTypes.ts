@@ -47,19 +47,19 @@ export interface CartItem {
   variation?: nullable<string>
   is_virtual?: boolean
   quantity?: nullable<number>
-  allowed_gift_wrapping?: nullable<Boolean>
-  totalCost?: nullable<number>
+  allowed_gift_wrapping?: boolean
+  total_cost?: nullable<number>
   total?: nullable<number>
   price?: nullable<number>
-  priceCost?: nullable<number>
-  stockBalance?: nullable<number>
-  canSellOutOfStock?: nullable<Boolean>
-  variationId?: nullable<number>
-  additionalPrice?: nullable<number>
-  priceGiftWrapping?: nullable<number>
-  allowedGiftWrappingPrice?: nullable<number>
+  price_cost?: nullable<number>
+  stock_balance?: nullable<number>
+  can_sell_out_off_stock?: boolean
+  variation_id?: nullable<number>
+  additional_price?: nullable<number>
+  price_gift_wrapping?: nullable<number>
+  allowed_gift_wrapping_price?: nullable<number>
   discount?: nullable<number>
-  priceCompare?: nullable<number>
+  price_compare?: nullable<number>
   image?: nullable<Image>
   customize?: nullable<CustomizationsItem>
   components?: nullable<ComponentItem>
@@ -79,8 +79,8 @@ export interface CustomizeContent {
 }
 
 export interface ComponentItem {
-  variationId?: number
-  componentId?: number
+  variation_id?: number
+  component_id?: number
 }
 
 interface MutationInput {
@@ -88,7 +88,7 @@ interface MutationInput {
 }
 
 export interface AddItemInput extends MutationInput {
-  items: Array<CartItemAddInput>
+  items: CartItemAddInput[]
 }
 
 export interface UpdateItemInput extends MutationInput {
@@ -108,9 +108,9 @@ export interface CleanCartInput extends MutationInput {
 }
 
 export interface CartItemAddInput {
-  variationId: number
+  variation_id: number
   quantity: number
-  cartToken?: string
+  cart_token?: string
   zipcode?: number
   customize?: CustomizationsItemInput
   components?: ComponentItemInput
@@ -123,8 +123,8 @@ export interface CartItemUpdateInput {
 }
 
 export interface ComponentItemInput {
-  variationId?: number
-  componentId?: number
+  variation_id?: number
+  component_id?: number
 }
 
 export interface CustomizationsItemInput {

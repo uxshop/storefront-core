@@ -4,11 +4,11 @@ import 'isomorphic-fetch'
 
 const SELECTED_FIELDS: Array<CartFields> = ['id', 'token']
 
-const SINGLE_ITEM_TO_BE_ADDED_SAMPLE: Array<CartItemAddInput> = [{ variationId: 9469350, quantity: 1 }]
-// const MULTIPLE_ITEMS_TO_BE_ADDED_SAMPLE: Array<CartItemAddInput> = [
-//   ...SINGLE_ITEM_TO_BE_ADDED_SAMPLE,
-//   { variationId: 9468614, quantity: 1 }
-// ]
+const SINGLE_ITEM_TO_BE_ADDED_SAMPLE: Array<CartItemAddInput> = [{ variation_id: 9469347, quantity: 1 }]
+const MULTIPLE_ITEMS_TO_BE_ADDED_SAMPLE: Array<CartItemAddInput> = [
+  ...SINGLE_ITEM_TO_BE_ADDED_SAMPLE,
+  { variation_id: 9469369, quantity: 1 }
+]
 
 describe('Cart Module', () => {
   it('Should add item and return cart with all fields successfully', async () => {
@@ -27,12 +27,12 @@ describe('Cart Module', () => {
     expect(cartResultFields.length).toEqual(SELECTED_FIELDS.length)
   })
 
-  // it('Should add multiple items and return cart with all fields successfully', async () => {
-  //   const cartResult = await CartService.addItem({ items: MULTIPLE_ITEMS_TO_BE_ADDED_SAMPLE })
-  //   expect(cartResult.items.length).toEqual(MULTIPLE_ITEMS_TO_BE_ADDED_SAMPLE.length)
-  // })
+  it('Should add multiple items and return cart with all fields successfully', async () => {
+    const cartResult = await CartService.addItem({ items: MULTIPLE_ITEMS_TO_BE_ADDED_SAMPLE })
+    expect(cartResult.items.length).toEqual(MULTIPLE_ITEMS_TO_BE_ADDED_SAMPLE.length)
+  })
 
   it('Should try to add item with invalid variation_id and it should throw error', async () => {
-    expect(async () => await CartService.addItem({ items: [{ variationId: 999, quantity: 1 }] })).rejects.toThrow
+    expect(async () => await CartService.addItem({ items: [{ variation_id: 999, quantity: 1 }] })).rejects.toThrow
   })
 })
