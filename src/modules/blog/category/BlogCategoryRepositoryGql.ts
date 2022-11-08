@@ -13,13 +13,9 @@ export class BlogCategoryRepositoryGql {
   static async getList(fields?: BlogCategoryFields[]): Promise<BlogCategory[]> {
     const blogCategoryQuery = new BlogCategoryQueries(fields)
     const blogCategoryListQuery: string = blogCategoryQuery.listFullQuery()
-    try {
-      const { blogCategories }: BlogCategoryListResponse = await client.query(blogCategoryListQuery)
+    const { blogCategories }: BlogCategoryListResponse = await client.query(blogCategoryListQuery)
 
-      return blogCategories
-    } catch (error) {
-      throw new Error(error)
-    }
+    return blogCategories
   }
 
   private static async getOne(OptionsGetBlogCategory: OptionsGetBlogCategory): Promise<BlogCategory> {
@@ -27,16 +23,12 @@ export class BlogCategoryRepositoryGql {
 
     const blogCategoryQuery = new BlogCategoryQueries(fields)
     const blogCategoryGetOneQuery: string = blogCategoryQuery.getOnefullQuery()
-    try {
-      const { blogCategory }: BlogCategoryResponse = await client.query(
-        blogCategoryGetOneQuery,
-        filter && { filter: { ...filter } }
-      )
+    const { blogCategory }: BlogCategoryResponse = await client.query(
+      blogCategoryGetOneQuery,
+      filter && { filter: { ...filter } }
+    )
 
-      return blogCategory
-    } catch (error) {
-      throw new Error(error)
-    }
+    return blogCategory
   }
 
   static async getById(id: number, fields?: BlogCategoryFields[]): Promise<BlogCategory> {

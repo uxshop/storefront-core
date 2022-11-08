@@ -6,7 +6,11 @@ const Repository = shop_ctx.mock?.apps ? AppsRepositoryJson : AppsRepositoryGql
 
 export class AppsService {
   static async getById(id: string, fields?: Array<AppsFields>) {
-    const result: Apps = await Repository.getById(Number(id), fields)
-    return result
+    try {
+      const result: Apps = await Repository.getById(Number(id), fields)
+      return result
+    } catch (error) {
+      throw new Error(error?.message)
+    }
   }
 }

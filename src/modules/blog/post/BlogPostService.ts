@@ -8,27 +8,39 @@ const Repository = shop_ctx.mock?.blogPost ? BlogPostRepositoryJson : BlogPostRe
 
 export class BlogPostService {
   static async getById(id: string, fields?: BlogPostFields[]): Promise<Post> {
-    const result: Post = await Repository.getById(Number(id), fields)
-    return result
+    try {
+      const result: Post = await Repository.getById(Number(id), fields)
+      return result
+    } catch (error) {
+      throw new Error(error?.message)
+    }
   }
 
   static async getBySlug(slug: string, fields?: BlogPostFields[]): Promise<Post> {
-    const result: Post = await Repository.getBySlug(slug, fields)
-    return result
+    try {
+      const result = await Repository.getBySlug(slug, fields)
+      return result
+    } catch (error) {
+      throw new Error(error?.message)
+    }
   }
 
   static async getList(
     { page, first = 6, fastSearch, postCategoryId }: BlogPostListFilter,
     fields?: BlogPostFields[]
   ): Promise<BlogPostList> {
-    const result: BlogPostList = await Repository.getList({
-      filter: {
-        ...normalizePagination(page, first),
-        fastSearch,
-        postCategoryId
-      },
-      fields: fields
-    })
-    return result
+    try {
+      const result: BlogPostList = await Repository.getList({
+        filter: {
+          ...normalizePagination(page, first),
+          fastSearch,
+          postCategoryId
+        },
+        fields: fields
+      })
+      return result
+    } catch (error) {
+      throw new Error(error?.message)
+    }
   }
 }

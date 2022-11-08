@@ -55,7 +55,7 @@ export class BrandQueries {
       }`
   }
 
-  getOnefullQuery() {
+  getOneFullQuery() {
     return `query getBrand($filter: filterBrand){
       brand(filter: $filter){
         ${this.getFields()}
