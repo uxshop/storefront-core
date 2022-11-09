@@ -10,7 +10,7 @@ describe('Broadcast Service', () => {
   it('Should emit event sendBrand', async () => {
     const spy = jest.spyOn(window, 'dispatchEvent')
 
-    BroadcastService.sendBrand(brandMock)
+    BroadcastService.emmit('Brand', brandMock)
 
     const [event] = spy.mock.calls[0]
 
@@ -21,7 +21,7 @@ describe('Broadcast Service', () => {
   it('Should emit event sendShop', async () => {
     const spy = jest.spyOn(window, 'dispatchEvent')
 
-    BroadcastService.sendShop(shopMock)
+    BroadcastService.emmit('Shop', shopMock)
 
     const [event] = spy.mock.calls[0]
 
