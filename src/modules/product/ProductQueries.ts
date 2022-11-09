@@ -18,7 +18,7 @@ export class ProductQueries {
   }
 
   private getAttributeFields() {
-    return `{id, name, slug, attributeId, attributeName}`
+    return `{id, name, slug, attributeId, attributeName, position, isActive}`
   }
 
   private getColorFields() {
@@ -107,20 +107,13 @@ export class ProductQueries {
       'id',
       'productId',
       'price',
-      'colorId',
-      'colorSecondaryId',
-      'attributeValueId',
-      'attributeValueSecondaryId',
-      'reference',
       'slug',
       'priceCompare',
-      'sku',
       'gtin',
       'mpn',
       'additionalShippingTime',
       `images ${this.getImageFields()}`,
       'balance',
-      'isSellingOutOfStock',
       `color ${this.getColorFields()}`,
       `attribute ${this.getAttributeFields()}`,
       `attributeSecondary ${this.getAttributeFields()}`
@@ -194,7 +187,8 @@ export class ProductQueries {
       `color ${this.getColorFields()}`,
       `attribute ${this.getAttributeFields()}`,
       `attributeSecondary ${this.getAttributeFields()}`,
-      `features ${this.getFeatureFields()}`
+      `features ${this.getFeatureFields()}`,
+      'priceOutOfStock'
     ]
   }
 

@@ -31,6 +31,8 @@ export class ProductRepositoryGql {
     const productQuery = new ProductQueries(fields)
     const productGetOneQuery: string = productQuery.getOnefullQuery()
 
+    console.log(productGetOneQuery)
+
     try {
       const { product }: ProductResponse = await client.query(productGetOneQuery, filter && { filter: { ...filter } })
 
