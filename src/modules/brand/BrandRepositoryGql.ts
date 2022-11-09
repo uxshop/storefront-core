@@ -21,7 +21,7 @@ export class BrandRepositoryGql {
 
   private static async getOne({ fields, filter }: OptionsGetBrand): Promise<Brand> {
     const brandQuery = new BrandQueries(fields)
-    const brandGetOneQuery: string = brandQuery.getOnefullQuery()
+    const brandGetOneQuery: string = brandQuery.getOneFullQuery()
     const { brand }: BrandResponse = await client.query(brandGetOneQuery, filter && { filter: { ...filter } })
 
     return brand

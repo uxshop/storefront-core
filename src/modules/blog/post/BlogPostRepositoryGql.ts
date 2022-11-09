@@ -14,31 +14,18 @@ export class BlogPostRepositoryGql {
   static async getList({ fields, filter }: OptionsGetBlogPostList): Promise<BlogPostList> {
     const blogPostQuery = new BlogPostQueries(fields)
     const blogPostListQuery: string = blogPostQuery.listFullQuery()
-    try {
-      const { blogPosts }: BlogPostListResponse = await client.query(
-        blogPostListQuery,
-        filter && { filter: { ...filter } }
-      )
-
-      return blogPosts
-    } catch (error) {
-      throw new Error(error)
-    }
+    const { blogPosts }: BlogPostListResponse = await client.query(
+      blogPostListQuery,
+      filter && { filter: { ...filter } }
+    )
+    return blogPosts
   }
 
   private static async getBlogPost({ fields, filter }: OptionsGetBlogPost): Promise<Post> {
     const blogPostQuery = new BlogPostQueries(fields)
     const blogPostGetOneQuery: string = blogPostQuery.getOnefullQuery()
-    try {
-      const { blogPost }: BlogPostResponse = await client.query(
-        blogPostGetOneQuery,
-        filter && { filter: { ...filter } }
-      )
-
-      return blogPost
-    } catch (error) {
-      throw new Error(error)
-    }
+    const { blogPost }: BlogPostResponse = await client.query(blogPostGetOneQuery, filter && { filter: { ...filter } })
+    return blogPost
   }
 
   static async getById(id: number, fields?: BlogPostFields[]): Promise<Post> {
