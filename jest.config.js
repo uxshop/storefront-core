@@ -8,7 +8,7 @@ const blogPost = require('./src/mocks/blog/blog-post.json')
 
 module.exports = {
   preset: 'ts-jest',
-  testEnvironment: 'node',
+  testEnvironment: 'jsdom',
   rootDir: './src',
   globals: {
     shop_ctx: {
