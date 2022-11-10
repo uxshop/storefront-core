@@ -34,7 +34,7 @@ export class PagesQueries {
       }`
   }
 
-  getOnefullQuery() {
+  getOneFullQuery() {
     return `query Page($filter: filterPage) {
       page(filter: $filter) {
             ${this.getFields()}
