@@ -7,13 +7,9 @@ export class ScriptsRepositoryGql {
     const { fields, filter } = optionsGetScripts
     const scriptsQuery = new ScriptsQueries(fields)
     const getScriptsQuery: string = scriptsQuery.listFullQuery()
-    try {
-      const { scripts }: ScriptsResponse = await client.query(getScriptsQuery, filter && { filter: { ...filter } })
+    const { scripts }: ScriptsResponse = await client.query(getScriptsQuery, filter && { filter: { ...filter } })
 
-      return scripts
-    } catch (error) {
-      throw new Error(error)
-    }
+    return scripts
   }
 
   static async getList(fields?: ScriptFields[]): Promise<Script[]> {
