@@ -1,7 +1,7 @@
-import { AppsFields } from './AppsTypes'
+import { AppFilter, AppFields } from './AppTypes'
 
-export class AppsRepositoryJson {
-  static async getById(id: number, fields?: AppsFields[]) {
+export class AppRepositoryJson {
+  static async getById(id: number, fields?: AppFields[]) {
     const mock = shop_ctx.mock?.apps || {}
 
     if (id != mock.id) {
