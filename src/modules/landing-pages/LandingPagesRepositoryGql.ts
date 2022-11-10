@@ -1,4 +1,4 @@
-import { BroadcastService } from 'src/services/broadcast/broadcast-service'
+import { BroadcastService } from '../../services/broadcast/broadcast-service'
 import { client } from '../../services/GraphqlService'
 import { LandingPagesQueries } from './LandingPagesQueries'
 import { LandingPage, LandingPageFields, LandingPageResponse, OptionsGetLandingPage } from './LandingPagesTypes'
