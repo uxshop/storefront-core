@@ -15,7 +15,7 @@ export class BrandService {
         filter: paginationFilter || { page: 1 }
       })
 
-      BroadcastService.emmit('Brand', result)
+      BroadcastService.emit('Brand', result)
 
       return result
     } catch (error) {
@@ -26,7 +26,7 @@ export class BrandService {
   static async getById(id: string, fields?: BrandFields[]): Promise<Brand> {
     try {
       const result = await Repository.getById(Number(id), fields)
-      BroadcastService.emmit('Brand', result)
+      BroadcastService.emit('Brand', result)
 
       return result
     } catch (error) {
@@ -37,7 +37,7 @@ export class BrandService {
   static async getBySlug(slug: string, fields?: BrandFields[]): Promise<Brand> {
     try {
       const result = await Repository.getBySlug(slug, fields)
-      BroadcastService.emmit('Brand', result)
+      BroadcastService.emit('Brand', result)
 
       return result
     } catch (error) {

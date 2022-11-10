@@ -17,12 +17,12 @@ export type BroadcastEvents =
   | 'Sidebar'
   | 'User'
 export class BroadcastService {
-  static emmit(eventType: BroadcastEvents, data: any) {
+  static emit(eventType: BroadcastEvents, data: any) {
     const eventMessage = `send${eventType}`
     const event = new CustomEvent(eventMessage, {
       detail: data
     })
 
-    window.dispatchEvent(event)
+    data && window.dispatchEvent(event)
   }
 }
