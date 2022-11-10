@@ -15,12 +15,7 @@ module.exports = {
       token:
         'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzaG9wX2lkIjo0NywidHlwZSI6ImFkbWluIiwiZW1haWwiOiJzaW1hb0Bkb29jYS5jb20uYnIiLCJmaXJzdF9uYW1lIjoiU2NobGF3YSIsImFjdGl2ZSI6dHJ1ZSwiaWF0IjoxNjYyNjU3MzIyfQ.q5GxkXJZeN7xQ3HVN7sqPK1Ls-Ck--hRTAgvSV7RyLs',
       domain: 'dcgamer.dchomolog.dooca.store',
-      mock: {
-        apps: appsMock,
-        sidebar: sidebarMock,
-        freight: freightMock,
-        newsletter: newsletterMock
-      }
+      mock: {}
     }
   }
 }
