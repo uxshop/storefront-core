@@ -1,3 +1,4 @@
+import { BroadcastService } from 'src/services/broadcast/broadcast-service'
 import { client } from '../../services/GraphqlService'
 import { LandingPagesQueries } from './LandingPagesQueries'
 import { LandingPage, LandingPageFields, LandingPageResponse, OptionsGetLandingPage } from './LandingPagesTypes'
@@ -5,19 +6,16 @@ import { LandingPage, LandingPageFields, LandingPageResponse, OptionsGetLandingP
 export class LandingPagesRepositoryGql {
   private static async get({ fields, filter }: OptionsGetLandingPage): Promise<LandingPage<any>> {
     const landingPagesQuery = new LandingPagesQueries(fields)
-    const landingPagesGetQuery: string = landingPagesQuery.getOnefullQuery()
-    try {
-      const { landingPage }: LandingPageResponse = await client.query(
-        landingPagesGetQuery,
-        filter && { filter: { ...filter } }
-      )
+    const landingPagesGetQuery: string = landingPagesQuery.getOneFullQuery()
+    const { landingPage }: LandingPageResponse = await client.query(
+      landingPagesGetQuery,
+      filter && { filter: { ...filter } }
+    )
 
-      const content = landingPage.content && JSON.parse(landingPage.content)
+    landingPage.content = landingPage.content ? JSON.parse(landingPage.content) : {}
+    BroadcastService.emit('LandingPages', landingPage)
 
-      return { ...landingPage, ...(content && { content: content }) }
-    } catch (error) {
-      throw new Error(error)
-    }
+    return landingPage
   }
 
   static async getById(id: number, fields?: Array<LandingPageFields>): Promise<LandingPage<any>> {
