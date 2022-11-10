@@ -15,7 +15,7 @@ export class AppsQueries {
 
   getApps() {
     return `query Apps($filter: filterApps) {
-        apps(filter: $filter) {
+        app(filter: $filter) {
           ${this.getFields()}
         }
       }`

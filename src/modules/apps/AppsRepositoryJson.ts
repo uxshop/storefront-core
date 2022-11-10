@@ -1,7 +1,7 @@
 import { AppsFields } from './AppsTypes'
 
 export class AppsRepositoryJson {
-  static async getById(id: number, fields?: Array<AppsFields>) {
+  static async getById(id: number, fields?: AppsFields[]) {
     const mock = shop_ctx.mock?.apps || {}
 
     if (id != mock.id) {

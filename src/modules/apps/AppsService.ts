@@ -1,13 +1,16 @@
 import { AppsRepositoryJson } from './AppsRepositoryJson'
 import { AppsRepositoryGql } from './AppsRepositoryGql'
-import { Apps, AppsFields } from './AppsTypes'
+import { App, AppsFields } from './AppsTypes'
+import { BroadcastService } from '../../services/broadcast/broadcast-service'
 
 const Repository = shop_ctx.mock?.apps ? AppsRepositoryJson : AppsRepositoryGql
 
 export class AppsService {
-  static async getById(id: string, fields?: Array<AppsFields>) {
+  static async getById(id: string, fields?: AppsFields[]): Promise<App> {
     try {
-      const result: Apps = await Repository.getById(Number(id), fields)
+      const result = await Repository.getById(Number(id), fields)
+      BroadcastService.emit('Apps', result)
+
       return result
     } catch (error) {
       throw new Error(error?.message)

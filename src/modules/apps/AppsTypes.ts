@@ -1,6 +1,6 @@
 import { nullable } from '../../types/HelpersTypes'
 
-export interface Apps {
+export interface App {
   id?: nullable<string>
   slug?: nullable<number>
   price?: nullable<number>
@@ -16,7 +16,7 @@ export interface AppsFilter {
 }
 
 export interface AppsResponse {
-  apps: Apps
+  app: App
 }
 
 export type AppsFields = 'id' | 'slug' | 'price' | 'shopId' | 'storeAppId' | 'content' | 'userId' | 'bridgePackageId'

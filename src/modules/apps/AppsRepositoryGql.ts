@@ -1,13 +1,13 @@
 import { client } from '../../services/GraphqlService'
 import { AppsQueries } from './AppsQueries'
-import { Apps, AppsFields, AppsResponse } from './AppsTypes'
+import { App, AppsFields, AppsResponse } from './AppsTypes'
 
 export class AppsRepositoryGql {
-  static async getById(id: number, fields?: Array<AppsFields>): Promise<Apps> {
+  static async getById(id: number, fields?: AppsFields[]): Promise<App> {
     const appsQuery = new AppsQueries(fields)
     const getAppsQuery: string = appsQuery.getApps()
-    const { apps }: AppsResponse = await client.query(getAppsQuery, { filter: { id: id } })
+    const { app }: AppsResponse = await client.query(getAppsQuery, { filter: { id: id } })
 
-    return apps
+    return app
   }
 }

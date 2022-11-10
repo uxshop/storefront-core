@@ -7,7 +7,6 @@ const ID_FILTER = '136533'
 describe('Brand Module', () => {
   it('Should get brand by id with all fields successfully', async () => {
     const brandResult = await BrandService.getById(ID_FILTER)
-
     expect(brandResult.id).toEqual(ID_FILTER.toString())
   })
 
