@@ -6,7 +6,7 @@ import { Menu, MenuFields } from './MenuTypes'
 const Repository = shop_ctx.mock?.menu ? MenuRepositoryJson : MenuRepositoryGql
 
 export class MenuService {
-  static async getById(id: string, fields?: Array<MenuFields>): Promise<Menu> {
+  static async getById(id: string, fields?: MenuFields[]): Promise<Menu> {
     try {
       const result: Menu = await Repository.getById(Number(id), fields)
 
@@ -18,9 +18,9 @@ export class MenuService {
     }
   }
 
-  static async getList(fields?: Array<MenuFields>): Promise<Array<Menu>> {
+  static async getList(fields?: MenuFields[]): Promise<Menu[]> {
     try {
-      const result: Array<Menu> = await Repository.getList(fields)
+      const result: Menu[] = await Repository.getList({ fields })
 
       BroadcastService.emit('Menu', result)
 
