@@ -1,6 +1,6 @@
 import { client } from '../../services/GraphqlService'
 import { MenuQueries } from './MenuQueries'
-import { Menu, MenuFields, MenuListResponse, MenuResponse, OptionsGetMenu } from './MenuTypes'
+import { Menu, MenuFields, MenuListResponse, MenuResponse, OptionsGetMenu, OptionsGetMenuList } from './MenuTypes'
 
 export class MenuRepositoryGql {
   private static async getOne({ fields, filter }: OptionsGetMenu): Promise<Menu> {
@@ -11,10 +11,13 @@ export class MenuRepositoryGql {
     return menu
   }
 
-  static async getList(fields?: MenuFields[]): Promise<Menu[]> {
+  static async getList(optionsGetMenuList?: OptionsGetMenuList): Promise<Menu[]> {
+    const menuIds = optionsGetMenuList?.menuIds
+    const fields = optionsGetMenuList?.fields
+
     const menuQuery = new MenuQueries(fields)
     const menuListQuery: string = menuQuery.listFullQuery()
-    const { menus }: MenuListResponse = await client.query(menuListQuery)
+    const { menus }: MenuListResponse = await client.query(menuListQuery, menuIds && { menuIds: menuIds })
 
     return menus
   }

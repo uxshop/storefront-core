@@ -1,7 +1,7 @@
-import { MenuFields } from './MenuTypes'
+import { MenuFields, OptionsGetMenuList } from './MenuTypes'
 
 export class MenuRepositoryJson {
-  static async getList(fields?: MenuFields[]) {
+  static async getList(optionsGetMenuList?: OptionsGetMenuList) {
     const result = shop_ctx.mock?.menu
     return result || {}
   }
