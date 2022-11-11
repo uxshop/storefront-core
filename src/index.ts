@@ -4,7 +4,7 @@ import { StyleHelper } from './helpers/styleHelper'
 import { ViewportHelper } from './helpers/viewportHelper'
 
 // Modules services
-import { AppsService } from './modules/app/AppService'
+import { AppService } from './modules/app/AppService'
 import { BlogCategoryService } from './modules/blog/category/BlogCategoryService'
 import { BlogPostService } from './modules/blog/post/BlogPostService'
 import { BrandService } from './modules/brand/BrandService'
@@ -33,7 +33,7 @@ export {
   StringHelper,
   StyleHelper,
   ViewportHelper,
-  AppsService,
+  AppService,
   BlogCategoryService,
   BlogPostService,
   BrandService,
