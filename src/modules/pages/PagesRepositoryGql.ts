@@ -4,28 +4,20 @@ import { PagesQueries } from './PagesQueries'
 import { Page } from '../../types/PageTypes'
 
 export class PagesRepositoryGql {
-  static async getList(fields?: Array<PageFields>): Promise<Array<Page>> {
+  static async getList(fields?: PageFields[]): Promise<Page[]> {
     const pagesQuery = new PagesQueries(fields)
-    const pagesListQuery: string = pagesQuery.listFullQuery()
-    try {
-      const { pages }: PageListResponse = await client.query(pagesListQuery)
+    const pagesListQuery = pagesQuery.listFullQuery()
+    const { pages }: PageListResponse = await client.query(pagesListQuery)
 
-      return pages
-    } catch (error) {
-      throw new Error(error)
-    }
+    return pages
   }
 
   private static async getOne({ fields, filter }: OptionsGetPage): Promise<Page> {
     const pagesQuery = new PagesQueries(fields)
-    const pagesGetOneQuery: string = pagesQuery.getOnefullQuery()
-    try {
-      const { page }: PageResponse = await client.query(pagesGetOneQuery, filter && { filter: filter })
+    const pagesGetOneQuery = pagesQuery.getOneFullQuery()
+    const { page }: PageResponse = await client.query(pagesGetOneQuery, filter && { filter: filter })
 
-      return page
-    } catch (error) {
-      throw new Error(error)
-    }
+    return page
   }
 
   static async getById(id: Number, fields?: Array<PageFields>): Promise<Page> {
