@@ -51,6 +51,10 @@ export interface MenuResponse {
 export interface MenuListResponse {
   menus: Menu[]
 }
+export interface OptionsGetMenuList {
+  menuIds?: number[]
+  fields?: MenuFields[]
+}
 
 export type MenuFields = 'id' | 'name' | 'handle' | 'createdAt' | 'updatedAt' | 'values'
 
