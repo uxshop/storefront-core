@@ -1,4 +1,4 @@
-import { BroadcastService } from 'src/services/broadcast/broadcast-service'
+import { BroadcastService } from '../../services/broadcast/broadcast-service'
 import { SidebarRepositoryGql } from './SidebarRepositoryGql'
 import { SidebarRepositoryJson } from './SidebarRepositoryJson'
 import { Sidebar, SidebarFilter } from './SidebarTypes'
