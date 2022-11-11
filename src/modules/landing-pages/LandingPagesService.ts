@@ -6,12 +6,20 @@ const Repository = shop_ctx.mock?.landing_pages ? LandingPagesRepositoryJson : L
 
 export class LandingPagesService {
   static async getById(id: string, fields?: LandingPageFields[]): Promise<LandingPage<any>> {
-    const result: LandingPage<any> = await Repository.getById(Number(id), fields)
-    return result
+    try {
+      const result: LandingPage<any> = await Repository.getById(Number(id), fields)
+      return result
+    } catch (error) {
+      throw new Error(error?.message)
+    }
   }
 
   static async getBySlug(slug: string, fields?: LandingPageFields[]): Promise<LandingPage<any>> {
-    const result: LandingPage<any> = await Repository.getBySlug(slug, fields)
-    return result
+    try {
+      const result: LandingPage<any> = await Repository.getBySlug(slug, fields)
+      return result
+    } catch (error) {
+      throw new Error(error?.message)
+    }
   }
 }
