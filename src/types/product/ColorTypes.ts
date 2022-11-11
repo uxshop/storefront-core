@@ -1,6 +1,6 @@
 import { Image } from '../ImageTypes'
 import { ProductImage } from './ProductImageTypes'
-import { nullable } from '../NullableTypes'
+import { nullable } from '../HelpersTypes'
 
 export interface Color {
   id: number

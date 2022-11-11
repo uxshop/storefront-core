@@ -86,7 +86,7 @@ export class MenuQueries {
       }`
   }
 
-  getOnefullQuery() {
+  getOneFullQuery() {
     return `query getMenu($filter: filterMenu){
         menu(filter: $filter){
           ${this.getFields()}

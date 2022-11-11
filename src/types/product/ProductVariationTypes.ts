@@ -1,7 +1,7 @@
 import { Color } from './ColorTypes'
 import { AttributeValue } from './AttributeTypes'
 import { ProductImage } from './ProductImageTypes'
-import { nullable } from '../NullableTypes'
+import { nullable } from '../HelpersTypes'
 
 export interface ProductVariation {
   id: number

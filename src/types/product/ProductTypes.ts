@@ -8,7 +8,7 @@ import { Attribute } from './AttributeTypes'
 import { ProductImage } from './ProductImageTypes'
 import { ComponentGroup } from './ComponentGroupTypes'
 import { ProductVariation } from './ProductVariationTypes'
-import { nullable } from '../NullableTypes'
+import { nullable } from '../HelpersTypes'
 export interface Product {
   id: number
   name: string

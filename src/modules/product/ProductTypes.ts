@@ -1,12 +1,11 @@
 import { PageableEdgeObject, PageableListObject, PaginationFilter } from '../../types/PaginationTypes'
-import { nullable } from '../../types/NullableTypes'
+import { nullable } from '../../types/HelpersTypes'
 import { SidebarFilter } from '../sidebar/SidebarTypes'
 
 export interface Product {
   id?: string
   name?: string
   slug?: string
-  url?: string
   payments?: nullable<ProductPayment[]>
   gtin?: string
   mpn?: string
@@ -97,7 +96,6 @@ export interface ProductBrand {
   shortDescription?: string
   image?: nullable<ProductImage>
   banner?: nullable<ProductImage>
-  url?: string
 }
 
 export interface ProductCategory {
@@ -108,7 +106,6 @@ export interface ProductCategory {
   image?: nullable<ProductImage>
   breadcrumb?: string
   googleTaxonomyId?: string
-  url?: string
 }
 
 export interface PaymentInstallment {
@@ -247,7 +244,6 @@ export type ProductFields =
   | 'id'
   | 'name'
   | 'slug'
-  | 'url'
   | 'payments'
   | 'gtin'
   | 'mpn'

@@ -56,7 +56,7 @@ export class CategoryQueries {
         }`
   }
 
-  getOnefullQuery() {
+  getOneFullQuery() {
     return `query getCategory($filter: filterCategory!){
         category(filter: $filter){
           ${this.getFields()}

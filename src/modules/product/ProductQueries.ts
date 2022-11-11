@@ -49,8 +49,7 @@ export class ProductQueries {
         description,
         shortDescription,
         image ${this.getImageFields()},
-        banner ${this.getImageFields()},
-        url
+        banner ${this.getImageFields()}
     }`
   }
 
@@ -63,8 +62,7 @@ export class ProductQueries {
         description, 
         image ${this.getImageFields()}, 
         breadcrumb, 
-        googleTaxonomyId, 
-        url
+        googleTaxonomyId
     }`
   }
 
@@ -137,7 +135,6 @@ export class ProductQueries {
       'id',
       'name',
       'slug',
-      'url',
       `payments {${this.getPaymentFields().join()}}`,
       'gtin',
       'mpn',
@@ -226,7 +223,7 @@ export class ProductQueries {
         }`
   }
 
-  getOnefullQuery() {
+  getOneFullQuery() {
     return `query Product($filter: filterProduct) {
       product(filter: $filter) {
           ${this.getFields()}

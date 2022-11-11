@@ -1,9 +1,10 @@
 export interface Setting<T> {
-  shopId: Number
-  themeId: Number
-  version: String
-  page: String
+  shopId: number
+  themeId: number
+  version: string
+  page: string
   data: T
+  error?: string
 }
 
 export interface SettingResponse {
@@ -12,7 +13,7 @@ export interface SettingResponse {
 
 export interface SettingFilter {
   sectionType?: String
-  themeId?: Number
-  version?: String
-  page?: String
+  themeId?: number
+  version?: string
+  page?: string
 }

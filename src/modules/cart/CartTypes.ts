@@ -1,5 +1,5 @@
 import { Image } from '../../types/ImageTypes'
-import { nullable } from '../../types/NullableTypes'
+import { nullable } from '../../types/HelpersTypes'
 
 export interface Cart {
   id?: string

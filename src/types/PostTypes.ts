@@ -1,4 +1,4 @@
-import { nullable } from './NullableTypes'
+import { nullable } from './HelpersTypes'
 import { Category } from './CategoryTypes'
 import { Image } from './ImageTypes'
 

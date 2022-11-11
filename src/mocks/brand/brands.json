@@ -1,0 +1,163 @@
+{
+  "data": {
+    "brands": {
+      "edges": [
+        {
+          "node": {
+            "id": "136481",
+            "name": "Nike",
+            "slug": "nike",
+            "position": 1,
+            "isActive": true,
+            "createdAt": 1666889785,
+            "externalId": null,
+            "hotsiteId": null,
+            "description": "<p>Nike</p>",
+            "shortDescription": null,
+            "image": {
+              "alt": null,
+              "src": "https://optimizer.dchomolog.dooca.store/15285/brands/bnefzrh86js4mtqgcbnnecvjdrtprf4cxvf9.png"
+            },
+            "banner": null,
+            "metaTitle": null,
+            "metaKeywords": null,
+            "metaDescription": null,
+            "updatedAt": 1667267522
+          },
+          "cursor": "136481"
+        },
+        {
+          "node": {
+            "id": "136482",
+            "name": "Puma",
+            "slug": "puma",
+            "position": 2,
+            "isActive": true,
+            "createdAt": 1666890548,
+            "externalId": null,
+            "hotsiteId": null,
+            "description": "<p>Puma</p>",
+            "shortDescription": null,
+            "image": {
+              "alt": null,
+              "src": "https://optimizer.dchomolog.dooca.store/15285/brands/h8g4opa1ktc8xq1efv2a18bvv1jiltivmqvk.png"
+            },
+            "banner": null,
+            "metaTitle": null,
+            "metaKeywords": null,
+            "metaDescription": null,
+            "updatedAt": 1667267522
+          },
+          "cursor": "136482"
+        },
+        {
+          "node": {
+            "id": "136483",
+            "name": "Adidas",
+            "slug": "adidas",
+            "position": 3,
+            "isActive": true,
+            "createdAt": 1666890682,
+            "externalId": null,
+            "hotsiteId": null,
+            "description": "<p>Adidas descrição</p>",
+            "shortDescription": null,
+            "image": {
+              "alt": null,
+              "src": "https://optimizer.dchomolog.dooca.store/15285/brands/fcoedxbfbgboi4frrpsqeljxfxzvxjvpahev.png?v=1666890682"
+            },
+            "banner": {
+              "alt": null,
+              "src": "https://optimizer.dchomolog.dooca.store/15285/brands/qzmcyvpfexmfe3btty0tupnux5bgbifbyyfs.png?v=1667267729"
+            },
+            "metaTitle": "Adidas casual",
+            "metaKeywords": "adidas, tenis, casual",
+            "metaDescription": "os melhores produtos adidas",
+            "updatedAt": 1667267776
+          },
+          "cursor": "136483"
+        },
+        {
+          "node": {
+            "id": "136519",
+            "name": "AMD",
+            "slug": "amd",
+            "position": 4,
+            "isActive": true,
+            "createdAt": 1667329546,
+            "externalId": null,
+            "hotsiteId": null,
+            "description": null,
+            "shortDescription": null,
+            "image": {
+              "alt": null,
+              "src": "https://optimizer.dchomolog.dooca.store/15285/brands/hr6itvshijvinqzyfo2lxp4kbt6yabcbayuv.png"
+            },
+            "banner": null,
+            "metaTitle": null,
+            "metaKeywords": null,
+            "metaDescription": null,
+            "updatedAt": 1667329546
+          },
+          "cursor": "136519"
+        },
+        {
+          "node": {
+            "id": "136520",
+            "name": "Intel",
+            "slug": "intel",
+            "position": 5,
+            "isActive": true,
+            "createdAt": 1667329607,
+            "externalId": null,
+            "hotsiteId": null,
+            "description": null,
+            "shortDescription": null,
+            "image": {
+              "alt": null,
+              "src": "https://optimizer.dchomolog.dooca.store/15285/brands/28sah1inb8doo5imwbzge9bdc8bikdst9mzf.png"
+            },
+            "banner": null,
+            "metaTitle": null,
+            "metaKeywords": null,
+            "metaDescription": null,
+            "updatedAt": 1667329607
+          },
+          "cursor": "136520"
+        },
+        {
+          "node": {
+            "id": "136521",
+            "name": "DOLCE & GABBANA",
+            "slug": "dolce-gabbana",
+            "position": 6,
+            "isActive": true,
+            "createdAt": 1667333977,
+            "externalId": null,
+            "hotsiteId": null,
+            "description": null,
+            "shortDescription": null,
+            "image": {
+              "alt": null,
+              "src": "https://optimizer.dchomolog.dooca.store/15285/brands/8cwnazsrb7txzapfqiuanupx3smq0wyahepa.svg"
+            },
+            "banner": null,
+            "metaTitle": null,
+            "metaKeywords": null,
+            "metaDescription": null,
+            "updatedAt": 1667333977
+          },
+          "cursor": "136521"
+        }
+      ],
+      "pageInfo": {
+        "hasNextPage": false,
+        "hasPreviousPage": false,
+        "startCursor": "136481",
+        "endCursor": "136521",
+        "first": 1,
+        "total": 6
+      }
+    }
+  }
+}

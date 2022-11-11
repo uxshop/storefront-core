@@ -3,17 +3,17 @@ import { FreightFields } from '../FreightTypes'
 import 'isomorphic-fetch'
 
 const SHIPPING_FILTER = {
-  variationId: '9468973',
+  variationId: '2914059',
   zipCode: '93037190'
 }
 
 describe('Freight Module', () => {
-  it('Should get freight with all fields succeffully', async () => {
+  it('Should get freight with all fields successfully', async () => {
     const freightResult = await FreightService.getList(SHIPPING_FILTER)
     expect(freightResult[0].id).toEqual('138')
   })
 
-  it('Should get freight with selected fields succeffully', async () => {
+  it('Should get freight with selected fields successfully', async () => {
     const SELECTED_FIELDS: FreightFields[] = ['id', 'name']
     const freightResult = await FreightService.getList(SHIPPING_FILTER, [...SELECTED_FIELDS])
     const freightResultKeys = Object.keys(freightResult[0]).filter(key => key != '__typename')
