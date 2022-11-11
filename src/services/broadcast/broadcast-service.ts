@@ -16,6 +16,7 @@ export type BroadcastEvents =
   | 'Shop'
   | 'Sidebar'
   | 'User'
+
 export class BroadcastService {
   static emit(eventType: BroadcastEvents, data: any) {
     const eventMessage = `send${eventType}`
