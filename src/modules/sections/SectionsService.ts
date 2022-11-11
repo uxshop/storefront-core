@@ -1,3 +1,4 @@
+import { BroadcastService } from '../../services/broadcast/broadcast-service'
 import { SectionsRepositoryGql } from './SectionsRepositoryGql'
 import { SectionsRepositoryJson } from './SectionsRepositoryJson'
 import { Section, SectionFilter } from './SectionsTypes'
@@ -6,13 +7,19 @@ const Repository = shop_ctx.mock?.sections ? SectionsRepositoryJson : SectionsRe
 
 export class SectionsService {
   static async getOne(filter?: SectionFilter) {
-    const result: Section<unknown> = await Repository.getOne(filter)
-    const page = filter.page ?? 'home'
+    try {
+      const result: Section<unknown> = await Repository.getOne(filter)
+      const page = filter.page ?? 'home'
+      const sectionsByCategory = this.getByCategory(result.data, page)
+      BroadcastService.emit('Sections', sectionsByCategory)
 
-    return this.getByCategory(result.data, page)
+      return sectionsByCategory
+    } catch (error) {
+      throw new Error(error?.message)
+    }
   }
 
-  static async getByCategory(data, page) {
+  private static async getByCategory(data, page) {
     return {
       header: data.header,
       footer: data.footer,
