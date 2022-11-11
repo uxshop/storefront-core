@@ -60,6 +60,7 @@ export interface Product {
   variations?: nullable<ProductVariation[]>
   components?: nullable<ProductComponent[]>
   componentGroups?: nullable<ProductComponentGroup[]>
+  priceOutOfStock?: nullable<number>
 }
 
 export interface ProductComponentVariation
@@ -78,15 +79,7 @@ export interface ProductComponentVariation
     | 'color'
     | 'attribute'
     | 'attributeSecondary'
-  > {
-  colorId: nullable<number>
-  colorSecondaryId: nullable<number>
-  attributeValueId: nullable<number>
-  attributeValueSecondaryId: nullable<number>
-  reference: string
-  sku: string
-  isSellingOutOfStock: boolean
-}
+  > {}
 
 export interface ProductResponse {
   product: nullable<Product>
@@ -205,6 +198,8 @@ export interface ProductAttribute {
   slug?: string
   attributeId?: number
   attributeName?: string
+  isActive?: boolean
+  position?: number
 }
 
 export interface ProductVariation extends Omit<Product, 'variations'> {}
