@@ -5,26 +5,18 @@ import { Menu, MenuFields, MenuListResponse, MenuResponse, OptionsGetMenu } from
 export class MenuRepositoryGql {
   private static async getOne({ fields, filter }: OptionsGetMenu): Promise<Menu> {
     const menuQuery = new MenuQueries(fields)
-    const menuGetOneQuery: string = menuQuery.getOnefullQuery()
-    try {
-      const { menu }: MenuResponse = await client.query(menuGetOneQuery, filter && { filter: { ...filter } })
+    const menuGetOneQuery: string = menuQuery.getOneFullQuery()
+    const { menu }: MenuResponse = await client.query(menuGetOneQuery, filter && { filter: { ...filter } })
 
-      return menu
-    } catch (error) {
-      throw new Error(error)
-    }
+    return menu
   }
 
   static async getList(fields?: MenuFields[]): Promise<Menu[]> {
     const menuQuery = new MenuQueries(fields)
     const menuListQuery: string = menuQuery.listFullQuery()
-    try {
-      const { menus }: MenuListResponse = await client.query(menuListQuery)
+    const { menus }: MenuListResponse = await client.query(menuListQuery)
 
-      return menus
-    } catch (error) {
-      throw new Error(error)
-    }
+    return menus
   }
 
   static async getById(id: number, fields?: MenuFields[]): Promise<Menu> {
