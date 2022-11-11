@@ -7,14 +7,14 @@ const SELECTED_FIELDS: Array<ProductFields> = ['id', 'slug']
 
 describe('Product Module', () => {
   it('Should get product by id with all fields successfully', async () => {
-    const FILTER_ID = '2913645'
+    const FILTER_ID = '2914059'
     const productResult = await ProductService.getById(FILTER_ID)
     expect(productResult.productId.toString()).toEqual(FILTER_ID)
-    expect(productResult.name).toEqual('Teste Novo')
+    expect(productResult.name).toEqual('Tarugo')
   })
 
   it('Should get product by id with selected fields successfully', async () => {
-    const FILTER_ID = '2913645'
+    const FILTER_ID = '2914059'
     const productResult = await ProductService.getById(FILTER_ID, [...SELECTED_FIELDS])
     const productResultFields = Object.keys(productResult).filter(key => key != '__typename')
     expect(productResultFields).toEqual(SELECTED_FIELDS)
@@ -22,10 +22,10 @@ describe('Product Module', () => {
   })
 
   it('Should get product by slug with all fields successfully', async () => {
-    const FILTER_SLUG = 'teste-novo'
+    const FILTER_SLUG = 'tarugo'
     const productResult = await ProductService.getBySlug(FILTER_SLUG)
     expect(productResult.slug).toEqual(FILTER_SLUG)
-    expect(productResult.name).toEqual('Teste Novo')
+    expect(productResult.name).toEqual('Tarugo')
   })
 
   it('Should get product list with all fields successfully', async () => {
