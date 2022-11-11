@@ -7,12 +7,8 @@ export class ShopRepositoryGql {
     const shopQuery = new ShopQueries(fields)
     const getShopQuery: string = shopQuery.getShop()
 
-    try {
-      const { shop }: ShopResponse = await client.query(getShopQuery)
+    const { shop }: ShopResponse = await client.query(getShopQuery)
 
-      return shop
-    } catch (error) {
-      throw new Error(error)
-    }
+    return shop
   }
 }
