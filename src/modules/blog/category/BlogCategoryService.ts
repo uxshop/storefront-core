@@ -1,4 +1,4 @@
-import { BroadcastService } from 'src/services/broadcast/broadcast-service'
+import { BroadcastService } from '../../../services/broadcast/broadcast-service'
 import { BlogCategoryRepositoryGql } from './BlogCategoryRepositoryGql'
 import { BlogCategoryRepositoryJson } from './BlogCategoryRepositoryJson'
 import { BlogCategory, BlogCategoryFields } from './BlogCategoryTypes'

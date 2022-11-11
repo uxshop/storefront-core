@@ -1,4 +1,4 @@
-import { BroadcastService } from 'src/services/broadcast/broadcast-service'
+import { BroadcastService } from '../../services/broadcast/broadcast-service'
 import { CategoryRepositoryGql } from './CategoryRepositoryGql'
 import { CategoryRepositoryJson } from './CategoryRepositoryJson'
 import { Category, CategoryFields, CategoryTree, CategoryTreeFields } from './CategoryTypes'
