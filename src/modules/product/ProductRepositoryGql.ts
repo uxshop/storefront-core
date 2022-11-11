@@ -15,29 +15,21 @@ export class ProductRepositoryGql {
     const productQuery = new ProductQueries(fields)
     const productListQuery: string = productQuery.listFullQuery()
 
-    try {
-      const { products }: ProductListResponse = await client.query(
-        productListQuery,
-        filter && { agg: agg, filter: { ...filter } }
-      )
+    const { products }: ProductListResponse = await client.query(
+      productListQuery,
+      filter && { agg: agg, filter: { ...filter } }
+    )
 
-      return products
-    } catch (error) {
-      throw new Error(error)
-    }
+    return products
   }
 
   private static async getOne({ fields, filter }: OptionsGetProduct): Promise<Product> {
     const productQuery = new ProductQueries(fields)
-    const productGetOneQuery: string = productQuery.getOnefullQuery()
+    const productGetOneQuery: string = productQuery.getOneFullQuery()
 
-    try {
-      const { product }: ProductResponse = await client.query(productGetOneQuery, filter && { filter: { ...filter } })
+    const { product }: ProductResponse = await client.query(productGetOneQuery, filter && { filter: { ...filter } })
 
-      return product
-    } catch (error) {
-      throw new Error(error)
-    }
+    return product
   }
 
   static async getById(id: number, fields?: Array<ProductFields>): Promise<Product> {
