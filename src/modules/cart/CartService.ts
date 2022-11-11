@@ -1,3 +1,4 @@
+import { BroadcastService } from 'src/services/broadcast/broadcast-service'
 import { CartRepositoryGql } from './CartRepositoryGql'
 import { CartRepositoryJson } from './CartRepositoryJson'
 import { AddItemInput, CartFields, DeleteItemInput, UpdateItemInput } from './CartTypes'
@@ -8,6 +9,8 @@ export class CartService {
   static async addItem(input: AddItemInput, fields?: Array<CartFields>) {
     try {
       const result = await Repository.addItem({ fields: fields || null, input: input })
+      BroadcastService.emit('Cart', result)
+
       return result
     } catch (error) {
       throw new Error(error?.message)
@@ -17,6 +20,8 @@ export class CartService {
   static async updateItem(input: UpdateItemInput, fields?: Array<CartFields>) {
     try {
       const result = await Repository.updateItem({ fields: fields || null, input: input })
+      BroadcastService.emit('Cart', result)
+
       return result
     } catch (error) {
       throw new Error(error?.message)
@@ -26,6 +31,8 @@ export class CartService {
   static async deleteItem(input: DeleteItemInput, fields?: Array<CartFields>) {
     try {
       const result = await Repository.deleteItem({ fields: fields || null, input: input })
+      BroadcastService.emit('Cart', result)
+
       return result
     } catch (error) {
       throw new Error(error?.message)
@@ -35,6 +42,8 @@ export class CartService {
   static async getCart(cartToken: string, fields?: Array<CartFields>) {
     try {
       const result = await Repository.getCart({ fields: fields || null, filter: { cartToken: cartToken } })
+      BroadcastService.emit('Cart', result)
+
       return result
     } catch (error) {
       throw new Error(error?.message)
