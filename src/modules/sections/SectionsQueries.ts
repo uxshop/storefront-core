@@ -1,5 +1,5 @@
 export class SectionsQueries {
-  fields: null | Array<string>
+  fields: null | string[]
 
   constructor() {
     this.fields = this.defaultFields()
@@ -13,7 +13,7 @@ export class SectionsQueries {
     return ['data', 'page', 'version', 'themeId']
   }
 
-  getOnefullQuery() {
+  getOneFullQuery() {
     return `query getSections($filter: filterSection){
         section(filter: $filter){
           ${this.getFields()}
