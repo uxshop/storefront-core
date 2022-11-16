@@ -29,8 +29,8 @@ export interface SidebarItem {
 
 export interface SidebarFilter {
   id: number
-  type: string
-  name: string
+  type?: string
+  name?: string
 }
 
 export type SidebarFields = 'filtered' | 'filters'
