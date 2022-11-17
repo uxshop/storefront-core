@@ -15,7 +15,7 @@ describe('User Module', () => {
     const LOGIN_CREDENTIALS = { email: 'diovani.dooca@gmail.com', password: 'Teste123' }
     const SELECTED_FIELDS: Array<UserFields> = ['id', 'phone']
     const loginResult: User = await UserService.auth(LOGIN_CREDENTIALS, SELECTED_FIELDS)
-    expect(Object.keys(loginResult).filter(key => key != '__typename')).toEqual(SELECTED_FIELDS)
+    expect(Object.keys(loginResult)).toEqual(SELECTED_FIELDS)
   })
 
   it('Should try to do login with incorrect credentials and an error should be thrown', async () => {

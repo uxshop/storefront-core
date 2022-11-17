@@ -29,7 +29,7 @@ describe('Cart Module', () => {
   it('Should get cart with selected fields successfully', async () => {
     const cartResult = await CartService.getCart(firstAddedItemsCart.token, [...SELECTED_FIELDS])
 
-    const cartResultFields = Object.keys(cartResult).filter(key => key != '__typename')
+    const cartResultFields = Object.keys(cartResult)
     expect(cartResultFields).toEqual(SELECTED_FIELDS)
     expect(cartResultFields.length).toEqual(SELECTED_FIELDS.length)
   })

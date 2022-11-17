@@ -20,10 +20,8 @@ export function buildGeneralModuleAsserts(
 }
 
 export function buildBaseAsserts(result: unknown, referenceObject: unknown, mock?: unknown) {
-  Object.keys(result)
-    .filter(key => key !== '__typename')
-    .forEach(key => {
-      mock && expect(result[key]).toEqual(mock[key])
-      expect(typeof result[key] === typeof referenceObject[key] || result[key] === null).toBeTruthy()
-    })
+  Object.keys(result).forEach(key => {
+    mock && expect(result[key]).toEqual(mock[key])
+    expect(typeof result[key] === typeof referenceObject[key] || result[key] === null).toBeTruthy()
+  })
 }

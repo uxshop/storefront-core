@@ -10,6 +10,7 @@ class GraphqlService {
       url: api_url,
       requestPolicy: 'cache-first',
       exchanges: defaultExchanges,
+      maskTypename: true,
       fetchOptions: {
         headers: {
           token: token,

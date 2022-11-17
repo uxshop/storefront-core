@@ -45,7 +45,7 @@ describe('Cart Module', () => {
       [...SELECTED_FIELDS]
     )
 
-    const cartResultFields = Object.keys(updatedItemCartWithSelectedFields).filter(key => key != '__typename')
+    const cartResultFields = Object.keys(updatedItemCartWithSelectedFields)
     expect(cartResultFields).toEqual(SELECTED_FIELDS)
     expect(cartResultFields.length).toEqual(SELECTED_FIELDS.length)
   })

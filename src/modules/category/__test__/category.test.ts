@@ -12,7 +12,7 @@ describe('Category Module', () => {
   it('Should get category by id with selected fields successfully', async () => {
     const SELECTED_FIELDS: CategoryFields[] = ['id', 'name', 'position', 'depth', 'breadcrumb']
     const categoryResult = await CategoryService.getById(ID_FILTER, [...SELECTED_FIELDS])
-    const categoryResultKeys = Object.keys(categoryResult).filter(key => key != '__typename')
+    const categoryResultKeys = Object.keys(categoryResult)
     expect(categoryResultKeys).toEqual(SELECTED_FIELDS)
     expect(categoryResultKeys.length).toEqual(SELECTED_FIELDS.length)
   })

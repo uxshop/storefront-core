@@ -12,7 +12,7 @@ describe('Pages Module', () => {
   it('Should get page by id with selected fields successfully', async () => {
     const SELECTED_FIELDS: Array<PageFields> = ['id', 'slug']
     const pagesResult = await PagesService.getById(ID_FILTER, [...SELECTED_FIELDS])
-    const pagesResultKeys = Object.keys(pagesResult).filter(key => key != '__typename')
+    const pagesResultKeys = Object.keys(pagesResult)
     expect(pagesResultKeys).toEqual(SELECTED_FIELDS)
     expect(pagesResultKeys.length).toEqual(SELECTED_FIELDS.length)
   })
