@@ -13,7 +13,7 @@ describe('Apps Module', () => {
   it('Should get apps by id with selected fields successfully', async () => {
     const SELECTED_FIELDS: AppFields[] = ['id', 'slug', 'content']
     const appsResult = await AppService.getById(ID_FILTER, [...SELECTED_FIELDS])
-    const appsResultFields = Object.keys(appsResult).filter(key => key != '__typename')
+    const appsResultFields = Object.keys(appsResult)
     expect(appsResultFields).toEqual(SELECTED_FIELDS)
     expect(appsResultFields.length).toEqual(SELECTED_FIELDS.length)
   })

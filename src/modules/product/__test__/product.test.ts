@@ -16,7 +16,7 @@ describe('Product Module', () => {
   it('Should get product by id with selected fields successfully', async () => {
     const FILTER_ID = '2914059'
     const productResult = await ProductService.getById(FILTER_ID, [...SELECTED_FIELDS])
-    const productResultFields = Object.keys(productResult).filter(key => key != '__typename')
+    const productResultFields = Object.keys(productResult)
     expect(productResultFields).toEqual(SELECTED_FIELDS)
     expect(productResultFields.length).toEqual(SELECTED_FIELDS.length)
   })

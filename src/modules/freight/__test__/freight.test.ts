@@ -16,7 +16,7 @@ describe('Freight Module', () => {
   it('Should get freight with selected fields successfully', async () => {
     const SELECTED_FIELDS: FreightFields[] = ['id', 'name']
     const freightResult = await FreightService.getList(SHIPPING_FILTER, [...SELECTED_FIELDS])
-    const freightResultKeys = Object.keys(freightResult[0]).filter(key => key != '__typename')
+    const freightResultKeys = Object.keys(freightResult[0])
     expect(freightResultKeys).toEqual(SELECTED_FIELDS)
     expect(freightResultKeys.length).toEqual(SELECTED_FIELDS.length)
   })

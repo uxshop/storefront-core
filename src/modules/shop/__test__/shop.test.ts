@@ -12,7 +12,7 @@ describe('Shop Module', () => {
 
   it('Should Get shop with selected fields successfully', async () => {
     const shopResult: Shop = await ShopService.getShop([...SELECTED_FIELDS])
-    const shopResultKeys = Object.keys(shopResult).filter(key => key != '__typename')
+    const shopResultKeys = Object.keys(shopResult)
     expect(shopResultKeys).toEqual(SELECTED_FIELDS)
     expect(shopResultKeys.length).toEqual(SELECTED_FIELDS.length)
   })

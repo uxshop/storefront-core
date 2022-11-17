@@ -13,7 +13,7 @@ describe('Blog Post Module', () => {
   it('Should get blog post by id with selected fields successfully', async () => {
     const SELECTED_FIELDS: BlogPostFields[] = ['id', 'name']
     const blogPostResult = await BlogPostService.getById(ID_FILTER, SELECTED_FIELDS)
-    const blogPostResultKeys = Object.keys(blogPostResult).filter(key => key != '__typename')
+    const blogPostResultKeys = Object.keys(blogPostResult)
     expect(blogPostResultKeys).toEqual(SELECTED_FIELDS)
     expect(blogPostResultKeys.length).toEqual(SELECTED_FIELDS.length)
   })

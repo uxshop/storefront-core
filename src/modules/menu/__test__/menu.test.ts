@@ -13,7 +13,7 @@ describe('Menu Module', () => {
 
   it('Should get menu by id with selected fields successfully', async () => {
     const menuResult: Menu = await MenuService.getById(ID_FILTER, [...SELECTED_FIELDS])
-    const menuResultKeys = Object.keys(menuResult).filter(key => key != '__typename')
+    const menuResultKeys = Object.keys(menuResult)
     expect(menuResultKeys).toEqual(SELECTED_FIELDS)
     expect(menuResultKeys.length).toEqual(SELECTED_FIELDS.length)
   })

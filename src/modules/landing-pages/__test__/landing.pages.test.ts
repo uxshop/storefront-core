@@ -12,7 +12,7 @@ describe('Landing Pages Module', () => {
   it('Should get landing page by id with selected fields successfully', async () => {
     const SELECTED_FIELDS: LandingPageFields[] = ['id', 'name', 'slug', 'content']
     const landingPageResult: LandingPage<any> = await LandingPagesService.getById(ID_FILTER, SELECTED_FIELDS)
-    const landingPageResultFields = Object.keys(landingPageResult).filter(key => key != '__typename')
+    const landingPageResultFields = Object.keys(landingPageResult)
     expect(landingPageResultFields).toEqual(SELECTED_FIELDS)
     expect(landingPageResultFields.length).toEqual(SELECTED_FIELDS.length)
   })
