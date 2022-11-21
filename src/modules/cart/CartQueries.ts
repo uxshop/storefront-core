@@ -17,8 +17,8 @@ export class CartQueries {
         email, 
         doc, 
         newsletter, 
-        first_name, 
-        last_name, 
+        firstName, 
+        lastName, 
         name, 
         phone
       }`,
@@ -33,28 +33,28 @@ export class CartQueries {
         state
       }`,
       'coupon',
-      'shipping_token',
-      'payment_token',
+      'shippingToken',
+      'paymentToken',
       'creditcard {cvv, exp, name, Int}',
       `items {
         id,
         name,
         variation,
-        is_virtual,
+        isVirtual,
         quantity,
-        allowed_gift_wrapping,
-        total_cost,
+        allowedGiftWrapping,
+        totalCost,
         total,
         price,
-        price_cost,
-        stock_balance,
-        can_sell_out_of_stock,
-        variation_id,
-        additional_price,
-        price_gift_wrapping,
-        allowed_gift_wrapping_price,
+        priceCost,
+        stockBalance,
+        canSellOutOfStock,
+        variationId,
+        additionalPrice,
+        priceGiftWrapping,
+        allowedGiftWrappingPrice,
         discount,
-        price_compare,
+        priceCompare,
         image {src, alt},
         customize {
             id, 
@@ -66,14 +66,14 @@ export class CartQueries {
                 price
             }
         },
-        components {variation_id, component_id}
+        components {variationId, componentId}
       }`
     ]
   }
 
   getCartQuery() {
     return `query Query($cartToken: String) {
-        cart(cart_token: $cartToken) {
+        cart(cartToken: $cartToken) {
           ${this.getFields()}
         }
       }`
@@ -81,7 +81,7 @@ export class CartQueries {
 
   addItemQuery() {
     return `mutation Mutation($cartToken: String, $items: [CartItemAddInput]) {
-        addItem(cart_token: $cartToken, items: $items) {
+        addItem(cartToken: $cartToken, items: $items) {
           ${this.getFields()}
         }
       }`
@@ -89,7 +89,7 @@ export class CartQueries {
 
   updateItemQuery() {
     return `mutation Mutation($cartToken: String!, $item: updateItemTypeInput) {
-        updateItem(cart_token: $cartToken, item: $item) {
+        updateItem(cartToken: $cartToken, item: $item) {
           ${this.getFields()}
         }
       }`
@@ -97,7 +97,7 @@ export class CartQueries {
 
   deleteItemQuery() {
     return `mutation DeleteItem($cartToken: String!, $item: deleteItemTypeInput) {
-        deleteItem(cart_token: $cartToken, item: $item) {
+        deleteItem(cartToken: $cartToken, item: $item) {
           ${this.getFields()}
         }
       }`
