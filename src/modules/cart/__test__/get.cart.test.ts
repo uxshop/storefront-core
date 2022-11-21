@@ -14,7 +14,6 @@ describe('Cart Module', () => {
   })
 
   it('Should get cart with all fields successfully', async () => {
-    console.log(firstAddedItemsCart?.token)
     const cartResult = await CartService.getCart(firstAddedItemsCart?.token)
 
     const cartItems = cartResult.items
