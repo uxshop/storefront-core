@@ -9,7 +9,7 @@ export interface Script {
   loadMethod?: string
   content?: string
   description?: string
-  url?: string
+  src?: string
 }
 
 export interface ScriptsResponse {
@@ -37,4 +37,4 @@ export type ScriptFields =
   | 'category'
   | 'isActive'
   | 'description'
-  | 'url'
+  | 'src'
