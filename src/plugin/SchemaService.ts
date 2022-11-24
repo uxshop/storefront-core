@@ -5,22 +5,20 @@ import path from 'path'
 export interface SchemaFile {
   schema: string
   path: string
-  fileName: string
 }
 
 export class SchemaService {
   schemaTypes = {
-    preset: 'preset',
+    presets: 'presets',
     section: 'schema',
     settings: 'settings-schema'
   }
 
-  private getParentDirectory(pathName: string): SchemaFile {
-    const schema = pathName.split('/').slice(-2, -1)[0]
+  private getParentDirectory(path: string): SchemaFile {
+    const schema = path.split('/').slice(-2, -1)[0]
     return {
       schema,
-      path: pathName,
-      fileName: path.basename(pathName)
+      path
     }
   }
 
@@ -31,8 +29,8 @@ export class SchemaService {
         .ext('json')
         .match(`${this.schemaTypes[bundletype]}*`)
         .find()
-
       const directories = files.map(this.getParentDirectory)
+
       return directories
     } catch (error) {
       throw new Error(`Error getting files path`)
@@ -49,12 +47,8 @@ export class SchemaService {
     }
   }
 
-  private async bundleGenerator(themePath: string, bundleType: string): Promise<Record<string, unknown> | string[]> {
-    const toContent = async (directory: SchemaFile) => ({
-      [directory.schema]: await this.getContent(directory),
-      fileName: directory.fileName
-    })
-
+  private async bundleGenerator(themePath: string, bundleType: string): Promise<Record<string, unknown>> {
+    const toContent = async (directory: SchemaFile) => ({ [directory.schema]: await this.getContent(directory) })
     const getDraftBundle = async contents => await Promise.all(contents)
     const draftBundleToBundle = draftBundle => Object.assign({}, ...draftBundle)
 
@@ -62,9 +56,6 @@ export class SchemaService {
       const directories = await this.getPaths(themePath, bundleType)
       const contents = await directories.map(toContent)
       const draftBundle = await getDraftBundle(contents)
-      if (bundleType === this.schemaTypes.preset) {
-        return draftBundle
-      }
 
       return draftBundleToBundle(draftBundle)
     } catch (error) {
@@ -72,7 +63,7 @@ export class SchemaService {
     }
   }
 
-  private writeBundleFile(content, dir) {
+  private writeSchemaBundle(content, dir) {
     fs.mkdir(
       path.dirname(dir),
       {
@@ -81,7 +72,7 @@ export class SchemaService {
       error => {
         if (error) throw new Error(`Error create diretory ${error}`)
 
-        fs.writeFile(dir, typeof content === 'string' ? content : JSON.stringify(content), error => {
+        fs.writeFile(dir, content, error => {
           if (error) throw new Error(`Error write bundle ${error}`)
         })
       }
@@ -91,7 +82,17 @@ export class SchemaService {
   async getSettingsBundle(themePath: string): Promise<string> {
     try {
       const bundle = await this.bundleGenerator(`${themePath}/src/`, 'settings')
-      return JSON.stringify(bundle['config'])
+      return JSON.stringify(bundle.config)
+    } catch (error) {
+      throw new Error(`Error returning settings bundle ${error}`)
+    }
+  }
+
+  async getPresetsBundle(themePath: string): Promise<string> {
+    try {
+      const bundle = await this.bundleGenerator(`${themePath}/src/`, 'presets')
+      console.log('🚀 ~ file: SchemaService.ts ~ line 94 ~ SchemaService ~ getPresetsBundle ~ bundle', bundle)
+      return JSON.stringify(bundle.config)
     } catch (error) {
       throw new Error(`Error returning settings bundle ${error}`)
     }
@@ -100,20 +101,9 @@ export class SchemaService {
   async getSectionBundle(themePath: string): Promise<string> {
     try {
       const bundle = await this.bundleGenerator(`${themePath}/src/`, 'section')
-      delete bundle['fileName']
       return JSON.stringify(bundle)
     } catch (error) {
       throw new Error(`Error returning sections bundle ${error}`)
-    }
-  }
-
-  async getPresetBundle(themePath: string): Promise<any> {
-    try {
-      const bundle = await this.bundleGenerator(`${themePath}/src/`, 'preset')
-
-      return bundle
-    } catch (error) {
-      throw new Error(`Error returning presets bundle ${error}`)
     }
   }
 
@@ -122,7 +112,7 @@ export class SchemaService {
       const bundle = await this.getSettingsBundle(themePath)
       const pathDir = `${themePath}/public/schemas/settings.json`
 
-      this.writeBundleFile(bundle, pathDir)
+      this.writeSchemaBundle(bundle, pathDir)
 
       return bundle
     } catch (error) {
@@ -133,10 +123,9 @@ export class SchemaService {
   async generateSectionBundle(themePath: string) {
     try {
       const bundle = await this.getSectionBundle(themePath)
-
       const pathDir = `${themePath}/public/schemas/sections.json`
 
-      this.writeBundleFile(bundle, pathDir)
+      this.writeSchemaBundle(bundle, pathDir)
 
       return bundle
     } catch (error) {
@@ -146,14 +135,14 @@ export class SchemaService {
 
   async generatePresetBundle(themePath: string) {
     try {
-      const bundles = await this.getPresetBundle(themePath)
-      bundles.forEach(async bundle => {
-        let pathDir = `${themePath}/public/presets/${bundle.fileName}`
+      const bundle = await this.getPresetsBundle(themePath)
+      const pathDir = `${themePath}/public/presets/presets.json`
 
-        this.writeBundleFile(bundle['presets'], pathDir)
-      })
+      this.writeSchemaBundle(bundle, pathDir)
+
+      return bundle
     } catch (error) {
-      throw new Error(`Error generate presets bundle ${error}`)
+      throw new Error(`Error generate sections bundle ${error}`)
     }
   }
 }
