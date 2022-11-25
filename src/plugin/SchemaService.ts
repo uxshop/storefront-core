@@ -91,7 +91,6 @@ export class SchemaService {
   async getPresetsBundle(themePath: string): Promise<string> {
     try {
       const bundle = await this.bundleGenerator(`${themePath}/src/`, 'presets')
-      console.log('🚀 ~ file: SchemaService.ts ~ line 94 ~ SchemaService ~ getPresetsBundle ~ bundle', bundle)
       return JSON.stringify(bundle.config)
     } catch (error) {
       throw new Error(`Error returning settings bundle ${error}`)
