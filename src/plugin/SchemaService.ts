@@ -141,7 +141,7 @@ export class SchemaService {
 
       return bundle
     } catch (error) {
-      throw new Error(`Error generate sections bundle ${error}`)
+      throw new Error(`Error generate presets bundle ${error}`)
     }
   }
 }
