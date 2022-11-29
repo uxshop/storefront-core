@@ -39,8 +39,9 @@ export function shopPlugin(shopConfig) {
       try {
         const themePath = process.cwd()
         const schemaService = new SchemaService()
-        const settingsBundle = await schemaService.generateSettingsBundle(themePath)
-        const sectionsBundle = await schemaService.generateSectionBundle(themePath)
+        await schemaService.generateSettingsBundle(themePath)
+        await schemaService.generateSectionBundle(themePath)
+        await schemaService.generatePresetBundle(themePath)
       } catch (error) {
         console.error(error)
       }

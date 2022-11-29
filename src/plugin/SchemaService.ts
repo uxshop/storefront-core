@@ -9,6 +9,7 @@ export interface SchemaFile {
 
 export class SchemaService {
   schemaTypes = {
+    presets: 'presets',
     section: 'schema',
     settings: 'settings-schema'
   }
@@ -87,6 +88,15 @@ export class SchemaService {
     }
   }
 
+  async getPresetsBundle(themePath: string): Promise<string> {
+    try {
+      const bundle = await this.bundleGenerator(`${themePath}/src/`, 'presets')
+      return JSON.stringify(bundle.config)
+    } catch (error) {
+      throw new Error(`Error returning settings bundle ${error}`)
+    }
+  }
+
   async getSectionBundle(themePath: string): Promise<string> {
     try {
       const bundle = await this.bundleGenerator(`${themePath}/src/`, 'section')
@@ -119,6 +129,19 @@ export class SchemaService {
       return bundle
     } catch (error) {
       throw new Error(`Error generate sections bundle ${error}`)
+    }
+  }
+
+  async generatePresetBundle(themePath: string) {
+    try {
+      const bundle = await this.getPresetsBundle(themePath)
+      const pathDir = `${themePath}/public/presets/presets.json`
+
+      this.writeSchemaBundle(bundle, pathDir)
+
+      return bundle
+    } catch (error) {
+      throw new Error(`Error generate presets bundle ${error}`)
     }
   }
 }
