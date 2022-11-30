@@ -10,7 +10,7 @@ export class AppQueries {
   }
 
   private defaultFields() {
-    return ['id', 'slug', 'storeAppId', 'content']
+    return ['id', 'slug', 'content', 'type']
   }
 
   getApp() {
