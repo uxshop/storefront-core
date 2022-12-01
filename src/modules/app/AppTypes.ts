@@ -3,7 +3,7 @@ import { nullable } from '../../types/HelpersTypes'
 export interface App {
   id?: nullable<string>
   slug?: nullable<number>
-  storeAppId?: nullable<number>
+  type?: nullable<string>
   content?: nullable<string>
 }
 
@@ -15,4 +15,4 @@ export interface AppResponse {
   app: App
 }
 
-export type AppFields = 'id' | 'slug' | 'storeAppId' | 'content'
+export type AppFields = 'id' | 'slug' | 'type' | 'content'
