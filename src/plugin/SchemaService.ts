@@ -111,7 +111,7 @@ export class SchemaService {
       const bundle = await this.getSettingsBundle(themePath)
       const pathDir = `${themePath}/public/schemas/settings.json`
 
-      this.writeSchemaBundle(bundle, pathDir)
+      bundle && this.writeSchemaBundle(bundle, pathDir)
 
       return bundle
     } catch (error) {
@@ -124,7 +124,7 @@ export class SchemaService {
       const bundle = await this.getSectionBundle(themePath)
       const pathDir = `${themePath}/public/schemas/sections.json`
 
-      this.writeSchemaBundle(bundle, pathDir)
+      bundle && this.writeSchemaBundle(bundle, pathDir)
 
       return bundle
     } catch (error) {
@@ -137,7 +137,7 @@ export class SchemaService {
       const bundle = await this.getPresetsBundle(themePath)
       const pathDir = `${themePath}/public/presets/presets.json`
 
-      this.writeSchemaBundle(bundle, pathDir)
+      bundle && this.writeSchemaBundle(bundle, pathDir)
 
       return bundle
     } catch (error) {
