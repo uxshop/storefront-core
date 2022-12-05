@@ -12,7 +12,7 @@ interface OptionsGetList {
 }
 
 export class ProductService {
-  static async getList({ filter, agg = { field: 'product_id' }, fields }: OptionsGetList): Promise<ProductList> {
+  static async getList({ filter, agg = { field: ['productId'] }, fields }: OptionsGetList): Promise<ProductList> {
     try {
       const { items, ...remainFilter } = filter
 
