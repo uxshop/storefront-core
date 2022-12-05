@@ -228,7 +228,7 @@ export interface OptionsGetProduct {
 }
 
 export interface Aggregator {
-  field: string
+  field: string[]
 }
 export interface OptionsGetProductList {
   filter: ProductPaginationFilter
