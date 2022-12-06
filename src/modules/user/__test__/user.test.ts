@@ -2,18 +2,15 @@ import { UserService } from '../UserService'
 import { User, UserFields } from '../UserTypes'
 import 'isomorphic-fetch'
 
+const LOGIN_CREDENTIALS = { email: 'simao@dooca.com.br', password: '123456' }
 describe('User Module', () => {
   it('Should do login and return User with all fields successfully', async () => {
-    const LOGIN_CREDENTIALS = { email: 'diovani.dooca@gmail.com', password: 'Teste123' }
     const loginResult: User = await UserService.auth(LOGIN_CREDENTIALS)
-    expect(loginResult.active).toEqual(true)
-    expect(loginResult.email).toEqual('diovani.dooca@gmail.com')
-    expect(loginResult.phone).toEqual('51989029203')
+    expect(loginResult.email).toEqual('simao@dooca.com.br')
   })
 
   it('Should do login and return User with all selected successfully', async () => {
-    const LOGIN_CREDENTIALS = { email: 'diovani.dooca@gmail.com', password: 'Teste123' }
-    const SELECTED_FIELDS: Array<UserFields> = ['id', 'phone']
+    const SELECTED_FIELDS: UserFields[] = ['id', 'phone']
     const loginResult: User = await UserService.auth(LOGIN_CREDENTIALS, SELECTED_FIELDS)
     expect(Object.keys(loginResult)).toEqual(SELECTED_FIELDS)
   })
@@ -24,10 +21,9 @@ describe('User Module', () => {
   })
 
   it('Should do login and try to get User using token with all fields successfully', async () => {
-    const LOGIN_CREDENTIALS = { email: 'diovani.dooca@gmail.com', password: 'Teste123' }
+    const LOGIN_CREDENTIALS = { email: 'simao@dooca.com.br', password: '123456' }
     const loginResult: User = await UserService.auth(LOGIN_CREDENTIALS)
-    const userResult: User = await UserService.get(loginResult?.token)
-    expect(userResult.active).toEqual(loginResult.active)
+    const userResult: User = await UserService.get(loginResult?.token || '')
     expect(userResult.email).toEqual(loginResult.email)
     expect(userResult.phone).toEqual(loginResult.phone)
   })

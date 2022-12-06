@@ -17,7 +17,7 @@ export class UserRepositoryGql {
   static async get({ token, fields }: OptionsGetUser): Promise<User> {
     const userQuery = new UserQueries(fields)
     const getUserQuery: string = userQuery.get()
-    const { user }: UserResponse = await client.query(getUserQuery, { filter: { userToken: token } })
+    const { user }: UserResponse = await client.query(getUserQuery, { filter: { user_token: token } })
 
     return user
   }
