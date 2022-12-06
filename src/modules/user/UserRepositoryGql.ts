@@ -1,12 +1,12 @@
 import { client } from '../../services/GraphqlService'
 import { UserQueries } from './UserQueries'
-import { LoginRespose, OptionsDoLogin, OptionsGetUser, User, UserResponse } from './UserTypes'
+import { LoginResponse, OptionsDoLogin, OptionsGetUser, User, UserResponse } from './UserTypes'
 
 export class UserRepositoryGql {
   static async auth({ fields, credentials }: OptionsDoLogin): Promise<User> {
     const userQuery = new UserQueries(fields)
     const doLoginQuery: string = userQuery.auth()
-    const { login }: LoginRespose = await client.mutation(
+    const { login }: LoginResponse = await client.mutation(
       doLoginQuery,
       credentials && { credentials: { ...credentials } }
     )

@@ -3,8 +3,8 @@ import { CartFields, CartItemAddInput } from '../CartTypes'
 import 'isomorphic-fetch'
 
 const FIRST_ITEM_INDEX = 0
-const SELECTED_FIELDS: Array<CartFields> = ['id', 'token']
-const SINGLE_ITEM_TO_BE_ADDED_SAMPLE: Array<CartItemAddInput> = [{ variation_id: 9469347, quantity: 1 }]
+const SELECTED_FIELDS: CartFields[] = ['id', 'token']
+const SINGLE_ITEM_TO_BE_ADDED_SAMPLE: CartItemAddInput[] = [{ variationId: 9469180, quantity: 1 }]
 
 let firstAddedItemsCart
 
@@ -45,7 +45,7 @@ describe('Cart Module', () => {
       [...SELECTED_FIELDS]
     )
 
-    const cartResultFields = Object.keys(updatedItemCartWithSelectedFields).filter(key => key != '__typename')
+    const cartResultFields = Object.keys(updatedItemCartWithSelectedFields)
     expect(cartResultFields).toEqual(SELECTED_FIELDS)
     expect(cartResultFields.length).toEqual(SELECTED_FIELDS.length)
   })

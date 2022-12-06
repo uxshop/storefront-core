@@ -21,7 +21,7 @@ export class ScriptsQueries {
       'category',
       'isActive',
       'description',
-      'url'
+      'src'
     ]
   }
 

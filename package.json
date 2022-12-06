@@ -14,7 +14,7 @@
     "install": "tsc && tsc -p ./src/plugin"
   },
   "dependencies": {
-    "@types/node": "^17.0.31",
+    "@types/node": "^18.11.9",
     "@urql/core": "^2.3.3",
     "dotenv": "^16.0.1",
     "filehound": "^1.17.6",

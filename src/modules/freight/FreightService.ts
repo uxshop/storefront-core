@@ -1,3 +1,4 @@
+import { BroadcastService } from '../../services/broadcast/broadcast-service'
 import { FreightRepositoryGql } from './FreightRepositoryGql'
 import { FreightRepositoryJson } from './FreightRepositoryJson'
 import { Freight, FreightFields, Shipping } from './FreightTypes'
@@ -9,10 +10,17 @@ interface ShippingInput extends Omit<Shipping, 'variationId'> {
 }
 export class FreightService {
   static async getList(shipping: ShippingInput, fields?: FreightFields[]) {
-    const result: Freight[] = await Repository.getList({
-      filter: { ...shipping, variationId: Number(shipping.variationId) },
-      fields: fields || null
-    })
-    return result
+    try {
+      const result: Freight[] = await Repository.getList({
+        filter: { ...shipping, variationId: Number(shipping.variationId) },
+        fields: fields || null
+      })
+
+      BroadcastService.emit('Freight', result)
+
+      return result
+    } catch (error) {
+      throw new Error(error?.message)
+    }
   }
 }

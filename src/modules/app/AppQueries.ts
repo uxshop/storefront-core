@@ -1,4 +1,4 @@
-export class AppsQueries {
+export class AppQueries {
   fields: null | Array<string>
 
   constructor(fields) {
@@ -10,12 +10,12 @@ export class AppsQueries {
   }
 
   private defaultFields() {
-    return ['id', 'slug', 'price', 'shopId', 'storeAppId', 'content', 'userId', 'bridgePackageId']
+    return ['id', 'slug', 'content', 'type']
   }
 
-  getApps() {
-    return `query Apps($filter: filterApps) {
-        apps(filter: $filter) {
+  getApp() {
+    return `query App($filter: filterApps) {
+        app(filter: $filter) {
           ${this.getFields()}
         }
       }`

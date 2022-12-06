@@ -6,7 +6,6 @@ export interface Product {
   id?: string
   name?: string
   slug?: string
-  url?: string
   payments?: nullable<ProductPayment[]>
   gtin?: string
   mpn?: string
@@ -60,6 +59,7 @@ export interface Product {
   variations?: nullable<ProductVariation[]>
   components?: nullable<ProductComponent[]>
   componentGroups?: nullable<ProductComponentGroup[]>
+  priceOutOfStock?: nullable<number>
 }
 
 export interface ProductComponentVariation
@@ -78,15 +78,7 @@ export interface ProductComponentVariation
     | 'color'
     | 'attribute'
     | 'attributeSecondary'
-  > {
-  colorId: nullable<number>
-  colorSecondaryId: nullable<number>
-  attributeValueId: nullable<number>
-  attributeValueSecondaryId: nullable<number>
-  reference: string
-  sku: string
-  isSellingOutOfStock: boolean
-}
+  > {}
 
 export interface ProductResponse {
   product: nullable<Product>
@@ -104,7 +96,6 @@ export interface ProductBrand {
   shortDescription?: string
   image?: nullable<ProductImage>
   banner?: nullable<ProductImage>
-  url?: string
 }
 
 export interface ProductCategory {
@@ -115,7 +106,6 @@ export interface ProductCategory {
   image?: nullable<ProductImage>
   breadcrumb?: string
   googleTaxonomyId?: string
-  url?: string
 }
 
 export interface PaymentInstallment {
@@ -205,6 +195,8 @@ export interface ProductAttribute {
   slug?: string
   attributeId?: number
   attributeName?: string
+  isActive?: boolean
+  position?: number
 }
 
 export interface ProductVariation extends Omit<Product, 'variations'> {}
@@ -236,7 +228,7 @@ export interface OptionsGetProduct {
 }
 
 export interface Aggregator {
-  field: string
+  field: string[]
 }
 export interface OptionsGetProductList {
   filter: ProductPaginationFilter
@@ -252,7 +244,6 @@ export type ProductFields =
   | 'id'
   | 'name'
   | 'slug'
-  | 'url'
   | 'payments'
   | 'gtin'
   | 'mpn'

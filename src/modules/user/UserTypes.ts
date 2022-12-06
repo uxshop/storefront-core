@@ -30,7 +30,7 @@ export interface User {
   image?: nullable<Image>
 }
 
-export interface LoginRespose {
+export interface LoginResponse {
   login: User
 }
 

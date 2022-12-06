@@ -25,7 +25,7 @@ export class LandingPagesQueries {
     ]
   }
 
-  getOnefullQuery() {
+  getOneFullQuery() {
     return `query LandingPage($filter: filter) {
         landingPage(filter: $filter) {
           ${this.getFields()}

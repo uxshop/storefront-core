@@ -6,7 +6,7 @@ interface OptionsGetList {
   fields?: Array<ProductFields>
 }
 export class ProductRepositoryJson {
-  static async getList({ filter, agg = { field: 'product_id' }, fields }: OptionsGetList) {
+  static async getList({ filter, agg = { field: ['productId'] }, fields }: OptionsGetList) {
     const result = shop_ctx.mock?.products
     return result || {}
   }

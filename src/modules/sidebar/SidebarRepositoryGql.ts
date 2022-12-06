@@ -7,15 +7,11 @@ export class SidebarRepositoryGql {
     const sidebarQuery = new SidebarQueries()
     const sidebarGetQuery: string = sidebarQuery.getQuery()
 
-    try {
-      const { sidebarFilters: sidebar }: SidebarResponse = await client.query(
-        sidebarGetQuery,
-        filter && { filters: [...filter] }
-      )
+    const { sidebarFilters: sidebar }: SidebarResponse = await client.query(
+      sidebarGetQuery,
+      filter && { filters: [...filter] }
+    )
 
-      return sidebar
-    } catch (error) {
-      throw new Error(error)
-    }
+    return sidebar
   }
 }

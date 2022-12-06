@@ -7,14 +7,13 @@ const ID_FILTER = '136533'
 describe('Brand Module', () => {
   it('Should get brand by id with all fields successfully', async () => {
     const brandResult = await BrandService.getById(ID_FILTER)
-
     expect(brandResult.id).toEqual(ID_FILTER.toString())
   })
 
   it('Should get brand by id with selected fields successfully', async () => {
     const SELECTED_FIELDS: BrandFields[] = ['id', 'name', 'slug']
     const brandResult = await BrandService.getById(ID_FILTER, [...SELECTED_FIELDS])
-    const brandResultFields = Object.keys(brandResult).filter(key => key != '__typename')
+    const brandResultFields = Object.keys(brandResult)
 
     expect(brandResultFields).toEqual(SELECTED_FIELDS)
   })

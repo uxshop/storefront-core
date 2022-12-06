@@ -10,7 +10,7 @@ export class NewsletterQueries {
   }
 
   private defaultFields() {
-    return ['name', 'email', 'gender', 'created_at']
+    return ['name', 'email', 'gender', 'createdAt']
   }
 
   subscribe() {
