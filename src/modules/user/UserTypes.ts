@@ -2,29 +2,29 @@ import { Image } from '../../types/ImageTypes'
 import { nullable } from '../../types/HelpersTypes'
 
 export interface User {
-  id?: nullable<String>
-  email?: nullable<String>
-  firstName?: nullable<String>
-  lastName?: nullable<String>
-  gender?: nullable<String>
-  newsletter?: nullable<Boolean>
-  marketplace?: nullable<Boolean>
-  customerGroupId?: nullable<Number>
-  externalId?: nullable<Number>
-  entity?: nullable<String>
-  company?: nullable<String>
-  ie?: nullable<String>
-  birthday?: nullable<String>
-  phone?: nullable<String>
+  id?: number
+  email?: nullable<string>
+  firstName?: string
+  lastName?: string
+  gender?: nullable<string>
+  newsletter?: boolean
+  marketplace?: boolean
+  customerGroupId?: nullable<number>
+  externalId?: nullable<number>
+  entity?: nullable<string>
+  company?: nullable<string>
+  ie?: nullable<string>
+  birthday?: nullable<string>
+  phone?: nullable<string>
   token?: nullable<string>
-  resetToken?: nullable<String>
-  note?: nullable<String>
-  facebookId?: nullable<String>
-  googleId?: nullable<String>
-  active?: nullable<Boolean>
-  createdAt?: nullable<String>
-  updatedAt?: nullable<String>
-  doc?: nullable<String>
+  resetToken?: nullable<string>
+  note?: nullable<string>
+  facebookId?: nullable<string>
+  googleId?: nullable<string>
+  active?: boolean
+  createdAt?: nullable<string>
+  updatedAt?: nullable<string>
+  doc?: nullable<string>
   group?: nullable<UserGroup>
   address?: nullable<UserAddress>
   image?: nullable<Image>
@@ -39,35 +39,35 @@ export interface UserResponse {
 }
 
 export interface UserGroup {
-  id?: nullable<Number>
-  name?: nullable<String>
+  id?: nullable<number>
+  name?: nullable<string>
 }
 
 export interface UserAddress {
-  id?: nullable<Number>
-  receiver?: nullable<String>
-  zipcode?: nullable<String>
-  street?: nullable<String>
-  city?: nullable<String>
-  state?: nullable<String>
-  number?: nullable<Number>
-  detail?: nullable<String>
+  id?: nullable<number>
+  receiver?: nullable<string>
+  zipCode?: nullable<string>
+  street?: nullable<string>
+  city?: nullable<string>
+  state?: nullable<string>
+  number?: nullable<number>
+  detail?: nullable<string>
 }
 
 export interface OptionsDoLogin {
-  fields: nullable<Array<UserFields>>
+  fields: nullable<UserFields[]>
   credentials: LoginCredentials
 }
 
 export interface OptionsGetUser {
   token: string
-  fields: nullable<Array<UserFields>>
+  fields: nullable<UserFields[]>
 }
 
 export interface LoginCredentials {
-  doc?: String
-  email?: String
-  password: String
+  doc?: string
+  email?: string
+  password: string
 }
 
 export type UserFields =

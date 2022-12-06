@@ -30,7 +30,7 @@ export class UserQueries {
       'note',
       'facebookId',
       'googleId',
-      'active',
+      'isActive',
       'createdAt',
       'updatedAt',
       'doc',
