@@ -4,26 +4,26 @@ import { nullable } from '../../types/HelpersTypes'
 export interface User {
   id?: number
   email?: nullable<string>
-  first_name?: string
-  last_name?: string
+  firstName?: string
+  lastName?: string
   gender?: nullable<string>
   newsletter?: boolean
   marketplace?: boolean
-  customer_group_id?: nullable<number>
-  external_id?: nullable<number>
+  customerGroupId?: nullable<number>
+  externalId?: nullable<number>
   entity?: nullable<string>
   company?: nullable<string>
   ie?: nullable<string>
   birthday?: nullable<string>
   phone?: nullable<string>
   token?: nullable<string>
-  reset_token?: nullable<string>
+  resetToken?: nullable<string>
   note?: nullable<string>
-  facebook_id?: nullable<string>
-  google_id?: nullable<string>
+  facebookId?: nullable<string>
+  googleId?: nullable<string>
   active?: boolean
-  created_at?: nullable<string>
-  updated_at?: nullable<string>
+  createdAt?: nullable<string>
+  updatedAt?: nullable<string>
   doc?: nullable<string>
   group?: nullable<UserGroup>
   address?: nullable<UserAddress>
@@ -46,7 +46,7 @@ export interface UserGroup {
 export interface UserAddress {
   id?: nullable<number>
   receiver?: nullable<string>
-  zip_code?: nullable<string>
+  zipCode?: nullable<string>
   street?: nullable<string>
   city?: nullable<string>
   state?: nullable<string>
@@ -55,19 +55,19 @@ export interface UserAddress {
 }
 
 export interface OptionsDoLogin {
-  fields: nullable<Array<UserFields>>
+  fields: nullable<UserFields[]>
   credentials: LoginCredentials
 }
 
 export interface OptionsGetUser {
   token: string
-  fields: nullable<Array<UserFields>>
+  fields: nullable<UserFields[]>
 }
 
 export interface LoginCredentials {
-  doc?: String
-  email?: String
-  password: String
+  doc?: string
+  email?: string
+  password: string
 }
 
 export type UserFields =
