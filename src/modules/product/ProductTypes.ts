@@ -218,9 +218,13 @@ export interface ProductFilter {
 export interface ProductPaginationFilter extends Pick<PaginationFilter, 'first'> {
   page?: number
   fastSearch?: FastSearch
+  sortKey?: ProductSortKey
+  reverse?: boolean
   sidebarFilters?: SidebarFilter[]
   customerGroupId?: number
 }
+
+export type ProductSortKey = 'relevance' | 'price' | 'createdAt' | 'discount' | 'alphabetical'
 
 export interface OptionsGetProduct {
   fields: ProductFields[]
