@@ -14,7 +14,7 @@ export class SidebarQueries {
   }
 
   getQuery() {
-    return `query Query($filters: [filterSidebar]) {
+    return `query SidebarFilters($filters: [filterSidebar]) {
         sidebarFilters(filters: $filters) {
             ${this.getFields()}
           }
