@@ -10,7 +10,10 @@ export class SidebarQueries {
   }
 
   private defaultFields() {
-    return ['filtered {type, id, name}', 'filters {type, name, items {id, name, position}}']
+    return [
+      'filtered {type, id, name}',
+      'filters {type, name, items {id, name, position, hexadecimal, image {src, alt}}}'
+    ]
   }
 
   getQuery() {
