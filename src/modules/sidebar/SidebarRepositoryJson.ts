@@ -1,11 +1,10 @@
-import { nullable } from 'src/types/HelpersTypes'
-import { Sidebar, SidebarFilter } from './SidebarTypes'
+import { OptionsGetSidebar, Sidebar } from './SidebarTypes'
 
 export class SidebarRepositoryJson {
-  static get(filter?: nullable<SidebarFilter[]>): Sidebar {
+  static get(filters?: OptionsGetSidebar): Sidebar {
     const mock = shop_ctx.mock?.sidebar
     const result = mock && { ...mock, filtered: [...mock.filtered] }
-    !filter && this.adjustFilteredField(result)
+    !filters && this.adjustFilteredField(result)
     return result || {}
   }
 

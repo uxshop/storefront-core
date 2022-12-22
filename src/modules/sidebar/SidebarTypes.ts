@@ -1,5 +1,6 @@
 import { Image } from '../../types/ImageTypes'
 import { nullable } from '../../types/HelpersTypes'
+import { FastSearch } from '../product/ProductTypes'
 
 export interface Sidebar {
   filtered: nullable<SidebarFilteredItems[]>
@@ -34,6 +35,13 @@ export interface SidebarFilter {
   id: number
   type?: string
   name?: string
+}
+
+export interface OptionsGetSidebar {
+  filters?: nullable<SidebarFilter[]>
+  fastSearch?: nullable<FastSearch>
+  minPrice?: nullable<number>
+  maxPrice?: nullable<number>
 }
 
 export type SidebarFields = 'filtered' | 'filters'

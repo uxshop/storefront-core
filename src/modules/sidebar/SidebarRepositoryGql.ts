@@ -1,17 +1,13 @@
 import { client } from '../../services/GraphqlService'
 import { SidebarQueries } from './SidebarQueries'
-import { Sidebar, SidebarFilter, SidebarResponse } from './SidebarTypes'
-import { nullable } from '../../types/HelpersTypes'
+import { OptionsGetSidebar, Sidebar, SidebarResponse } from './SidebarTypes'
 
 export class SidebarRepositoryGql {
-  static async get(filter?: nullable<SidebarFilter[]>): Promise<Sidebar> {
+  static async get(filters?: OptionsGetSidebar): Promise<Sidebar> {
     const sidebarQuery = new SidebarQueries()
     const sidebarGetQuery: string = sidebarQuery.getQuery()
 
-    const { sidebarFilters: sidebar }: SidebarResponse = await client.query(
-      sidebarGetQuery,
-      filter && { filters: [...filter] }
-    )
+    const { sidebarFilters: sidebar }: SidebarResponse = await client.query(sidebarGetQuery, { ...filters })
 
     return sidebar
   }
