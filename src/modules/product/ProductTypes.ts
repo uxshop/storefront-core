@@ -207,7 +207,6 @@ export interface ProductList extends PageableListObject<ProductEdge> {}
 
 export interface FastSearch {
   queryString: string
-  fields?: ProductFields[]
 }
 
 export interface ProductFilter {
@@ -217,8 +216,8 @@ export interface ProductFilter {
 
 export interface ProductPaginationFilter extends Pick<PaginationFilter, 'first'> {
   page?: number
-  fastSearch?: FastSearch
-  sortKey?: ProductSortKey
+  fastSearch?: nullable<FastSearch>
+  sortKey?: nullable<ProductSortKey>
   reverse?: boolean
   maxPrice?: nullable<number>
   minPrice?: nullable<number>
