@@ -1,3 +1,4 @@
+import { Image } from 'src/types/ImageTypes'
 import { nullable } from '../../types/HelpersTypes'
 
 export interface Sidebar {
@@ -25,6 +26,8 @@ export interface SidebarItem {
   id: number
   name: string
   position: number
+  hexadecimal: nullable<string>
+  image: nullable<Image>
 }
 
 export interface SidebarFilter {

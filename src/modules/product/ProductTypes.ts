@@ -220,6 +220,9 @@ export interface ProductPaginationFilter extends Pick<PaginationFilter, 'first'>
   fastSearch?: FastSearch
   sortKey?: ProductSortKey
   reverse?: boolean
+  maxPrice?: nullable<number>
+  minPrice?: nullable<number>
+  isPromotional?: boolean
   sidebarFilters?: SidebarFilter[]
   customerGroupId?: number
 }
