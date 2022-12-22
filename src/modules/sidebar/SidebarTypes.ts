@@ -1,4 +1,4 @@
-import { Image } from 'src/types/ImageTypes'
+import { Image } from '../../types/ImageTypes'
 import { nullable } from '../../types/HelpersTypes'
 
 export interface Sidebar {
