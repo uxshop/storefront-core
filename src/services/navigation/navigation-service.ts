@@ -1,29 +1,29 @@
 export class NavigationService {
   static getBrandLink(brandSlug: string): string {
-    return `${brandSlug}/b`
+    return `/${brandSlug}/b`
   }
 
   static getBlogCategoryLink(blogCategorySlug: string): string {
-    return `blog/${blogCategorySlug}`
+    return `/blog/${blogCategorySlug}`
   }
 
   static getBlogPostLink(blogPostSlug: string): string {
-    return `blog/${blogPostSlug}`
+    return `/blog/${blogPostSlug}`
   }
 
   static getCategoryLink(categorySlug: string): string {
-    return `${categorySlug}/c`
+    return `/${categorySlug}/c`
   }
 
   static getInstitutionalLink(institutionalSlug: string): string {
-    return `${institutionalSlug}/i`
+    return `/${institutionalSlug}/i`
   }
 
   static getLandingPageLink(landingPageSlug: string): string {
-    return `${landingPageSlug}/lp`
+    return `/${landingPageSlug}/lp`
   }
 
   static getProductLink(productSlug: string): string {
-    return `${productSlug}/p`
+    return `/${productSlug}/p`
   }
 }
