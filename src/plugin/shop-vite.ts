@@ -32,7 +32,7 @@ export function shopPlugin(shopConfig) {
 
       return {
         html: html,
-        tags: [{ tag: 'script', attrs: { async: '', src: URL_ASSETS, defer: '' }, injectTo: 'body' }]
+        tags: [{ tag: 'script', attrs: { src: URL_ASSETS, defer: true }, injectTo: 'body' }]
       }
     },
     async buildStart(config) {
