@@ -28,7 +28,7 @@ export function shopPlugin(shopConfig) {
       }
     },
     transformIndexHtml(html: string): IndexHtmlTransformResult {
-      const URL_ASSETS = process.env.VITE_URL_ASSETS || 'https://assets-storefront.s3.amazonaws.com/assets/index.js'
+      const URL_ASSETS = process.env.VITE_URL_ASSETS || 'https://assets-storefront.s3.amazonaws.com/global.js'
 
       return {
         html: html,
