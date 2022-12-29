@@ -3,12 +3,12 @@ import { NewsletterRepositoryGql } from './NewsletterRepositoryGql'
 import { NewsletterRepositoryJson } from './NewsletterRepositoryJson'
 import { Newsletter, NewsletterInput } from './NewsletterTypes'
 
-const Repository = shop_ctx.mock?.newsletter ? NewsletterRepositoryJson : NewsletterRepositoryGql
+const Repository = () => (shop_ctx.mock?.newsletter ? NewsletterRepositoryJson : NewsletterRepositoryGql)
 
 export class NewsletterService {
   static async subscribe(userData: NewsletterInput): Promise<Newsletter> {
     try {
-      const newsletterResult = await Repository.subscribe(userData)
+      const newsletterResult = await Repository().subscribe(userData)
       BroadcastService.emit('Newsletter', newsletterResult)
       return newsletterResult
     } catch (error) {

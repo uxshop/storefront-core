@@ -1,4 +1,4 @@
-import { client } from '../../services/GraphqlService'
+import { getClient } from '../../services/GraphqlService'
 import { CartQueries } from './CartQueries'
 import {
   AddItemResponse,
@@ -18,7 +18,7 @@ export class CartRepositoryGql {
   static async addItem({ fields, input }: OptionsAddItemCart): Promise<Cart> {
     const cartQuery = new CartQueries(fields)
     const addItemQuery: string = cartQuery.addItemQuery()
-    const { addItem }: AddItemResponse = await client.mutation(addItemQuery, input && { ...input })
+    const { addItem }: AddItemResponse = await getClient().mutation(addItemQuery, input && { ...input })
 
     return addItem
   }
@@ -26,7 +26,7 @@ export class CartRepositoryGql {
   static async updateItem({ fields, input }: OptionsUpdateItemCart): Promise<Cart> {
     const cartQuery = new CartQueries(fields)
     const updateItemQuery: string = cartQuery.updateItemQuery()
-    const { updateItem }: UpdateItemResponse = await client.mutation(updateItemQuery, input && { ...input })
+    const { updateItem }: UpdateItemResponse = await getClient().mutation(updateItemQuery, input && { ...input })
 
     return updateItem
   }
@@ -34,7 +34,7 @@ export class CartRepositoryGql {
   static async deleteItem({ fields, input }: OptionsDeleteItemCart): Promise<Cart> {
     const cartQuery = new CartQueries(fields)
     const deleteItemQuery: string = cartQuery.deleteItemQuery()
-    const { deleteItem }: DeleteItemResponse = await client.mutation(deleteItemQuery, input && { ...input })
+    const { deleteItem }: DeleteItemResponse = await getClient().mutation(deleteItemQuery, input && { ...input })
 
     return deleteItem
   }
@@ -42,7 +42,7 @@ export class CartRepositoryGql {
   static async cleanCart({ fields, input }: OptionsCleanCart): Promise<Cart> {
     const cartQuery = new CartQueries(fields)
     const cleanCartQuery: string = cartQuery.cleanCartQuery()
-    const { cleanCart }: CleanCartResponse = await client.mutation(cleanCartQuery, input && { ...input })
+    const { cleanCart }: CleanCartResponse = await getClient().mutation(cleanCartQuery, input && { ...input })
 
     return cleanCart
   }
@@ -50,7 +50,7 @@ export class CartRepositoryGql {
   static async getCart({ fields, filter }: OptionsGetCart): Promise<Cart> {
     const cartQuery = new CartQueries(fields)
     const getCartQuery: string = cartQuery.getCartQuery()
-    const { cart }: GetCartResponse = await client.query(getCartQuery, filter && { ...filter })
+    const { cart }: GetCartResponse = await getClient().query(getCartQuery, filter && { ...filter })
 
     return cart
   }

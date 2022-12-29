@@ -3,12 +3,12 @@ import { UserRepositoryGql } from './UserRepositoryGql'
 import { UserRepositoryJson } from './UserRepositoryJson'
 import { LoginCredentials, User, UserFields } from './UserTypes'
 
-const Repository = shop_ctx.mock?.user ? UserRepositoryJson : UserRepositoryGql
+const Repository = () => (shop_ctx.mock?.user ? UserRepositoryJson : UserRepositoryGql)
 
 export class UserService {
   static async auth(credentials: LoginCredentials, fields?: UserFields[]): Promise<User> {
     try {
-      const result: User = await Repository.auth({ fields: fields || null, credentials: credentials })
+      const result: User = await Repository().auth({ fields: fields || null, credentials: credentials })
 
       BroadcastService.emit('User', result)
 
@@ -20,7 +20,7 @@ export class UserService {
 
   static async get(token: string, fields?: UserFields[]): Promise<User> {
     try {
-      const result: User = await Repository.get({ fields: fields || null, token: token })
+      const result: User = await Repository().get({ fields: fields || null, token: token })
 
       BroadcastService.emit('User', result)
 

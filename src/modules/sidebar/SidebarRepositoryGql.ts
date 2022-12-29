@@ -1,4 +1,4 @@
-import { client } from '../../services/GraphqlService'
+import { getClient } from '../../services/GraphqlService'
 import { SidebarQueries } from './SidebarQueries'
 import { OptionsGetSidebar, Sidebar, SidebarResponse } from './SidebarTypes'
 
@@ -7,7 +7,9 @@ export class SidebarRepositoryGql {
     const sidebarQuery = new SidebarQueries()
     const sidebarGetQuery: string = sidebarQuery.getQuery()
 
-    const { sidebarFilters: sidebar }: SidebarResponse = await client.query(sidebarGetQuery, { ...filters })
+    const { sidebarFilters: sidebar }: SidebarResponse = await getClient().query(sidebarGetQuery, {
+      ...filters
+    })
 
     return sidebar
   }

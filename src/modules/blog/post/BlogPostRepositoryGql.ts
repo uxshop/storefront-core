@@ -1,5 +1,5 @@
 import { Post } from '../../../types/PostTypes'
-import { client } from '../../../services/GraphqlService'
+import { getClient } from '../../../services/GraphqlService'
 import { BlogPostQueries } from './BlogPostQueries'
 import {
   BlogPostFields,
@@ -14,7 +14,7 @@ export class BlogPostRepositoryGql {
   static async getList({ fields, filter }: OptionsGetBlogPostList): Promise<BlogPostList> {
     const blogPostQuery = new BlogPostQueries(fields)
     const blogPostListQuery: string = blogPostQuery.listFullQuery()
-    const { blogPosts }: BlogPostListResponse = await client.query(
+    const { blogPosts }: BlogPostListResponse = await getClient().query(
       blogPostListQuery,
       filter && { filter: { ...filter } }
     )
@@ -24,7 +24,10 @@ export class BlogPostRepositoryGql {
   private static async getBlogPost({ fields, filter }: OptionsGetBlogPost): Promise<Post> {
     const blogPostQuery = new BlogPostQueries(fields)
     const blogPostGetOneQuery: string = blogPostQuery.getOnefullQuery()
-    const { blogPost }: BlogPostResponse = await client.query(blogPostGetOneQuery, filter && { filter: { ...filter } })
+    const { blogPost }: BlogPostResponse = await getClient().query(
+      blogPostGetOneQuery,
+      filter && { filter: { ...filter } }
+    )
     return blogPost
   }
 

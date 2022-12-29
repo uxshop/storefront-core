@@ -1,5 +1,5 @@
 import { Brand } from '../../types/product/BrandTypes'
-import { client } from '../../services/GraphqlService'
+import { getClient } from '../../services/GraphqlService'
 import { BrandQueries } from './BrandQueries'
 import {
   BrandFields,
@@ -14,7 +14,7 @@ export class BrandRepositoryGql {
   static async getList({ fields, filter }: OptionsGetBrandList): Promise<BrandList> {
     const brandQuery = new BrandQueries(fields)
     const brandListQuery: string = brandQuery.listFullQuery()
-    const { brands }: BrandListResponse = await client.query(brandListQuery, filter && { filter: { ...filter } })
+    const { brands }: BrandListResponse = await getClient().query(brandListQuery, filter && { filter: { ...filter } })
 
     return brands
   }
@@ -22,7 +22,7 @@ export class BrandRepositoryGql {
   private static async getOne({ fields, filter }: OptionsGetBrand): Promise<Brand> {
     const brandQuery = new BrandQueries(fields)
     const brandGetOneQuery: string = brandQuery.getOneFullQuery()
-    const { brand }: BrandResponse = await client.query(brandGetOneQuery, filter && { filter: { ...filter } })
+    const { brand }: BrandResponse = await getClient().query(brandGetOneQuery, filter && { filter: { ...filter } })
 
     return brand
   }

@@ -3,13 +3,13 @@ import { CategoryRepositoryGql } from './CategoryRepositoryGql'
 import { CategoryRepositoryJson } from './CategoryRepositoryJson'
 import { Category, CategoryFields, CategoryTree, CategoryTreeFields } from './CategoryTypes'
 
-const Repository =
+const Repository = () =>
   shop_ctx.mock?.category && shop_ctx.mock?.categoryTree ? CategoryRepositoryJson : CategoryRepositoryGql
 
 export class CategoryService {
   static async getById(id: string, fields?: CategoryFields[]): Promise<Category> {
     try {
-      const result = await Repository.getById(Number(id), fields)
+      const result = await Repository().getById(Number(id), fields)
       BroadcastService.emit('Category', result)
 
       return result
@@ -20,7 +20,7 @@ export class CategoryService {
 
   static async getBySlug(slug: string, fields?: CategoryFields[]): Promise<Category> {
     try {
-      const result: Category = await Repository.getBySlug(slug, fields)
+      const result: Category = await Repository().getBySlug(slug, fields)
       BroadcastService.emit('Category', result)
 
       return result
@@ -31,7 +31,7 @@ export class CategoryService {
 
   static async getTree(fields?: CategoryTreeFields[]): Promise<CategoryTree[]> {
     try {
-      const result = await Repository.getTree(fields)
+      const result = await Repository().getTree(fields)
       BroadcastService.emit('Category', result)
 
       return result

@@ -1,5 +1,5 @@
 import { BroadcastService } from '../../services/broadcast/broadcast-service'
-import { client } from '../../services/GraphqlService'
+import { getClient } from '../../services/GraphqlService'
 import { LandingPagesQueries } from './LandingPagesQueries'
 import { LandingPage, LandingPageFields, LandingPageResponse, OptionsGetLandingPage } from './LandingPagesTypes'
 
@@ -7,7 +7,7 @@ export class LandingPagesRepositoryGql {
   private static async get({ fields, filter }: OptionsGetLandingPage): Promise<LandingPage<any>> {
     const landingPagesQuery = new LandingPagesQueries(fields)
     const landingPagesGetQuery: string = landingPagesQuery.getOneFullQuery()
-    const { landingPage }: LandingPageResponse = await client.query(
+    const { landingPage }: LandingPageResponse = await getClient().query(
       landingPagesGetQuery,
       filter && { filter: { ...filter } }
     )

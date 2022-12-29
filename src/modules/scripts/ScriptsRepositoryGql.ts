@@ -1,4 +1,4 @@
-import { client } from '../../services/GraphqlService'
+import { getClient } from '../../services/GraphqlService'
 import { ScriptsQueries } from './ScriptsQueries'
 import { OptionsGetScripts, Script, ScriptFields, ScriptsResponse } from './ScriptsTypes'
 
@@ -7,7 +7,7 @@ export class ScriptsRepositoryGql {
     const { fields, filter } = optionsGetScripts
     const scriptsQuery = new ScriptsQueries(fields)
     const getScriptsQuery: string = scriptsQuery.listFullQuery()
-    const { scripts }: ScriptsResponse = await client.query(getScriptsQuery, filter && { filter: { ...filter } })
+    const { scripts }: ScriptsResponse = await getClient().query(getScriptsQuery, filter && { filter: { ...filter } })
 
     return scripts
   }

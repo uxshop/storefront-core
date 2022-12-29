@@ -1,4 +1,4 @@
-import { client } from '../../services/GraphqlService'
+import { getClient } from '../../services/GraphqlService'
 import { ProductQueries } from './ProductQueries'
 import {
   OptionsGetProduct,
@@ -15,7 +15,7 @@ export class ProductRepositoryGql {
     const productQuery = new ProductQueries(fields)
     const productListQuery: string = productQuery.listFullQuery()
 
-    const { products }: ProductListResponse = await client.query(
+    const { products }: ProductListResponse = await getClient().query(
       productListQuery,
       filter && { agg: agg, filter: { ...filter } }
     )
@@ -27,7 +27,10 @@ export class ProductRepositoryGql {
     const productQuery = new ProductQueries(fields)
     const productGetOneQuery: string = productQuery.getOneFullQuery()
 
-    const { product }: ProductResponse = await client.query(productGetOneQuery, filter && { filter: { ...filter } })
+    const { product }: ProductResponse = await getClient().query(
+      productGetOneQuery,
+      filter && { filter: { ...filter } }
+    )
 
     return product
   }

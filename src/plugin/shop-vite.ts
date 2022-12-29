@@ -29,10 +29,22 @@ export function shopPlugin(shopConfig) {
     },
     transformIndexHtml(html: string): IndexHtmlTransformResult {
       const URL_ASSETS = process.env.VITE_URL_ASSETS || 'https://assets-storefront.s3.amazonaws.com/global.js'
+      const configShop = JSON.stringify({
+        api_url: shopConfig.api_url || URL_APIS.api_url,
+        api_editor: shopConfig.api_editor || URL_APIS.api_editor,
+        token: shopConfig.token,
+        domain: shopConfig.domain,
+        mock: shopConfig.mock || null,
+        base_path: shopConfig.base_path || '/'
+      })
+      const setupScript = `window.shop_ctx = ${configShop}`
 
       return {
         html: html,
-        tags: [{ tag: 'script', attrs: { src: URL_ASSETS, defer: true }, injectTo: 'body' }]
+        tags: [
+          { tag: 'script', children: setupScript, injectTo: 'body' },
+          { tag: 'script', attrs: { src: URL_ASSETS, defer: true }, injectTo: 'body' }
+        ]
       }
     },
     async buildStart(config) {

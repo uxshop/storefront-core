@@ -5,12 +5,12 @@ import { BrandRepositoryGql } from './BrandRepositoryGql'
 import { BrandRepositoryJson } from './BrandRepositoryJson'
 import { BrandFields, BrandList } from './BrandTypes'
 
-const Repository = shop_ctx.mock?.brand ? BrandRepositoryJson : BrandRepositoryGql
+const Repository = () => (shop_ctx.mock?.brand ? BrandRepositoryJson : BrandRepositoryGql)
 
 export class BrandService {
   static async getList(paginationFilter: PaginationFilter, fields?: BrandFields[]): Promise<BrandList> {
     try {
-      const result = await Repository.getList({
+      const result = await Repository().getList({
         fields: fields || null,
         filter: paginationFilter || { page: 1 }
       })
@@ -25,7 +25,7 @@ export class BrandService {
 
   static async getById(id: string, fields?: BrandFields[]): Promise<Brand> {
     try {
-      const result = await Repository.getById(Number(id), fields)
+      const result = await Repository().getById(Number(id), fields)
       BroadcastService.emit('Brand', result)
 
       return result
@@ -36,7 +36,7 @@ export class BrandService {
 
   static async getBySlug(slug: string, fields?: BrandFields[]): Promise<Brand> {
     try {
-      const result = await Repository.getBySlug(slug, fields)
+      const result = await Repository().getBySlug(slug, fields)
       BroadcastService.emit('Brand', result)
 
       return result

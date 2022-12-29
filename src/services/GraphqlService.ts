@@ -44,6 +44,9 @@ class GraphqlService {
     }
   }
 }
-const client = new GraphqlService(shop_ctx.api_url, shop_ctx.token, shop_ctx.domain)
 
-export { client }
+function getClient() {
+  return new GraphqlService(shop_ctx.api_url, shop_ctx.token, shop_ctx.domain)
+}
+
+export { getClient }

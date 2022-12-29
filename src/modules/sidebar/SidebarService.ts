@@ -4,12 +4,12 @@ import { SidebarRepositoryJson } from './SidebarRepositoryJson'
 import { OptionsGetSidebar, Sidebar } from './SidebarTypes'
 import { nullable } from '../../types/HelpersTypes'
 
-const Repository = shop_ctx.mock?.sidebar ? SidebarRepositoryJson : SidebarRepositoryGql
+const Repository = () => (shop_ctx.mock?.sidebar ? SidebarRepositoryJson : SidebarRepositoryGql)
 
 export class SidebarService {
   static async get(filters?: OptionsGetSidebar): Promise<Sidebar> {
     try {
-      const result: Sidebar = await Repository.get(filters)
+      const result: Sidebar = await Repository().get(filters)
 
       BroadcastService.emit('Sidebar', result)
 

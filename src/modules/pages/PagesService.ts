@@ -3,12 +3,12 @@ import { PagesRepositoryGql } from './PagesRepositoryGql'
 import { PagesRepositoryJson } from './PagesRepositoryJson'
 import { PageFields } from './PageTypes'
 
-const Repository = shop_ctx.mock?.pages || shop_ctx.mock?.page ? PagesRepositoryJson : PagesRepositoryGql
+const Repository = () => (shop_ctx.mock?.pages || shop_ctx.mock?.page ? PagesRepositoryJson : PagesRepositoryGql)
 
 export class PagesService {
   static async getList(fields?: PageFields[]): Promise<Page[]> {
     try {
-      const result = await Repository.getList(fields)
+      const result = await Repository().getList(fields)
       return result
     } catch (error) {
       throw new Error(error?.message)
@@ -17,7 +17,7 @@ export class PagesService {
 
   static async getById(id: string, fields?: PageFields[]): Promise<Page> {
     try {
-      const result = await Repository.getById(Number(id), fields)
+      const result = await Repository().getById(Number(id), fields)
       return result
     } catch (error) {
       throw new Error(error?.message)
@@ -26,7 +26,7 @@ export class PagesService {
 
   static async getBySlug(slug: string, fields?: PageFields[]): Promise<Page> {
     try {
-      const result = await Repository.getBySlug(slug, fields)
+      const result = await Repository().getBySlug(slug, fields)
       return result
     } catch (error) {
       throw new Error(error?.message)

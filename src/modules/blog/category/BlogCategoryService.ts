@@ -3,12 +3,12 @@ import { BlogCategoryRepositoryGql } from './BlogCategoryRepositoryGql'
 import { BlogCategoryRepositoryJson } from './BlogCategoryRepositoryJson'
 import { BlogCategory, BlogCategoryFields } from './BlogCategoryTypes'
 
-const Repository = shop_ctx.mock?.blogCategory ? BlogCategoryRepositoryJson : BlogCategoryRepositoryGql
+const Repository = () => (shop_ctx.mock?.blogCategory ? BlogCategoryRepositoryJson : BlogCategoryRepositoryGql)
 
 export class BlogCategoryService {
   static async getById(id: string, fields?: BlogCategoryFields[]): Promise<BlogCategory> {
     try {
-      const result: BlogCategory = await Repository.getById(Number(id), fields)
+      const result: BlogCategory = await Repository().getById(Number(id), fields)
       BroadcastService.emit('Blog', result)
 
       return result
@@ -19,7 +19,7 @@ export class BlogCategoryService {
 
   static async getBySlug(slug: string, fields?: BlogCategoryFields[]): Promise<BlogCategory> {
     try {
-      const result: BlogCategory = await Repository.getBySlug(slug, fields)
+      const result: BlogCategory = await Repository().getBySlug(slug, fields)
       BroadcastService.emit('Blog', result)
 
       return result
@@ -30,7 +30,7 @@ export class BlogCategoryService {
 
   static async getList(fields?: BlogCategoryFields[]): Promise<BlogCategory[]> {
     try {
-      const result: BlogCategory[] = await Repository.getList(fields)
+      const result: BlogCategory[] = await Repository().getList(fields)
       BroadcastService.emit('Blog', result)
 
       return result
