@@ -224,6 +224,7 @@ export interface ProductPaginationFilter extends Pick<PaginationFilter, 'first'>
   isPromotional?: boolean
   sidebarFilters?: SidebarFilter[]
   customerGroupId?: number
+  productIds?: number[]
 }
 
 export type ProductSortKey = 'relevance' | 'price' | 'createdAt' | 'discount' | 'alphabetical'
