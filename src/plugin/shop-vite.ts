@@ -43,7 +43,7 @@ export function shopPlugin(shopConfig) {
         html: html,
         tags: [
           { tag: 'script', attrs: { id: 'setup-shop' }, children: setupScript, injectTo: 'head' },
-          { tag: 'script', attrs: { src: URL_ASSETS, defer: true }, injectTo: 'body' }
+          { tag: 'script', attrs: { src: URL_ASSETS }, injectTo: 'body' }
         ]
       }
     },
