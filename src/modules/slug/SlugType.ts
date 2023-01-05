@@ -1,10 +1,10 @@
-export interface Slug<T> {
+export interface Slug {
   slug: string
   source: string
-  data?: T
+  data?: string
 }
 export interface SlugResponse {
-  slug: Slug<string>
+  slug: Slug
 }
 export interface SlugFilter {
   slug: string
