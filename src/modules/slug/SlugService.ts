@@ -1,7 +1,7 @@
 import { SlugRepositoryGql } from './SlugRepositoryGql'
 import { SlugRepositoryJson } from './SlugRepositoryJson'
 import { Slug, SlugFilter } from './SlugType'
-import { BroadcastService } from 'src/services/broadcast/broadcast-service'
+import { BroadcastService } from '../../services/broadcast/broadcast-service'
 import { BroadcastServiceEmitType } from '../../types/BroadcastEventEmitType'
 const Repository = () => (shop_ctx.mock?.slug ? SlugRepositoryJson : SlugRepositoryGql)
 

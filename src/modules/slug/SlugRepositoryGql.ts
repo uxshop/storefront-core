@@ -1,6 +1,6 @@
 import { getClient } from '../../services/GraphqlService'
 import { SlugQueries } from './SlugQueries'
-import { SlugFilter, SlugResponse } from './SlugType'
+import { SlugFilter, Slug, SlugResponse } from './SlugType'
 
 export class SlugRepositoryGql {
   static async getOne(filter?: SlugFilter) {
