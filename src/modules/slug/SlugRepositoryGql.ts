@@ -9,7 +9,6 @@ export class SlugRepositoryGql {
     const { slug } = await getClient().query<SlugResponse>(slugGetOneQuery, filter && { filter: { ...filter } })
 
     const data = JSON.parse(slug.data)
-    console.log('🚀 ~ file: SlugRepositoryGql.ts:12 ~ SlugRepositoryGql ~ getOne ~ data', { ...slug, data })
 
     return { ...slug, data }
   }
