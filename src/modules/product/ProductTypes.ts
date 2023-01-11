@@ -60,6 +60,7 @@ export interface Product {
   components?: nullable<ProductComponent[]>
   componentGroups?: nullable<ProductComponentGroup[]>
   priceOutOfStock?: nullable<number>
+  sku?: nullable<string>
 }
 
 export interface ProductComponentVariation
