@@ -11,7 +11,7 @@ export class PageSeoService extends SeoService {
   }
 
   public getPage(): string {
-    if (this.page.template === 'faq') return this.render(this.faqPage())
+    if (this.page?.template === 'faq') return this.render(this.faqPage())
     return this.render(this.genericPage())
   }
 
@@ -19,9 +19,9 @@ export class PageSeoService extends SeoService {
     let microData: PageMicroData = {
       '@context': 'http://schema.org/',
       '@type': 'WebPage',
-      url: this.page.slug,
-      name: this.page.name,
-      description: this.formatRichText(this.page.description)
+      url: this.page?.slug,
+      name: this.page?.name,
+      description: this.formatRichText(this.page?.description || '')
     }
     return microData
   }
@@ -30,19 +30,19 @@ export class PageSeoService extends SeoService {
     let microData: PageMicroData = {
       '@context': 'http://schema.org/',
       '@type': 'FAQPage',
-      url: this.page.slug,
-      name: this.page.name,
-      description: this.formatRichText(this.page.description),
+      url: this.page?.slug,
+      name: this.page?.name,
+      description: this.formatRichText(this.page?.description || ''),
       mainEntity: []
     }
-    if (this.page.faq.length) {
-      this.page.faq.forEach(question => {
+    if (this.page?.faq?.length) {
+      this.page?.faq.forEach(question => {
         let questionItem = {
           '@type': 'Question',
           name: question.question,
           acceptedAnswer: {
             '@type': 'Answer',
-            text: this.formatRichText(question.answer)
+            text: this.formatRichText(question.answer || '')
           }
         }
         microData.mainEntity.push(questionItem)
