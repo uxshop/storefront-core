@@ -6,17 +6,17 @@ export class BlogSeoServiceBase extends SeoService {
   protected getPostData(post: Post): PostMicroData {
     let data: PostMicroData = {
       '@type': 'BlogPosting',
-      url: post.url,
-      headline: post.name,
-      name: post.name,
-      dateCreated: post.createdAt,
-      datePublished: post.createdAt,
-      dateModified: post.updatedAt,
+      url: post?.url,
+      headline: post?.name,
+      name: post?.name,
+      dateCreated: post?.createdAt,
+      datePublished: post?.createdAt,
+      dateModified: post?.updatedAt,
       inLanguage: 'pt-BR',
-      articleSection: post.category.name,
-      articleBody: this.formatRichText(post.description)
+      articleSection: post?.category.name,
+      articleBody: this.formatRichText(post?.description || '')
     }
-    if (post.image) data.image = post.image.src
+    if (post?.image) data.image = post?.image.src
 
     return data
   }
