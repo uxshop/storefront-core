@@ -185,7 +185,8 @@ export class ProductQueries {
       `attribute ${this.getAttributeFields()}`,
       `attributeSecondary ${this.getAttributeFields()}`,
       `features ${this.getFeatureFields()}`,
-      'priceOutOfStock'
+      'priceOutOfStock',
+      'sku'
     ]
   }
 
