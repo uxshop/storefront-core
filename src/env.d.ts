@@ -26,6 +26,7 @@ interface shop {
     sidebar?: any
     sections?: any
     settings?: any
+    slug?: any
     shop?: any
     products?: any
     user?: any
