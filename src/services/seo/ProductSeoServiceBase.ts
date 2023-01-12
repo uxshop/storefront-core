@@ -11,9 +11,9 @@ export class ProductSeoServiceBase extends SeoService {
     let data: ProductMicroData = {
       '@type': 'Product',
       url: productUrl,
-      name: product.name,
-      sku: String(product.id),
-      description: product.name,
+      name: product?.name,
+      sku: String(product?.id),
+      description: product?.name,
       offers: {
         '@type': 'AggregateOffer',
         url: productUrl,
@@ -28,8 +28,8 @@ export class ProductSeoServiceBase extends SeoService {
       }
     }
 
-    if (product.images.length) {
-      product.images.forEach(function (image) {
+    if (product?.images.length) {
+      product?.images.forEach(function (image) {
         data.image = []
         data.image.push(image.src)
       })
@@ -43,53 +43,53 @@ export class ProductSeoServiceBase extends SeoService {
       data.offers.lowPrice = billetTotal
     }
 
-    if (product.description) data.description = this.formatRichText(product.description)
+    if (product?.description) data.description = this.formatRichText(product?.description)
 
-    if (product.brand) {
+    if (product?.brand) {
       data.brand = {
         '@type': 'Brand',
-        name: product.brand.name,
-        logo: product.brand.image.src,
-        image: product.brand.image.src,
+        name: product?.brand?.name,
+        logo: product?.brand?.image.src,
+        image: product?.brand?.image.src,
         url: productBrandUrl
       }
-      if (product.brand.image) data.brand.image = product.brand.image.src
+      if (product?.brand?.image) data.brand.image = product?.brand?.image?.src
     }
 
-    if (product.category.name) data.category = product.category.name
+    if (product?.category?.name) data.category = product?.category?.name
 
-    if (product.weight)
+    if (product?.weight)
       data.weight = {
         '@type': 'QuantitativeValue',
-        value: product.weight,
+        value: product?.weight,
         unitCode: 'kg'
       }
 
-    if (product.width)
+    if (product?.width)
       data.width = {
         '@type': 'QuantitativeValue',
-        value: product.width,
+        value: product?.width,
         unitCode: 'cm'
       }
 
-    if (product.height)
+    if (product?.height)
       data.height = {
         '@type': 'QuantitativeValue',
-        value: product.height,
+        value: product?.height,
         unitCode: 'cm'
       }
 
-    if (product.depth)
+    if (product?.depth)
       data.depth = {
         '@type': 'QuantitativeValue',
-        value: product.depth,
+        value: product?.depth,
         unitCode: 'cm'
       }
 
-    if (product?.gtin) data.gtin13 = product.gtin
-    if (product?.color) data.color = product.color.name
+    if (product?.gtin) data.gtin13 = product?.gtin
+    if (product?.color) data.color = product?.color.name
 
-    data.sku = product?.sku ?? String(product.id)
+    data.sku = product?.sku ?? String(product?.id)
 
     return data
   }
