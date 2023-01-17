@@ -11,23 +11,17 @@ export class ShopSeoService extends SeoService {
   }
 
   public getShop(): string {
-    let microData: ShopMicroData = {
+    if (!this.shop) return
+
+    const microData: ShopMicroData = {
       '@context': 'http://schema.org',
       '@type': 'Store',
-      name: this.shop?.name
-    }
-    if (this.shop?.description) microData.description = this.shop?.description
-
-    if (this.shop?.phone) microData.telephone = this.shop?.phone
-
-    if (this.shop?.email) microData.email = this.shop?.email
-
-    if (this.shop?.domain) {
-      microData.url = `https://${this.shop?.domain}`
-    }
-
-    if (this.shop?.zipcode)
-      microData.address = {
+      name: this.shop.name,
+      telephone: this.shop.phone,
+      email: this.shop.email,
+      url: `https://${this.shop?.domain ?? this.shop.domainTemporary}`,
+      description: this.shop.description,
+      address: {
         '@type': 'PostalAddress',
         streetAddress: `${this.shop?.street} ${this.shop?.number} ${this.shop?.detail ?? null}`,
         addressLocality: `${this.shop?.district} - ${this.shop?.city}`,
@@ -35,7 +29,7 @@ export class ShopSeoService extends SeoService {
         addressCountry: 'Brasil',
         postalCode: this.shop?.zipcode
       }
-
+    }
     return this.render(microData)
   }
 }
