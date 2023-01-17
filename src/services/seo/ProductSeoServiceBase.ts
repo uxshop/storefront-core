@@ -49,8 +49,8 @@ export class ProductSeoServiceBase extends SeoService {
       data.brand = {
         '@type': 'Brand',
         name: product?.brand?.name,
-        logo: product?.brand?.image.src,
-        image: product?.brand?.image.src,
+        logo: product?.brand?.image?.src,
+        image: product?.brand?.image?.src,
         url: productBrandUrl
       }
       if (product?.brand?.image) data.brand.image = product?.brand?.image?.src
