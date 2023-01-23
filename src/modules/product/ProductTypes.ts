@@ -57,29 +57,11 @@ export interface Product {
   features?: nullable<ProductFeature[]>
   productId?: number
   variations?: nullable<ProductVariation[]>
-  components?: nullable<ProductComponent[]>
+  components?: nullable<ProductVariation[]>
   componentGroups?: nullable<ProductComponentGroup[]>
   priceOutOfStock?: nullable<number>
   sku?: nullable<string>
 }
-
-export interface ProductComponentVariation
-  extends Pick<
-    ProductVariation,
-    | 'id'
-    | 'productId'
-    | 'price'
-    | 'slug'
-    | 'priceCompare'
-    | 'gtin'
-    | 'mpn'
-    | 'additionalShippingTime'
-    | 'images'
-    | 'balance'
-    | 'color'
-    | 'attribute'
-    | 'attributeSecondary'
-  > {}
 
 export interface ProductResponse {
   product: nullable<Product>
