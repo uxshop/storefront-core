@@ -100,24 +100,6 @@ export class ProductQueries {
     ]
   }
 
-  private getComponentVariationsFields() {
-    return [
-      'id',
-      'productId',
-      'price',
-      'slug',
-      'priceCompare',
-      'gtin',
-      'mpn',
-      'additionalShippingTime',
-      `images ${this.getImageFields()}`,
-      'balance',
-      `color ${this.getColorFields()}`,
-      `attribute ${this.getAttributeFields()}`,
-      `attributeSecondary ${this.getAttributeFields()}`
-    ]
-  }
-
   private getComponentFields() {
     return `
     {
@@ -126,7 +108,7 @@ export class ProductQueries {
       quantity
       isDefault
       isOptional
-      variations {${this.getComponentVariationsFields().join()}}
+      variations {${this.getCommonFields().join()}}
     }`
   }
 
