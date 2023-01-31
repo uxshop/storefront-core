@@ -28,7 +28,7 @@ export class ProductSeoServiceBase extends SeoService {
       }
     }
 
-    if (product?.images.length) {
+    if (product?.images?.length) {
       product?.images.forEach(function (image) {
         data.image = []
         data.image.push(image.src)
