@@ -8,8 +8,9 @@ const Repository = () => (shop_ctx.mock?.sections ? SectionsRepositoryJson : Sec
 export class SectionsService {
   static async getOne(filter?: SectionFilter) {
     try {
-      const result: Section<unknown> = await Repository().getOne(filter)
       const page = filter.page ?? 'home'
+      delete filter.page
+      const result: Section<any> = await Repository().getOne(filter)
       const sectionsByCategory = this.getByCategory(result.data, page)
       BroadcastService.emit('Sections', sectionsByCategory)
 
