@@ -12,7 +12,7 @@ export class NavigationService {
   }
 
   static getCategoryLink(categorySlug: string): string {
-    return `/${categorySlug}/c`
+    return `/blog/${categorySlug}`
   }
 
   static getInstitutionalLink(institutionalSlug: string): string {
