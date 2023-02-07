@@ -12,14 +12,10 @@ export interface Post {
   updatedAt: string
   url: string
   image?: nullable<Image>
-  tags?: nullable<Tag[]>
+  tags?: nullable<string>
   active?: nullable<boolean>
   metaTitle?: nullable<string>
   metaDescription?: nullable<string>
   metaKeywords?: nullable<string>
   category?: nullable<Category>
-}
-
-interface Tag {
-  name: string
 }
