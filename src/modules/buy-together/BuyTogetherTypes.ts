@@ -1,4 +1,4 @@
-import { ID } from 'src/types/HelpersTypes'
+import { ID } from '../../types/HelpersTypes'
 
 export type BuyTogetherFields =
   | 'id'
