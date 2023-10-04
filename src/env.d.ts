@@ -1,5 +1,3 @@
-/// <reference types="vite/client" />
-
 import { ShopDataConfig } from './types/ShopTypes'
 
 interface shop {

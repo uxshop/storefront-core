@@ -10,8 +10,8 @@
     "dev:plugin": "tsc -p ./src/plugin --watch --sourcemap",
     "test": "npx jest",
     "test:dev": "npx jest --watch",
-    "build": "tsc && tsc -p ./src/plugin",
-    "install": "tsc && tsc -p ./src/plugin"
+    "build": "tsc",
+    "install": "tsc"
   },
   "dependencies": {
     "@types/node": "^18.11.9",
