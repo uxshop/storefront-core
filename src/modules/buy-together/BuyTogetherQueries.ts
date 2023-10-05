@@ -29,6 +29,13 @@ export class BuyTogetherQueries {
       id
       name
       slug
+      color {
+        id
+        name
+        slug
+        hexadecimal
+        position
+      }
       colors {
         id
         name
@@ -43,6 +50,15 @@ export class BuyTogetherQueries {
           variationIds
           position
         }
+        position
+      }
+      images {
+        id
+        productId
+        src
+        alt
+        colorIds
+        variationIds
         position
       }
       payments {
