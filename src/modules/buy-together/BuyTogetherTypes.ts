@@ -21,8 +21,8 @@ export interface BuyTogether {
   dateFrom: string
   dateTo: string
   active: boolean
-  productsPivot: GqlProduct[]
-  product: GqlProduct
+  productsPivot: Product[]
+  product: Product
 }
 
 export interface PaymentInstallment {
@@ -123,7 +123,7 @@ export interface FeatureValue {
   image?: ShowcaseImage | null
 }
 
-export interface GqlShowcaseFeature {
+export interface ShowcaseFeature {
   id: number
   name: string
   slug: string
@@ -185,7 +185,7 @@ export interface Showcase {
   color?: ShowcaseColor
   attribute?: Attribute
   attributeSecondary?: Attribute
-  features?: GqlShowcaseFeature[]
+  features?: ShowcaseFeature[]
   productId?: number
   createdAt?: string
   variations?: any[]
@@ -213,7 +213,7 @@ export interface ComponentGroup {
   description?: string
 }
 
-export interface GqlProduct {
+export interface Product {
   id: number
   name: string
   slug: string
@@ -269,9 +269,9 @@ export interface GqlProduct {
   color?: ShowcaseColor
   attribute?: Attribute
   attributeSecondary?: Attribute
-  features?: GqlShowcaseFeature[]
+  features?: ShowcaseFeature[]
   productId?: number
-  variations?: GqlProduct[]
+  variations?: Product[]
   components?: Component[]
   componentGroups?: ComponentGroup[]
   sku?: string
