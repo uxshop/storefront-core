@@ -13,8 +13,8 @@ module.exports = {
     shop_ctx: {
       api_url: 'https://api-storefront.dchomolog.dooca.store/',
       token:
-        'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzaG9wX2lkIjo0NywidHlwZSI6ImFkbWluIiwiZW1haWwiOiJzaW1hb0Bkb29jYS5jb20uYnIiLCJmaXJzdF9uYW1lIjoiU2NobGF3YSIsImFjdGl2ZSI6dHJ1ZSwiaWF0IjoxNjYyNjU3MzIyfQ.q5GxkXJZeN7xQ3HVN7sqPK1Ls-Ck--hRTAgvSV7RyLs',
-      domain: 'dcgamer.dchomolog.dooca.store',
+        'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzaG9wX2lkIjoxMDM3NzksInR5cGUiOiJhZG1pbiIsImVtYWlsIjoic2ltYW8ubWV5cmVyQGJhZ3kuY29tLmJyIiwiZmlyc3RfbmFtZSI6IlNpbVx1MDBlM28iLCJhY3RpdmUiOnRydWUsImlhdCI6MTY5NTE1MjU2NX0.56NBX4cX4-fAt0CehPUNqCSMs3OTa617ImXlyZQ8nRA',
+      domain: 'sapato-do-simon.homolog.bagypro.com',
       mock: {}
     }
   }

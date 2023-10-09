@@ -35,11 +35,11 @@ export class ProductRepositoryGql {
     return product
   }
 
-  static async getById(id: number, fields?: Array<ProductFields>): Promise<Product> {
+  static async getById(id: number, fields?: ProductFields[]): Promise<Product> {
     return this.getOne({ fields: fields || null, filter: { productId: id } })
   }
 
-  static async getBySlug(slug: string, fields?: Array<ProductFields>): Promise<Product> {
+  static async getBySlug(slug: string, fields?: ProductFields[]): Promise<Product> {
     return this.getOne({ fields: fields || null, filter: { slug: slug } })
   }
 }

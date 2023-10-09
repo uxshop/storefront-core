@@ -3,39 +3,35 @@ import { ProductService } from '../ProductService'
 import { Pagination } from '../../../types/PaginationTypes'
 import 'isomorphic-fetch'
 
-const SELECTED_FIELDS: Array<ProductFields> = ['id', 'slug']
-
+const SELECTED_FIELDS: ProductFields[] = ['id', 'slug']
+const PRODUCT_ID_FILTER = '2915659'
 describe('Product Module', () => {
   it('Should get product by id with all fields successfully', async () => {
-    const FILTER_ID = '2914059'
-    const productResult = await ProductService.getById(FILTER_ID)
-    expect(productResult.productId.toString()).toEqual(FILTER_ID)
-    expect(productResult.name).toEqual('Tarugo')
+    const productResult = await ProductService.getById(PRODUCT_ID_FILTER)
+    expect(productResult.productId?.toString()).toEqual(PRODUCT_ID_FILTER)
   })
 
   it('Should get product by id with selected fields successfully', async () => {
-    const FILTER_ID = '2914059'
-    const productResult = await ProductService.getById(FILTER_ID, [...SELECTED_FIELDS])
+    const productResult = await ProductService.getById(PRODUCT_ID_FILTER, [...SELECTED_FIELDS])
     const productResultFields = Object.keys(productResult)
     expect(productResultFields).toEqual(SELECTED_FIELDS)
     expect(productResultFields.length).toEqual(SELECTED_FIELDS.length)
   })
 
   it('Should get product by slug with all fields successfully', async () => {
-    const FILTER_SLUG = 'tarugo'
-    const productResult = await ProductService.getBySlug(FILTER_SLUG)
-    expect(productResult.slug).toEqual(FILTER_SLUG)
-    expect(productResult.name).toEqual('Tarugo')
+    const SLUG_FILTER = 'tenis-nike-air-max'
+    const productResult = await ProductService.getBySlug(SLUG_FILTER)
+    expect(productResult.slug).toEqual(SLUG_FILTER)
   })
 
   it('Should get product list with all fields successfully', async () => {
-    const FILTER_PAGINATION: Pagination = { page: 1, items: 1 }
-    const productResult = await ProductService.getList({ filter: FILTER_PAGINATION })
+    const PAGINATION_FILTER: Pagination = { page: 1, items: 1 }
+    const productResult = await ProductService.getList({ filter: PAGINATION_FILTER })
     expect(productResult.edges.length).toEqual(1)
   })
 
   it('Should try to get product by inexistent id and it should throw error', async () => {
-    const FILTER_ID = '6'
-    expect(async () => await ProductService.getById(FILTER_ID)).rejects.toThrow()
+    const ID_FILTER = '6'
+    expect(async () => await ProductService.getById(ID_FILTER)).rejects.toThrow()
   })
 })

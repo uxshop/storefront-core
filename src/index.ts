@@ -22,6 +22,7 @@ import { SidebarService } from './modules/sidebar/SidebarService'
 import { ProductService } from './modules/product/ProductService'
 import { UserService } from './modules/user/UserService'
 import { FreightService } from './modules/freight/FreightService'
+import { BuyTogetherService } from './modules/buy-together/BuyTogetherService'
 
 import { SeoServiceFactory } from './services/seo/SeoServiceFactory'
 import { CookieService } from './services/CookieService'
@@ -54,5 +55,6 @@ export {
   SeoServiceFactory,
   CookieService,
   Socket,
-  NavigationService
+  NavigationService,
+  BuyTogetherService
 }
