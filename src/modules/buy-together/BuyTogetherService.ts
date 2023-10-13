@@ -11,7 +11,6 @@ export class BuyTogetherService {
     fields?: BuyTogetherFields[]
   ): Promise<BuyTogether> {
     const buyTogetherData = await BuyTogetherRepositoryGql.getByProductId(productId, fields)
-    console.log('🚀 ~ file: BuyTogetherService.ts:14 ~ BuyTogetherService ~ buyTogetherData:', buyTogetherData)
     if (buyTogetherData && this.checkPromotionDateValid(buyTogetherData)) return buyTogetherData
     return null
   }
