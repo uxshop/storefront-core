@@ -19,7 +19,7 @@ export interface BuyTogether {
   buyButtonText: string
   productId: number
   dateFrom: string
-  dateTo: string
+  dateTo: string | null
   active: boolean
   productsPivot: Product[]
   product: Product
