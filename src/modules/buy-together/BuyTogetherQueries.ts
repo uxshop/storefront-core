@@ -448,10 +448,6 @@ export class BuyTogetherQueries {
           position
         }
         isGift
-        releaseDate {
-          releaseDate
-          now
-        }
       }
       components {
         productComponentId
@@ -477,10 +473,6 @@ export class BuyTogetherQueries {
         position
       }
       isGift
-      releaseDate {
-        releaseDate
-        now
-      }
     }`
   }
 
