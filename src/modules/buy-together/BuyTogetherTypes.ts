@@ -25,6 +25,11 @@ export interface BuyTogether {
   product: Product
 }
 
+export interface ReleaseDate {
+  releaseDate: string
+  now: string
+}
+
 export interface PaymentInstallment {
   markup: number
   parcel: number
@@ -220,6 +225,7 @@ export interface Product {
   payments: Payment[]
   gtin: string
   mpn: string
+  releaseDate: ReleaseDate
   additionalShippingTime: number
   externalId?: string
   categoryDefaultId?: number
