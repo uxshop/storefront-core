@@ -1,5 +1,6 @@
 import { PageableEdgeObject, PageableListObject, PaginationFilter } from '../../types/PaginationTypes'
 import { nullable } from '../../types/HelpersTypes'
+import { ReleaseDate } from '../../types/ReleaseDateTypes'
 import { SidebarFilter } from '../sidebar/SidebarTypes'
 
 export interface Product {
@@ -16,6 +17,7 @@ export interface Product {
   description?: string
   shortDescription?: string
   relevance?: number
+  releaseDate?: nullable<ReleaseDate>
   tags?: string
   minQuantity?: number
   maxQuantity?: number
