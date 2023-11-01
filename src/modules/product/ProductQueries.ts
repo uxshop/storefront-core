@@ -9,6 +9,10 @@ export class ProductQueries {
     return this.fields.join()
   }
 
+  private getReleaseDateFields() {
+    return '{releaseDate, now}'
+  }
+
   private getImageFields() {
     return '{productId, src, alt, colorIds, variationIds, position}'
   }
@@ -127,6 +131,7 @@ export class ProductQueries {
       'description',
       'shortDescription',
       'relevance',
+      `releaseDate ${this.getReleaseDateFields()}`,
       'tags',
       'minQuantity',
       'maxQuantity',

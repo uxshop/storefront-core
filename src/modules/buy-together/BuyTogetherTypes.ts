@@ -1,3 +1,4 @@
+import { ReleaseDate } from '../../types/ReleaseDateTypes'
 import { ID } from '../../types/HelpersTypes'
 
 export type BuyTogetherFields =
@@ -23,11 +24,6 @@ export interface BuyTogether {
   active: boolean
   productsPivot: Product[]
   product: Product
-}
-
-export interface ReleaseDate {
-  releaseDate: string
-  now: string
 }
 
 export interface PaymentInstallment {

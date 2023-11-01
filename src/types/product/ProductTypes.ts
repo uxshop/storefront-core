@@ -9,6 +9,8 @@ import { ProductImage } from './ProductImageTypes'
 import { ComponentGroup } from './ComponentGroupTypes'
 import { ProductVariation } from './ProductVariationTypes'
 import { nullable } from '../HelpersTypes'
+import { ReleaseDate } from '../ReleaseDateTypes'
+
 export interface Product {
   id: number
   name: string
@@ -26,6 +28,7 @@ export interface Product {
   description?: nullable<string>
   shortDescription?: nullable<string>
   relevance?: nullable<number>
+  releaseDate?: nullable<ReleaseDate>
   tags?: nullable<string>
   minQuantity?: nullable<number>
   maxQuantity?: nullable<number>
