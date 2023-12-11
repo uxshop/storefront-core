@@ -1,3 +1,4 @@
+import { ReleaseDate } from '../../types/ReleaseDateTypes'
 import { ID } from '../../types/HelpersTypes'
 
 export type BuyTogetherFields =
@@ -220,6 +221,7 @@ export interface Product {
   payments: Payment[]
   gtin: string
   mpn: string
+  releaseDate: ReleaseDate
   additionalShippingTime: number
   externalId?: string
   categoryDefaultId?: number

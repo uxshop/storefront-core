@@ -2,6 +2,7 @@ import { Color } from './ColorTypes'
 import { AttributeValue } from './AttributeTypes'
 import { ProductImage } from './ProductImageTypes'
 import { nullable } from '../HelpersTypes'
+import { ReleaseDate } from '../ReleaseDateTypes'
 
 export interface ProductVariation {
   id: number
@@ -11,6 +12,7 @@ export interface ProductVariation {
   updatedAt: string
   gridId?: nullable<number>
   colorId?: nullable<number>
+  releaseDate?: nullable<ReleaseDate>
   colorSecondaryId?: nullable<number>
   attributeValueId?: nullable<number>
   attributeValueSecondaryId?: nullable<number>

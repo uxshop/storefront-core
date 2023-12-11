@@ -197,12 +197,20 @@ export class BuyTogetherQueries {
           slug
         }
       }
+      releaseDate {
+        releaseDate
+        now
+      }
       productId
       createdAt
       variations {
         id
         name
         slug
+        releaseDate {
+          releaseDate
+          now
+        }
         payments {
           id
           gatewayId
