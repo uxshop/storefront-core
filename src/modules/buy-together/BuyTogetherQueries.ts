@@ -1,11 +1,13 @@
+type QueryMode = 'restrict' | 'full'
+
 export class BuyTogetherQueries {
   fields: null | string[]
 
   constructor(fields) {
-    this.fields = fields || this.getAllFields()
+    this.fields = fields
   }
 
-  private getAllFields() {
+  private getAllFields(productQueryMode?: QueryMode) {
     return (
       this.fields ??
       `{
@@ -18,10 +20,107 @@ export class BuyTogetherQueries {
         dateFrom,
         dateTo,
         active,
-        product ${this.getProduct()},
-        productsPivot ${this.getProduct()}
+        product ${productQueryMode === 'restrict' ? this.getStrictProductFields() : this.getProduct()},
+        productsPivot ${productQueryMode === 'restrict' ? this.getStrictProductFields() : this.getProduct()}
       }`
     )
+  }
+
+  private getStrictProductFields() {
+    const imageFields = `
+    {
+      id
+      productId
+      src
+      alt
+      colorIds
+      variationIds
+    }`
+    const colorFields = `
+    {
+      id
+      name
+      slug
+      hexadecimal
+    }`
+    const attributeFields = `
+    {
+      id
+      name
+      slug
+      attributeId
+      attributeName
+      isActive
+    }`
+    const featureFields = `
+    {
+      id
+      name
+      slug
+      values {
+        id
+        name
+        slug
+      }
+    }`
+    const variationsFields = `
+    {
+      id
+      name
+      slug
+      releaseDate {
+        releaseDate
+        now
+      }
+      description
+      shortDescription
+      isVirtual
+      isPreSale
+      images ${imageFields}
+      priceOutOfStock
+      isSellOutOfStock
+      additionalTimeOutOfStock
+      balance
+      price
+      priceCompare
+      discount
+      billetDiscount
+      paymentsReason
+      color ${colorFields}
+      attribute ${attributeFields}
+      attributeSecondary ${attributeFields}
+      features ${featureFields}
+      productId
+      colors ${colorFields}
+    }
+    `
+    return `{
+      id
+      name
+      slug
+      description
+      shortDescription
+      images ${imageFields}
+      priceOutOfStock
+      isSellOutOfStock
+      balance
+      price
+      priceCompare
+      discount
+      billetDiscount
+      color ${colorFields}
+      attribute ${attributeFields}
+      attributeSecondary ${attributeFields}
+      features ${featureFields}
+      releaseDate {
+        releaseDate
+        now
+      }
+      productId
+      variations ${variationsFields}
+      sku
+      colors ${colorFields}
+    }`
   }
 
   private getProduct() {
@@ -484,10 +583,10 @@ export class BuyTogetherQueries {
     }`
   }
 
-  getOneFullQuery() {
+  getOneFullQuery(productQueryMode?: QueryMode) {
     return `query BuyTogether($filter: filterBuyTogether) {
       buyTogether(filter: $filter) 
-        ${this.getAllFields()}
+        ${this.getAllFields(productQueryMode)}
     }`
   }
 }
