@@ -11,6 +11,7 @@ export type BuyTogetherFields =
   | 'dateFrom'
   | 'dateTo'
   | 'active'
+  | 'product'
   | 'productsPivot'
 
 export interface BuyTogether {
