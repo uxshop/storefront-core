@@ -52,6 +52,16 @@ export class BuyTogetherQueries {
       attributeName
       isActive
     }`
+    const paymentsFields = `
+    {
+      id
+      name
+      method
+      description
+      isActive
+      markup
+      isDefault
+    }`  
     const featureFields = `
     {
       id
@@ -106,6 +116,7 @@ export class BuyTogetherQueries {
       balance
       price
       priceCompare
+      payments ${paymentsFields}
       discount
       billetDiscount
       color ${colorFields}
