@@ -15,6 +15,13 @@ export class BuyTogetherService {
     return null
   }
 
+  static async getByProductIds(productIds: number[], fields?: BuyTogetherFields[]): Promise<BuyTogether[]> {
+    const buyTogetherData = await BuyTogetherRepositoryGql.getByProductIds(productIds, fields)
+    return buyTogetherData.map(buyTogether => {
+      if (this.checkPromotionDateValid(buyTogether)) return buyTogether
+    })
+  }
+
   private static checkPromotionDateValid({ dateFrom, dateTo }: BuyTogether) {
     const nowUnixTime = Number(new Date())
     const dateFromUnixTime = Number(new Date(dateFrom + 'T00:00:00'))

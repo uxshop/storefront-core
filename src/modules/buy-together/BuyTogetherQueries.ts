@@ -600,4 +600,10 @@ export class BuyTogetherQueries {
         ${this.getAllFields(productQueryMode)}
     }`
   }
+  getListFullQuery(productQueryMode?: QueryMode) {
+    return `query BuyTogetherList($filter: filterBuyTogetherList) {
+      buyTogetherList(filter: $filter) 
+        ${this.getAllFields(productQueryMode)}
+    }`
+  }
 }
