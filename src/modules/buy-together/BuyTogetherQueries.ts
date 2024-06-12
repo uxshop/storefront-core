@@ -61,7 +61,7 @@ export class BuyTogetherQueries {
       isActive
       markup
       isDefault
-    }`  
+    }`
     const featureFields = `
     {
       id
@@ -95,7 +95,7 @@ export class BuyTogetherQueries {
       priceCompare
       discount
       billetDiscount
-      paymentsReason
+      payments ${paymentsFields}
       color ${colorFields}
       attribute ${attributeFields}
       attributeSecondary ${attributeFields}
@@ -111,12 +111,12 @@ export class BuyTogetherQueries {
       description
       shortDescription
       images ${imageFields}
+      payments ${paymentsFields}
       priceOutOfStock
       isSellOutOfStock
       balance
       price
       priceCompare
-      payments ${paymentsFields}
       discount
       billetDiscount
       color ${colorFields}
