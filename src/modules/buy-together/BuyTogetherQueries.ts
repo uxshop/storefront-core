@@ -52,6 +52,16 @@ export class BuyTogetherQueries {
       attributeName
       isActive
     }`
+    const paymentsFields = `
+    {
+      id
+      name
+      method
+      description
+      isActive
+      markup
+      isDefault
+    }`
     const featureFields = `
     {
       id
@@ -85,7 +95,7 @@ export class BuyTogetherQueries {
       priceCompare
       discount
       billetDiscount
-      paymentsReason
+      payments ${paymentsFields}
       color ${colorFields}
       attribute ${attributeFields}
       attributeSecondary ${attributeFields}
@@ -101,6 +111,7 @@ export class BuyTogetherQueries {
       description
       shortDescription
       images ${imageFields}
+      payments ${paymentsFields}
       priceOutOfStock
       isSellOutOfStock
       balance
@@ -586,6 +597,12 @@ export class BuyTogetherQueries {
   getOneFullQuery(productQueryMode?: QueryMode) {
     return `query BuyTogether($filter: filterBuyTogether) {
       buyTogether(filter: $filter) 
+        ${this.getAllFields(productQueryMode)}
+    }`
+  }
+  getListFullQuery(productQueryMode?: QueryMode) {
+    return `query BuyTogetherList($filter: filterBuyTogetherList) {
+      buyTogetherList(filter: $filter) 
         ${this.getAllFields(productQueryMode)}
     }`
   }
