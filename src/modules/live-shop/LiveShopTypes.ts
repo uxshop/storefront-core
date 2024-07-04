@@ -43,7 +43,7 @@ export interface LiveShop {
   id: number
   hashRoom: string
   name: string
-  status: string
+  status: 'inLive' | 'finished' | 'warmup' | string
   urlLive: string
   title: string
   banner: LiveShopImage

@@ -3,7 +3,8 @@
     "id": 1,
     "hashRoom": "abc123",
     "name": "Super Live Shop",
-    "status": "active",
+    "slug": "super-live-shop",
+    "status": "inLive",
     "urlLive": "https://www.youtube.com/watch?v=J-K0cF0BCx4",
     "title": "Bem vindo a Super Live Shop!",
     "banner": {
@@ -14,7 +15,7 @@
       {
         "id": 101,
         "discount": {
-          "type": "percentage",
+          "type": "markup",
           "value": 10
         },
         "variations": [

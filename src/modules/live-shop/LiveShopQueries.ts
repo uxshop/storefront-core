@@ -20,7 +20,7 @@ export class LiveShopQueries {
   private getVariationFields() {
     return `
       {
-        id, 
+        variationId, 
         discount ${this.getDiscountFields()}
       }`
   }
@@ -28,7 +28,7 @@ export class LiveShopQueries {
   private getProductFields() {
     return `
       {
-        id, 
+        productId, 
         discount ${this.getDiscountFields()}, 
         variations ${this.getVariationFields()}
       }`

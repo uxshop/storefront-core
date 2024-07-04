@@ -8,7 +8,17 @@ const Repository = () => (shop_ctx.mock?.live_shop ? LiveShopRepositoryJson : Li
 export class LiveShopService {
   static async getByHash(hash: string, fields?: LiveShopFields[]): Promise<LiveShop> {
     try {
-      const result: LiveShop = await Repository().getByHash(hash, fields)
+      const result: LiveShop = await Repository().getOne({ filter: { hash } }, fields)
+      BroadcastService.emit('LiveShop', result)
+
+      return result
+    } catch (error) {
+      throw new Error(error?.message)
+    }
+  }
+  static async getById(id: number, fields?: LiveShopFields[]): Promise<LiveShop> {
+    try {
+      const result: LiveShop = await Repository().getOne({ filter: { id } }, fields)
       BroadcastService.emit('LiveShop', result)
 
       return result
