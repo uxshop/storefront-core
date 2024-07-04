@@ -53,4 +53,4 @@ module.exports = {
 
 ### Cada módulo corresponde a um endpoint da api-storefront
 
-![alt text](<Captura de Tela 2024-07-04 às 15.40.29.png>)
+![alt text](modules.png)
