@@ -2,9 +2,6 @@ import { BroadcastService } from '../../services/broadcast/broadcast-service'
 import { LiveShopRepositoryGql } from './LiveShopRepositoryGql'
 import { LiveShopRepositoryJson } from './LiveShopRepositoryJson'
 import { LiveShop, LiveShopFields } from './LiveShopTypes'
-import liveShopMock from '../../mocks/live-shop/live-shop.json'
-
-shop_ctx.mock.live_shop = liveShopMock
 
 const Repository = () => (shop_ctx.mock?.live_shop ? LiveShopRepositoryJson : LiveShopRepositoryGql)
 
