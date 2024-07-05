@@ -1,0 +1,44 @@
+[
+  {
+    "id": 1,
+    "hashRoom": "abc123",
+    "name": "Super Live Shop",
+    "slug": "super-live-shop",
+    "status": "inLive",
+    "urlLive": "https://www.youtube.com/watch?v=J-K0cF0BCx4",
+    "title": "Bem vindo a Super Live Shop!",
+    "banner": {
+      "src": "https://picsum.photos/200",
+      "alt": "Banner Image"
+    },
+    "products": [
+      {
+        "id": 101,
+        "discount": {
+          "type": "markup",
+          "value": 10
+        },
+        "variations": [
+          {
+            "id": 1001,
+            "discount": {
+              "type": "fixed",
+              "value": 5
+            }
+          }
+        ]
+      }
+    ],
+    "messages": [
+      {
+        "title": "Boas vindas!",
+        "content": "Bem vindo a primeira live shop!"
+      }
+    ],
+    "alertVisible": true,
+    "chatVisible": false,
+    "isActive": true,
+    "createdAt": "2024-07-03T12:00:00Z",
+    "updatedAt": "2024-07-03T12:00:00Z"
+  }
+]
