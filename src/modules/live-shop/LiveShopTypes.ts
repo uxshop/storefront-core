@@ -14,6 +14,11 @@ export type LiveShopFields =
   | 'createdAt'
   | 'updatedAt'
 
+export interface LiveShopFilter {
+  id?: number
+  hash?: string
+  slug?: string
+}
 export interface LiveShopImage {
   src: string
   alt: string
