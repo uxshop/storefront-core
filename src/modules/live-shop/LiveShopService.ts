@@ -6,9 +6,9 @@ import { LiveShop, LiveShopFields } from './LiveShopTypes'
 const Repository = () => (shop_ctx.mock?.live_shop ? LiveShopRepositoryJson : LiveShopRepositoryGql)
 
 export class LiveShopService {
-  static async getByHash(hash: string, fields?: LiveShopFields[]): Promise<LiveShop> {
+  static async getByHash(hashRoom: string, fields?: LiveShopFields[]): Promise<LiveShop> {
     try {
-      const result: LiveShop = await Repository().getOne({ filter: { hash } }, fields)
+      const result: LiveShop = await Repository().getOne({ filter: { hashRoom } }, fields)
       BroadcastService.emit('LiveShop', result)
 
       return result

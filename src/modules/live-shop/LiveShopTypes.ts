@@ -16,7 +16,7 @@ export type LiveShopFields =
 
 export interface LiveShopFilter {
   id?: number
-  hash?: string
+  hashRoom?: string
   slug?: string
 }
 export interface LiveShopImage {
@@ -47,6 +47,7 @@ export interface LiveShopProduct {
 export interface LiveShop {
   id: number
   hashRoom: string
+  slug: string
   name: string
   status: 'inLive' | 'finished' | 'warmup' | string
   urlLive: string

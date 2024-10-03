@@ -6,7 +6,7 @@ export class LiveShopRepositoryJson {
     const liveShop = liveShopJsonMock
     const liveShopResult = liveShop.find(
       item =>
-        (filter.hash && item.hashRoom === filter.hash) ||
+        (filter.hashRoom && item.hashRoom === filter.hashRoom) ||
         (filter.id && item.id === filter.id) ||
         (filter.slug && item.slug === filter.slug)
     )

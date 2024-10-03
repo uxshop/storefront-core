@@ -5,7 +5,7 @@
     "name": "Super Live Shop",
     "slug": "super-live-shop",
     "status": "inLive",
-    "urlLive": "https://www.youtube.com/watch?v=J-K0cF0BCx4",
+    "urlLive": "https://www.youtube.com/watch?v=Tii6ljAdSm0",
     "title": "Bem vindo a Super Live Shop!",
     "banner": {
       "src": "https://picsum.photos/200",
@@ -13,7 +13,23 @@
     },
     "products": [
       {
-        "id": 101,
+        "id": 2915719,
+        "discount": {
+          "type": "markup",
+          "value": 10
+        },
+        "variations": [
+          {
+            "id": 1001,
+            "discount": {
+              "type": "fixed",
+              "value": 5
+            }
+          }
+        ]
+      },
+      {
+        "id": 2915788,
         "discount": {
           "type": "markup",
           "value": 10
