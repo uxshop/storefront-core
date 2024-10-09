@@ -13,7 +13,7 @@ module.exports = {
     shop_ctx: {
       api_url: 'https://api-storefront.dchomolog.dooca.store/',
       token:
-        'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzaG9wX2lkIjoxMDM3NzksInR5cGUiOiJhZG1pbiIsImVtYWlsIjoic2ltYW8ubWV5cmVyQGJhZ3kuY29tLmJyIiwiZmlyc3RfbmFtZSI6IlNpbVx1MDBlM28iLCJhY3RpdmUiOnRydWUsImlhdCI6MTY5NTE1MjU2NX0.56NBX4cX4-fAt0CehPUNqCSMs3OTa617ImXlyZQ8nRA',
+        'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzaG9wX2lkIjoxMDM3Nzl9.aN9JQNFDsB2bZ56KuTSg9F0G8lmOqK59XEd_VXhaa5M',
       domain: 'sapato-do-simon.homolog.bagypro.com',
       mock: {}
     }

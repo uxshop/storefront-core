@@ -28,6 +28,7 @@ interface shop {
     shop?: any
     products?: any
     user?: any
+    live_shop?: any
   }
 }
 

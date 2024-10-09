@@ -6,6 +6,7 @@ export type BroadcastEvents =
   | 'Category'
   | 'Freight'
   | 'LandingPages'
+  | 'LiveShop'
   | 'Menu'
   | 'Newsletter'
   | 'Pages'
