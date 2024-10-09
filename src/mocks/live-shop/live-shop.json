@@ -13,7 +13,7 @@
     },
     "products": [
       {
-        "id": 2915719,
+        "productId": 2915719,
         "discount": {
           "type": "markup",
           "value": 10
@@ -29,7 +29,7 @@
         ]
       },
       {
-        "id": 2915788,
+        "productId": 2915788,
         "discount": {
           "type": "markup",
           "value": 10
@@ -49,6 +49,10 @@
       {
         "title": "Boas vindas!",
         "content": "Bem vindo a primeira live shop!"
+      },
+      {
+        "title": "Os menores precos!",
+        "content": "Bem vindo que tá bombando!"
       }
     ],
     "alertVisible": true,

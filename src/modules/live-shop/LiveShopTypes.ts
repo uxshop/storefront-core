@@ -39,7 +39,7 @@ export interface LiveShopVariation {
   discount: LiveShopDiscount
 }
 export interface LiveShopProduct {
-  id: number
+  productId: number
   discount: LiveShopDiscount
   variations: LiveShopVariation[]
 }
