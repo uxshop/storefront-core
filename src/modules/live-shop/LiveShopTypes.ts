@@ -32,6 +32,7 @@ export interface LiveShopDiscount {
 export interface LiveShopMessage {
   title: string
   content: string
+  id?: string
 }
 
 export interface LiveShopVariation {
