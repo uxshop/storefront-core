@@ -1,9 +1,8 @@
-import liveShopJsonMock from '../../mocks/live-shop/live-shop.json'
 import { LiveShop, LiveShopFilter } from './LiveShopTypes'
 
 export class LiveShopRepositoryJson {
   static async getOne({ filter }: { filter: LiveShopFilter }, fields?: string[]): Promise<LiveShop> {
-    const liveShop = liveShopJsonMock
+    const liveShop = shop_ctx.mock?.live_shop
     const liveShopResult = liveShop.find(
       item =>
         (filter.hashRoom && item.hashRoom === filter.hashRoom) ||
