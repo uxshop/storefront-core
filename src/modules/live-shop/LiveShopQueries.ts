@@ -10,7 +10,7 @@ export class LiveShopQueries {
   }
 
   private getMessageFields() {
-    return '{id, title, content}'
+    return '{id, title, content, status}'
   }
 
   private getDiscountFields() {
@@ -30,7 +30,8 @@ export class LiveShopQueries {
       {
         productId, 
         discount ${this.getDiscountFields()}, 
-        variations ${this.getVariationFields()}
+        variations ${this.getVariationFields()},
+        status
       }`
   }
 
