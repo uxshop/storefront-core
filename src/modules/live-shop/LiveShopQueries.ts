@@ -10,7 +10,7 @@ export class LiveShopQueries {
   }
 
   private getMessageFields() {
-    return '{title, content}'
+    return '{id, title, content}'
   }
 
   private getDiscountFields() {
