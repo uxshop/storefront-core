@@ -1,3 +1,5 @@
+export type LiveShopItemStatus = 'displaying' | 'hidden' | 'highlighting'
+
 export type LiveShopFields =
   | 'id'
   | 'hashRoom'
@@ -32,6 +34,7 @@ export interface LiveShopDiscount {
 export interface LiveShopMessage {
   title: string
   content: string
+  status: LiveShopItemStatus
   id?: string
 }
 
@@ -43,6 +46,7 @@ export interface LiveShopProduct {
   productId: number
   discount: LiveShopDiscount
   variations: LiveShopVariation[]
+  status: LiveShopItemStatus
 }
 
 export interface LiveShop {
