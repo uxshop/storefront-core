@@ -228,7 +228,7 @@ export interface OptionsGetProductList {
   agg?: Aggregator
 }
 
-export interface ProductListFilter extends Omit<ProductPaginationFilter, 'first'> {
+export interface ProductListFilter extends ProductPaginationFilter {
   items?: number
 }
 
