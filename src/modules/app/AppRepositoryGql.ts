@@ -10,4 +10,12 @@ export class AppRepositoryGql {
 
     return app
   }
+
+  static async getBySlug(slug: string, fields?: AppFields[]): Promise<App> {
+    const appQuery = new AppQueries(fields)
+    const getAppQuery: string = appQuery.getApp()
+    const { app }: AppResponse = await getClient().query(getAppQuery, { filter: { slug: slug } })
+
+    return app
+  }
 }
