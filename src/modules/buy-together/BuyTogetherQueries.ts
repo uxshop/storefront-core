@@ -72,6 +72,7 @@ export class BuyTogetherQueries {
       markup
       isDefault
       installment ${installmentFields}
+      installments ${installmentFields}
     }`
     const featureFields = `
     {

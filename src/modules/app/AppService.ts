@@ -16,4 +16,15 @@ export class AppService {
       throw new Error(error?.message)
     }
   }
+
+  static async getBySlug(slug: string, fields?: AppFields[]): Promise<App> {
+    try {
+      const result = await Repository().getBySlug(slug, fields)
+      BroadcastService.emit('Apps', result)
+
+      return result
+    } catch (error) {
+      throw new Error(error?.message)
+    }
+  }
 }

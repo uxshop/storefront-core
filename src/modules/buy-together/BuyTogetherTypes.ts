@@ -33,7 +33,7 @@ export interface PaymentInstallment {
   discount: number
   interest: number
   total: string
-  parcel_price: string
+  parcelPrice: string
 }
 
 export interface Payment {
