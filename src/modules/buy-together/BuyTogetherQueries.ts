@@ -52,6 +52,16 @@ export class BuyTogetherQueries {
       attributeName
       isActive
     }`
+    const installmentFields = `
+    {
+          markup
+          parcel
+          discount
+          interest
+          total
+          parcelPrice
+      }
+    `
     const paymentsFields = `
     {
       id
@@ -61,6 +71,8 @@ export class BuyTogetherQueries {
       isActive
       markup
       isDefault
+      installment ${installmentFields}
+      installments ${installmentFields}
     }`
     const featureFields = `
     {
