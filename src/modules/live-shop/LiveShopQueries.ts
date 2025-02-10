@@ -39,6 +39,7 @@ export class LiveShopQueries {
     return [
       'id',
       'name',
+      'hashRoom',
       'status',
       'urlLive',
       'title',
