@@ -224,11 +224,11 @@ export interface Aggregator {
 }
 export interface OptionsGetProductList {
   filter: ProductPaginationFilter
-  fields?: ProductFields[]
+  fields?: Partial<ProductFields>[]
   agg?: Aggregator
 }
 
-export interface ProductListFilter extends Omit<ProductPaginationFilter, 'first'> {
+export interface ProductListFilter extends ProductPaginationFilter {
   items?: number
 }
 
@@ -288,3 +288,4 @@ export type ProductFields =
   | 'variations'
   | 'components'
   | 'componentGroups'
+  | string
