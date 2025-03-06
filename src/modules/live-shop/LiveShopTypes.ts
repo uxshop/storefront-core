@@ -35,6 +35,7 @@ export interface LiveShopMessage {
   title: string
   content: string
   status: LiveShopItemStatus
+  position: number
   id?: string
 }
 
@@ -47,6 +48,7 @@ export interface LiveShopProduct {
   discount: LiveShopDiscount
   variations: LiveShopVariation[]
   status: LiveShopItemStatus
+  position: number
 }
 
 export interface LiveShop {
