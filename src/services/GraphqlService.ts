@@ -15,7 +15,7 @@ class GraphqlService {
         headers: {
           token: token,
           domain: domain,
-          'User-Agent': 'storefront-core'
+          'Client-Name': 'storefront-core',
         }
       }
     })
