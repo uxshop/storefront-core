@@ -54,14 +54,13 @@ export class BuyTogetherQueries {
     }`
     const installmentFields = `
     {
-          markup
-          parcel
-          discount
-          interest
-          total
-          parcelPrice
-      }
-    `
+       markup
+       parcel
+       discount
+       interest
+       total
+       parcelPrice
+    }`
     const paymentsFields = `
     {
       id
@@ -74,17 +73,6 @@ export class BuyTogetherQueries {
       installment ${installmentFields}
       installments ${installmentFields}
     }`
-    const featureFields = `
-    {
-      id
-      name
-      slug
-      values {
-        id
-        name
-        slug
-      }
-    }`
     const variationsFields = `
     {
       id
@@ -94,8 +82,6 @@ export class BuyTogetherQueries {
         releaseDate
         now
       }
-      description
-      shortDescription
       isVirtual
       isPreSale
       images ${imageFields}
@@ -111,7 +97,6 @@ export class BuyTogetherQueries {
       color ${colorFields}
       attribute ${attributeFields}
       attributeSecondary ${attributeFields}
-      features ${featureFields}
       productId
       colors ${colorFields}
     }
@@ -120,8 +105,6 @@ export class BuyTogetherQueries {
       id
       name
       slug
-      description
-      shortDescription
       images ${imageFields}
       payments ${paymentsFields}
       priceOutOfStock
@@ -134,7 +117,6 @@ export class BuyTogetherQueries {
       color ${colorFields}
       attribute ${attributeFields}
       attributeSecondary ${attributeFields}
-      features ${featureFields}
       releaseDate {
         releaseDate
         now
