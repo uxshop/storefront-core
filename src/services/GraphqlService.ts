@@ -14,7 +14,8 @@ class GraphqlService {
       fetchOptions: {
         headers: {
           token: token,
-          domain: domain
+          domain: domain,
+          'User-Agent': 'storefront-core'
         }
       }
     })
