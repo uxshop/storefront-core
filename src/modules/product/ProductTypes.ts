@@ -288,4 +288,5 @@ export type ProductFields =
   | 'variations'
   | 'components'
   | 'componentGroups'
+  | 'releaseDate'
   | string
