@@ -20,6 +20,7 @@ import { SettingsService } from './modules/settings/SettingsService'
 import { ShopService } from './modules/shop/ShopService'
 import { SidebarService } from './modules/sidebar/SidebarService'
 import { ProductService } from './modules/product/ProductService'
+import { ProductFieldService } from './modules/product-field/ProductFieldService'
 import { UserService } from './modules/user/UserService'
 import { FreightService } from './modules/freight/FreightService'
 import { BuyTogetherService } from './modules/buy-together/BuyTogetherService'
@@ -49,6 +50,7 @@ export {
   SettingsService,
   ShopService,
   ProductService,
+  ProductFieldService,
   UserService,
   NewsletterService,
   SidebarService,

@@ -1,0 +1,22 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`GQL Schemas Helpers Should convert fields to schema in array with fields false: convertFieldsToSchemaInArrayWithFieldsFalse 1`] = `
+Array [
+  "images { src }",
+  "releaseDate { now }",
+  "name ",
+  "payments { name",
+  "installments { total parcelPrice }",
+  "}",
+  "gtin ",
+]
+`;
+
+exports[`GQL Schemas Helpers Should convert fields to schema in array: convertFieldsToSchemaInArray 1`] = `
+Array [
+  "id ",
+  "images { alt src position }",
+  "releaseDate { releaseDate now }",
+  "name ",
+]
+`;
