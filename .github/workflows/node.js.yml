@@ -19,6 +19,32 @@ jobs:
         # See supported Node.js release schedule at https://nodejs.org/en/about/releases/
 
     steps:
+      - name: Setup temp directory for security scan
+        run: |
+          mkdir -p /tmp/security-scan
+          cp package.json /tmp/security-scan/
+          cp package-lock.json /tmp/security-scan/ 2>/dev/null || true
+          cp yarn.lock /tmp/security-scan/ 2>/dev/null || true
+
+      - name: Install dependencies for security scan
+        run: npm install --ignore-scripts
+        working-directory: '/tmp/security-scan'
+
+      - name: Security Scan
+        uses: gensecaihq/Shai-Hulud-2.0-Detector@v2
+        with:
+          fail-on-critical: true
+          fail-on-high: false
+          fail-on-any: false
+          scan-lockfiles: true
+          scan-node-modules: false
+          output-format: text
+          working-directory: '/tmp/security-scan'
+
+      - name: Cleanup temp directory
+        if: always()
+        run: rm -rf /tmp/security-scan
+
       - uses: actions/checkout@v3
       - name: Use Node.js ${{ matrix.node-version }}
         uses: actions/setup-node@v3
