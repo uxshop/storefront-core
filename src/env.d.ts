@@ -7,6 +7,7 @@ interface shop {
   domain: string
   base_path?: string
   mock?: {
+    productsFields?: any
     apps?: any
     category?: any
     categoryTree?: any
